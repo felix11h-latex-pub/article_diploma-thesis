@@ -1,0 +1,10 @@
+# Fdb version 3
+["pdflatex"] 1386874857 "Chapter03.tex" "Chapter03.pdf" "Chapter03" 
+  "/etc/texmf/web2c/texmf.cnf" 1383758586 1101 af7716885e081ab43982cab7b4672c1a ""
+  "/usr/share/texlive/texmf/web2c/texmf.cnf" 1341304304 31466 25867adcbb7c2423c76afd53e67c9231 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1383758786 3672787 2c98625d8d1bb09ac85214141f708f75 ""
+  "Chapter03.aux" 1386765143 2273 30d373c09f06f7135bc953351c40b626 ""
+  "Chapter03.tex" 1386874873 11661 7cdb1d95221c3b65c1030c8542655f34 ""
+  (generated)
+  "Chapter03.pdf"
+  "Chapter03.log"
