@@ -40,8 +40,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/base/latin9.def
-INPUT /usr/share/texlive/texmf-dist/tex/latex/base/latin9.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
 INPUT /var/lib/texmf/tex/generic/babel/babel.sty
 INPUT /var/lib/texmf/tex/generic/babel/babel.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/ngermanb.ldf
@@ -92,6 +98,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrhack.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/scrhack.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
@@ -264,9 +272,6 @@ INPUT ./gfx/HCP_text_logo.png
 INPUT ./gfx/HCP_text_logo.png
 INPUT gfx/HCP_text_logo.png
 INPUT ./gfx/HCP_text_logo.png
-INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
-INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT gfx/AllenBrainLogo.png
 INPUT ./gfx/AllenBrainLogo.png
 INPUT ./gfx/AllenBrainLogo.png
@@ -323,7 +328,6 @@ INPUT ./ClassicThesis.out
 INPUT ClassicThesis.run.xml
 OUTPUT ClassicThesis.run.xml
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb

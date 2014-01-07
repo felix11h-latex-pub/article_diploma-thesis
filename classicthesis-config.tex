@@ -1,23 +1,12 @@
-% ****************************************************************************************************
-% classicthesis-config.tex 
-% formerly known as loadpackages.sty, classicthesis-ldpkg.sty, and classicthesis-preamble.sty 
-% Use it at the beginning of your ClassicThesis.tex, or as a LaTeX Preamble 
-% in your ClassicThesis.{tex,lyx} with \input{classicthesis-config}
-% ****************************************************************************************************  
-% If you like the classicthesis, then I would appreciate a postcard. 
-% My address can be found in the file ClassicThesis.pdf. A collection 
-% of the postcards I received so far is available online at 
-% http://postcards.miede.de
-% ****************************************************************************************************
 
-% ****************************************************************************************************
+
 % 1. Configure classicthesis for your needs here, e.g., remove "drafting" below 
 % in order to deactivate the time-stamp on the pages
-% ****************************************************************************************************
+
 \PassOptionsToPackage{eulerchapternumbers,listings,drafting,%
 				 pdfspacing,%floatperchapter,%linedheaders,%
 				 subfig,parts}{classicthesis}										
-% ********************************************************************
+
 % Available options for classicthesis.sty 
 % (see ClassicThesis.pdf for more information):
 % drafting
@@ -25,7 +14,7 @@
 % eulerchapternumbers beramono eulermath pdfspacing minionprospacing
 % tocaligned dottedtoc manychapters
 % listings floatperchapter subfig
-% ********************************************************************
+
 
 % ********************************************************************
 % Triggers for this config
@@ -33,8 +22,7 @@
 \usepackage{ifthen}
 \newboolean{enable-backrefs} % enable backrefs in the bibliography
 \setboolean{enable-backrefs}{false} % true false
-% ****************************************************************************************************
-
+% *******************************************************************
 
 % ****************************************************************************************************
 % 2. Personal data and user ad-hoc commands
@@ -85,10 +73,10 @@
 % ******************************************************************** 
 % Packages with options that might require adjustments
 % ******************************************************************** 
-\PassOptionsToPackage{latin9}{inputenc}	% latin9 (ISO-8859-9) = latin1+"Euro sign"
+\PassOptionsToPackage{utf8}{inputenc}	% latin9 (ISO-8859-9) = latin1+"Euro sign"
  \usepackage{inputenc}				
 
-%\PassOptionsToPackage{ngerman,american}{babel}   % change this to your language(s)
+\PassOptionsToPackage{ngerman,american}{babel}   % change this to your language(s)
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
  \usepackage{babel}					
