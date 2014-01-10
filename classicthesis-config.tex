@@ -88,12 +88,11 @@
 
 %there was however the problem, that I could not get the spacing for the headline right - depends on parskip!
 
-% For [1] - Style comments
+
+% For [1] - Style comments:
 %\usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
-
-
-% For (Name, 2002) style comments 
-\usepackage[style=authoryear, url=false, maxbibnames=99, doi=false]{biblatex}
+% For (Name, 2002) - Style comments: 
+\usepackage[style=authoryear, url=false, maxbibnames=99, doi=false, maxcitenames=2]{biblatex}
 
 \AtEveryBibitem{\ifentrytype{article}{\clearfield{issn}}{}}
 \AtEveryBibitem{\clearfield{month}}
