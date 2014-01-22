@@ -19,6 +19,7 @@
      "openright"
      "twoside"
      "classicthesis-config"
+     "Chapters/02-Graph_theory"
      "Chapters/Chapter03"
      "FrontBackmatter/Bibliography")))
 

@@ -168,8 +168,44 @@
 %----------------------------------------%
 				
 
-\PassOptionsToPackage{fleqn}{amsmath}		% math environments and more by the AMS 
- \usepackage{amsmath}
+
+\usepackage{amsmath}
+\usepackage{amsthm}        % Does theorem stuff
+\usepackage{amssymb} 
+\usepackage{xypic}  	   %for strange reason I need this to make the two cell diagrams	
+\usepackage[2cell]{xy} 	   %for commutative diagrams%
+
+\newcommand{\C}{\mathcal{C}}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Hom}{\operatorname{Hom}}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+
 
 % ******************************************************************** 
 % General useful packages
