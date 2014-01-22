@@ -82,7 +82,7 @@
       <file>ClassicThesis-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>Bibliography.bib</file>
+      <file>~/library/references/main.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>
