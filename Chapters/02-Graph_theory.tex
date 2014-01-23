@@ -12,26 +12,24 @@ References for this chapter:
 \url{http://nlab.mathforge.org/nlab/show/quiver}, \parencite{Bang-Jensen_Digraphs} 
 
 
-\begin{comment}
+%  \begin{defn}[Graph, Order] A \textbf{graph} is a pair of sets $G
+% =(V,E)$, consisting of the \textbf{vertex set} $V(G)=V$ and the
+% \textbf{edge set} $E(G)=E$, such that $E \subseteq V \times V$.  The
+% number of vertices of a graph $G$ is its \textbf{order} $|G|$, the
+% number of edges is denoted by $||G||$.  A graph of order $0$ or $1$ is
+% called \textit{trivial}.
+%   \end{defn}
 
-  \begin{defn}[Graph, Order] A \textbf{graph} is a pair of sets $G
-    =(V,E)$, consisting of the \textbf{vertex set} $V(G)=V$ and the
-    \textbf{edge set} $E(G)=E$, such that $E \subseteq V \times V$.
-    The number of vertices of a graph $G$ is its \textbf{order} $|G|$,
-    the number of edges is denoted by $||G||$.  A graph of order $0$
-    or $1$ is called \textit{trivial}.
-  \end{defn}
+%   The object of interest in my thesis will be directed pseudographs,
+% but I will still have to think about how to
+%   \begin{itemize}
+%   \item call them, graphs, directed graphs, etc..
+%   \item think about the weights(!!)
+%   \item think about definitions
+%   \end{itemize}
 
-  The object of interest in my thesis will be directed pseudographs,
-  but I will still have to think about how to
-  \begin{itemize}
-  \item call them, graphs, directed graphs, etc..
-  \item think about the weights(!!)
-  \item think about definitions
-  \end{itemize}
+%   \bigskip
 
-  \bigskip
-\end{comment}
 
 
 
@@ -117,15 +115,19 @@ isomorphism inbetween them.
   \mathbb{R}$.
 \end{defn}
 
-\begin{remark}
-  \red{(heavy draft)}, title: A directed graph category for biological neural networks, in a bordered box?\\
-  Certainly, a weighted directed pseudograph is the most fitting mathematical modelling to the biological situation, since self connections and multiple synapse are not only plausibel (source?) but the rule. However there is one abstraction we can make by adding together the synaptic weights - NEST is doing it..\\
-  Also think about \textbf{inhibitory, excitatory}. Suggestion: edge
-  weights $\omega: E(G) \to \mathbb{R}^{+}$ \textbf{and} vertex
-  weights $\nu: V(G) \to \{-1, 1\}$. Synaptic weight $\mathrm{syn}(e)$
-  for edge $e$ is then \[\mathrm{syn}(e) = \nu(s(e))\,\omega(e).\]
-  Benefit: Synapse from one neuron are either excitatory or inhibitory
-  but not mixed as in bio.
+\begin{remark} \red{(heavy draft)}, title: A directed graph category
+for biological neural networks, in a bordered box?\\ Certainly, a
+weighted directed pseudograph is the most fitting mathematical
+modelling to the biological situation, since self connections and
+multiple synapse are not only plausibel (source?) but the
+rule. However there is one abstraction we can make by adding together
+the synaptic weights - NEST is doing it..\\ Also think about
+\textbf{inhibitory, excitatory}. Suggestion: edge weights $\omega:
+E(G) \to \mathbb{R}^{+}$ \textbf{and} vertex weights $\nu: V(G) \to
+\{-1, 1\}$. Synaptic weight $\mathrm{syn}(e)$ for edge $e$ is
+then \[\mathrm{syn}(e) = \nu(s(e))\,\omega(e).\] Benefit: Synapse from
+one neuron are either excitatory or inhibitory but not mixed as in
+bio.
 \end{remark}
 
 
@@ -155,17 +157,17 @@ isomorphism inbetween them.
 
 
 
-\begin{comment}
-  A given directed loop graph $G = (V,E,s,t)$, can always be
-  represented by a canonical isomorphic directed loop graph $G' =
-  (V,E')$, where $E':=\{(s(e),t(e)) | e \in E\} \subseteq V^2$. For a
-  directed loop graph $G'$ in canonical form, the source and target
-  functions $s',t'$ do not need to be specified, since they are
-  uniquely determined as the projections on the first and second
-  component, $s' = \mathrm{pr}_1, t' = \mathrm{pr}_2$. Wait, not so
-  easy because multi-sets, however add synaptic strength of parallel
-  edges to make directed loop-graphs! (Bang-Jensen)
-\end{comment}
+
+% A given directed loop graph $G = (V,E,s,t)$, can always be
+% represented by a canonical isomorphic directed loop graph $G' =
+% (V,E')$, where $E':=\{(s(e),t(e)) | e \in E\} \subseteq V^2$. For a
+% directed loop graph $G'$ in canonical form, the source and target
+% functions $s',t'$ do not need to be specified, since they are uniquely
+% determined as the projections on the first and second component, $s' =
+% \mathrm{pr}_1, t' = \mathrm{pr}_2$. Wait, not so easy because
+% multi-sets, however add synaptic strength of parallel edges to make
+% directed loop-graphs! (Bang-Jensen)
+
 
 
 From now on any \textit{directed graph} is assumed to be a directed
@@ -286,14 +288,14 @@ consisting of only one vertex has length zero. \red{ colon, really?}
 
 
 
-\begin{comment}
-  \begin{defn}[Neighbour, adjacent]
-    Two \textbf{vertices} $x,y \in V(G)$ of $G$ are called
-    \textit{adjacent} or \textit{neighbours} if there is an edge
-    between $x$ and $y$, $(x,y) \in E(G)$. Two \textbf{edges} $e \neq
-    f$ are \textit{adjacent} if they have an end in common.
-  \end{defn}
-\end{comment}
+
+%   \begin{defn}[Neighbour, adjacent] Two \textbf{vertices} $x,y \in
+% V(G)$ of $G$ are called \textit{adjacent} or \textit{neighbours} if
+% there is an edge between $x$ and $y$, $(x,y) \in E(G)$. Two
+% \textbf{edges} $e \neq f$ are \textit{adjacent} if they have an end in
+% common.
+%   \end{defn}
+
 
 More to do:
 
@@ -326,6 +328,9 @@ their equivalence classes and consider \textit{labeled graphs}, where
 the edge set of a graph with $n$ vertices takes the form $V =
 \{1,\ldots,n\}$.
 
+
+
+
 \subsection{Erd\H{o}s-R\'{e}nyi graphs}
 
 References: Newman, Erdos1960, Erdos1959, Gilbert1959, 
@@ -347,18 +352,25 @@ Wikipedia, \parencite{West_Graph-theory}
   \[
   \operatorname{E}(X) = pn^2. \mathrm{\:(if\,self-edges!)}
   \]
-  Then, of course, the \textbf{mean in- and out-degree} is \[ \langle
+  Then, of course, the \textbf{mean in-}  and \textbf{out-degree} is \[ \langle
   d^{\mathrm{in}} \rangle = \langle d^{\mathrm{out}} \rangle =
   \frac{\langle |E(G)| \rangle}{|V(G)|} = np.\] \textit{Does this make
     sense? Define everything properly!!}
 \end{remark}
 
 
-% *****************************************
-% *****************************************
-% *****************************************
-% *****************************************
-% *****************************************
+
+% From Graph clustering - Satu Elisa Schaeffer - 2007
+% 
+% [84] P. Erdos, A. Rényi, On random graphs I, in: Selected Papers
+% of Alfréd Rényi, vol. 2, Akadémiai Kiadó, Budapest, Hungary,
+% 1976, pp. 308–315. First publication in Publ. Math. Debrecen
+% 1959.
+% [85] P. Erdos, A. Rényi, On the evolution of random graphs,
+% in: Selected Papers of Alfréd Rényi, vol. 2, Akadémiai Kiadó,
+% Budapest, Hungary, 1976, pp. 482–525. First publication in
+% MTA Mat. Kut. Int. Közl. 1960.
+
 
 
 
