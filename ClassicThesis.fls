@@ -264,6 +264,8 @@ INPUT Chapters/02-Graph_theory.aux
 INPUT Chapters/02-Graph_theory.aux
 INPUT Chapters/Chapter03.aux
 INPUT Chapters/Chapter03.aux
+INPUT Chapters/05-Network_Model.aux
+INPUT Chapters/05-Network_Model.aux
 INPUT FrontBackmatter/Bibliography.aux
 INPUT FrontBackmatter/Bibliography.aux
 OUTPUT ClassicThesis.aux
@@ -409,6 +411,9 @@ INPUT ./gfx/img/AllenBrainLogo.png
 INPUT gfx/img/song2005-quadruplet_recordings.png
 INPUT ./gfx/img/song2005-quadruplet_recordings.png
 INPUT ./gfx/img/song2005-quadruplet_recordings.png
+OUTPUT Chapters/05-Network_Model.aux
+INPUT Chapters/05-Network_Model.tex
+INPUT Chapters/05-Network_Model.tex
 OUTPUT FrontBackmatter/Bibliography.aux
 INPUT FrontBackmatter/Bibliography.tex
 INPUT FrontBackmatter/Bibliography.tex
@@ -417,6 +422,8 @@ INPUT Chapters/02-Graph_theory.aux
 INPUT Chapters/02-Graph_theory.aux
 INPUT Chapters/Chapter03.aux
 INPUT Chapters/Chapter03.aux
+INPUT Chapters/05-Network_Model.aux
+INPUT Chapters/05-Network_Model.aux
 INPUT FrontBackmatter/Bibliography.aux
 INPUT FrontBackmatter/Bibliography.aux
 INPUT ./ClassicThesis.out
