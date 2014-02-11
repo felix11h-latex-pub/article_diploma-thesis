@@ -420,6 +420,9 @@ INPUT ./gfx/tikz/geomtr_prb_05.pdf
 INPUT gfx/tikz/geomtr_prb.pdf
 INPUT ./gfx/tikz/geomtr_prb.pdf
 INPUT ./gfx/tikz/geomtr_prb.pdf
+INPUT gfx/plots/test.pdf
+INPUT ./gfx/plots/test.pdf
+INPUT ./gfx/plots/test.pdf
 OUTPUT FrontBackmatter/Bibliography.aux
 INPUT FrontBackmatter/Bibliography.tex
 INPUT FrontBackmatter/Bibliography.tex
