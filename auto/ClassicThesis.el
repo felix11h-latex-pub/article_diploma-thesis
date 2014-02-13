@@ -20,6 +20,7 @@
      "twoside"
      "classicthesis-config"
      "Chapters/02-Graph_theory"
+     "Chapters/05-Network_Model"
      "Chapters/Chapter03"
      "FrontBackmatter/Bibliography")))
 
