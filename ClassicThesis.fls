@@ -407,6 +407,12 @@ INPUT ./gfx/tikz/geomtr_prb.pdf
 INPUT gfx/plots/test.pdf
 INPUT ./gfx/plots/test.pdf
 INPUT ./gfx/plots/test.pdf
+INPUT gfx/tikz/distance_rewiring.pdf
+INPUT ./gfx/tikz/distance_rewiring.pdf
+INPUT ./gfx/tikz/distance_rewiring.pdf
+INPUT gfx/dist_rew_rew.pdf
+INPUT ./gfx/dist_rew_rew.pdf
+INPUT ./gfx/dist_rew_rew.pdf
 OUTPUT Chapters/Chapter03.aux
 INPUT Chapters/Chapter03.tex
 INPUT Chapters/Chapter03.tex
@@ -447,8 +453,10 @@ INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb
