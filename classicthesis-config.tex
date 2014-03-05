@@ -4,7 +4,7 @@
 % in order to deactivate the time-stamp on the pages
 
 \PassOptionsToPackage{eulerchapternumbers,listings,drafting,%
-				 pdfspacing,%floatperchapter,%linedheaders,%
+				 pdfspacing,floatperchapter,%linedheaders,%
 				 subfig,parts}{classicthesis}										
 
 % Available options for classicthesis.sty 
@@ -228,6 +228,7 @@
 % ****************************************************************************************************
 % 4. Setup floats: tables, (sub)figures, and captions
 % ****************************************************************************************************
+
 \usepackage{tabularx} % better tables
 	\setlength{\extrarowheight}{3pt} % increase table row height
 \newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
@@ -357,6 +358,14 @@
 			\providecommand{\subfigureautorefname}{\figureautorefname}%  			
     }{\relax}
 \makeatother
+
+\usepackage{sidecap}%?? caption besides figures
+\usepackage{floatrow}
+\usepackage{makeidx} %??
+\makeindex           %??  
+\usepackage{overpic}
+
+
 
 
 % ****************************************************************************************************
