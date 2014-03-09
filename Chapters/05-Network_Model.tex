@@ -13,7 +13,7 @@ model in Chapter~\ref{ch:structural_aspects}.
 \setlength{\parindent}{0pt}
 
 %\section{Introduction}\label{sec:intro_model}
-
+\clearpage
 \section{Anisotropy in Neural Connectivity}\label{sec:biol_anisotropy}
 
 % The field of neurogeometry is trying to answer the question when
@@ -41,13 +41,55 @@ dendrites. A fundamental concept in this field is that of
 connection of two neurons, present whenever the axon of one neuron is
 within a spatial distance $s$ of the dendrite of the other, it is a
 necessary, although not sufficient, condition for the formation of a
-synaptic connection (\autoref{fig:potential_synapse}). The existence of such close
-appositions strongly depends on dendritic and axonal anatomy;
-identification of defining morphological characteristics in both axon
-and dendrites would therefore allow for an abstracted model of network
-connectivity. It is the hope that such a model, motivated from the
-geometry of the cortical neuron's functional compartments, yields interesting
-connectivity and dynamics.
+synaptic connection (\autoref{fig:potential_synapse}). The existence
+of such close appositions solely depends on dendritic and axonal
+anatomy; identification of defining morphological characteristics in
+both axon and dendrite would therefore allow for a model of local
+network connectivity, assuming for example that a certain ratio $r$ of
+potential synapses turn into active contacts independently. It is the
+hope that such a model, motivated from the geometry of a neuron's
+functional compartments, not only displays inherent patterns of
+connectivity similar to what has been observed biological networks,
+but also proofs itself as a testing ground for how this connectivity
+may affect network dynamics.
+
+\vspace{-0.25cm}
+\definecolor{lightgray}{rgb}{0.88, 0.88, 0.88}
+\begin{center}
+ \setlength{\fboxrule}{0pt}
+ \fcolorbox{black}{lightgray}{
+   \begin{minipage}[c]{0.90\textwidth}
+
+     \vspace{0.1cm}
+     \setlength{\intextsep}{0pt}%
+     \setlength{\columnsep}{8pt}%
+     \begin{wrapfigure}{r}{0.65\textwidth}
+       \captionsetup{labelformat=empty,labelsep=none}
+       \centering
+       \includegraphics[width=\linewidth]{gfx/img/potential_synapse2.png}
+       \vspace{-35pt}
+       \caption{}
+       \label{fig:potential_synapse}
+     \end{wrapfigure}
+
+     \footnotesize \textbf{Potential Synapse} 
+     \smallskip
+
+     Close ap\-positions be\-tween den\-drite and axon
+     are a necessary condition for the formation of a synapse. \textbf{(a)}
+     3-D reconstructions of a py\-ra\-mi\-dal cell den\-drite in red, axon of a
+     regular spiking non-pyramidal cell in blue. \textbf{(b)-(c)}
+     Overlapping arbors allow for several potential synapses whenever
+     dendrite and axon are within a spatial distance $\leq s$. Values for
+     $s$ depend on the type of synapse, typically between
+     0.4-\SI{2}{\micro\meter}. Scale bar: \SI{100}{\micro\meter},
+     \SI{30}{\micro\meter}, \SI{3}{\micro\meter} in (a),(b),(c)
+     respectively. Image from \textcite{Stepanyants2005}. \hfill \textbf{4.1}
+
+     \vspace{0.1cm}
+   \end{minipage}}
+\end{center}
+
 
 % \vspace{0.5cm}
 % \begin{figure}[!htbp] 
@@ -58,23 +100,35 @@ connectivity and dynamics.
 %   \label{fig:potential_synapse}
 % \end{figure}
 
-\vspace{0.5cm}
-\begin{figure}[!htbp]
-\captionsetup{format=plain}
-\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=0.45\textwidth}}]{figure}[\FBwidth]
-{\includegraphics[width=0.45\textwidth]{gfx/img/potential_synapse1.png}}
-{\caption{\textbf{Potential Synapse}  \textbf{a)} 3-D reconstruction
-    showing dendrite of pyramidal cell in red, axon of 
-    cell in red. Image from \textcite{Stepanyants2005}.}\label{fig:potential_synapse}}
-\end{figure}
-\vspace{0.3cm}
+% \vspace{0.5cm}
+% \begin{figure}[!htbp]
+% \captionsetup{format=plain}
+% \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=0.3\textwidth}}]{figure}[\FBwidth]
+% {\includegraphics[width=0.6\textwidth]{gfx/img/potential_synapse1.png}}
+% {%
+%   \caption{\textbf{Potential Synapse} Close appositions between
+%           dendrite and axon are a necessary condition for the formation of a
+%           synapse. \textbf{(a)} 3-D reconstructions of a pyramidal cell dendrite
+%           in red, axon of a regular spiking non-pyramidal cell in
+%           blue. \textbf{(b)-(c)} Overlapping arbors allow
+%           for several potential synapses whenever dendrite and axon are within a
+%           spatial distance $\leq s$. Values for $s$ depend on the type of
+%           synapse, typically between 0.4-\SI{2}{\micro\meter}. Scale bar:
+%           \SI{100}{\micro\meter}, \SI{30}{\micro\meter}, \SI{3}{\micro\meter} in
+%           (a),(b),(c) respectively. Image from
+%           \textcite{Stepanyants2005}.}%
+%   \label{fig:potential_synapse}%
+% }
+% \end{figure}                                
+% \vspace{0.3cm}
 
-Finding such defining characteristics however is difficult, as axonal morphology is,
-in general, highly diverse.
-\parencite{Debanne2004}. Across different species,
+
+Finding such defining characteristics however is difficult, as axonal
+morphology is, in general, highly diverse
 %------------------------------------------------
 \marginpar{high variability in axonal morphology} 
 %------------------------------------------------ 
+\parencite{Debanne2004}. Across different species,
 distinct regions in the central nervous system and different neuron
 types, axons display a wide variety of shapes characterized by
 morphometric parameters such as total length, branching complexity and
@@ -87,81 +141,18 @@ branch points and a total axon length between 150 and
 
 It is therefore imperative to confine this analysis to a specific
 brain region and neuron type. In this study, we set the focus on
-circuits of pyramidal cells in the mammalian cortex. Being among the
-most well studied local networks, the . Even more specifically, local
-circuits of thick tufted layer V pyramidal neurons in the rat's
-somatsosensory cortex will serve as a benchmark f
+circuits of pyramidal cells in the mammalian cortex.
+%?? Cortex does this
+%?? Cortex is this well studied
+%?? Here we go
+More specifically, local circuits of thick tufted layer V
+pyramidal neurons in the rat's somatsosensory cortex have been the
+target of advanced
+experimentation \parencite{Song2005,Perin2011,Romand2011, Ramaswamy2012}, and will
+serve as a benchmark for results in neural morphology and network
+connectivity in this report.
 
-
-Axons of pyramidal cells in the mammalian cortex are well
-described. From the soma the single main stem of the axon
-originates and then projects downwards, describing a trajectory resembling
-a straight line \parencite[p.~67]{Braitenberg_Cortex}. Within a
-distance of 300-\SI{500}{\micro\meter}, the axon arborizes building
-as many as 2nd and 3rd order collateral branches. Again
-constituting a complex tree-like structure. 
-
-Experiments are constrained by a typical slice thickness of
-\SI{300}{\micro\meter}. On this scale, 3-D reconstruction from labeled
-thick tufted layer V pyramidal cells illustrates characteristic
-morphology of the axonal tree (\autoref{fig:romand_axon_trace}). Downwards, branching,
-vertically. 
-
-
-, showing an apparent anisotropy in neural connectivity, aligning with
-the growth direction of axon's main stem (\autoref{fig:axon_heat}).
-
-
-
-Using image manipulation software to trace axonal trees in a
-sample of five reconstructions of TTL5 neurons,   
- 
-In a sample of 5 reconstructions, the respective axonal
-trees where traced using image manipulation o 
-
-
-Downwards, branching,
-vertically. Tracing the axon with a image manipulation program, we
-obtain a heat map (\autoref{fig:axon_heat}).
-
-Dendritic morphology in layer V is also well
-described. \marginpar{dendritic morphology in layer V} Bipartite,
-neglect apical dendrite.
-
-
-Combing the heatmaps, we obtain clear evidence for anisotropy. 
-
-
-
-
-% Thick tufted pyramidal cells in the rat's somatosensory cortex 
-
-% Owing to this diversity, it is impossible to and it
-% is our intent to focus on a specific neuron type and brain region.
-
-% Neuron morphology as well as network connectivity in the rat's
-% somatosensory cortex has been thoroughly studied. Even more
-% specifically, thick tufted layer V have been the target of studies. 
-% \marginpar{focus on TTL5 neurons}
-
-
-
-
-% %?? Neuromorpho evidence 
-
-
-% Neuron morphology and connectivity in the rat's somatosensory cortex
-% has been thoroughly studied. As s. 
-
-
-
-% Identifying anisotropy in neural connectivity as an interesting . In
-% this thesis 
-% In this study is more specifically focusing in pyramidal neurons in 
-
-
-\vspace{0.5cm}
-\begin{figure}[h] 
+\begin{figure}[!htbp]
   \centering 
   \makebox[0.875\textwidth]{%
     \includegraphics[width=0.4\textwidth]{%
@@ -170,29 +161,53 @@ Combing the heatmaps, we obtain clear evidence for anisotropy.
     \includegraphics[width=0.4\textwidth]{%
       gfx/img/network_model/p14rr_1_traced_soma_unit_B.pdf}% 
     }%
-
-  \caption{\textbf{Tracing axonal branching of a pyramidal cell} 
-    In a 3-D model reconstructed from biocytin-labeled thick-tufted
-    layer V pyramidal cells in the somatosensory cortex of  postnatal
-    (day 14) Wistar
-    rats, \textcite{Romand2011} depict dendritic compartments in
-    red, axonal compartments in blue. 
-    \textbf{A)} A \SI{600}{\micro\meter} window centered on the
-    soma of the pyramidal cell shows the main stem of the cell's axon projecting downwards in
-    a straight line, collaterals branching at various angles. \textbf{B)} Using
-    image manipulation software, axon morphology was manually traced
-    and is emphasized in black.}%?? this doesn't hit anisotropy idea yet
-    
+  \caption{\textbf{Tracing axonal branching of a pyramidal cell} In a
+    3-D model reconstructed from biocytin-labeled thick-tufted layer V
+    pyramidal cells in the somatosensory cortex of postnatal (day 14)
+    Wistar rats, \textcite{Romand2011} depict dendritic compartments in
+    red, axonal compartments in blue.  \textbf{A)} A
+    \SI{600}{\micro\meter} window centered on the soma of the pyramidal
+    cell shows the main stem of the cell's axon projecting downwards in a
+    straight line, collaterals branching at various angles. \textbf{B)}
+    Using image manipulation software, axon morphology was manually traced
+    and is emphasized in black.}    
   \label{fig:romand_axon_trace}
 \end{figure}
+\vspace{-0.2cm}
 
+Axonal morphology of pyramidal cells in the cerebral cortex is well
+described. From the soma the single main stem of the axon
+%------------------------------------------------
+\marginpar{cortical axons form straight lines, arborize profusely} 
+%------------------------------------------------ 
+originates and projects downwards, describing a trajectory closely
+resembling a straight line \parencite{Braitenberg_Cortex}. At
+arbitrary points along this path, collaterals branch off at various
+angles and constitute themself linear paths until they further ramify
+or terminate. Displaying a high degree of ramification, axonal trees
+of cortical pyramidal cells build, in general, complex
+structures \parencite{Petersen2003,Ramaswamy2012}. Cortical slice
+experiments analyzing neural anatomy are typically constrained by a
+slice thickness of \SI{300}{\micro\meter}. On this scale, 3-D
+reconstruction from labeled thick tufted layer V pyramidal cells
+reveals characteristic morphology of the axonal tree
+(\autoref{fig:romand_axon_trace}). The downwards projecting, straight
+axon branches at several points, forming collateral branches that
+travel in linear path as well.
 
+In a statistical view, this characteristic axonal morphology results
+in high axon branch densities along the main stem, whereas distant
+regions display a relatively low density
+(\autoref{fig:axon_heat}). Specifically, axon collaterals do not
+cluster around the soma but align with the main stem's projection. As
+presence of an axonal branch constitutes a necessary condition for a
+potential synapse, a higher concentration of potential and,
+subsequently, realized synapses is expected in regions of high branch
+density. For a coherent picture of local connectivity profiles,
+however, dendritic morphology needs to be considered as well. 
 
-
-
-
-\vspace{0.5cm}
-\begin{figure}[h] 
+ 
+\begin{figure}[!htbp]
   \centering 
   \makebox[0.875\textwidth]{%
     \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/p14rr_1_trace_soma.pdf}
@@ -203,19 +218,33 @@ Combing the heatmaps, we obtain clear evidence for anisotropy.
       \put(3,92){\small\textbf{\textcolor{white}{B}}}
     \end{overpic}
     }%
-    \caption{\textbf{Overlay of 5 axonal branches} \textbf{A)} Axon
-      collaterals of a single pyramidal cell as extracted in
-      \autoref{fig:romand_axon_trace}. \textbf{B)} Consecutively
-      overlaying extracted axon trees from five different neurons from
-    \textcite{Romand2011} yields a dense pattern of axonal
-    morphology. Heatmap shows density and illustrates the anisotropy
-    in neural connectivity}%??
+    \caption{%
+      \textbf{Illustrating axonal branch density}
+      In a sample of 5 reconstructions from thick-tufted layer V pyramidal
+      cells \parencite{Romand2011}, tracing axonal morphology illustrates
+      characteristic branch density along the axon's main
+      stem. \textbf{A)} Example of extracted axonal tree. Outline manually
+      traced using image manipulation software. Soma indicated by
+      triangle. Original data from \textcite{Romand2011}. \textbf{B)}
+      Overlaying 5 axonal trees extracted as in A), 
+      % ?? show Appendix?  Sumatra label?? colorbar??
+      applying a Gaussian filter and displaying high axon densities in
+      warm colors, illustrates the characteristic higher branch
+      densities along the axon's main stem.}
   \label{fig:axon_heat}
 \end{figure}
+\vspace{-0.2cm}
 
+Dendritic morphology of cortical pyramidal cells... %Bipartite,
+                                %neglect apical dendrite 
+On the scale of typical cortical slice thickness, however, the apical
+dendrite is cut off and the basal dendrite dominates the dendritic
+morphology and potential of dendritic-axonal connections
+(\autoref{fig:dendrite_heat}). The radial extension of dendritic branches results in a
+concentration of dendritic branches around the soma, much
+in the contrast to the findings of axonal branch densities before.
 
-\vspace{0.5cm}
-\begin{figure}[!htbp]
+\begin{figure}[!ht]
   \makebox[0.875\textwidth]{%
     \includegraphics[width=0.4\textwidth]{%
       gfx/img/network_model/p14rr_1_traced_soma_unit_A.pdf}%
@@ -233,7 +262,7 @@ Combing the heatmaps, we obtain clear evidence for anisotropy.
       \put(3,92){\small\textbf{\textcolor{white}{D}}}
     \end{overpic}
     }%
-  \caption{\textbf{Overlay of 5 axonal branches} \textbf{A)} Axon
+  \caption{\textbf{Dendritic morphology and branch density} \textbf{A)} Axon
       collaterals of a single pyramidal cell as extracted in
       Figure~\ref{fig:romand_traced}. \textbf{B)} Consecutively
       overlaying extracted axon trees from five different neurons from
@@ -242,6 +271,102 @@ Combing the heatmaps, we obtain clear evidence for anisotropy.
       in neural connectivity}%?? caption wrong
   \label{fig:dendrite_heat}
 \end{figure}
+\vspace{-0.2cm}
+
+Combining the above results of dendritic and axonal branch densities
+yields, in the light of neurogeometry, a clear concept of anisotropy
+of neural connectivity. Simplifying dendritic , it becomes apparent
+that potential synapse are present along the main axon in much higher
+concentration than in directions that diverge from the axon's
+projection. This notion is supported by findings of
+\textcite{Stepanyants2005}'s in depth-study, which confirm the
+overrepresentation of potential synapses along the axon for pyramidal
+cells. Consistent with that only , anisotropy in that degrees is not
+present in spiny stellate neurons located in lower-layer-4.
+
+
+\cite{Thomson2002} Axons are not looking for their targets but
+dendrites might, further evidence to focus on axon geometry.
+
+It is worth noting that this result of anisotropic connectivity does,
+in general, not hold for other brain regions and neurons type. While
+the ad hoc approach taken here is confirmed by an in-depth study of
+\textcite{Stepanyants2005} for cortical pyramidal cells, spiny
+stellate neurons located in lower-layer-4 do not show a clear
+preferred direction for potential synapse.
+
+
+% Thick tufted pyramidal cells in the rat's somatosensory cortex 
+
+% Owing to this diversity, it is impossible to and it
+% is our intent to focus on a specific neuron type and brain region.
+
+% Neuron morphology as well as network connectivity in the rat's
+% somatosensory cortex has been thoroughly studied. Even more
+% specifically, thick tufted layer V have been the target of studies. 
+% \marginpar{focus on TTL5 neurons}
+
+
+% Neuron morphology and connectivity in the rat's somatosensory cortex
+% has been thoroughly studied. As s. 
+
+
+
+
+% the respective axonal
+% trees where traced using image manipulation o 
+
+% , showing an apparent anisotropy in neural connectivity, aligning with
+% the growth direction of axon's main stem (\autoref{fig:axon_heat}).
+
+
+% Combing the heatmaps, we obtain clear evidence for anisotropy. In the
+% next section we will combine dendritic and axonal morphological
+% characteristics into an abstracted geometric model. 
+
+% Identifying anisotropy in neural connectivity as an interesting . In
+% this thesis 
+% In this study is more specifically focusing in pyramidal neurons in 
+
+
+% \vspace{0.5cm}
+% \begin{figure}[h] 
+%   \centering 
+%   \makebox[0.875\textwidth]{%
+%     \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/p14rr_1_trace_soma.pdf}
+%       \put(3,92){\small\textbf{A}}
+%     \end{overpic}
+%     \hfill
+%     \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/p14rr_1_trace_soma.pdf}
+%       \put(3,92){\small\textbf{B}}
+%     \end{overpic}
+%     }%
+%   \vfill
+%   \vspace{0.2cm}
+%   \makebox[0.875\textwidth]{%
+%     \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/p14rr_1-5_overlay.pdf}
+%       \put(3,92){\small\textbf{A}}
+%     \end{overpic}
+%     \hfill
+%     \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/axon_heat_correct_soma.png}
+%       \put(3,92){\small\textbf{\textcolor{white}{B}}}
+%     \end{overpic}
+%     }%
+%     \caption{\textbf{Overlay of 5 axonal branches} \textbf{A)} Axon
+%       collaterals of a single pyramidal cell as extracted in
+%       \autoref{fig:romand_axon_trace}. \textbf{B)} Consecutively
+%       overlaying extracted axon trees from five different neurons from
+%     \textcite{Romand2011} yields a dense pattern of axonal
+%     morphology. Heatmap shows density and illustrates the anisotropy
+%     in neural connectivity}%??
+%   \label{fig:axon_heat}
+% \end{figure}
+
+
+
+
+
+
 
 
 
