@@ -302,17 +302,26 @@ from a single pyramidal cell, cluster around the downwards projecting
 axon (\autoref{fig:neural_anisotropy}).
 \begin{figure}[!ht]
   \centering 
-  \includegraphics[width=0.5\textwidth,frame]{gfx/img/network_model/neural_anisotropy.pdf}
-  \caption{%
-    \textbf{Connected neurons of single pyramidal cell align with axon
-    projection} Combining simplified stereotypical axonal profiles (cf.
-    \autoref{fig:axon_heat}, soma in center, black) and dendritic
-    profiles (cf. \autoref{fig:dendrite_heat}), illustrates how
-    connected neurons (red) tend to cluster around the pre-synaptic axon's
-    profile, as spatial closeness constitutes a necessary condition for the
-    formation of contacts. Unconnected neurons (gray) are found
-    distant from the axon's projection, but not necessarily distant from the soma.
-  }
+  \makebox[0.875\textwidth]{%
+    \begin{overpic}[width=0.4\textwidth,frame]{gfx/img/network_model/axon_dendrite_meet.pdf}
+      \put(3,92){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.4\textwidth,frame]{gfx/img/network_model/axon_dendrite_meet_schema_dense.pdf}
+      \put(3,92){\small\textbf{B}}
+    \end{overpic}
+    }%
+
+    \caption{%
+      \textbf{Connected neurons of a single pyramidal cell align with
+        axonal projection} Reducing the full axonal and dendritic
+      trees as shown for two neurons in A)  to their stereotypical
+      axonal (blue) and dendritic profiles (red, gray) in B), demonstrates
+      how connected neurons (red) tend to cluster around the
+      pre-synaptic axon's profile, as spatial closeness constitutes a
+      necessary condition for the formation of contacts. Unconnected
+      neurons (gray) are found distant from the axon's projection, but
+      not necessarily distant from the soma. }
   \label{fig:neural_anisotropy}
 \end{figure}
 %\vspace{-0.2cm} 
@@ -409,23 +418,88 @@ present in spiny stellate neurons located in lower-layer-4.
 
 
 
-
-
-
-
-
-
-\clearpage
 \section{Anisotropic geometric graph model}\label{sec:network_model}
 
-Model tries to be geometric and simple. We therefore
+% Model tries to be geometric and simple. We therefore
 
-Along the main stem of the axon in constant width. \marginpar{Variable
-  width later!}%?? When?
+% and propose the following model: along the main stem of the axon in
+% constant width. \marginpar{Variable
+
+% width later!}%?? When?
 
 
-\cite{Thomson2002} Axons are not looking for their targets but
-dendrites might, further evidence to focus on axon geometry.
+% Implementing the concept of anisotropy in neuronal connectivity
+% developed in the last section in a model, we're faced with
+% challenges. 
+
+% A first approach. The approach taken here tries to, making anisotropy
+% a salient feature in an otherwise standard model. 
+
+With this in mind, we propose the following model: On a square surface
+of side length $e$, a number of $N$ point neurons are randomly,
+uniformly distributed.  Connected neighbors are then calculated for
+each neuron separately and independently, by determining the randomly,
+uniformly distributed direction of the neuron's axon. In this
+direction the axon traverses over the surface describing a straight
+path, terminating only when an edge of the surface is
+reached. Directed contacts are made with every neuron that is within a
+width $w(x)$ of the axon's trajectory, where in general $w$ depends on
+the axon length $x$ at this point.
+
+
+\begin{figure}[!htbp]
+  \centering 
+  \makebox{%
+    \begin{overpic}[width=0.325\textwidth,frame]{gfx/img/network_model/model_dendrite.pdf}
+      \put(3,91){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.325\textwidth,frame]{gfx/img/network_model/model_axon.pdf}
+      \put(3,91){\small\textbf{B}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.325\textwidth,frame]{gfx/img/network_model/connectivity.pdf}
+      \put(3,91){\small\textbf{C}}
+    \end{overpic}
+    }%
+  \caption{%
+    \textbf{Interpretations of network model}
+   Here constant width $w$ coinciding with dendrite radius}
+  \label{fig:network_model}
+\end{figure}
+\vspace{-0.2cm}
+
+
+
+Algorithm in Python, in connectivity stored in graph
+tool \parencite{graph_tool} %?? Fix Display 
+
+
+% \cite{Thomson2002} Axons are not looking for their targets but
+% dendrites might, further evidence to focus on axon geometry.
+
+To employ this model to generate networks, a set of parameters needs to be
+chosen. The network size $N$ is solely determining computational
+efforts in numerical calculations and has thus been set as
+$N = 1000$. Side length of the surface is a priori and, relative of
+
+The final parameter is then the axon-profile width $w$. In their
+analysis of connectivity of thick-tufted layer V pyramidal cells in
+neonatal rats (day 14), \textcite{Song2005} report an overall connection
+probability of $p=0.116$, consistent with prior reports of a cortical
+connection probability of $p \approx 0.1$. %?? Which reports?  
+
+
+
+
+Having no further evidence at the time on how to select axon width, we
+set $w(x)$ to be constant. This leaves 
+
+to the overall connection probability $p$ can be approximated by
+\[
+p = \frac{L w}{E^2},
+\]
+where $L$ is the average length of the axon. 
 
 
 
