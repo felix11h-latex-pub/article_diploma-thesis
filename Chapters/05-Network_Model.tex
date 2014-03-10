@@ -35,7 +35,7 @@ model in Chapter~\ref{ch:structural_aspects}.
 
 Neurogeometry\index{neuro geometry} addresses the problem of inferring
 synaptic connectivity from the geometric shapes of axon and
-dendrites. A fundamental concept in this field is that of
+dendrites. A fundamental concept in this field is that of a
 \textit{potential synapse}\index{potential synapse}
 \parencite{Stepanyants2002}. Defined as the potential axonal-dendritic
 connection of two neurons, present whenever the axon of one neuron is
@@ -49,7 +49,7 @@ network connectivity, assuming for example that a certain ratio $r$ of
 potential synapses turn into active contacts independently. It is the
 hope that such a model, motivated from the geometry of a neuron's
 functional compartments, not only displays inherent patterns of
-connectivity similar to what has been observed biological networks,
+connectivity similar to what has been observed in biological networks,
 but also proofs itself as a testing ground for how this connectivity
 may affect network dynamics.
 
@@ -123,8 +123,8 @@ may affect network dynamics.
 % \vspace{0.3cm}
 
 
-Finding such defining characteristics however is difficult, as axonal
-morphology is, in general, highly diverse
+Finding stereotypical anatomical characteristics however is difficult,
+as axonal morphology is, in general, highly diverse
 %------------------------------------------------
 \marginpar{high variability in axonal morphology} 
 %------------------------------------------------ 
@@ -134,10 +134,10 @@ types, axons display a wide variety of shapes characterized by
 morphometric parameters such as total length, branching complexity and
 axonal extent \parencite{Ropireddy2011}. Typical examples of distinct
 morphology include the T-shaped axons of cerebellar granule cells
-branching only at a singular point, and axons of hippocampal CA3
-pyramidal cells, which, in stark contrast, have at least 100 to 200
-branch points and a total axon length between 150 and
-\SI{300}{\milli\meter}. %??citations from Debanne?
+branching only at a singular point \parencite{Cajal1911}, and axons of hippocampal CA3
+pyramidal cells, which, in stark contrast, may feature up to 40
+branches resulting in a total length of axon collaterals of up to
+\SI{12}{\milli\meter} \parencite{Ishizuka1990}.
 
 It is therefore imperative to confine this analysis to a specific
 brain region and neuron type. In this study, we set the focus on
@@ -235,23 +235,35 @@ however, dendritic morphology needs to be considered as well.
 \end{figure}
 \vspace{-0.2cm}
 
-Dendritic morphology of cortical pyramidal cells... %Bipartite,
-                                %neglect apical dendrite 
+Dendritic anatomy of cortical pyramidal cells is inherently bipartite.
+From the soma several \textit{basal dendrites}\index{basal dendrite}
+emerge and extend into arbitrary directions, branching profusely until
+they terminate . The single \textit{apical dendrite}\index{apical
+  dendrite} emerges from the apex of the pyramidal cell and ascends in
+a linear trajectory, forming occasional collateral branches until
+finally terminating into the apical tuft, where the dendrite branches
+several times to form a tree like structure \parencite{Feldman1984}.
+%------------------------------------------------
+\marginpar{basal dendrites dominate local connectivity} 
+%------------------------------------------------  
 On the scale of typical cortical slice thickness, however, the apical
 dendrite is cut off and the basal dendrite dominates the dendritic
 morphology and potential of dendritic-axonal connections
-(\autoref{fig:dendrite_heat}). The radial extension of dendritic branches results in a
-concentration of dendritic branches around the soma, much
-in the contrast to the findings of axonal branch densities before.
+(\autoref{fig:dendrite_heat}). The radial extension of dendritic
+branches results in a high concentration of dendritic branches around the
+soma, much in the contrast to the findings of axonal branch densities
+before.
 
 \begin{figure}[!ht]
   \makebox[0.875\textwidth]{%
     \includegraphics[width=0.4\textwidth]{%
       gfx/img/network_model/p14rr_1_traced_soma_unit_A.pdf}%
     \hfill
-    \includegraphics[width=0.4\textwidth]{%
-      gfx/img/network_model/p14rr_1_traced_soma_unit_B.pdf}% 
-    }%
+   \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/p14rr_1_traced_soma.pdf}
+      \put(3,92){\small\textbf{B}}
+    \end{overpic}
+    }
+  \vfill
   \vspace{0.3cm}
   \makebox[0.875\textwidth]{%
     \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/p14rr_1_dendrite_trace_scale.pdf}
@@ -262,38 +274,68 @@ in the contrast to the findings of axonal branch densities before.
       \put(3,92){\small\textbf{\textcolor{white}{D}}}
     \end{overpic}
     }%
-  \caption{\textbf{Dendritic morphology and branch density} \textbf{A)} Axon
-      collaterals of a single pyramidal cell as extracted in
-      Figure~\ref{fig:romand_traced}. \textbf{B)} Consecutively
-      overlaying extracted axon trees from five different neurons from
-      \textcite{Romand2011} yields a dense pattern of axonal
-      morphology. Heatmap shows density and illustrates the anisotropy
-      in neural connectivity}%?? caption wrong
+  \caption{\textbf{Dendritic morphology and branch density}
+    Using neuronal morphology of thick-tufted layer V
+    pyramidal cells recorded by \textcite{Romand2011}, dendritic
+    anatomy is traced and combined to illustrate high
+    branch density around the soma. \textbf{A)} In a
+    \SI{600}{\micro\meter} window centered on the soma, basal
+    dendrites (red) are visible extending around the soma. The ascending
+    thick apical dendrite (red) is cut off and apical tuft is not
+    shown. \textbf{B)-C)} Manual tracing of dendritic outlines
+    in five samples (one shown), allows for clearer identification of
+    stereotypical morphology and later analysis. \textbf{D)} Combining
+    5 dendritic outlines as shown in C) and subsequent Gaussian
+    filtering reveals the relatively high dendritic branch density
+    around the soma.
+  }%?? sumatra label
   \label{fig:dendrite_heat}
 \end{figure}
 \vspace{-0.2cm}
 
 Combining the above results of dendritic and axonal branch densities
-yields, in the light of neurogeometry, a clear concept of anisotropy
-of neural connectivity. Simplifying dendritic , it becomes apparent
-that potential synapse are present along the main axon in much higher
-concentration than in directions that diverge from the axon's
-projection. This notion is supported by findings of
-\textcite{Stepanyants2005}'s in depth-study, which confirm the
+in the light of neurogeometry, a clear concept of anisotropy of neural
+connectivity emerges. As dendritic branches of potential post-synaptic
+targets extend radially from the soma and do not display a preferred
+direction, target neurons for outgoing synaptic contacts originating
+from a single pyramidal cell, cluster around the downwards projecting
+axon (\autoref{fig:neural_anisotropy}).
+\begin{figure}[!ht]
+  \centering 
+  \includegraphics[width=0.5\textwidth,frame]{gfx/img/network_model/neural_anisotropy.pdf}
+  \caption{%
+    \textbf{Connected neurons of single pyramidal cell align with axon
+    projection} Combining simplified stereotypical axonal profiles (cf.
+    \autoref{fig:axon_heat}, soma in center, black) and dendritic
+    profiles (cf. \autoref{fig:dendrite_heat}), illustrates how
+    connected neurons (red) tend to cluster around the pre-synaptic axon's
+    profile, as spatial closeness constitutes a necessary condition for the
+    formation of contacts. Unconnected neurons (gray) are found
+    distant from the axon's projection, but not necessarily distant from the soma.
+  }
+  \label{fig:neural_anisotropy}
+\end{figure}
+%\vspace{-0.2cm} 
+% Why is anisotropy so good??
+% It becomes apparent that
+% connected neurons are located along the main axon in much higher
+% concentration than in directions that diverge from the axon's
+% projection. 
+In their in-depth study, \textcite{Stepanyants2005} confirm the
 overrepresentation of potential synapses along the axon for pyramidal
-cells. Consistent with that only , anisotropy in that degrees is not
+cells. Consistent with the notion that stereotypical morphology of
+pyramidal cells is intrinsic to the local network's connectivity
+profile, they also find that anisotropy of this degree is \textit{not}
 present in spiny stellate neurons located in lower-layer-4.
 
 
-\cite{Thomson2002} Axons are not looking for their targets but
-dendrites might, further evidence to focus on axon geometry.
 
-It is worth noting that this result of anisotropic connectivity does,
-in general, not hold for other brain regions and neurons type. While
-the ad hoc approach taken here is confirmed by an in-depth study of
-\textcite{Stepanyants2005} for cortical pyramidal cells, spiny
-stellate neurons located in lower-layer-4 do not show a clear
-preferred direction for potential synapse.
+% It is worth noting that this result of anisotropic connectivity does,
+% in general, not hold for other brain regions and neurons type. While
+% the ad hoc approach taken here is confirmed by an in-depth study of
+% \textcite{Stepanyants2005} for cortical pyramidal cells, spiny
+% stellate neurons located in lower-layer-4 do not show a clear
+% preferred direction for potential synapse.
 
 
 % Thick tufted pyramidal cells in the rat's somatosensory cortex 
@@ -380,6 +422,13 @@ Model tries to be geometric and simple. We therefore
 
 Along the main stem of the axon in constant width. \marginpar{Variable
   width later!}%?? When?
+
+
+\cite{Thomson2002} Axons are not looking for their targets but
+dendrites might, further evidence to focus on axon geometry.
+
+
+
 
 \newpage
 \section{Distance dependent connectivity}\label{sec:dist_depend_con}
