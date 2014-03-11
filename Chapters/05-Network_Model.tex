@@ -155,11 +155,15 @@ connectivity in this report.
 \begin{figure}[!htbp]
   \centering 
   \makebox[0.875\textwidth]{%
-    \includegraphics[width=0.4\textwidth]{%
-      gfx/img/network_model/p14rr_1_traced_soma_unit_A.pdf}%
+    \begin{overpic}[width=0.4\textwidth]{%
+        gfx/img/network_model/p14rr_1.pdf}
+      \put(3,92){\small\textbf{A}}
+    \end{overpic}
     \hfill
-    \includegraphics[width=0.4\textwidth]{%
-      gfx/img/network_model/p14rr_1_traced_soma_unit_B.pdf}% 
+    \begin{overpic}[width=0.4\textwidth]{%
+        gfx/img/network_model/p14rr_1_axon_traced_soma.pdf}
+      \put(3,92){\small\textbf{B}}
+    \end{overpic}
     }%
   \caption{\textbf{Tracing axonal branching of a pyramidal cell} In a
     3-D model reconstructed from biocytin-labeled thick-tufted layer V
@@ -256,8 +260,10 @@ before.
 
 \begin{figure}[!ht]
   \makebox[0.875\textwidth]{%
-    \includegraphics[width=0.4\textwidth]{%
-      gfx/img/network_model/p14rr_1_traced_soma_unit_A.pdf}%
+    \begin{overpic}[width=0.4\textwidth]{%
+        gfx/img/network_model/p14rr_1.pdf}
+      \put(3,92){\small\textbf{A}}
+    \end{overpic}
     \hfill
    \begin{overpic}[width=0.4\textwidth]{gfx/img/network_model/p14rr_1_traced_soma.pdf}
       \put(3,92){\small\textbf{B}}
@@ -451,15 +457,18 @@ the axon length $x$ at this point.
 \begin{figure}[!htbp]
   \centering 
   \makebox{%
-    \begin{overpic}[width=0.325\textwidth,frame]{gfx/img/network_model/model_dendrite.pdf}
+    \begin{overpic}[width=0.325\textwidth,frame]{%
+        gfx/img/network_model/model_dendrite.pdf}
       \put(3,91){\small\textbf{A}}
     \end{overpic}
     \hfill
-    \begin{overpic}[width=0.325\textwidth,frame]{gfx/img/network_model/model_axon.pdf}
+    \begin{overpic}[width=0.325\textwidth,frame]{%
+        gfx/img/network_model/model_axon.pdf}
       \put(3,91){\small\textbf{B}}
     \end{overpic}
     \hfill
-    \begin{overpic}[width=0.325\textwidth,frame]{gfx/img/network_model/connectivity.pdf}
+    \begin{overpic}[width=0.325\textwidth,frame]{%
+        gfx/img/network_model/connectivity.pdf}
       \put(3,91){\small\textbf{C}}
     \end{overpic}
     }%
