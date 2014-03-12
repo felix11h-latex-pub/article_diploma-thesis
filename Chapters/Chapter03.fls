@@ -1,6 +1,0 @@
-PWD /users/hoffmann/Desktop/writing/classicthesisas-intro-struct/Chapters
-INPUT /etc/texmf/web2c/texmf.cnf
-INPUT /usr/share/texlive/texmf/web2c/texmf.cnf
-INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT Chapter03.tex
-OUTPUT Chapter03.log
