@@ -1,0 +1,8 @@
+*
+!Chapters
+!FrontBackmatter
+!gfx
+!*.sty
+!*.tex
+!*.pdf
+!.gitignore
