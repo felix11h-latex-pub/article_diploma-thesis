@@ -190,20 +190,32 @@
 
 
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
+% ----------- Theoremstyles ------------- %
+
+% count within "chapter" for 2.1,2.2,.. numbering
+% switch to "section" for 2.1.1, 2.1.2.. 
+% see http://tex.stackexchange.com/questions/13831
+
 
 \theoremstyle{definition}
-\newtheorem{defn}{Definition}[section]
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{theorem}
+\newtheorem{theorem}[definition]{Theorem}           % sharing 
+\newtheorem{proposition}[definition]{Proposition}   % counter
+\newtheorem{lemma}[definition]{Lemma}               % with 
+\newtheorem{proposition}[definition]{Proposition}   % definition
+\newtheorem{corollary}[definition]{Corollary}       %
+
 
 \newenvironment{example}[1][Example]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 
-\usepackage{siunitx}
+% --------------------------------------- %
+
+
+
 
 
 \newcommand{\red}[1]{\textcolor{red}{#1}}
@@ -373,7 +385,7 @@
 \usepackage{wrapfig}
 \usepackage[export]{adjustbox}
 \usepackage{csquotes}
-
+\usepackage{siunitx}
 
 % ****************************************************************************************************
 % 7. Last calls before the bar closes
@@ -417,3 +429,9 @@
 \usepackage{lmodern} % <-- no osf support :-(
 %\usepackage[urw-garamond]{mathdesign} <-- no osf support :-(
 % ****************************************************************************************************
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../dplths_document"
+%%% End: 

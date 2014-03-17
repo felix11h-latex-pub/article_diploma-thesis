@@ -459,18 +459,6 @@ width $w(x)$ of the axon's trajectory, where in general $w$ depends on
 the axon length $x$ at this point
 (\autoref{fig:anisotropic_network_model}).
 
-More formally we define:
-
-\begin{defn}[Anisotropic geometric graph] 
-Let $n \in \mathbb{N}$ and $e,w \in (0,\infty)$. An
-\textit{anisotropic geometric random graph} $G(n,e,w)$ then consists of a
-tuple $(G,p,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
-maps $p:V(G)\to[0,e)^2$ and $a:V(G)\to[0,2\pi)$, such that for every
-vertex pair $v,w \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
-$t(e)=w$ exists if and only if $\le w$. %what is \le w??
-\end{defn}
-
-
 \begin{figure}[!htbp]
   \centering 
   \makebox{%
@@ -507,7 +495,8 @@ $t(e)=w$ exists if and only if $\le w$. %what is \le w??
 \end{figure}
 %\vspace{-0.2cm}
 
-The implementation of arbitrary axonal orientation is crucial to this
+
+The implementation of arbitrary axonal orientation is crucial to the
 model. Although cortical axons are described as consistently
 projecting downwards \parencite[%
 cf. Section~\ref{sec:biol_anisotropy}]{Braitenberg_Cortex}, combining
@@ -518,6 +507,41 @@ located below them.  It is in fact not a vertical alignment of axon
 orientation, but the anisotropy in neural connectivity - the
 observation of neuronal targets aligning with the axonal projection -
 that this model tries to capture. 
+
+We will commonly refer to the model defined above as the
+\textit{anisotropic geometric network model}. The resulting object of
+a realization of the model is a directed graph. More formally we
+define realizations as:
+
+\begin{definition}[Anisotropic geometric graph] 
+Let $n \in \mathbb{N}$ and $e,w \in (0,\infty)$. An
+\textit{anisotropic geometric graph} $G(n,e,w)$ then consists of a
+tuple $(G,p,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
+maps \[p:V(G)\to[0,e)^2, \quad a:V(G)\to[0,2\pi),\] such that for every
+vertex pair $v,w \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
+$t(e)=w$ exists if and only if $\le w$. %what is \le w??
+\end{definition}
+
+% \begin{definition}[anisotropic geometric random graph] A anisotropic
+%   geometric graph $G(n,e,w)$ is a ran
+% \end{definition}
+
+The subsequent is a study of anisotropic geometric graphs. To enable
+this analysis, some prior work which composes the rest of this
+chapter. Integral to is a numerical implementation. The anisotropic
+network model is 
+
+
+
+
+
+\section{Numerical Implementation}
+
+for numerical considerations was achieved in Python. Using convenient 
+
+
+
+
 
 
 
@@ -540,10 +564,39 @@ Harnessing the computational implementation, we generated a sample of
 % \cite{Thomson2002} Axons are not looking for their targets but
 % dendrites might, further evidence to focus on axon geometry.
 
-To employ this model to generate networks, a set of parameters needs to be
-chosen. The network size $N$ is solely determining computational
-efforts in numerical calculations and has thus been set as
-$N = 1000$. Side length of the surface is a priori and, relative of
+To harness the numerical implemenation to generate networks, a set
+of parameters needs to be chosen. The network size $N$ is solely
+%------------------------------------------------
+\marginpar{determine parameter set to generate sample graphs}
+%------------------------------------------------ 
+governing computational efforts in subsequent calculations and has
+thus been set as $N = 1000$. As shown in ??, only the quotient of
+the side length parameter $e$ and axon width $w$  . As such, side
+length $e$ is arbitrarily set as $e = 100$ and leaves axon width for
+determination. 
+
+First, we determine $w$ to be constant. Although simplistic profiles
+(\autoref{fig:axon_heat}) and makes for characteristic distance
+distribution as we will see later
+(\autoref{fig:distance_theory_compare}), more in line with idea of
+abstractness and simplisticity.For small $w$ then, the overall
+connection probability $p$ can be approximated as
+\[
+p = \frac{L w}{E^2},
+\]
+where $L$ is the average length of the axon until it terminates on a
+surface edge. 
+
+\begin{proposition}
+Average L
+\end{proposition}
+
+\begin{proof}
+Hello
+\end{proof}
+
+Having established the connection between , 
+
 
 The final parameter is then the axon-profile width $w$. In their
 analysis of connectivity of thick-tufted layer V pyramidal cells in
@@ -555,11 +608,7 @@ connection probability of $p \approx 0.1$. %?? Which reports?
 Having no further evidence at the time on how to select axon width, we
 set $w(x)$ to be constant. This leaves 
 
-to the overall connection probability $p$ can be approximated by
-\[
-p = \frac{L w}{E^2},
-\]
-where $L$ is the average length of the axon. 
+
 
 With this parameter set we generate a sample of 25 graphs %?? Sumatra:
                                 %"N1000w_ax126-flat_graph0-24"
@@ -655,7 +704,7 @@ dependencies in the sample graphs generated.
   \centering
   \includegraphics[width=0.7\linewidth]{plots/test.pdf}
   \caption{\textbf{Distance dependent connection probabilities}}%??
-  \label{fig:something_else}%??
+  \label{fig:distance_theory_compare}%??
 \end{figure}
 
 

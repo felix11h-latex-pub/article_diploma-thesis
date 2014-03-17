@@ -12,13 +12,13 @@ References for this chapter:
 \url{http://nlab.mathforge.org/nlab/show/quiver}, \parencite{Bang-Jensen_Digraphs} 
 
 
-%  \begin{defn}[Graph, Order] A \textbf{graph} is a pair of sets $G
+%  \begin{definition}[Graph, Order] A \textbf{graph} is a pair of sets $G
 % =(V,E)$, consisting of the \textbf{vertex set} $V(G)=V$ and the
 % \textbf{edge set} $E(G)=E$, such that $E \subseteq V \times V$.  The
 % number of vertices of a graph $G$ is its \textbf{order} $|G|$, the
 % number of edges is denoted by $||G||$.  A graph of order $0$ or $1$ is
 % called \textit{trivial}.
-%   \end{defn}
+%   \end{definition}
 
 %   The object of interest in my thesis will be directed pseudographs,
 % but I will still have to think about how to
@@ -33,7 +33,7 @@ References for this chapter:
 
 
 
-\begin{defn}[Directed graphs]
+\begin{definition}[Directed graphs]
   A \textbf{directed pseudograph} $G$ consists of two finite \red{(,
     non-empty?)} sets $V$, the \textit{set of vertices} of $G$, and
   $E$, the \textit{set of edges} of $G$, and two maps
@@ -50,7 +50,7 @@ References for this chapter:
   \textbf{simple directed graph} can be defined as a directed
   pseudograph where $d$ is both injective and already maps to
   $V^2\setminus\Delta_V$.
-\end{defn}
+\end{definition}
 
 Thus, in simple directed graphs, neither parallel edges nor loops -
 edges between the same vertex - are allowed, whereas directed
@@ -107,13 +107,13 @@ isomorphism inbetween them.
   E_G, e \mapsto \varphi_E^{-1}(e)$.
 \end{remark}
 
-\begin{defn}[Weighted directed graphs]
+\begin{definition}[Weighted directed graphs]
   A \textbf{weighted directed graph} is a directed graph $G$ along
   with a mapping $\omega: E(G) \to \mathbb{R}$, called the
   \textit{weight function}. Similarily, a \textbf{vertex-weighted
     directed graph} is a directed graph with a mapping $\nu: V(G) \to
   \mathbb{R}$.
-\end{defn}
+\end{definition}
 
 \begin{remark} \red{(heavy draft)}, title: A directed graph category
 for biological neural networks, in a bordered box?\\ Certainly, a
@@ -252,7 +252,7 @@ of $W$ is defined as the length of the sequence of edges; a walk
 consisting of only one vertex has length zero. \red{ colon, really?}
 
 
-\begin{defn}[Distance]
+\begin{definition}[Distance]
   The \textbf{distance} of two vertices $x$,$y$ in a directed graph
   $G$ \red{(means?)}, is defined as the minimum length of an
   $(x,y)$-walk, if any such walk exists, otherwise
@@ -262,7 +262,7 @@ consisting of only one vertex has length zero. \red{ colon, really?}
   W\,\mathrm{is}\,(x,y)\mathrm{-walk}\}.
   \]
   \red{$|E(W)|$ is not explained. Necessary?}
-\end{defn}
+\end{definition}
 
 \begin{proposition}
   The distance function $\operatorname{dist}: V(G) \times V(G) \to
@@ -289,12 +289,12 @@ consisting of only one vertex has length zero. \red{ colon, really?}
 
 
 
-%   \begin{defn}[Neighbour, adjacent] Two \textbf{vertices} $x,y \in
+%   \begin{definition}[Neighbour, adjacent] Two \textbf{vertices} $x,y \in
 % V(G)$ of $G$ are called \textit{adjacent} or \textit{neighbours} if
 % there is an edge between $x$ and $y$, $(x,y) \in E(G)$. Two
 % \textbf{edges} $e \neq f$ are \textit{adjacent} if they have an end in
 % common.
-%   \end{defn}
+%   \end{definition}
 
 
 More to do:
@@ -337,10 +337,10 @@ References: Newman, Erdos1960, Erdos1959, Gilbert1959,
 Wikipedia, \parencite{West_Graph-theory}
 		
 		
-\begin{defn}[Terms used]
+\begin{definition}[Terms used]
   Graphs with $n$ vertices: $G^n = \{G| G\,\mathrm{is\,
     graph\,(means??)},\, |V(G)| = n\}$
-\end{defn}
+\end{definition}
 		
 \begin{remark}[Expected number of edges in a directed Erd\H{o}s-R\'{e}nyi graph (DERG)]
   $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
