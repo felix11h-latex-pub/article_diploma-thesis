@@ -30,15 +30,15 @@
 \newcommand{\myTitle}{A Classic Thesis Style\xspace}
 \newcommand{\mySubtitle}{An Homage to The Elements of Typographic Style\xspace}
 \newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
-\newcommand{\myName}{Andr\'e Miede\xspace}
-\newcommand{\myProf}{Put name here\xspace}
-\newcommand{\myOtherProf}{Put name here\xspace}
-\newcommand{\mySupervisor}{Put name here\xspace}
+\newcommand{\myName}{Felix Hoffmann\xspace}
+\newcommand{\myProf}{Peter Pfaffelhuber\xspace}
+\newcommand{\myOtherProf}{Stefan Rotter\xspace}
+\newcommand{\mySupervisor}{Stefan Rotter\xspace}
 \newcommand{\myFaculty}{Put data here\xspace}
 \newcommand{\myDepartment}{Put data here\xspace}
-\newcommand{\myUni}{Put data here\xspace}
-\newcommand{\myLocation}{Darmstadt\xspace}
-\newcommand{\myTime}{August 2012\xspace}
+\newcommand{\myUni}{University of Freiburg\xspace}
+\newcommand{\myLocation}{Freiburg\xspace}
+\newcommand{\myTime}{June 2014\xspace}
 \newcommand{\myVersion}{version 4.1\xspace}
 
 
@@ -84,15 +84,18 @@
 %\PassOptionsToPackage{square,numbers}{natbib}
 % \usepackage{natbib}
 
+
 %-------Biblatex ------------------------%
 
 %there was however the problem, that I could not get the spacing for the headline right - depends on parskip!
 
-
 % For [1] - Style comments:
 %\usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
 % For (Name, 2002) - Style comments: 
+
 \usepackage[style=authoryear, url=false, maxbibnames=99, doi=false, maxcitenames=2]{biblatex}
+
+
 
 \AtEveryBibitem{\ifentrytype{article}{\clearfield{issn}}{}}
 \AtEveryBibitem{\clearfield{month}}
@@ -102,7 +105,7 @@
 \AtEveryBibitem{\clearfield{isbn}}
 \AtEveryBibitem{\clearfield{language}}
 
-\bibliography{~/library/references/main}
+\bibliography{\string~/library/references/main}
 
 %set the distances between bib items
 \setlength\bibitemsep{5pt}
@@ -110,30 +113,30 @@
 %removes quotation marks for article titles
 \DeclareFieldFormat[article]{title}{#1} 
 
+%------------------------------------------------------------%
 %for Author Name (2005) -- to Author Name. 2005.
-\begin{comment}
-\makeatletter
-\def\act@on@bibmacro#1#2{%
-  \expandafter#1\csname abx@macro@\detokenize{#2}\endcsname
-}
-\def\patchbibmacro{\act@on@bibmacro\patchcmd}
-\def\pretobibmacro{\act@on@bibmacro\pretocmd}
-\def\apptobibmacro{\act@on@bibmacro\apptocmd}
-\def\showbibmacro{\act@on@bibmacro\show}
-\makeatother
 
-\patchbibmacro{date+extrayear}{%
-  \printtext[parens]%
-}{%
-  \setunit{\addperiod\space}%
-  \printtext%
-}{}{}
-\end{comment}
+% \makeatletter
+% \def\act@on@bibmacro#1#2{%
+%   \expandafter#1\csname abx@macro@\detokenize{#2}\endcsname
+% }
+% \def\patchbibmacro{\act@on@bibmacro\patchcmd}
+% \def\pretobibmacro{\act@on@bibmacro\pretocmd}
+% \def\apptobibmacro{\act@on@bibmacro\apptocmd}
+% \def\showbibmacro{\act@on@bibmacro\show}
+% \makeatother
 
-%make references list small
-%\renewcommand{\bibfont}{\normalfont\footnotesize}
+% \patchbibmacro{date+extrayear}{%
+%   \printtext[parens]%
+% }{%
+%   \setunit{\addperiod\space}%
+%   \printtext%
+% }{}{}
+%------------------------------------------------------------%
 
-\renewbibmacro{in:}{}
+
+
+ \renewbibmacro{in:}{}
 
 %for (Name Year) - style citation where whole content in bracket is hyperlinked
 \renewbibmacro*{cite}{%
@@ -369,6 +372,7 @@
 \usepackage{overpic}
 \usepackage{wrapfig}
 \usepackage[export]{adjustbox}
+\usepackage{csquotes}
 
 
 % ****************************************************************************************************
