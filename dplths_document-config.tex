@@ -237,6 +237,7 @@
 \newtheorem{proposition}[definition]{Proposition}   % counter
 \newtheorem{lemma}[definition]{Lemma}               % with   
 \newtheorem{corollary}[definition]{Corollary}       % definition
+\newtheorem{algorithm}[definition]{Algorithm}
 
 \newcommand{\propositionautorefname}{Proposition}
 
@@ -402,7 +403,23 @@
 \usepackage[export]{adjustbox}
 \usepackage{csquotes}
 \usepackage{siunitx}
+\usepackage[noend]{algpseudocode}
 
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
 
 
 % ****************************************************************************************************

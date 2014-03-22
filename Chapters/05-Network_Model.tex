@@ -519,7 +519,8 @@ connection probability of $p \approx 0.1$. %?? Which reports?
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{/users/hoffmann/research/data/axon_width_computation/foo.pdf}
+  \includegraphics[width=0.8\linewidth]{%
+    /users/hoffmann/research/data/axon_width_computation/foo.pdf}%??
   %\includegraphics[width=0.7\linewidth]{plots/test.pdf}
   \caption{\textbf{Tracing axonal branching of a pyramidal cell} In a
     3-D model reconstructed from biocytin-labeled thick-tufted layer V
@@ -632,7 +633,7 @@ dependencies in the sample graphs generated.
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{/users/hoffmann/research/data/sample_graph_analysis/distance_profiles/original/test.pdf}
+  \includegraphics[width=0.8\linewidth]{/users/hoffmann/research/data/sample_graph_analysis/distance_profiles/original/test.pdf} %??
   \caption{\textbf{Predicted distance-dependent connection probability
     profile is matched by numerical computation} In a
     3-D model reconstructed from biocytin-labeled thick-tufted layer V
@@ -670,11 +671,34 @@ connectivity by consecutively rewiring existing connections to new
 suitable targets.
 
 
+\begin{algorithm}
+Let $N(n,e,w) = (G,P,a)$ be  Then 
+\normalfont
+\begin{algorithmic}%[1] <-- gives line numbers
+\For {$v \in V(N_G)$}
+  \For {$e \in E_{\textrm{out}}(v)$}
+     \State $x \gets \norm{N_P(v)-t(e)}$
+     \State $T \gets \{w \in V(N_G) \mid  x-\epsilon \leq
+     \norm{N_P(v)-N_P(w)} < x+\epsilon\}$
+     \State $t(e) \gets \textrm{choice} T$
+  \EndFor
+\EndFor
+
+\end{algorithmic}
+is defined.
+\end{algorithm}
+
+\begin{proposition}
+Preserves distance-connectivity.
+\end{proposition}
 
 % for every neuron:
 %    for every outgoing connection:
 %        x = distance to target
 %        new_targets = all nodes in distance $(x-\epsilon,x+\epsilon)$
+
+
+for $\in V(G)$ do 
 
 
 
