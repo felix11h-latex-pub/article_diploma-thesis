@@ -24,6 +24,38 @@
 \setboolean{enable-backrefs}{false} % true false
 % *******************************************************************
 
+\usepackage{listings} 
+%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % for special keywords
+\lstset{language=[LaTeX]Tex,%C++,
+    keywordstyle=\color{RoyalBlue},%\bfseries,
+    basicstyle=\small\ttfamily,
+    %identifierstyle=\color{NavyBlue},
+    commentstyle=\color{Green}\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none,%left,%
+    numberstyle=\scriptsize,%\tiny
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single,
+    belowcaptionskip=.75\baselineskip
+    %frame=L
+} 
+
+\usepackage{minted}
+\newminted{python}{fontsize=\small, 
+		   linenos,
+		   numbersep=8pt,
+		   gobble=4,
+		   frame=lines,
+		   bgcolor=bg,
+		   framesep=3mm} 
+
+
+
+
 % ****************************************************************************************************
 % 2. Personal data and user ad-hoc commands
 % ****************************************************************************************************
@@ -63,6 +95,7 @@
 \usepackage{comment}
 %\usepackage[font=small,labelfont=bf, skip = 20pt]{caption}
 \definecolor{linkgrey}{rgb}{0.38,0.38,0.38}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
 
 % ****************************************************************************************************
 
@@ -202,10 +235,10 @@
 \theoremstyle{theorem}
 \newtheorem{theorem}[definition]{Theorem}           % sharing 
 \newtheorem{proposition}[definition]{Proposition}   % counter
-\newtheorem{lemma}[definition]{Lemma}               % with 
-\newtheorem{proposition}[definition]{Proposition}   % definition
-\newtheorem{corollary}[definition]{Corollary}       %
+\newtheorem{lemma}[definition]{Lemma}               % with   
+\newtheorem{corollary}[definition]{Corollary}       % definition
 
+\newcommand{\propositionautorefname}{Proposition}
 
 \newenvironment{example}[1][Example]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
@@ -259,25 +292,7 @@
 % ****************************************************************************************************
 % 5. Setup code listings
 % ****************************************************************************************************
-\usepackage{listings} 
-%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % for special keywords
-\lstset{language=[LaTeX]Tex,%C++,
-    keywordstyle=\color{RoyalBlue},%\bfseries,
-    basicstyle=\small\ttfamily,
-    %identifierstyle=\color{NavyBlue},
-    commentstyle=\color{Green}\ttfamily,
-    stringstyle=\rmfamily,
-    numbers=none,%left,%
-    numberstyle=\scriptsize,%\tiny
-    stepnumber=5,
-    numbersep=8pt,
-    showstringspaces=false,
-    breaklines=true,
-    frameround=ftff,
-    frame=single,
-    belowcaptionskip=.75\baselineskip
-    %frame=L
-} 
+
 % ****************************************************************************************************    		   
 
 
@@ -377,8 +392,9 @@
     }{\relax}
 \makeatother
 
+\usepackage{etex}
 \usepackage{sidecap}%?? caption besides figures
-\usepackage{floatrow}
+%\usepackage{floatrow}
 \usepackage{makeidx} %??
 \makeindex           %??  
 \usepackage{overpic}
@@ -386,6 +402,8 @@
 \usepackage[export]{adjustbox}
 \usepackage{csquotes}
 \usepackage{siunitx}
+
+
 
 % ****************************************************************************************************
 % 7. Last calls before the bar closes
@@ -433,5 +451,5 @@
 
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "../dplths_document"
+%%% TeX-master: "dplths_document"
 %%% End: 

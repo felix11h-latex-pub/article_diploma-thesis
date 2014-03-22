@@ -452,13 +452,9 @@ network model is
 
 
 
-\section{Numerical Implementation}
+\section{Numerical Implementation}\label{numerical_implementation}
 
 for numerical considerations was achieved in Python. Using convenient 
-
-
-
-
 
 
 
@@ -521,6 +517,23 @@ neonatal rats (day 14), \textcite{Song2005} report an overall connection
 probability of $p=0.116$, consistent with prior reports of a cortical
 connection probability of $p \approx 0.1$. %?? Which reports?  
 
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{/users/hoffmann/research/data/axon_width_computation/foo.pdf}
+  %\includegraphics[width=0.7\linewidth]{plots/test.pdf}
+  \caption{\textbf{Tracing axonal branching of a pyramidal cell} In a
+    3-D model reconstructed from biocytin-labeled thick-tufted layer V
+    pyramidal cells in the somatosensory cortex of postnatal (day 14)
+    Wistar rats, \textcite{Romand2011} depict dendritic compartments in
+    red, axonal compartments in blue.  \textbf{A)} A
+    \SI{600}{\micro\meter} window centered on the soma of the pyramidal
+    cell shows the main stem of the cell's axon projecting downwards in a
+    straight line, collaterals branching at various angles. \textbf{B)}
+    Using image manipulation software, axon morphology was manually traced
+    and is emphasized in black.} %??
+  \label{fig:determine_axon_width}%??
+\end{figure}
+
 
 Having no further evidence at the time on how to select axon width, we
 set $w(x)$ to be constant. This leaves 
@@ -535,9 +548,9 @@ With this parameter set we generate a sample of 25 graphs %?? Sumatra:
 
 
 
-
+\clearpage
 \newpage
-\section{Distance dependent connectivity}\label{sec:dist_depend_con}
+\section{Distance dependent connectivity}\label{sec:distance_connectivity}
 
 In Gilbert's random graph model $G(n,p)$, 
 \marginpar{Random Graph  Model section~\ref{sec:gilbert_graph}} %?? TITLE
@@ -578,7 +591,7 @@ connected,
 Owning to the abstract geometric model we defined, this connection
 probability is easily computed.
 
-\begin{proposition} %?? make proposition or something
+\begin{proposition} \label{distance_prof}
 In the anisotropic geometric graph model distance depend connection
 probabilities are computed as 
 \[
@@ -617,10 +630,20 @@ p(x) = \begin{cases} 0.5 & \mathrm{for} \,\, x\le w/2 \\
 We can verify this result by computationally extracting the distance
 dependencies in the sample graphs generated. 
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.7\linewidth]{plots/test.pdf}
-  \caption{\textbf{Distance dependent connection probabilities}}%??
+  \includegraphics[width=0.8\linewidth]{/users/hoffmann/research/data/sample_graph_analysis/distance_profiles/original/test.pdf}
+  \caption{\textbf{Predicted distance-dependent connection probability
+    profile is matched by numerical computation} In a
+    3-D model reconstructed from biocytin-labeled thick-tufted layer V
+    pyramidal cells in the somatosensory cortex of postnatal (day 14)
+    Wistar rats, \textcite{Romand2011} depict dendritic compartments in
+    red, axonal compartments in blue.  \textbf{A)} A
+    \SI{600}{\micro\meter} window centered on the soma of the pyramidal
+    cell shows the main stem of the cell's axon projecting downwards in a
+    straight line, collaterals branching at various angles. \textbf{B)}
+    Using image manipulation software, axon morphology was manually traced
+    and is emphasized in black.} %??
   \label{fig:distance_theory_compare}%??
 \end{figure}
 
@@ -628,16 +651,36 @@ dependencies in the sample graphs generated.
 
 
 
-\section{Rewiring Methods}
+\section{Rewiring}
 
-In the network configuration introduced in
-section~\ref{sec:network_model} strong directional anisotropy is
-present: Edges originating from one node \enquote{point in the same
-  direction}, that is they connect to other nodes which cluster around
-a. In this section we introduce an algorithm
+% In the network configuration introduced in
+% section~\ref{sec:network_model} strong directional anisotropy is
+% present: Edges originating from one node \enquote{point in the same
+%   direction}, that is they connect to other nodes which cluster around
+% a. In this section we introduce an algorithm
+
+It is in our highest interest to compare results to. 
+%------------------------------------------------
+\marginpar{eliminate anisotropy through rewiring}
+%------------------------------------------------ 
+To this end we introduce an algorithm that preserves
+distance-dependent connectivity as found in
+Proposition~\ref{distance_prof}, but eliminates anisotropy in network
+connectivity by consecutively rewiring existing connections to new
+suitable targets.
+
+
+
+% for every neuron:
+%    for every outgoing connection:
+%        x = distance to target
+%        new_targets = all nodes in distance $(x-\epsilon,x+\epsilon)$
+
+
+
 
 \vspace{0.5cm}
-\begin{figure}[h] 
+\begin{figure}[!htbp]
   \centering 
   \makebox[0.85\textwidth]{%
     %\includegraphics[width=0.4\textwidth]{dist_rew_org.pdf}%
@@ -656,6 +699,8 @@ a. In this section we introduce an algorithm
  
 
 \section{Anisotropy Measure}
+
+
 
 
 \section{Summary and Discussion}

@@ -1,0 +1,28 @@
+% ************************************************
+\chapter{Test Chapter}\label{ch:test_chapter} 
+% ************************************************
+
+\begin{pythoncode} %underscore problem!!
+data_paths = sys.argv[1:1+params.n_data_sets]
+data_sets = []
+
+for data_path in data_paths:
+    pfile = open(data_path, "rb")
+    data_sets.append(pickle.load(pfile))
+    pfile.close()
+
+try:
+    sys.argv[1+params.n_data_sets]
+except IndexError:
+    label = img_label.labelstr
+else:
+    label = sys.argv[1+params.n_data_sets]
+\end{pythoncode}
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../dplths_document"
+%%% End: 
