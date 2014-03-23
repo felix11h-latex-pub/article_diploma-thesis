@@ -679,8 +679,8 @@ Let $N(n,e,w) = (G,P,a)$ be  Then
 \For {$v \in V(N_G)$}
   \For {$e \in E_{\textrm{out}}(v)$}
      \State $x \gets \norm{N_P(v)-t(e)}$
-     \State $T \gets \{w \in V(N_G) \mid  x-\epsilon \leq
-     \norm{N_P(v)-N_P(w)} < x+\epsilon\}$
+     \State $T \gets \{w \in V(N_G) \mid  x-\varepsilon \leq
+     \norm{N_P(v)-N_P(w)} < x+\varepsilon\}$
      \State $t(e) \gets \textrm{choice} T$
   \EndFor
 \EndFor
@@ -702,8 +702,6 @@ Preserves distance-connectivity.
 for $\in V(G)$ do 
 
 
-
-
 \vspace{0.5cm}
 \begin{figure}[!htbp]
   \centering 
@@ -719,7 +717,8 @@ for $\in V(G)$ do
       \put(3,105){\small\textbf{After}}
     \end{overpic} 
   }%
-  \caption{\textbf{Rewiring}}%??
+  \caption{\textbf{Rewiring} finding new target in distance $x'$ such
+    that $x-\varepsilon \leq x' < x+\varepsilon$.}%??
   \label{fig:distance_rewiring}
 \end{figure}
 
