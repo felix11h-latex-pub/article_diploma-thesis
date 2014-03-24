@@ -5,7 +5,8 @@
 
 \PassOptionsToPackage{eulerchapternumbers,listings,drafting,%
 				 pdfspacing,floatperchapter,%linedheaders,%
-				 subfig,parts}{classicthesis}										
+				 subfig,parts}{classicthesis}
+
 
 % Available options for classicthesis.sty 
 % (see ClassicThesis.pdf for more information):
@@ -56,11 +57,12 @@
 
 
 
-% ****************************************************************************************************
+% ************************************************************************* %
 % 2. Personal data and user ad-hoc commands
-% ****************************************************************************************************
+% ************************************************************************* %
+
 \newcommand{\myTitle}{A Classic Thesis Style\xspace}
-\newcommand{\mySubtitle}{An Homage to The Elements of Typographic Style\xspace}
+%\newcommand{\mySubtitle}{my subtitle}
 \newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
 \newcommand{\myName}{Felix Hoffmann\xspace}
 \newcommand{\myProf}{Peter Pfaffelhuber\xspace}
@@ -72,8 +74,6 @@
 \newcommand{\myLocation}{Freiburg\xspace}
 \newcommand{\myTime}{June 2014\xspace}
 \newcommand{\myVersion}{version 4.1\xspace}
-
-
 
 
 
@@ -90,19 +90,11 @@
 
 
 
-%%%My own%%%
-\usepackage{color}
-\usepackage{comment}
-%\usepackage[font=small,labelfont=bf, skip = 20pt]{caption}
-\definecolor{linkgrey}{rgb}{0.38,0.38,0.38}
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
 
-% ****************************************************************************************************
-
-
-% ****************************************************************************************************
+% ************************************************************************* %
 % 3. Loading some handy packages
-% ****************************************************************************************************
+% ************************************************************************* %
+
 % ******************************************************************** 
 % Packages with options that might require adjustments
 % ******************************************************************** 
@@ -118,16 +110,21 @@
 % \usepackage{natbib}
 
 
-%-------Biblatex ------------------------%
 
-%there was however the problem, that I could not get the spacing for the headline right - depends on parskip!
+
+% ************************************************************************* %
+% 4. Biblatex
+% ************************************************************************* %
+
+%there was however the problem, that I could not get the spacing 
+% for the headline right - depends on parskip!
 
 % For [1] - Style comments:
 %\usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
 % For (Name, 2002) - Style comments: 
 
-\usepackage[style=authoryear, url=false, maxbibnames=99, doi=false, maxcitenames=2]{biblatex}
-
+\usepackage[style=authoryear, url=false, maxbibnames=99, 
+            doi=false, maxcitenames=2]{biblatex}
 
 
 \AtEveryBibitem{\ifentrytype{article}{\clearfield{issn}}{}}
@@ -168,7 +165,6 @@
 %------------------------------------------------------------%
 
 
-
  \renewbibmacro{in:}{}
 
 %for (Name Year) - style citation where whole content in bracket is hyperlinked
@@ -201,9 +197,13 @@
   {\usebibmacro{textcite:postnote}}
   
   
-%----------------------------------------%
-				
 
+
+
+% ************************************************************************* %
+% 5. Math
+% ************************************************************************* %
+		
 
 \usepackage{amsmath}
 \usepackage{amsthm}        % Does theorem stuff
@@ -222,13 +222,11 @@
 \newcommand{\Hom}{\operatorname{Hom}}
 
 
-
 % ----------- Theoremstyles ------------- %
 
 % count within "chapter" for 2.1,2.2,.. numbering
 % switch to "section" for 2.1.1, 2.1.2.. 
 % see http://tex.stackexchange.com/questions/13831
-
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
@@ -239,20 +237,32 @@
 \newtheorem{corollary}[definition]{Corollary}       % definition
 \newtheorem{algorithm}[definition]{Algorithm}
 
-\newcommand{\propositionautorefname}{Proposition}
-
 \newenvironment{example}[1][Example]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 
+
+% ------ || \norm || and | \abs |  ------ %
+
+% see http://tex.stackexchange.com/a/43009/4912
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
 % --------------------------------------- %
-
-
-
-
-
-\newcommand{\red}[1]{\textcolor{red}{#1}}
 
 
 
@@ -271,12 +281,11 @@
 	\usepackage{acronym} % nice macros for handling all acronyms in the thesis
 %\renewcommand*{\acsfont}[1]{\textssc{#1}} % for MinionPro
 \renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms
-% ****************************************************************************************************
 
 
-% ****************************************************************************************************
+% ************************************************************************* %
 % 4. Setup floats: tables, (sub)figures, and captions
-% ****************************************************************************************************
+% ************************************************************************* %
 
 \usepackage{tabularx} % better tables
 	\setlength{\extrarowheight}{3pt} % increase table row height
@@ -287,19 +296,19 @@
 \usepackage{subfig} 
 
  
-% ****************************************************************************************************
 
 
-% ****************************************************************************************************
+
+% ************************************************************************* %
 % 5. Setup code listings
-% ****************************************************************************************************
+% ************************************************************************* %
+    		   
 
-% ****************************************************************************************************    		   
 
-
-% ****************************************************************************************************
+% ************************************************************************* %
 % 6. PDFLaTeX, hyperreferences and citation backreferences
-% ****************************************************************************************************
+% ************************************************************************* %
+
 % ********************************************************************
 % Using PDFLaTeX
 % ********************************************************************
@@ -404,27 +413,23 @@
 \usepackage{csquotes}
 \usepackage{siunitx}
 \usepackage[noend]{algpseudocode}
-
-\usepackage{mathtools}
-
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
-
-% Swap the definition of \abs* and \norm*, so that \abs
-% and \norm resizes the size of the brackets, and the 
-% starred version does not.
-\makeatletter
-\let\oldabs\abs
-\def\abs{\@ifstar{\oldabs}{\oldabs*}}
-%
-\let\oldnorm\norm
-\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
-\makeatother
+\newcommand{\red}[1]{\textcolor{red}{#1}}
 
 
-% ****************************************************************************************************
+
+%%%My own%%%
+\usepackage{color}
+\usepackage{comment}
+%\usepackage[font=small,labelfont=bf, skip = 20pt]{caption}
+\definecolor{linkgrey}{rgb}{0.38,0.38,0.38}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+
+% ************************************************************************* %
 % 7. Last calls before the bar closes
-% ****************************************************************************************************
+% ************************************************************************* %
+
+
 % ********************************************************************
 % Development Stuff
 % ********************************************************************
@@ -438,12 +443,14 @@
 % Last, but not least...
 % ********************************************************************
 \usepackage{classicthesis} 
-% ****************************************************************************************************
 
 
-% ****************************************************************************************************
+
+% ************************************************************************* %
 % 8. Further adjustments (experimental)
-% ****************************************************************************************************
+% ************************************************************************* %
+
+
 % ********************************************************************
 % Changing the text area
 % ********************************************************************
@@ -463,10 +470,11 @@
 %\renewcommand{\sfdefault}{iwona}
 \usepackage{lmodern} % <-- no osf support :-(
 %\usepackage[urw-garamond]{mathdesign} <-- no osf support :-(
-% ****************************************************************************************************
+
 
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "dplths_document"
 %%% End: 
+%  LocalWords:  Biblatex parskip
