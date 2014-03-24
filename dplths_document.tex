@@ -13,11 +13,12 @@
 % * [medium] mathbb in section-titles/chapter-titles 
 %      => disappears somehow in headlines!!!
 %********************************************************************
-\documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
-                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
-                BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
-                ngerman,american,%
-                ]{scrreprt}
+\documentclass[twoside,openright,titlepage, parskip=full,%
+               numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
+               footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+               BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
+               ngerman,american,%
+              ]{scrreprt}
 
 %********************************************************************
 % Note: Make all your adjustments in here
@@ -29,17 +30,16 @@
 %*******************************************************
 %\hyphenation{put special hyphenation here}
 
-% ********************************************************************
-% GO!GO!GO! MOVE IT!
-%*******************************************************
+
 \begin{document}
 
 \frenchspacing
 \raggedbottom
 
+
 %\setlength{\textfloatsep}{15pt plus 1.0pt minus 2.0pt}
 \setlength{\intextsep}{22pt plus 2.0pt minus 4.0pt}
-%\setlength{\belowcaptionskip}{20pt}
+\setlength{\belowcaptionskip}{-6pt}
 
 
 \selectlanguage{american} % american ngerman
@@ -51,14 +51,14 @@
 % Frontmatter
 %*******************************************************
 %%\include{FrontBackmatter/DirtyTitlepage}
-%%\include{FrontBackmatter/Titlepage}
-%%\include{FrontBackmatter/Titleback}
-%%\cleardoublepage\include{FrontBackmatter/Dedication}
-%\cleardoublepage\include{FrontBackmatter/Foreword}
-%%\cleardoublepage\include{FrontBackmatter/Abstract}
-%%\cleardoublepage\include{FrontBackmatter/Publication}
-%%\cleardoublepage\include{FrontBackmatter/Acknowledgments}
-\pagestyle{scrheadings}
+% \include{FrontBackmatter/Titlepage}
+% \include{FrontBackmatter/Titleback}
+% \cleardoublepage\include{FrontBackmatter/Dedication}
+% \cleardoublepage\include{FrontBackmatter/Foreword}
+% \cleardoublepage\include{FrontBackmatter/Abstract}
+% \cleardoublepage\include{FrontBackmatter/Publication}
+% \cleardoublepage\include{FrontBackmatter/Acknowledgments}
+ \pagestyle{scrheadings}
 % \cleardoublepage\include{FrontBackmatter/Contents}
 % %********************************************************************
 % % Mainmatter
@@ -77,6 +77,8 @@
 %\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff,
 %ignore
 
+%\parskip = \baselineskip %??
+\setlength{\parindent}{0pt}
 
 %\include{Chapters/01-Introduction}
 %\include{Chapters/02-Biology}
@@ -93,16 +95,16 @@
 % ********************************************************************
 % Backmatter
 %*******************************************************
-\appendix
-%%\cleardoublepage
-%%\part{Appendix}
-%%\include{Chapters/Chapter0A}
+% \appendix
+% \cleardoublepage
+% \part{Appendix}
+% \include{Chapters/Chapter0A}
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
-\cleardoublepage\include{FrontBackmatter/Bibliography}
-%%\cleardoublepage\include{FrontBackmatter/Colophon}
-%%\cleardoublepage\include{FrontBackmatter/Declaration}
+% \cleardoublepage\include{FrontBackmatter/Bibliography}
+% \cleardoublepage\include{FrontBackmatter/Colophon}
+% \cleardoublepage\include{FrontBackmatter/Declaration}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************

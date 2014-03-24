@@ -28,9 +28,6 @@ References for this chapter:
 %   \item think about definitions
 %   \end{itemize}
 
-%   \bigskip
-
-
 
 
 \begin{definition}[Directed graphs]
@@ -49,21 +46,18 @@ References for this chapter:
   directed pseudograph where $d$ is injective. Finally, a
   \textbf{simple directed graph} can be defined as a directed
   pseudograph where $d$ is both injective and already maps to
-  $V^2\setminus\Delta_V$.
-\end{definition}
-
+  $V^2\setminus\Delta_V$.\end{definition}
 Thus, in simple directed graphs, neither parallel edges nor loops -
 edges between the same vertex - are allowed, whereas directed
 multigraphs and directed loop graphs admit one of them respectively.
 
-\red{Say something about what "directed graph" means here.}
+%\red{Say something about what "directed graph" means here.}
 
 Given a directed graph $G$, we denote with $V(G)$ the set of vertices
 of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
 \textbf{edge set} $E(G)$ of $G$ denotes the set of edges of $G$. This
 means, for a directed graph specified as $G = (V_G,E_G,s_G,t_G)$, we
 have \[V(G) = V_G \quad \mathrm{and} \quad E(G) = E_G.\]
-
 
 \begin{figure}
   % \includestandalone[width=\textwidth]{gfx/tikz/directed_graph_types}
@@ -74,7 +68,6 @@ have \[V(G) = V_G \quad \mathrm{and} \quad E(G) = E_G.\]
     graph.} \label{fig:M1}
 \end{figure}
 
-
 A \textbf{morphism} $\phi: G \to H$, between two directed graphs
 $G=(V_G,E_G,s_G,t_G)$ and $H=(V_H,E_H,s_H,t_H)$, consists of a pair of
 maps $\phi_V: V_G \to V_H$ and $\phi_E: E_G \to E_H$, such that
@@ -84,15 +77,13 @@ s_H \circ \phi_E = \phi_V \circ s_G \mathrm{\quad and \quad} t_H \circ
 \]
 
 that is such that the following diagram commutes:
-
+%
 \begin{align*} 
   \xymatrix@+=1.3cm{E_G \ar^{t_G}@<0.66ex>[d] \ar_{s_G}@<-0.66ex>[d]
     \ar^{\phi_E}[r] & E_H \ar^{t_H}@<0.66ex>[d]
     \ar_{s_H}@<-0.66ex>[d]\\ V_G \ar^{\phi_V}[r] & V_H}
 \end{align*}
-
-\bigskip
-
+%
 A morphism $\varphi: G \to H$, between two directed pseudographs $G$
 and $H$ is an \textbf{isomorphism}, if the maps $\varphi_V: V_G \to
 V_H$ and $\varphi_E: E_G \to E_H$ are bijective. Two directed

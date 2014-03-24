@@ -62,7 +62,7 @@
 % ************************************************************************* %
 
 \newcommand{\myTitle}{A Classic Thesis Style\xspace}
-%\newcommand{\mySubtitle}{my subtitle}
+\newcommand{\mySubtitle}{my subtitle}
 \newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
 \newcommand{\myName}{Felix Hoffmann\xspace}
 \newcommand{\myProf}{Peter Pfaffelhuber\xspace}
@@ -87,7 +87,6 @@
 \newcommand{\Ie}{I.\,e.}
 \newcommand{\eg}{e.\,g.}
 \newcommand{\Eg}{E.\,g.} 
-
 
 
 
@@ -221,7 +220,6 @@
 \newcommand{\id}{\operatorname{id}}
 \newcommand{\Hom}{\operatorname{Hom}}
 
-
 % ----------- Theoremstyles ------------- %
 
 % count within "chapter" for 2.1,2.2,.. numbering
@@ -237,10 +235,15 @@
 \newtheorem{corollary}[definition]{Corollary}       % definition
 \newtheorem{algorithm}[definition]{Algorithm}
 
-\newenvironment{example}[1][Example]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-\newenvironment{remark}[1][Remark]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{example}[definition]{Remar}
+
+% \newenvironment{example}[1][Example]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{remark}[1][Remark]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 
 
 % ------ || \norm || and | \abs |  ------ %
@@ -296,7 +299,8 @@
 \usepackage{subfig} 
 
  
-
+%\setlength{\belowcaptionskip}{5pt}
+%\setlength{\textfloatsep}{35.0pt plus 2.0pt minus 4.0pt}
 
 
 % ************************************************************************* %
