@@ -137,7 +137,7 @@
 \bibliography{\string~/library/references/main}
 
 %set the distances between bib items
-\setlength\bibitemsep{5pt}
+%\setlength\bibitemsep{5pt}
 
 %removes quotation marks for article titles
 \DeclareFieldFormat[article]{title}{#1} 
@@ -210,6 +210,10 @@
 \usepackage{xypic}  	   %for strange reason I need this to make the two cell diagrams	
 \usepackage[2cell]{xy} 	   %for commutative diagrams%
 
+
+
+% -------------------- Math Macros ---------------------- %
+
 \newcommand{\C}{\mathcal{C}}
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\D}{\mathcal{D}}
@@ -220,7 +224,9 @@
 \newcommand{\id}{\operatorname{id}}
 \newcommand{\Hom}{\operatorname{Hom}}
 
-% ----------- Theoremstyles ------------- %
+
+
+% ------------------- Theoremstyles --------------------- %
 
 % count within "chapter" for 2.1,2.2,.. numbering
 % switch to "section" for 2.1.1, 2.1.2.. 
@@ -246,10 +252,45 @@
 % \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 
 
-% ------ || \norm || and | \abs |  ------ %
 
+% ------------------ Theorem Spacing -------------------- %
+
+% make spacing compatible with KOMA scirpt parskip=full
+% http://tex.stackexchange.com/a/167608/4912
+\begingroup
+    \makeatletter
+    \@for\theoremstyle:=definition,remark,plain\do{%
+        \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+            \setlength\thm@preskip\parskip
+            \setlength\thm@postskip{0pt}
+            }%
+        }
+\endgroup
+
+% adjust proof environment
+% http://tex.stackexchange.com/a/59769/4912
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \vspace{-\topsep}% remove the space after the theorem
+  \pushQED{\qed}%
+  \normalfont
+  \topsep0pt \partopsep0pt % controls space before
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+  \addvspace{0pt} % controls space after
+}
+\makeatother
+
+
+
+% -------------- Norm || - || and Abs |-|  -------------- %
+
+% defines \norm{} and \abs to automatically resize
 % see http://tex.stackexchange.com/a/43009/4912
-
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
@@ -265,7 +306,6 @@
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
 
-% --------------------------------------- %
 
 
 
