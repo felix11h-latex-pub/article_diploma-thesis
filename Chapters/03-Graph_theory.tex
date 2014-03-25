@@ -60,19 +60,55 @@ of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
 means, for a directed graph specified as $G = (V_G,E_G,s_G,t_G)$, we
 have \[V(G) = V_G \quad \mathrm{and} \quad E(G) = E_G.\]
 
-\begin{figure}
-  % \includestandalone[width=\textwidth]{gfx/tikz/directed_graph_types}
-  \centering
-
-  \includegraphics[width=0.4\textwidth]{tikz/directed_pseudograph.pdf}
-  \hfill
-  \includegraphics[width=0.4\textwidth]{tikz/directed_multigraph.pdf}
-
-  \caption{From top left to bottom right, typical examples of the
-    defined graph types: A) directed pseudograph, B) directed
-    multigraph, C) directed loop graph D) simple directed
-    graph.} \label{fig:M1}
+\begin{figure}[!htbp]
+  \centering 
+  \makebox[0.7\textwidth]{%
+    \begin{overpic}[width=0.3\textwidth]{%
+        tikz/directed_pseudograph.pdf}
+      \put(-15,35){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.3\textwidth]{%
+        tikz/directed_multigraph.pdf}
+      \put(3,35){\small\textbf{B}}
+    \end{overpic}
+    }%
+  \vfill
+  \vspace{0.3cm}
+  \makebox[0.7\textwidth]{%
+    \begin{overpic}[width=0.3\textwidth]{%
+        tikz/directed_loopgraph.pdf}
+      \put(-15,35){\small\textbf{C}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.3\textwidth]{%
+        tikz/directed_simple_graph.pdf}
+      \put(3,35){\small\textbf{D}}
+    \end{overpic}
+    }%
+    \caption{%
+      \textbf{Typical examples of the four directed graph types}
+      \textbf{A)} directed pseudograph  \textbf{B)} directed
+     multigraph, \textbf{C)} directed loop graph \textbf{D)} simple directed
+     graph.} %??
+  \label{fig:directed_graph_types}
 \end{figure}
+
+
+% \begin{figure}
+%   % \includestandalone[width=\textwidth]{gfx/tikz/directed_graph_types}
+%   \centering
+
+%   \includegraphics[width=0.49\textwidth]{tikz/directed_pseudograph.pdf}
+%   \hfill
+%   \includegraphics[width=0.49\textwidth]{tikz/directed_multigraph.pdf}
+
+
+%   \caption{From top left to bottom right, typical examples of the
+%     defined graph types: A) directed pseudograph B) directed
+%     multigraph, C) directed loop graph D) simple directed
+%     graph.} \label{fig:M1}
+% \end{figure}
 
 A \textbf{morphism} $\phi: G \to H$, between two directed graphs
 $G=(V_G,E_G,s_G,t_G)$ and $H=(V_H,E_H,s_H,t_H)$, consists of a pair of
