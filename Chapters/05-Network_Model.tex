@@ -342,7 +342,7 @@ present in spiny stellate neurons located in lower-layer-4.
 
 
 
-\section{Anisotropic geometric graph model}\label{sec:anisotropic_network_model}
+\section{Anisotropic geometric network model}\label{sec:anisotropic_network_model}
 
 % Model tries to be geometric and simple. We therefore
 
@@ -409,9 +409,11 @@ the axon length $x$ at this point
   \label{fig:anisotropic_network_model}
 \end{figure}
 
-
 The implementation of arbitrary axonal orientation is crucial to the
 model. Although cortical axons are described as consistently
+%------------------------------------------------
+\marginpar{random axonal orientation yields relevant connectivity} 
+%------------------------------------------------ 
 projecting downwards \parencite[%
 cf. Section~\ref{sec:biol_anisotropy}]{Braitenberg_Cortex}, combining
 exclusively vertically aligned axons with the simplified axonal and
@@ -422,19 +424,33 @@ orientation, but the anisotropy in neural connectivity - the
 observation of neuronal targets aligning with the axonal projection -
 that this model tries to capture. 
 
+
+
 We will commonly refer to the model defined above as the
 \textit{anisotropic geometric network model}. The resulting object of
-a realization of the model is a directed graph. More formally we
-define realizations as:
+a realization of the model consists of a geometric directed graph
+with a special mode of connectivity. We can formally define such
+realization as:
 
-\begin{definition}[Anisotropic geometric graph] 
+\begin{definition}[Anisotropic geometric graph]
+\label{def:anisotropic_geometric_graph} 
 Let $n \in \mathbb{N}$ and $e,w \in (0,\infty)$. An
 \textit{anisotropic geometric graph} $G(n,e,w)$ then consists of a
 tuple $(G,p,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
 maps \[p:V(G)\to[0,e)^2, \quad a:V(G)\to[0,2\pi),\] such that for every
-vertex pair $v,w \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
-$t(e)=w$ exists if and only if $\le w$. %what is \le w??
+vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
+$t(e)=v'$ exists if and only if $\le w$. %what is \le w??
 \end{definition}
+
+\begin{remark} 
+We write $N_G, N_p$ and $N_a$ to refer to the networks directed graph,
+position map and axonal orientation, respectively. 
+An \textit{anisotropic random graph} $G(n,e,w)$ is a anisotropic
+geometric graph obtained by uniformly distributing p and a. %??
+%?? Randomness!! 
+\end{remark}
+
+
 
 % \begin{definition}[anisotropic geometric random graph] A anisotropic
 %   geometric graph $G(n,e,w)$ is a ran
@@ -550,18 +566,21 @@ With this parameter set we generate a sample of 25 graphs %?? Sumatra:
 \newpage
 \section{Distance dependent connectivity}\label{sec:distance_connectivity}
 
-In Gilbert's random graph model $G(n,p)$, 
-\marginpar{Random Graph  Model section~\ref{sec:gilbert_graph}} %?? TITLE
+In Gilbert's random graph model $G(n,p)$,
+%------------------------------------------------ 
+\marginpar{Random Graph
+  Model section~\ref{sec:gilbert_graph}} %?? TITLE
+%------------------------------------------------
 probability of connection $p$ is independently chosen and a fixed
 value for all vertex pairs. The anisotropic geometric graph model
-introduced in the last %(true??)
-section is itself a random graph model - node positions as well as
-preferred directions of connection are randomly, uniformly
-distributed. In contrast to Gilbert's model however, neither is the
-probability of connection between a given vertex pair independent of
-the realization of other edges in the graph, nor is it a fixed value -
-probabilities strongly depend on internode distance in the
-anisotropic geometric graph model introduced.
+introduced in section~\ref{sec:anisotropic_network_model} is itself a
+random graph model - node positions as well as preferred directions of
+connection are uniformly at random distributed. In contrast to
+Gilbert's model however, neither is the probability of connection
+between a given vertex pair independent of the realization of other
+edges in the graph, nor is it a fixed value - probabilities strongly
+depend on internode distance in the anisotropic geometric graph model
+introduced.
 
 Analyzing dependencies in the anisotropic model, specifically by
 identifying prevalent patterns of connectivity and relating these
