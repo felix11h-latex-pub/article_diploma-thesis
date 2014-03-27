@@ -434,15 +434,17 @@ realization as:
 
 \begin{definition}[Anisotropic geometric graph]
 \label{def:anisotropic_geometric_graph} 
-Let $n \in \mathbb{N}$ and $e,w \in (0,\infty)$. An
-\textit{anisotropic geometric graph} $G(n,e,w)$ then consists of a
+Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
+\textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
 tuple $(G,p,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
-maps \[p:V(G)\to[0,e)^2, \quad a:V(G)\to[0,2\pi),\] such that for every
+maps \[p:V(G)\to[0,1)^2, \quad a:V(G)\to[0,2\pi),\] such that for every
 vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
 $t(e)=v'$ exists if and only if $\le w$. %what is \le w??
 \end{definition}
 
+%Unit square, scale later
 \begin{remark} 
+Here $l_2$ norm, others thinkable but for us irrelevant.
 We write $N_G, N_p$ and $N_a$ to refer to the networks directed graph,
 position map and axonal orientation, respectively. 
 An \textit{anisotropic random graph} $G(n,e,w)$ is a anisotropic
