@@ -25,7 +25,7 @@ begin with the definition of directed graphs: %?? needs rework
 %   \end{itemize}
 
 
-\begin{definition}[Directed graphs]
+\begin{definition}[Directed graphs]\index{directed graph}
   A \textbf{directed pseudograph} $G$ consists of two finite \red{(,
     non-empty?)} sets $V$, the \textit{set of vertices} of $G$, and
   $E$, the \textit{set of edges} of $G$, and two maps
@@ -36,7 +36,7 @@ begin with the definition of directed graphs: %?? needs rework
   \textbf{directed multigraph} is a directed pseudograph without
   \textit{loops}, that is the map $d = (s,t):E \to V^2$ already maps
   maps to $V^2\setminus\Delta_V$, where $V^2 = V \times V$ denotes the
-  cartesian product and $\Delta_V = \{(x,x)|x \in V\} \subseteq V^2$
+  cartesian product and $\Delta_V = \{(x,x) \mid x \in V\} \subseteq V^2$
   the diagonal. Similarily, a \textbf{directed loop graph} is a
   directed pseudograph where $d$ is injective. Finally, a
   \textbf{simple directed graph} can be defined as a directed
@@ -169,7 +169,7 @@ bio.
   projections on the first and second component, $s = \mathrm{pr}_1, t
   = \mathrm{pr}_2: E(G) \to V.$ Conversely, the edge set $E(G)
   \subseteq V^2$ can be determined from the source and target
-  functions as $E:=\{(s(e),t(e)) | e \in E\}$. The trivial identities
+  functions as $E:=\{(s(e),t(e)) \mid e \in E\}$. The trivial identities
   $(x,y) = (\mathrm{pr}_1(x,y),\mathrm{pr}_2(x,y))$ and
   $\mathrm{pr_1}(s(e), t(e)) = s(e)$ with $\mathrm{pr_2}(s(e), t(e)) =
   t(e)$ quickly verify the equivalence of the definitions.
@@ -215,7 +215,8 @@ makes problems as mentioned before.
 \end{remark}
 
 
-\begin{remark}[In- and out-degree] 
+\begin{definition}[In- and out-degree]  
+  \index{in-degree}\index{out-degree}
   For a directed graph $G$ the \textbf{in-degree} $d^-_G(x)$ of a
   vertex $x$ is defined as the number of edges of $G$ with target $x$,
   that is
@@ -227,7 +228,7 @@ makes problems as mentioned before.
   d^+_G(x) = \left|(x, V(G))_G\right|,
   \]
   the number of edges in $G$ with source $x$.
-\end{remark}
+\end{definition}
 
 \begin{remark}[Side]
   In some literature about directed graphs (Bang-Jensen), loops are
@@ -332,7 +333,7 @@ More to do:
 \item vertices will also be called nodes and neurons, edges will also
   be connections or synapses.
 \item subgraphs
-\item vertex set, edge set $E(G), V(G)$.
+\item \sout{vertex set, edge set $E(G), V(G)$.}
 \item $\omega(e)$ is weight, connection strength or synaptic weight
   (as a side remark
 \item extend to category of weighted directed pseudographs
@@ -354,39 +355,78 @@ References for this chapter:
 
 
 
-\section{Random Graph Theory}
+\section{Random Graph Theory}\label{sec:random_graph_theory}
+\index{random graph}%?? where
 
 For this chapter, as it is common and practical when talking about
 random graph models, we move away from the the abstract notion of graphs and
 their equivalence classes and consider \textit{labeled graphs}, where
 the edge set of a graph with $n$ vertices takes the form $V =
 \{1,\ldots,n\}$.
+%?? Focus on simple directed graphs!
 
-\begin{definition}[Gilbert random graph model]\label{def:gilbert_random_graph}
-Let $n\in\mathbb{N}$ and $0\leq p \leq 1$. The \textbf{Gilbert random graph
-model} $G(n,p)$ is a probability distribution over $G^n$ such that any
-graph $G \in G^n$ with $\abs{E(G)}=m$ occurs with probability
-$p^m(1-p)^{m-n(n-1)}$, for $0 \leq m \leq n(n-1)$. 
+and with $G^n$ we denote the set of simple directed graphs with $n$ vertices, 
+\[
+G^n = \{G \mid G\,\mathrm{\,graph},\, |V(G)| = n\}.
+\]
 
- $G(n,p)$ is a graph $G$ with
-$\abs{V(G)}=n$ obtained by randomly adding edges between every vertex
-pair with a probability $p$.
+First formally defined by , \textcite{Erdos1959}
+A random graph model is 
+The term \enquote{random graph} can then refer to a random graph model
+or one sample in the probability. Here we try to avoid this ambiguity
+and refer. 
+
+The $G(n,p)$ model was first introduced by \textcite{Gilbert1959}
+closely related to Erd\H{o}s and R\'{e}nyi's $G(n,m)$ model. \textcite{Bollobas_Random-graphs}	
+
+% \begin{definition}[Gilbert random graph model]\label{def:gilbert_random_graph}
+% Let $n\in\mathbb{N}$ and $0\leq p \leq 1$. The \textit{Gilbert random graph
+% model} $G(n,p)$ is a probability distribution over $G^n$ such that any
+% graph $G \in G^n$ with $\abs{E(G)}=k$ occurs with probability
+% $p^k(1-p)^{k-n(n-1)}$, for $0 \leq k \leq n(n-1)$. 
+% \end{definition}
+
+\begin{definition}[Gilbert random graph model]
+  \label{def:gilbert_random_graph} 
+  Let $n\in\mathbb{N}$ and $0\leq p \leq 1$. The \textit{Gilbert
+    random graph model} $G(n,p)$ is a probability space over $G^n$
+  with probability measure $P$ such that every graph $G$ with $\abs{E(G)}=k$ edges
+  appears with equal probability
+  \[
+    P(G) = p^k(1-p)^{n(n-1)-k},
+  \]
+  for $0 \leq k \leq n(n-1)$. 
 \end{definition}
 
-Alternatively, the Gilbert random graph model can be defined as a
-stochastic process. 
+Clearly $G(n,p)$ is well defined ... Which sigma algebra? Is it
+probability measure? It is uniquely determined?
+
+%  $G(n,p)$ is a graph $G$ with
+% $\abs{V(G)}=n$ obtained by randomly adding edges between every vertex
+% pair with a probability $p$.
+
+
+Equivalently, the Gilbert random graph model can be defined as a
+stochastic process.
+%------------------------------------------------
+\marginpar{equivalent definition as random process} 
+%------------------------------------------------ 
+ Obviously a graph with $k$ edges is then obtained
+with probability $something$, and conversely, induction 
+, proofing the equivalence. 
+
+
+\begin{proposition}
+degree things
+\end{proposition}
 
 % \subsection{Erd\H{o}s-R\'{e}nyi graphs}
 
-References: Newman, Erdos1960, Erdos1959, Gilbert1959, 
+References: Newman, Erdos1960, Erdos1959, Gilbert1959, Bollabos
 Wikipedia, \parencite{West_Graph-theory}
 		
 		
-\begin{definition}[Terms used]
-  Graphs with $n$ vertices: $G^n = \{G| G\,\mathrm{is\,
-    graph\,(means??)},\, |V(G)| = n\}$
-\end{definition}
-		
+
 \begin{remark}[Expected number of edges in a directed Erd\H{o}s-R\'{e}nyi graph (DERG)]
   $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
   with probability distribution $G(n,p) =\operatorname{B}(n^2,p)$,
@@ -411,17 +451,23 @@ Wikipedia, \parencite{West_Graph-theory}
 Geometric are of embedding t. Planar deal with . Here we relevant for
 us is a notion
 
-\begin{definition}[Geometric graph] A geometric directed graph is a
-  directed graph $G$ paired with a map
+\begin{definition}[Geometric directed graph]\index{geometric graph} A \textit{geometric
+    directed graph} $G_p$ is a directed graph $G$ paired with a map
 \[
   p:V(G) \to [0,1)^2,
 \]
-such that for every vertex pair $v,w \in V(G)$ an edge $e \in E(G)$
-with $s(e)=v$ and $t(e)=w$
+representing vertex positions on the unit square.
 \end{definition}
 
-This notion diverges from the usual . In directed graphs. We are
-however using . Random geometric graphs: \textcite{Gilbert1961}
+\begin{remark} This definition diverges from the usual notion of a
+  geometric graph, which determines the existence of edges only
+  between nodes within a spatial distance $x$ in a specified norm
+  (usually $l_w$). Moreover, geometric graphs are usually only
+  discussed in the context of random graph
+  models \parencite{Gilbert1961}.  While the concept of spatially
+  embedded graph allows to define a random graph model that is highly
+  relevant for this study:
+\end{remark}
 
 \begin{definition}[Distance-dependent random geometric graph model]
 A distance-dependent geomet. Distance distribution over, an edge 
