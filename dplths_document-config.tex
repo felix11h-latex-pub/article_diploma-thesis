@@ -123,7 +123,7 @@
 % For (Name, 2002) - Style comments: 
 
 \usepackage[style=authoryear, url=false, maxbibnames=99, 
-            doi=false, maxcitenames=2]{biblatex}
+            doi=true, maxcitenames=2]{biblatex}
 
 \AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\ifentrytype{article}{\clearfield{issn}}{}}
@@ -138,17 +138,18 @@
 
 
 % removes quotation marks for article titles
-%\DeclareFieldFormat[article]{title}{#1} 
+\DeclareFieldFormat[article]{title}{#1} 
 
 % set the distances between bib items
-\setlength\bibitemsep{2pt}
+\setlength\bibitemsep{4pt}
 
-% Links to DOIs
-% see http://tex.stackexchange.com/questions/23832
-\newbibmacro{string+doi}[1]{%
-  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
-\DeclareFieldFormat[article,incollection]{title}{\usebibmacro{string+doi}{#1}}
+% % Links to DOIs
+% % see http://tex.stackexchange.com/questions/23832
+% \ExecuteBibliographyOptions{doi=false}
+% \newbibmacro{string+doi}[1]{%
+%   \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+% \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+% \DeclareFieldFormat[article,incollection]{title}{\usebibmacro{string+doi}{#1}}
 
 
 
