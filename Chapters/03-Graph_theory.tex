@@ -390,7 +390,7 @@ closely related to Erd\H{o}s and R\'{e}nyi's $G(n,m)$ model. \textcite{Bollobas_
   \label{def:gilbert_random_graph} 
   Let $n\in\mathbb{N}$ and $0\leq p \leq 1$. The \textit{Gilbert
     random graph model} $G(n,p)$ is a probability space over $G^n$
-  with probability measure $P$ such that every graph $G$ with $\abs{E(G)}=k$ edges
+  with a probability measure $P$ such that every graph $G$ with $\abs{E(G)}=k$ edges
   appears with equal probability
   \[
     P(G) = p^k(1-p)^{n(n-1)-k},
@@ -417,10 +417,17 @@ with probability $something$, and conversely, induction
 
 
 \begin{proposition}
-degree things
+degree things 
 \end{proposition}
+%
+\begin{proof}
+ $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
+  with probability distribution $\operatorname{B}_{n(n-1),p}$.
+  \[
+    \operatorname{B}_{n(n-1),p}(k) = \binom{n(n-1)}{k} p^k(1-p)^{n(n-1)-k}
+  \]
+\end{proof}
 
-% \subsection{Erd\H{o}s-R\'{e}nyi graphs}
 
 References: Newman, Erdos1960, Erdos1959, Gilbert1959, Bollabos
 Wikipedia, \parencite{West_Graph-theory}
