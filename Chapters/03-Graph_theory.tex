@@ -389,31 +389,39 @@ closely related to Erd\H{o}s and R\'{e}nyi's $G(n,m)$ model. \textcite{Bollobas_
 \begin{definition}[Gilbert random graph model]
   \label{def:gilbert_random_graph} 
   Let $n\in\mathbb{N}$ and $0\leq p \leq 1$. The \textit{Gilbert
-    random graph model} $G(n,p)$ is a probability space over $G^n$
+    random graph model} $G(n,p)$ is a discrete probability space over $G^n$
   with a probability measure $P$ such that every graph $G$ with $\abs{E(G)}=k$ edges
-  appears with equal probability
-  \[
-    P(G) = p^k(1-p)^{n(n-1)-k},
-  \]
+  appears with equal probability%
+  \[%
+    P(G) = p^k(1-p)^{n(n-1)-k},%
+  \]%
   for $0 \leq k \leq n(n-1)$. 
 \end{definition}
 
-Clearly $G(n,p)$ is well defined ... Which sigma algebra? Is it
-probability measure? It is uniquely determined?
-
-%  $G(n,p)$ is a graph $G$ with
-% $\abs{V(G)}=n$ obtained by randomly adding edges between every vertex
-% pair with a probability $p$.
+\begin{remark}Clearly $G(n,p)$ is well-defined, as there exist $\binom{n(n-1)}{k}$
+distinct labeled graphs with $n$ vertices and $k$ edges and thus 
+\[
+  \sum_{G \in G^n} P(G) =  \sum_{k=0}^{n(n-1)}  \binom{n(n-1)}{k}
+  p^k(1-p)^{n(n-1)-k} = 1, % = (p+(1-p))^{n(n-1)}
+\]
+after the binomial theorem.
+% Which sigma algebra -> power set (discrete probability space)
+\end{remark}
 
 
 Equivalently, the Gilbert random graph model can be defined as a
-stochastic process.
+stochastic process;
 %------------------------------------------------
 \marginpar{equivalent definition as random process} 
 %------------------------------------------------ 
- Obviously a graph with $k$ edges is then obtained
-with probability $something$, and conversely, induction 
-, proofing the equivalence. 
+to an empty graph with $n$ vertices, for each of the $n(n-1)$ vertex
+pairs an edge is added at random and independently with probability
+$p$. The probability to obtain a specific graph $G$ with $k$ edges is
+then obviously $p^k(1-p)^{n(n-1)-k}$, already proofing the
+equivalence, since assuming a process as above with edge probability
+$p'$ such that the induced probability measure on $G^n$ equals
+$P$ from \ref{def:gilbert_random_graph}, already yields $p = p'$ in
+the choice of $n=2$ and $k=1$. 
 
 
 \begin{proposition}
@@ -459,9 +467,9 @@ Geometric are of embedding t. Planar deal with . Here we relevant for
 us is a notion
 
 \begin{definition}[Geometric directed graph]\index{geometric graph} A \textit{geometric
-    directed graph} $G_p$ is a directed graph $G$ paired with a map
+    directed graph} $G_{\Phi}$ is a directed graph $G$ paired with a map
 \[
-  p:V(G) \to [0,1)^2,
+  \Phi:V(G) \to [0,1)^2,
 \]
 representing vertex positions on the unit square.
 \end{definition}
@@ -469,16 +477,34 @@ representing vertex positions on the unit square.
 \begin{remark} This definition diverges from the usual notion of a
   geometric graph, which determines the existence of edges only
   between nodes within a spatial distance $x$ in a specified norm
-  (usually $l_w$). Moreover, geometric graphs are usually only
+  (usually $l_w$) \parencite[108]{Mesbahi_Multiagent-networks}  Moreover, geometric graphs are usually only
   discussed in the context of random graph
-  models \parencite{Gilbert1961}.  While the concept of spatially
+  models \parencite{Gilbert1961}.  
+  We denote the set of geometric graphs with $n$ edges by $G_{\Phi}^n$.
+  While the concept of spatially
   embedded graph allows to define a random graph model that is highly
   relevant for this study:
 \end{remark}
 
 \begin{definition}[Distance-dependent random geometric graph model]
-A distance-dependent geomet. Distance distribution over, an edge 
+  Let $n \in \mathbb{N}$ and $P: [0,\sqrt{2}] \to [0,1]$ a
+  continuous %?? C0 analytic?
+  map.  A \textit{distance-dependent geometric random graph model}
+  $G_{\Phi}(n,P)$ is a random graph model over $G^n_{\Phi}$, generated
+  by distributing uniformly at random the $n$ vertices on the unit
+  square and adding edges for each vertex pair $(v,w) \in
+  {V(G_{\Phi})}^2 \setminus \Delta_{V(G_{\Phi})}$ with a
+  probability $P(x)$, depending on the distance $x = \norm{\Phi(v) -
+    \Phi(w)}$ between the vertices.
 \end{definition}
+
+\begin{proposition}
+Expected edges
+\end{proposition}
+%
+\begin{proof}
+proofing this
+\end{proof}
 
 
 Need to introduce Position function to use for anisotropic networks
