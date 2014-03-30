@@ -25,35 +25,41 @@ begin with the definition of directed graphs: %?? needs rework
 %   \end{itemize}
 
 
-\begin{definition}[Directed graphs]\index{directed graph}
-  A \textbf{directed pseudograph} $G$ consists of two finite \red{(,
-    non-empty?)} sets $V$, the \textit{set of vertices} of $G$, and
-  $E$, the \textit{set of edges} of $G$, and two maps
-  \[
-  s,t: E \to V,
-  \]
-  the \textit{source} and \textit{target functions} of $G$. A
+\begin{definition}[Directed graphs]
+  \index{directed graph} \index{simple graph} \index{pseudograph}
+  \index{multigraph} \index{loop graph}
+  \label{def:directed_graphs}
+  A \textbf{directed pseudograph} $G$ consists of two finite
+  %
+  % Non-empty? -> No. Empty graph allowed for random 
+  % graph process that adds edges and or vertices
+  % 
+  $V$, the \textit{set of vertices} of $G$, and $E$, the \textit{set
+    of edges} of $G$, and two maps $ s,t: E \to V, $ the
+  \textit{source} and \textit{target functions} of $G$. A
   \textbf{directed multigraph} is a directed pseudograph without
   \textit{loops}, that is the map $d = (s,t):E \to V^2$ already maps
   maps to $V^2\setminus\Delta_V$, where $V^2 = V \times V$ denotes the
-  cartesian product and $\Delta_V = \{(x,x) \mid x \in V\} \subseteq V^2$
-  the diagonal. Similarily, a \textbf{directed loop graph} is a
+  cartesian product and $\Delta_V = \{(x,x) \mid x \in V\} \subseteq
+  V^2$ the diagonal. Similarily, a \textbf{directed loop graph} is a
   directed pseudograph where $d$ is injective. Finally, a
   \textbf{simple directed graph} can be defined as a directed
   pseudograph where $d$ is both injective and already maps to
   $V^2\setminus\Delta_V$.
 \end{definition}
+
 Thus, in simple directed graphs, neither parallel edges nor loops -
 edges between the same vertex - are allowed, whereas directed
 multigraphs and directed loop graphs admit one of them respectively.
 
-\red{Say something about what "directed graph" means here.}
+\red{Say something about what "directed graph" means here, do all
+  definition until random graphs work for all types of directed graphs?}
 
 Given a directed graph $G$, we denote with $V(G)$ the set of vertices
 of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
 \textbf{edge set} $E(G)$ of $G$ denotes the set of edges of $G$. This
 means, for a directed graph specified as $G = (V,E,s,t)$, we
-have \[V(G) = V_G \quad \mathrm{and} \quad E(G) = E_G.\]
+have \[V(G) = V \quad \mathrm{and} \quad E(G) = E.\]
 
 \begin{figure}[!htbp]
   \centering 
@@ -90,19 +96,6 @@ have \[V(G) = V_G \quad \mathrm{and} \quad E(G) = E_G.\]
 \end{figure}
 
 
-% \begin{figure}
-%   % \includestandalone[width=\textwidth]{gfx/tikz/directed_graph_types}
-%   \centering
-
-%   \includegraphics[width=0.49\textwidth]{tikz/directed_pseudograph.pdf}
-%   \hfill
-%   \includegraphics[width=0.49\textwidth]{tikz/directed_multigraph.pdf}
-
-%   \caption{From top left to bottom right, typical examples of the
-%     defined graph types: A) directed pseudograph B) directed
-%     multigraph, C) directed loop graph D) simple directed
-%     graph.} \label{fig:M1}
-% \end{figure}
 
 A \textbf{morphism} $\phi: G \to H$, between two directed graphs
 $G=(V_G,E_G,s_G,t_G)$ and $H=(V_H,E_H,s_H,t_H)$, consists of a pair of
@@ -134,26 +127,38 @@ isomorphism inbetween them.
 \end{remark}
 
 \begin{definition}[Weighted directed graphs]
-  A \textbf{weighted directed graph} is a directed graph $G$ along
+  An \textbf{edge-weighted directed graph} is a directed graph $G$ along
   with a mapping $\omega: E(G) \to \mathbb{R}$, called the
   \textit{weight function}. Similarily, a \textbf{vertex-weighted
     directed graph} is a directed graph with a mapping $\nu: V(G) \to
   \mathbb{R}$.
 \end{definition}
 
-\begin{remark} \red{(heavy draft)}, title: A directed graph category
-for biological neural networks, in a bordered box?\\ Certainly, a
-weighted directed pseudograph is the most fitting mathematical
-modelling to the biological situation, since self connections and
-multiple synapse are not only plausibel (source?) but the
-rule. However there is one abstraction we can make by adding together
-the synaptic weights - NEST is doing it..\\ Also think about
-\textbf{inhibitory, excitatory}. Suggestion: edge weights $\omega:
-E(G) \to \mathbb{R}^{+}$ \textbf{and} vertex weights $\nu: V(G) \to
-\{-1, 1\}$. Synaptic weight $\mathrm{syn}(e)$ for edge $e$ is
-then \[\mathrm{syn}(e) = \nu(s(e))\,\omega(e).\] Benefit: Synapse from
-one neuron are either excitatory or inhibitory but not mixed as in
-bio.
+\begin{remark} \red{(heavy draft)}
+
+  % 
+  % Think about
+  %  - synaptic integration (non-linear)
+  %  - self excitation, interessed in axonal-dendritic connections, so
+  %    probably not for structure but maybe dynamics?
+  % 
+
+  % Title: A directed graph category for biological neural networks
+
+  Certainly, a weighted directed pseudograph is the most fitting
+  mathematical modelling to the biological situation, since self
+  connections and multiple synapse are not only plausibel (source?)
+  but the rule. However there is one abstraction we can make by adding
+  together the synaptic weights - NEST is doing it. While linear
+  synaptic integration was shown to be, it is a prevalent model in
+  network (ref Nest).\\ 
+
+  Also think about \textbf{inhibitory, excitatory}. Suggestion: edge
+  weights $\omega: E(G) \to \mathbb{R}^{+}$ \textbf{and} vertex
+  weights $\nu: V(G) \to \{-1, 1\}$. Synaptic weight $\mathrm{syn}(e)$
+  for edge $e$ is then \[\mathrm{syn}(e) = \nu(s(e))\,\omega(e).\]
+  Benefit: Synapse from one neuron are either excitatory or inhibitory
+  but not mixed as in bio.
 \end{remark}
 
 
@@ -341,9 +346,9 @@ More to do:
 \item path
 \item adjacency matrix
 \item converses of graph related to opposite category?
-\item in- and out-degree
-\item triangle inequality for distance, $\mathrm{dist}(x,z) \leq
-  \mathrm{dist}(x,y) + \mathrm{dist}(y,z)$
+\item \sout{in- and out-degree}
+\item \sout{triangle inequality for distance, $\mathrm{dist}(x,z) \leq
+  \mathrm{dist}(x,y) + \mathrm{dist}(y,z)$}
 \end{itemize}
 
 
@@ -358,42 +363,52 @@ References for this chapter:
 \section{Random Graph Theory}\label{sec:random_graph_theory}
 \index{random graph}%?? where
 
-For this chapter, as it is common and practical when talking about
-random graph models, we move away from the the abstract notion of graphs and
-their equivalence classes and consider \textit{labeled graphs}, where
-the edge set of a graph with $n$ vertices takes the form $V =
-\{1,\ldots,n\}$.
+From this chapter on, as it is common and practical when talking about
+random graph models, we move away from the the abstract notion
+%------------------------------------------------
+\marginpar{focus on labeled, simple directed graphs}
+%------------------------------------------------ 
+of graphs and their equivalence classes and consider \textit{labeled
+  graphs}, where the edge set of a graph with $n$ vertices takes the
+form $V = \{1,\ldots,n\}$. Simple directed graphs constitute the
+fundamental mathematical object underlying the concepts developed in
+this work and if not specified otherwise, all graphs are assumed to be
+labeled and simple directed.
 %?? Focus on simple directed graphs!
 
-and with $G^n$ we denote the set of simple directed graphs with $n$ vertices, 
-\[
-G^n = \{G \mid G\,\mathrm{\,graph},\, |V(G)| = n\}.
-\]
+The concept of a random graph was first formally introduced by
+\textcite{Erdos1959}. In their $G(n,N)$ model, a graph with $n$
+vertices and $N$ edges is randomly and with equal probability selected
+from the set of graphs with this configuration. In the same year
+\textcite{Gilbert1959} independently introduced his closely related
+$G(n,p)$ model, which we define in detail in
+\ref{def:gilbert_random_graph}.
 
-First formally defined by , \textcite{Erdos1959}
-A random graph model is 
+A random graph model is a probability space over a set of specific graphs.  Erd\H{o}s et al. and Gilbert describe their
+. Often implicit. 
+
 The term \enquote{random graph} can then refer to a random graph model
 or one sample in the probability. Here we try to avoid this ambiguity
-and refer. 
+and refer. The object of 
 
+Keeping in mind that the term \enquote{graph} now refers to labeled,
+simple directed graphs if not otherwise specified we denote with $G^n$
+the set of directed graphs with $n$ vertices, 
+\[
+G^n := \{G \mid G\,\mathrm{\,graph},\, |V(G)| = n\}.
+\]
 The $G(n,p)$ model was first introduced by \textcite{Gilbert1959}
-closely related to Erd\H{o}s and R\'{e}nyi's $G(n,m)$ model. \textcite{Bollobas_Random-graphs}	
-
-% \begin{definition}[Gilbert random graph model]\label{def:gilbert_random_graph}
-% Let $n\in\mathbb{N}$ and $0\leq p \leq 1$. The \textit{Gilbert random graph
-% model} $G(n,p)$ is a probability distribution over $G^n$ such that any
-% graph $G \in G^n$ with $\abs{E(G)}=k$ occurs with probability
-% $p^k(1-p)^{k-n(n-1)}$, for $0 \leq k \leq n(n-1)$. 
-% \end{definition}
+closely related to Erd\H{o}s and R\'{e}nyi's $G(n,m)$
+model. \textcite{Bollobas_Random-graphs}
 
 \begin{definition}[Gilbert random graph model]
-  \label{def:gilbert_random_graph} 
+  \label{def:gilbert_random_graph} \index{Gilbert random graph model}
   Let $n\in\mathbb{N}$ and $0\leq p \leq 1$. The \textit{Gilbert
     random graph model} $G(n,p)$ is a discrete probability space over $G^n$
-  with a probability measure $P$ such that every graph $G$ with $\abs{E(G)}=k$ edges
+  with a probability measure $P$, such that every graph $G$ with $\abs{E(G)}=k$ edges
   appears with equal probability%
   \[%
-    P(G) = p^k(1-p)^{n(n-1)-k},%
+    P(G) = {p^k(1-p)^{n(n-1)-k}},%
   \]%
   for $0 \leq k \leq n(n-1)$. 
 \end{definition}
@@ -425,15 +440,25 @@ the choice of $n=2$ and $k=1$.
 
 
 \begin{proposition}
-degree things 
+  In- and out-degree distribution of vertices in the Gilbert random
+  graph model are Poisson for large $n$.
 \end{proposition}
 %
 \begin{proof}
- $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
-  with probability distribution $\operatorname{B}_{n(n-1),p}$.
+  Let $X$ be a random variable on the random graph model, mapping to
+  the in- or out-degree $d_G(v)$ of a vertex $v$ of a graph $G \in
+  G^n$. There are $n-1$ other vertices that, with probability $p$,
+  project to $v$ (receive input from $v$), thus
   \[
-    \operatorname{B}_{n(n-1),p}(k) = \binom{n(n-1)}{k} p^k(1-p)^{n(n-1)-k}
+    P(X=k) = \binom{n-1}{k} p^k (1-p)^{n-1-k}.
   \]
+  The binomial distribution i $P(k) = \mathcal{B}_{n-1,p}(k) \approx $.
+
+ % $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
+ %  with probability distribution $\operatorname{B}_{n(n-1),p}$.
+ %  \[
+ %    \operatorname{B}_{n(n-1),p}(k) = \binom{n(n-1)}{k} p^k(1-p)^{n(n-1)-k}
+ %  \]
 \end{proof}
 
 
@@ -442,34 +467,35 @@ Wikipedia, \parencite{West_Graph-theory}
 		
 		
 
-\begin{remark}[Expected number of edges in a directed Erd\H{o}s-R\'{e}nyi graph (DERG)]
-  $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
-  with probability distribution $G(n,p) =\operatorname{B}(n^2,p)$,
-  binomial distribution. That is, distribution of $X$ via probability
-  mass function $P(X=k) = {{n^2} \choose k} p^k\,(1-p)^{n^2-k}$. Thus
-  $\operatorname{E}(X)$ equals expect edges in DERG. We have of
-  course, since $G(n,p)$ binomial,
-  \[
-  \operatorname{E}(X) = pn^2. \mathrm{\:(if\,self-edges!)}
-  \]
-  Then, of course, the \textbf{mean in-}  and \textbf{out-degree} is \[ \langle
-  d^{\mathrm{in}} \rangle = \langle d^{\mathrm{out}} \rangle =
-  \frac{\langle |E(G)| \rangle}{|V(G)|} = np.\] \textit{Does this make
-    sense? Define everything properly!!}
-\end{remark}
+% \begin{remark}[Expected number of edges in a directed Erd\H{o}s-R\'{e}nyi graph (DERG)]
+%   $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
+%   with probability distribution $G(n,p) =\operatorname{B}(n^2,p)$,
+%   binomial distribution. That is, distribution of $X$ via probability
+%   mass function $P(X=k) = {{n^2} \choose k} p^k\,(1-p)^{n^2-k}$. Thus
+%   $\operatorname{E}(X)$ equals expect edges in DERG. We have of
+%   course, since $G(n,p)$ binomial,
+%   \[
+%   \operatorname{E}(X) = pn^2. \mathrm{\:(if\,self-edges!)}
+%   \]
+%   Then, of course, the \textbf{mean in-}  and \textbf{out-degree} is \[ \langle
+%   d^{\mathrm{in}} \rangle = \langle d^{\mathrm{out}} \rangle =
+%   \frac{\langle |E(G)| \rangle}{|V(G)|} = np.\] \textit{Does this make
+%     sense? Define everything properly!!}
+% \end{remark}
 
 
 
 
-\section{Geometric Graphs}
+\section{Geometric Graphs}\label{sec:geometric_graphs} 
 
-Geometric are of embedding t. Planar deal with . Here we relevant for
-us is a notion
+Geometric are of embedding t. Planar deal with
+\textcite{Diestel_Graph-theory}. Here we relevant for us is a notion
+\textcite{Penrose_Geometric-graph}
 
 \begin{definition}[Geometric directed graph]\index{geometric graph} A \textit{geometric
     directed graph} $G_{\Phi}$ is a directed graph $G$ paired with a map
 \[
-  \Phi:V(G) \to [0,1)^2,
+  \Phi:V(G) \to [0,1]^2,
 \]
 representing vertex positions on the unit square.
 \end{definition}
@@ -487,6 +513,7 @@ representing vertex positions on the unit square.
 \end{remark}
 
 \begin{definition}[Distance-dependent random geometric graph model]
+  %\index{distance-dependent random graph model}
   Let $n \in \mathbb{N}$ and $P: [0,\sqrt{2}] \to [0,1]$ a
   continuous %?? C0 analytic?
   map.  A \textit{distance-dependent geometric random graph model}
@@ -511,6 +538,16 @@ Need to introduce Position function to use for anisotropic networks
 \ref{def:anisotropic_geometric_graph}.
 
 
+
+
+\section{Connectivity Matrix}
+
+\begin{definition}[Connectivity matrix]
+% NEED LABELED GRAPH!!
+Let $G$ be a directed graph with $n$ vertices. Then the
+\textit{connectivity matrix} $C(G)$ of $G$, is such that $C(G)_{ij} =
+1$ if there exists an edge $e \in E(G)$ with 
+\end{definition}
 
 
 
