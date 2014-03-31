@@ -122,8 +122,21 @@
 %\usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
 % For (Name, 2002) - Style comments: 
 
-\usepackage[style=authoryear, url=false, maxbibnames=99, 
-            doi=true, maxcitenames=2]{biblatex}
+
+\usepackage[style=authoryear,   %  authoryear-comp maybe?
+            url=false,          %
+            maxbibnames=99,     %
+            doi=true,           %
+            maxcitenames=2,     %
+            dashed=false        %  (1)
+           ]{biblatex}
+
+
+% (1): no dash for same authors in biblography: 
+%      
+%       John Doe 2012  ->   John Doe 2012
+%       ----  2013          John Doe 2013
+
 
 \AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\ifentrytype{article}{\clearfield{issn}}{}}
@@ -138,7 +151,7 @@
 
 
 % removes quotation marks for article titles
-\DeclareFieldFormat[article]{title}{#1} 
+\DeclareFieldFormat[article, incollection, inproceedings]{title}{#1} 
 
 % set the distances between bib items
 \setlength\bibitemsep{4pt}
@@ -260,8 +273,9 @@
 
 
 \theoremstyle{remark}
-\newtheorem{remark}[definition]{Remark}
-\newtheorem{example}[definition]{Remar}
+% \newtheorem{remark}[definition]{Remark}  % numbered remarks
+\newtheorem*{remark}{Remark}               % unnumbered remarks
+\newtheorem{example}[definition]{Remark}
 
 % \newenvironment{example}[1][Example]{\begin{trivlist}
 % \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
@@ -539,4 +553,5 @@
 %%% mode: latex
 %%% TeX-master: "dplths_document"
 %%% End: 
-%  LocalWords:  Biblatex parskip
+%  LocalWords:  Biblatex parskip incollection inproceedings eprint
+%  LocalWords:  isbn shorttitle issn DOIs
