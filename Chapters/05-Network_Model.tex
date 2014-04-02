@@ -11,7 +11,17 @@ model in Chapter~\ref{ch:structural_aspects}.
 
 %\section{Introduction}\label{sec:intro_model}
 \clearpage
-\section{Anisotropy in Neural Connectivity}\label{sec:biol_anisotropy}
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                   Anisotropy in Neural Connectivity
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
+\section{Anisotropy in Neural Connectivity}
+\label{sec:biol_anisotropy}
 
 Neurogeometry\index{neuro geometry} addresses the problem of inferring
 synaptic connectivity from the geometric shapes of axon and
@@ -340,9 +350,15 @@ present in spiny stellate neurons located in lower-layer-4.
 
 
 
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                   Anisotropic geometric network model
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
 
 
-\section{Anisotropic geometric network model}\label{sec:anisotropic_network_model}
+\section{Anisotropic geometric network model}
+\label{sec:anisotropic_network_model}
 
 % Model tries to be geometric and simple. We therefore
 
@@ -433,25 +449,42 @@ with a special mode of connectivity. We can formally define such
 realization as:
 
 \begin{definition}[Anisotropic geometric graph]
-\label{def:anisotropic_geometric_graph} 
-Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
-\textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
-tuple $(G,p,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
-maps \[p:V(G)\to[0,1)^2, \quad a:V(G)\to[0,2\pi),\] such that for every
-vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
-$t(e)=v'$ exists if and only if $\le w$. %what is \le w??
+  \label{def:anisotropic_geometric_graph}
+  Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
+  \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
+  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
+  maps \[\Phi:V(G)\to[0,1]^2, \quad a:V(G)\to[0,2\pi),\] such that for every
+  vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
+  $t(e)=v'$ exists if and only if $\le w$. %what is \le w??
 \end{definition}
 
-%Unit square, scale later
+We can then also formally define a random graph model generatin
 
-\begin{definition}[Anisotropic random graph model] is a random process
-  first placing uniformly at random the $n$ vertices in the unit
-  square and then iteratively choosing uniformly at random and
-  independently an axonal orientation $0\leq a(v) < 2\pi$ for every
-  vertex $v$ and
-  connecting edges .
+
+\begin{definition}[Anisotropic random graph model] Let $n \in
+  \mathbb{N}$ and $w > 0$. The \textit{anisotropic random graph model}
+  $G(n,w)$ is a probability space over the set of anisotropic
+  geometric graphs with a  probability distribution induced by the
+  following process: Let $G$ be an empty graph with $n$
+  vertices. Assign randomly and uniformly to every vertex $v \in V(G)$
+  a position $\Phi(v) \in [0,1]^2$ and axonal orientation $0\leq a(v)
+  < 2\pi$. Then add edges such that $(G,\Phi,a)$ is an anisotropic
+  geometric graph $G_{n,w}$.
 \end{definition}
 
+%  and  be a simple
+%   directedThe random process 
+%   first placing uniformly at random the $n$ vertices in the unit
+%   square and then iteratively choosing uniformly at random and
+%   independently an axonal orientation  for every
+%   vertex $v$ and
+%   connecting edges .
+% \end{definition}
+
+\begin{remark}
+Unit square, scale later; edge width and axon width combined to ;
+Geometric graph relation
+\end{remark}
 
 
 \begin{remark} 
@@ -476,6 +509,15 @@ network model is
 
 
 
+
+
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                         Numerical Implementation
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
 
 
 \section{Numerical Implementation}\label{numerical_implementation}
@@ -570,14 +612,21 @@ set $w(x)$ to be constant. This leaves
 With this parameter set we generate a sample of 25 graphs %?? Sumatra:
                                 %"N1000w_ax126-flat_graph0-24"
 
-
-
-
-
-
 \clearpage
 \newpage
-\section{Distance dependent connectivity}\label{sec:distance_connectivity}
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                    Distance dependent connectivity
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
+\section{Distance dependent connectivity}
+\label{sec:distance_connectivity}
+
+
 
 In Gilbert's random graph model $G(n,p)$,
 %------------------------------------------------ 
@@ -682,6 +731,12 @@ dependencies in the sample graphs generated.
 
 
 
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                                Rewiring
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
 
 \section{Rewiring}
 
@@ -754,10 +809,25 @@ for $\in V(G)$ do
 
  
 
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                           Anisotropy Measure
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
 \section{Anisotropy Measure}
 
 
 
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                         Summary and Discussion
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
 
 \section{Summary and Discussion}
 

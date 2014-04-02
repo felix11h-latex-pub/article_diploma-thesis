@@ -5,7 +5,12 @@ In this chapter we review basic graph theory and explain how these
 terms are applicable in the context of biological neural networks. We
 begin with the definition of directed graphs: %?? needs rework
 
-\section{Directed graphs}\label{sec:directed_graphs}
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+  \section{Directed graphs}\label{sec:directed_graphs}
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
 
 
 %  \begin{definition}[Graph, Order] A \textbf{graph} is a pair of sets $G
@@ -264,7 +269,15 @@ out-degree, equal the total number of edges:
 \end{proof}
 
 
-\section{Walks and distances}
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+  \section{Walks and distances}\label{sec:walks_and_distances}
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
 
 Let $G$ be a directed graph \red{(what does it mean here?)}. A
 \textbf{walk} $W$ in $G$ is an alternating sequence
@@ -355,13 +368,18 @@ More to do:
 
 References for this chapter:
 \url{http://nlab.mathforge.org/nlab/show/graph},
-\url{http://nlab.mathforge.org/nlab/show/quiver}, \parencite{Bang-Jensen_Digraphs} 
+\url{http://nlab.mathforge.org/nlab/show/quiver}, \parencite{Bang-Jensen_Digraphs}
 
 
 
 
-\section{Random Graph Theory}\label{sec:random_graph_theory}
-%?? where
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+  \section{Random Graph Theory}\label{sec:random_graph_theory}
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
 
 From this chapter on, as it is common and practical when talking about
 random graph models, we move away from the abstract notion
@@ -383,11 +401,12 @@ from the set of such possible graphs. In the same year
 \textcite{Gilbert1959} independently introduced his $G(n,p)$ model,
 realizing edges between vertex pairs with a fixed probability $p$. The
 two models are closely related \parencite{Luczak1990} and overlap in
-literature, both being commonly referred to as \textit{Erd\H{o}s-R\'{e}nyi
-graphs}. Here we focus on the $G(n,p)$ model, as it closer in concept
-to a computational implementation of a random graph. Defining it in
-detail in \ref{def:gilbert_random_graph} we will refer to the random
-graph model as the \textit{Gilbert random graph model}.
+literature, both at times being to referred to as
+\textit{Erd\H{o}s-R\'{e}nyi graphs}. Here we focus on the $G(n,p)$
+model, as it closer in concept to a computational implementation of a
+random graph. Defining it in detail in \ref{def:gilbert_random_graph},
+we will refer to the random graph model as the \textit{Gilbert random
+  graph model}.
 
 \index{random graph}%
 In general, a random graph model is a probability space over a set of
@@ -407,13 +426,13 @@ to the mathematical object as a random graph model.
 
 Keeping in mind that the term \textit{graph} now refers to labeled,
 simple directed graphs if not otherwise specified we define $G^n$ to
-be the set of directed graphs with $n$ vertices,
+be the set of simple directed graphs with $n$ vertices,
 \[
 G^n := \{G \mid G\,\mathrm{\,graph},\, |V(G)| = n\}.
 \]
-We first define Gilbert's random graph model $G(n,p)$ by explicitly
-defining sample space and probability measure and show later the 
-
+We first introduce Gilbert's random graph model $G(n,p)$ by explicitly
+defining a probability space over $G^n$ and show later how the model
+may be realized as a random process. 
 
 \begin{definition}[Gilbert random graph model]
   \label{def:gilbert_random_graph} \index{Gilbert random graph model}
@@ -456,56 +475,52 @@ the choice of $n=2$ and $k=1$.
 
 \begin{proposition}
   In- and out-degree distribution of vertices in the Gilbert random
-  graph model are Poisson for large $n$.
+  graph model are binomial.
 \end{proposition}
 %
 \begin{proof}
   Let $X$ be a random variable on the random graph model, mapping to
-  the in- or out-degree $d_G(v)$ of a vertex $v$ of a graph $G \in
-  G^n$. There are $n-1$ other vertices that, with probability $p$,
+  the in-degree (out-degree) $d_G(v)$ of a vertex $v$ of a graph $G
+  \in G^n$. There are $n-1$ other vertices that, with probability $p$,
   project to $v$ (receive input from $v$), thus
   \[
-    P(X=k) = \binom{n-1}{k} p^k (1-p)^{n-1-k}.
-  \]
-  The binomial distribution i $P(k) = \mathcal{B}_{n-1,p}(k) \approx $.
-
- % $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
- %  with probability distribution $\operatorname{B}_{n(n-1),p}$.
- %  \[
- %    \operatorname{B}_{n(n-1),p}(k) = \binom{n(n-1)}{k} p^k(1-p)^{n(n-1)-k}
- %  \]
+    P(X=k) = \binom{n-1}{k} p^k (1-p)^{n-1-k},%
+  \]%
+  % $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
+  % with probability distribution $\operatorname{B}_{n(n-1),p}$.
+  % \[
+  % \operatorname{B}_{n(n-1),p}(k) = \binom{n(n-1)}{k} p^k(1-p)^{n(n-1)-k}
+  % \]
+  showing that $P^X = \mathcal{B}_{n-1,p}$.
 \end{proof}
 
-
-References: Newman, Erdos1960, Erdos1959, Gilbert1959, Bollabos
-Wikipedia, \parencite{West_Graph-theory}
-		
-		
-
-% \begin{remark}[Expected number of edges in a directed Erd\H{o}s-R\'{e}nyi graph (DERG)]
-%   $X: G^n \to \mathbb{R}, G \to |E(G)|$, discrete random variable,
-%   with probability distribution $G(n,p) =\operatorname{B}(n^2,p)$,
-%   binomial distribution. That is, distribution of $X$ via probability
-%   mass function $P(X=k) = {{n^2} \choose k} p^k\,(1-p)^{n^2-k}$. Thus
-%   $\operatorname{E}(X)$ equals expect edges in DERG. We have of
-%   course, since $G(n,p)$ binomial,
-%   \[
-%   \operatorname{E}(X) = pn^2. \mathrm{\:(if\,self-edges!)}
-%   \]
-%   Then, of course, the \textbf{mean in-}  and \textbf{out-degree} is \[ \langle
-%   d^{\mathrm{in}} \rangle = \langle d^{\mathrm{out}} \rangle =
-%   \frac{\langle |E(G)| \rangle}{|V(G)|} = np.\] \textit{Does this make
-%     sense? Define everything properly!!}
-% \end{remark}
+The Gilbert random graph is therefore also often referred to the
+\textit{binomial random graph model}.  As the typical neuronal networks
+are large ($n of order 10^3$) with sparse connectivity ($p \sim 0.1$), in-
+and out-degree distribution can be approximated by a Poisson
+distribution, 
+\[
+P^X(k) \approx \operatorname{Pois}_{\lambda}(k), \,\,
+\mathrm{with}\,\, \lambda = (n-1)p,
+\]
+after the Poisson limit theorem. Most results in the study of random
+graph models consider $n\to \infty$. In this study we are more concerned
 
 
 
 
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
 \section{Geometric Graphs}\label{sec:geometric_graphs} 
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
 
-Geometric are of embedding t. Planar deal with
-\textcite{Diestel_Graph-theory}. Here we relevant for us is a notion
-\textcite{Penrose_Geometric-graph}
+
+The theory of geometric graphs address the embedding of graphs in
+$\mathbb{R}^d$.  Planar graphs are graph that can be drawn on a
+surface, their edges drawn as straight lines connecting the vertices,
+such that no two lines intersect \parencite{Diestel_Graph-theory}. %Maybe West?
+Here we relevant for us is a notion \textcite{Penrose_Geometric-graph}
 
 \begin{definition}[Geometric directed graph]\index{geometric graph} A \textit{geometric
     directed graph} $G_{\Phi}$ is a directed graph $G$ paired with a map
@@ -518,13 +533,12 @@ representing vertex positions on the unit square.
 \begin{remark} This definition diverges from the usual notion of a
   geometric graph, which determines the existence of edges only
   between nodes within a spatial distance $x$ in a specified norm
-  (usually $l_w$) \parencite[108]{Mesbahi_Multiagent-networks}  Moreover, geometric graphs are usually only
-  discussed in the context of random graph
-  models \parencite{Gilbert1961}.  
-  We denote the set of geometric graphs with $n$ edges by $G_{\Phi}^n$.
-  While the concept of spatially
-  embedded graph allows to define a random graph model that is highly
-  relevant for this study:
+  (usually $l_w$) \parencite[108]{Mesbahi_Multiagent-networks}
+  Moreover, geometric graphs are usually only discussed in the context
+  of random graph models \parencite{Gilbert1961}.  We denote the set
+  of geometric graphs with $n$ edges by $G_{\Phi}^n$.  While the
+  concept of spatially embedded graph allows to define a random graph
+  model that is highly relevant for this study:
 \end{remark}
 
 \begin{definition}[Distance-dependent random geometric graph model]
@@ -540,6 +554,13 @@ representing vertex positions on the unit square.
     \Phi(w)}$ between the vertices.
 \end{definition}
 
+\begin{lemma} Distance occurences of two random points.
+\end{lemma}
+%
+\begin{proof}
+Heere
+\end{proof}
+
 \begin{proposition}
 Expected edges
 \end{proposition}
@@ -549,8 +570,10 @@ proofing this
 \end{proof}
 
 
+We call this \textit{distance-dependent connection probability profile}. 
 Need to introduce Position function to use for anisotropic networks
 \ref{def:anisotropic_geometric_graph}.
+
 
 
 
