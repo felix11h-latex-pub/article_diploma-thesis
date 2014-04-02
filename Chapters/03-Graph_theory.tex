@@ -1,9 +1,14 @@
 % ************************************************
 \chapter{Graph Theory}\label{ch:Graph_theory} 
 % ************************************************
-In this chapter we review basic graph theory and explain how these
-terms are applicable in the context of biological neural networks. We
-begin with the definition of directed graphs: %?? needs rework
+
+A review of graph theory lays the foundation for the mathematical
+considerations in this work. 
+
+ In this chapter we review basic graph
+theory and explain how these terms are applicable in the context of
+biological neural networks. We begin with the definition of directed
+graphs: %?? needs rework
 
 
 % ######################################################################### %
@@ -60,12 +65,6 @@ multigraphs and directed loop graphs admit one of them respectively.
 \red{Say something about what "directed graph" means here, do all
   definition until random graphs work for all types of directed graphs?}
 
-Given a directed graph $G$, we denote with $V(G)$ the set of vertices
-of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
-\textbf{edge set} $E(G)$ of $G$ denotes the set of edges of $G$. This
-means, for a directed graph specified as $G = (V,E,s,t)$, we
-have \[V(G) = V \quad \mathrm{and} \quad E(G) = E.\]
-
 \begin{figure}[!htbp]
   \centering 
   \makebox[0.6\textwidth]{%
@@ -100,7 +99,11 @@ have \[V(G) = V \quad \mathrm{and} \quad E(G) = E.\]
   \label{fig:directed_graph_types}
 \end{figure}
 
-
+Given a directed graph $G$, we denote with $V(G)$ the set of vertices
+of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
+\textbf{edge set} $E(G)$ of $G$ denotes the set of edges of $G$. This
+means, for a directed graph specified as $G = (V,E,s,t)$, we
+have $V(G) = V$ and $E(G) = E$.
 
 A \textbf{morphism} $\phi: G \to H$, between two directed graphs
 $G=(V_G,E_G,s_G,t_G)$ and $H=(V_H,E_H,s_H,t_H)$, consists of a pair of
@@ -132,9 +135,9 @@ isomorphism inbetween them.
 \end{remark}
 
 \begin{definition}[Weighted directed graphs]
-  An \textbf{edge-weighted directed graph} is a directed graph $G$ along
+  An \textit{edge-weighted directed graph} is a directed graph $G$ along
   with a mapping $\omega: E(G) \to \mathbb{R}$, called the
-  \textit{weight function}. Similarily, a \textbf{vertex-weighted
+  \textit{weight function}. Similarly, a \textit{vertex-weighted
     directed graph} is a directed graph with a mapping $\nu: V(G) \to
   \mathbb{R}$.
 \end{definition}
@@ -494,17 +497,20 @@ the choice of $n=2$ and $k=1$.
   showing that $P^X = \mathcal{B}_{n-1,p}$.
 \end{proof}
 
-The Gilbert random graph is therefore also often referred to the
-\textit{binomial random graph model}.  As the typical neuronal networks
-are large ($n of order 10^3$) with sparse connectivity ($p \sim 0.1$), in-
-and out-degree distribution can be approximated by a Poisson
-distribution, 
-\[
-P^X(k) \approx \operatorname{Pois}_{\lambda}(k), \,\,
-\mathrm{with}\,\, \lambda = (n-1)p,
-\]
-after the Poisson limit theorem. Most results in the study of random
-graph models consider $n\to \infty$. In this study we are more concerned
+The Gilbert random graph model is therefore also often referred to as
+\textit{binomial random graph}. %\parencite{Janson_Random-graphs}
+As typical neuronal networks are large ($n \geq 10^3$) with
+sparse connectivity ($p \approx  0.1$), in- and out-degree distribution
+can be approximated by a Poisson distribution, $P^X(k) \approx
+\operatorname{Pois}_{\lambda}(k)$, with $\lambda = (n-1)p$, after the
+Poisson limit theorem.
+
+Most results in the study of random graph models consider $n\to
+\infty$. In this study we are mostly interested in patterns of
+connectivity that arise in local circuits, leaving behind limit
+considerations and employ the Gilbert random graph model as a
+reference for the development of more detailed and specific random
+graph models.
 
 
 
@@ -533,36 +539,53 @@ representing vertex positions on the unit square.
 \begin{remark} This definition diverges from the usual notion of a
   geometric graph, which determines the existence of edges only
   between nodes within a spatial distance $x$ in a specified norm
-  (usually $l_w$) \parencite[108]{Mesbahi_Multiagent-networks}
+  (commonly $l_2$) \parencite[108]{Mesbahi_Multiagent-networks}.
   Moreover, geometric graphs are usually only discussed in the context
-  of random graph models \parencite{Gilbert1961}.  We denote the set
-  of geometric graphs with $n$ edges by $G_{\Phi}^n$.  While the
-  concept of spatially embedded graph allows to define a random graph
-  model that is highly relevant for this study:
-\end{remark}
+  of random graph models, first introduced by \textcite{Gilbert1961}. 
+\end{remark} 
+
+Denote the set of geometric graphs with $n$ edges by $G_{\Phi}^n$.
+The spatial embedding of geometric graphs allows us to define (random)
+connectivity depending on vertex positions and inter-vertex distances.
+Central to this study is the distance-dependent random graph model, in
+which edges are added with probability $p(x)$ depending on the
+distance $x$ between vertex pairs:
 
 \begin{definition}[Distance-dependent random geometric graph model]
   %\index{distance-dependent random graph model}
-  Let $n \in \mathbb{N}$ and $P: [0,\sqrt{2}] \to [0,1]$ a
+  Let $n \in \mathbb{N}$ and $C: [0,\sqrt{2}] \to [0,1]$ a
   continuous %?? C0 analytic?
   map.  A \textit{distance-dependent geometric random graph model}
-  $G_{\Phi}(n,P)$ is a random graph model over $G^n_{\Phi}$, generated
+  $G_{\Phi}(n,C)$ is a random graph model over $G^n_{\Phi}$, generated
   by distributing uniformly at random the $n$ vertices on the unit
   square and adding edges for each vertex pair $(v,w) \in
   {V(G_{\Phi})}^2 \setminus \Delta_{V(G_{\Phi})}$ with a
-  probability $P(x)$, depending on the distance $x = \norm{\Phi(v) -
+  probability $C(x)$, depending on the distance $x = \norm{\Phi(v) -
     \Phi(w)}$ between the vertices.
 \end{definition}
 
-\begin{lemma} Distance occurences of two random points.
+\begin{remark}
+  We call $C$ the graph's \textit{distance-dependent connection
+    probability profile}. Clearly, connectivity statistics in the
+  distance-dependent graph model inherently depend on the choice
+  $C$. However, it is equally important to develop an understanding of
+  the distribution of vertex distances in the graph:
+\end{remark}
+
+\begin{lemma} Let $D$ be a random variable mapping to the distance of
+  two random points in the unit square. Then
+\[P(X=x) = \]
 \end{lemma}
 %
 \begin{proof}
-Heere
+The argument after \textcite{Philip2007}
 \end{proof}
 
 \begin{proposition}
-Expected edges
+overall cp 
+\[
+  p = \int_0^{\sqrt{2}} C(x) P^D(x) \, dx
+\]
 \end{proposition}
 %
 \begin{proof}
