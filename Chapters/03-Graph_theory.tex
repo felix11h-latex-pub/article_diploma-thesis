@@ -135,6 +135,7 @@ isomorphism inbetween them.
 \end{remark}
 
 \begin{definition}[Weighted directed graphs]
+  \index{weighted graph}
   An \textit{edge-weighted directed graph} is a directed graph $G$ along
   with a mapping $\omega: E(G) \to \mathbb{R}$, called the
   \textit{weight function}. Similarly, a \textit{vertex-weighted
@@ -498,10 +499,11 @@ the choice of $n=2$ and $k=1$.
 \end{proof}
 
 The Gilbert random graph model is therefore also often referred to as
-\textit{binomial random graph}. %\parencite{Janson_Random-graphs}
-As typical neuronal networks are large ($n \geq 10^3$) with
-sparse connectivity ($p \approx  0.1$), in- and out-degree distribution
-can be approximated by a Poisson distribution, $P^X(k) \approx
+\textit{binomial random graph}\index{binomial random
+  graph}. %\parencite{Janson_Random-graphs}
+As typical neuronal networks are large ($n \geq 10^3$) with sparse
+connectivity ($p \approx 0.1$), in- and out-degree distribution can be
+approximated by a Poisson distribution, $P^X(k) \approx
 \operatorname{Pois}_{\lambda}(k)$, with $\lambda = (n-1)p$, after the
 Poisson limit theorem.
 
@@ -528,12 +530,14 @@ surface, their edges drawn as straight lines connecting the vertices,
 such that no two lines intersect \parencite{Diestel_Graph-theory}. %Maybe West?
 Here we relevant for us is a notion \textcite{Penrose_Geometric-graph}
 
-\begin{definition}[Geometric directed graph]\index{geometric graph} A \textit{geometric
-    directed graph} $G_{\Phi}$ is a directed graph $G$ paired with a map
-\[
-  \Phi:V(G) \to [0,1]^2,
-\]
-representing vertex positions on the unit square.
+\begin{definition}[Geometric directed graph]
+  \index{geometric graph} 
+  A \textit{geometric directed graph}
+  $G_{\Phi}$ is a directed graph $G$ paired with a map
+  \[
+    \Phi:V(G) \to [0,1]^2,
+  \]
+  representing vertex positions on the unit square.
 \end{definition}
 
 \begin{remark} This definition diverges from the usual notion of a
@@ -552,7 +556,7 @@ which edges are added with probability $p(x)$ depending on the
 distance $x$ between vertex pairs:
 
 \begin{definition}[Distance-dependent random geometric graph model]
-  %\index{distance-dependent random graph model}
+  \index{distance-dependent!random graph model}
   Let $n \in \mathbb{N}$ and $C: [0,\sqrt{2}] \to [0,1]$ a
   continuous %?? C0 analytic?
   map.  A \textit{distance-dependent geometric random graph model}
@@ -566,6 +570,7 @@ distance $x$ between vertex pairs:
 
 \begin{remark}
   We call $C$ the graph's \textit{distance-dependent connection
+    probability profile}\index{distance-dependent!connection
     probability profile}. Clearly, connectivity statistics in the
   distance-dependent graph model inherently depend on the choice
   $C$. However, it is equally important to develop an understanding of
