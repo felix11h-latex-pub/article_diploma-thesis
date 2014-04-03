@@ -677,9 +677,9 @@ structural features.
   arbitrary realization of the anisotropic random graph model
   $G(n,w)$. Define $C:[0,\sqrt{2}] \to [0,1]$ as the
   distance-dependent connection probability profile of $(G,\Phi)$,
-  that is such that $C(x)$ is the probability that a vertex pair $v,w
-  \in V(G)\setminus\Delta_{V(G)}$ in distance $x = \norm{\Phi(v)-\Phi(w)}$ is
-  connected. Then
+  that is such that $C(x)$ is the probability that for a vertex pair
+  $(v,v') \in V(G)^2\setminus\Delta_{V(G)}$ in distance $x =
+  \norm{\Phi(v)-\Phi(v')}$ the vertex $v$ projects to vertex $v'$. Then
   \[
     C(x) = \begin{cases}%
              0.5 & \mathrm{for} \,\, x\le w/2 \\
@@ -691,9 +691,11 @@ structural features.
 \end{theorem} 
 
 \begin{proof}
-  Let $v,w$ be a pair of vertices in $V(G) \setminus \Delta_{V(G)}$ in distance
-  $\norm{\Phi(v)-\Phi(w)} = x$ of each other. 
+  Let $v,v'$ be a pair of vertices in $V(G)^2 \setminus \Delta_{V(G)}$ in
+  distance $\norm{\Phi(v)-\Phi(v')} = x$ of each other. The vertex $v$
+  projects $v'$ only for suitable axonal orientations $a(v)$. 
 
+  
 
   To see this, consider a given source vertex $v$ at $(0,0)$ and a
   possible target $w$, such that $d(v,w) = x$. We may then express the

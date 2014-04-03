@@ -476,7 +476,6 @@ $p'$ such that the induced probability measure on $G^n$ equals
 $P$ from \ref{def:gilbert_random_graph}, already yields $p = p'$ in
 the choice of $n=2$ and $k=1$. 
 
-
 \begin{proposition}
   In- and out-degree distribution of vertices in the Gilbert random
   graph model are binomial.
@@ -562,7 +561,7 @@ distance $x$ between vertex pairs:
   map.  A \textit{distance-dependent geometric random graph model}
   $G_{\Phi}(n,C)$ is a random graph model over $G^n_{\Phi}$, generated
   by distributing uniformly at random the $n$ vertices on the unit
-  square and adding edges for each vertex pair $(v,w) \in
+  square and adding an edge from $v$ to $w$ for each vertex pair $(v,w) \in
   {V(G_{\Phi})}^2 \setminus \Delta_{V(G_{\Phi})}$ with a
   probability $C(x)$, depending on the distance $x = \norm{\Phi(v) -
     \Phi(w)}$ between the vertices.
@@ -578,23 +577,37 @@ distance $x$ between vertex pairs:
 \end{remark}
 
 \begin{lemma} Let $D$ be a random variable mapping to the distance of
-  two random points in the unit square. Then
-\[P(X=x) = \]
+  two random points in the square $[0,s]^2$ of side-length $s$. Then the
+  distribution of $D$ is given by the probability density function
+  \[
+    f(x) = \begin{cases} 2x^3 -8x^2 + 2\pi x & x \in [0,s) \\ %
+                         other term         &  x \in [s,\sqrt{2}s) %
+      \end{cases}
+  \]
 \end{lemma}
 %
 \begin{proof}
-The argument after \textcite{Philip2007}
+The argument after \textcite{Philip2007} \textcite{Moltchanov2012}
 \end{proof}
 
+\marginpar{\vspace{1.8cm}\\ label:
+  \textcolor{gray}{\texttt{3264af15}}\\ \smallskip More about labels
+  in Appendix~5.2} %?? correct ref
+\begin{figure}[h] \centering
+  \includegraphics[width=0.7\textwidth, keepaspectratio]{%
+    plots/3264af15.pdf}%
+  \label{fig:distance_distribution}
+\end{figure}
+
 \begin{proposition}
-overall cp 
+overall 0cp
 \[
   p = \int_0^{\sqrt{2}} C(x) P^D(x) \, dx
 \]
 \end{proposition}
 %
 \begin{proof}
-proofing this
+ proofing this
 \end{proof}
 
 
