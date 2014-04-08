@@ -570,13 +570,22 @@ distance $x$ between vertex pairs:
 \begin{remark}
   We call $C$ the graph's \textit{distance-dependent connection
     probability profile}\index{distance-dependent!connection
-    probability profile}. Clearly, connectivity statistics in the
+    probability}. Clearly, connectivity statistics in the
   distance-dependent graph model inherently depend on the choice
   $C$. However, it is equally important to develop an understanding of
   the distribution of vertex distances in the graph:
 \end{remark}
 
-\begin{lemma} \label{lemma:distance_unit_square}
+\begin{lemma} Let $X,Y$ be independent random variables, denote with
+  $f_X$ and $f_Y$ their probability distribution functions.
+  \begin{enumerate}[label=(\arabic*),ref=(\arabic*)]
+    \item The distribution of $f_{X+Y}$
+    \item The distribution of $f_{X^2}$
+    \item Let $X$ be positive. The distribution of $f_{\sqrt{X}}$
+  \end{enumerate}
+\end{lemma}
+
+\begin{theorem} \label{lemma:distance_unit_square}
   Let $D$ be a random variable mapping to the distance of
   two random points in the square $[0,s]^2$ of side-length $s$. Then the
   distribution of $D$ is given by the probability density function
@@ -593,13 +602,13 @@ distance $x$ between vertex pairs:
  1 - \frac{(2 - x^2)^2}{x^4}}} + 4 x \operatorname{arcsin}\left(\frac{2 -
 x^2}{x^2}\right)
   \end{align*}
-\end{lemma}
+\end{theorem}
 %
 \begin{proof}
-
-  Consider two independently and uniformly distributed random points
-  $p_1 = (x_1,y_1)$ and $p_2 = (x_2,y_2)$ in $[0,s]^2$. The distance
-  between $p_1$ and $p_2$ is given as
+  This result is well known, here we follow the approach described by
+  \textcite{Moltchanov2012}.  Consider two independently and uniformly
+  distributed random points $p_1 = (x_1,y_1)$ and $p_2 = (x_2,y_2)$ in
+  $[0,s]^2$. The distance between $p_1$ and $p_2$ is given as
   \[
     \norm{p_1 - p_2} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}.
   \]
@@ -609,27 +618,44 @@ x^2}{x^2}\right)
   % \marginpar{distribution for $\Delta_x = x_1 -  x_2$} 
   % ------------------------------------------------
   Denote with $f_{\Delta_x}$ its probability density. Then, since
-  $f_{-x_2}(x) = f_{x_2}(-x)$,
-  \begin{align}
-    f_{\Delta_x}(d) = f_{x_1 + (-x_2)}(d) = \int_{\mathbb{R}}  f_{x_1}(x)
-    f_{x_2}(x-d)\, dx
+  $f_{-x_2}(z) = f_{x_2}(-z)$,
+  \begin{align}\label{eq:f_delta_x}
+    f_{\Delta_x}(d) = f_{x_1 + (-x_2)}(d) = \int_{\mathbb{R}}  f_{x_1}(z)
+    f_{x_2}(z-d)\, dz
   \end{align}
   after the well known identity for the distribution of the sum of
   independent random variables.  % Klenke 14.19
   Density functions for $x_1$ and $x_2$ are given by
   \[
-    f_{x_1}(x) = f_{x_2}(x) = %
+    f_{x_1}(z) = f_{x_2}(z) = %
     \begin{cases} 
-      \frac{1}{s} & \mathrm{for} \, x \in  [0,s] \\
+      \frac{1}{s} & \mathrm{for} \, z \in  [0,s] \\
       0           & \mathrm{otherwise}.
     \end{cases}
   \] 
 
-  Thus w
+  Thus we may only obtain non-zero values in (\ref{eq:f_delta_x}) for $d
+  \in (-s,s]$, as otherwise either one of the factors in the integrand
+  is zero. In full we obtain the triangular distribution \parencite{Simpson1755},
+  \begin{align}
+    f_{\Delta_x}(d) =  \begin{cases}
+                         0 & d \notin (-s,s] \\
+                         \frac{s+d}{s^2} & d \in (-s,0] \\
+                         \frac{s-d}{s^2} & d \in (0,s].\\
+                       \end{cases}
+  \end{align}  
+
+  As a next step we calculated the distribution for $\Delta_x^2 =
+  (x_1-x_2)^2$. The probability density function of thus for . Thus 
+
+  \begin{align*}
+    f_{\Delta_x^2}(d) & = \frac{1}{2\sqrt{d}}
+    \left(f_{\Delta_x}(\sqrt{d}) + f_{\Delta_x}(-\sqrt{d})\right) \\
+    & = \frac{1}{2\sqrt{d}} \left(\frac{s-\sqrt{d}}{s^2} +
+      \frac{s+\left(-\sqrt{d}\right)}{s^2}\right) = \frac{1}{s\sqrt{d}} - \frac{1}{s^2}
+  \end{align*}
 
 
-
-  The argument after \textcite{Philip2007} \textcite{Moltchanov2012}
   The probability density function $f$ is obtained from $F$ through
   differentiation, completing the proof.
 \end{proof}
@@ -680,7 +706,12 @@ distances binned to a of width $\sqrt{2}/15$) verifies our calculation:
   proofing this
 \end{proof}
 
-\textbf{Example} 
+\textbf{Example} $C(x) = 1 - \frac{x}{\sqrt{2}}$. Then 
+\[
+  p = \int_{0}^{\sqrt{2}} f(x) \, dx - \frac{1}{\sqrt{2}}
+  \int_0^{\sqrt{2}} x f(x) \, dx = 1 - \frac{\mathbb{E}(X)}{\sqrt{2}}
+  =
+\]
 
 We call this \textit{distance-dependent connection probability profile}. 
 Need to introduce Position function to use for anisotropic networks

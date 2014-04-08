@@ -449,7 +449,8 @@ with a special mode of connectivity. We can formally define such
 realization as:
 
 \begin{definition}[Anisotropic geometric graph]
-  \label{def:anisotropic_geometric_graph}
+  \label{def:anisotropic_geometric_graph} 
+  \index{anisotropic geometric!graph}
   Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
   \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
   tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
@@ -461,11 +462,12 @@ realization as:
 We can then also formally define a random graph model generatin
 
 
-\begin{definition}[Anisotropic random graph model] Let $n \in
-  \mathbb{N}$ and $w > 0$. The \textit{anisotropic random graph model}
-  $G(n,w)$ is a probability space over the set of anisotropic
-  geometric graphs with a  probability distribution induced by the
-  following process: Let $G$ be an empty graph with $n$
+\begin{definition}[Anisotropic random graph model]
+  \index{anisotropic geometric!random graph model} 
+  Let $n \in \mathbb{N}$ and $w > 0$. The \textit{anisotropic random
+    graph model} $G(n,w)$ is a probability space over the set of
+  anisotropic geometric graphs with a probability distribution induced
+  by the following process: Let $G$ be an empty graph with $n$
   vertices. Assign randomly and uniformly to every vertex $v \in V(G)$
   a position $\Phi(v) \in [0,1]^2$ and axonal orientation $0\leq a(v)
   < 2\pi$. Then add edges such that $(G,\Phi,a)$ is an anisotropic
