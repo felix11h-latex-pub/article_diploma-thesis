@@ -539,22 +539,21 @@ Here we relevant for us is a notion \textcite{Penrose_Geometric-graph}
   representing vertex positions on the unit square.
 \end{definition}
 
-\begin{remark} This definition diverges from the usual notion of a
-  geometric graph, which determines the existence of edges only
-  between nodes within a spatial distance $x$ in a specified norm
-  (commonly $l_2$) \parencite[108]{Mesbahi_Multiagent-networks}.
-  Moreover, geometric graphs are usually only discussed in the context
-  of random graph models, first introduced by \textcite{Gilbert1961}. 
-\end{remark} 
+This definition diverges from the usual notion of a geometric graph,
+which determines the existence of edges only between nodes within a
+spatial distance $x$ in a specified norm (commonly
+$l_2$) \parencite[108]{Mesbahi_Multiagent-networks}. Moreover,
+geometric graphs are usually only discussed in the context of random
+graph models, first introduced by \textcite{Gilbert1961}.
 
-Denote the set of geometric graphs with $n$ edges by $G_{\Phi}^n$.
-The spatial embedding of geometric graphs allows us to define (random)
+Denote the set of geometric graphs with $n$ edges by $G_{\Phi}^n$. The
+spatial embedding of geometric graphs allows us to define (random)
 connectivity depending on vertex positions and inter-vertex distances.
 Central to this study is the distance-dependent random graph model, in
 which edges are added with probability $p(x)$ depending on the
 distance $x$ between vertex pairs:
 
-\begin{definition}[Distance-dependent random geometric graph model]
+\begin{definition}[Distance-dependent random graph model]
   \index{distance-dependent!random graph model}
   Let $n \in \mathbb{N}$ and $C: [0,\sqrt{2}] \to [0,1]$ a
   continuous %?? C0 analytic?
@@ -567,23 +566,58 @@ distance $x$ between vertex pairs:
     \Phi(w)}$ between the vertices.
 \end{definition}
 
-\begin{remark}
-  We call $C$ the graph's \textit{distance-dependent connection
-    probability profile}\index{distance-dependent!connection
-    probability}. Clearly, connectivity statistics in the
-  distance-dependent graph model inherently depend on the choice
-  $C$. However, it is equally important to develop an understanding of
-  the distribution of vertex distances in the graph:
-\end{remark}
+We call the function $C$ the graph's \textit{distance-dependent connection
+  probability profile}\index{distance-dependent!connection
+  probability}.
+%------------------------------------------------
+% \marginpar{profile $C$ and distance distribution determine
+%   connectivity}
+%------------------------------------------------
+ Clearly, connectivity statistics in the
+distance-dependent graph model intrinsically depend on the choice
+$C$. To develop a thorough understanding of connectivity in the
+model however, mapping the distribution of inter-vertex distances is
+equally important. Here we calculate the distribution of the distance
+between two random points in a square of side-length~$s$. Being able
+to identify distributions of transformed random variables is integral
+to the calculation:
 
-\begin{lemma} Let $X,Y$ be independent random variables, denote with
-  $f_X$ and $f_Y$ their probability distribution functions.
-  \begin{enumerate}[label=(\arabic*),ref=(\arabic*)]
-    \item The distribution of $f_{X+Y}$
-    \item The distribution of $f_{X^2}$
-    \item Let $X$ be positive. The distribution of $f_{\sqrt{X}}$
+\begin{lemma} \label{lemma:transform_random_variable} 
+  Let $X,Y$ be independent continuous random variables with values in
+  $\mathbb{R}$, denote with $f_X$ and $f_Y$ their probability
+  distribution functions.%
+  \begin{enumerate}[label=(\arabic*),ref=(\arabic*), itemsep=-0.4cm]
+    \item The distribution of the random variable $X+Y$ is given by
+      the probability density function%
+      \[%
+        f_{X+Y}(x) = \int_{\mathbb{R}} f_X(z) f_Y(z-x)\, dz.  
+      \]% 
+    \item The distribution of the random variable $X^2$ is given by
+      the probability density function
+      \[
+        f_{X^2}(x) = %
+        \begin{cases} 
+          0     & x \leq 0 \\
+          \frac{1}{2\sqrt{x}}\left(f_X(\sqrt{x})+f_X(-\sqrt{x})\right)
+           & x > 0 \\
+        \end{cases}
+      \]
+    \item Let $X$ only take positive values. Then the distribution of
+      the random variable $\sqrt{X}$ is given by the probability
+      density function
+      \[
+        f_{\sqrt{X}}(x) = %
+        \begin{cases}
+          0   & x < 0 \\
+          2x f_X(x^2) & x \geq 0 
+        \end{cases}
+      \]
   \end{enumerate}
 \end{lemma}
+%
+\begin{proof}
+Hello Proof
+\end{proof}
 
 \begin{theorem} \label{lemma:distance_unit_square}
   Let $D$ be a random variable mapping to the distance of
@@ -605,13 +639,14 @@ x^2}{x^2}\right)
 \end{theorem}
 %
 \begin{proof}
-  This result is well known, here we follow the approach described by
-  \textcite{Moltchanov2012}.  Consider two independently and uniformly
-  distributed random points $p_1 = (x_1,y_1)$ and $p_2 = (x_2,y_2)$ in
-  $[0,s]^2$. The distance between $p_1$ and $p_2$ is given as
+  We follow the approach described by \textcite{Moltchanov2012}.
+  Consider two independently and uniformly distributed random points
+  $p_1 = (x_1,y_1)$ and $p_2 = (x_2,y_2)$ in $[0,s]^2$. The distance
+  between $p_1$ and $p_2$ is given as
   \[
     \norm{p_1 - p_2} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}.
   \]
+
   As a first step we calculate the distribution for $\Delta_x = x_1 -
   x_2$. 
   % ------------------------------------------------
@@ -623,8 +658,7 @@ x^2}{x^2}\right)
     f_{\Delta_x}(d) = f_{x_1 + (-x_2)}(d) = \int_{\mathbb{R}}  f_{x_1}(z)
     f_{x_2}(z-d)\, dz
   \end{align}
-  after the well known identity for the distribution of the sum of
-  independent random variables.  % Klenke 14.19
+  after Lemma~\ref{lemma:transform_random_variable}.  % Klenke 14.19
   Density functions for $x_1$ and $x_2$ are given by
   \[
     f_{x_1}(z) = f_{x_2}(z) = %
@@ -633,7 +667,6 @@ x^2}{x^2}\right)
       0           & \mathrm{otherwise}.
     \end{cases}
   \] 
-
   Thus we may only obtain non-zero values in (\ref{eq:f_delta_x}) for $d
   \in (-s,s]$, as otherwise either one of the factors in the integrand
   is zero. In full we obtain the triangular distribution \parencite{Simpson1755},
@@ -644,20 +677,32 @@ x^2}{x^2}\right)
                          \frac{s-d}{s^2} & d \in (0,s].\\
                        \end{cases}
   \end{align}  
-
-  As a next step we calculated the distribution for $\Delta_x^2 =
-  (x_1-x_2)^2$. The probability density function of thus for . Thus 
-
+  %
+  Next we calculate the distribution for $\Delta_x^2 =
+  (x_1-x_2)^2$. Using Lemma~\ref{lemma:transform_random_variable} once
+  again we obtain for $d>0$
   \begin{align*}
     f_{\Delta_x^2}(d) & = \frac{1}{2\sqrt{d}}
     \left(f_{\Delta_x}(\sqrt{d}) + f_{\Delta_x}(-\sqrt{d})\right) \\
     & = \frac{1}{2\sqrt{d}} \left(\frac{s-\sqrt{d}}{s^2} +
-      \frac{s+\left(-\sqrt{d}\right)}{s^2}\right) = \frac{1}{s\sqrt{d}} - \frac{1}{s^2}
+      \frac{s+\left(-\sqrt{d}\right)}{s^2}\right) = \frac{1}{s\sqrt{d}} - \frac{1}{s^2},
   \end{align*}
-
-
-  The probability density function $f$ is obtained from $F$ through
-  differentiation, completing the proof.
+  and $f_{\Delta_x^2}(d) = 0$ for $d \leq 0$. Note that of course,
+  $f_{\Delta_x^2} = f_{\Delta_y^2}$ and we will refer to this density
+  function as $f_\Delta^2$. Convolution yields again the probability
+  density function for the sum of the random variables $\Delta_x^2$
+  and $\Delta_y^2$,
+  \[
+    f_{\Delta_x^2 + \Delta_y^2}(d) = \int_{\mathbb{R}} f_{\Delta^2}(z)
+    f_{\Delta^2}(d-z)\, dz.
+  \]
+  Finally Lemma~\ref{lemma:transform_random_variable} lets us compute
+  \[
+  f_D(d) = f_{\sqrt{\Delta_x^2 + \Delta_y^2}}(d) = 2d\, f_{\Delta_x^2 +
+    \Delta_y^2}(d^2),
+  \]
+  for $d \geq 0$. Otherwise, of course, $f_D(d) = 0$. Computation in
+  Mathematica (see) yields th 
 \end{proof}
 
 For random points on the unit square $[0,1]^2$, the distribution $f$
@@ -685,7 +730,7 @@ distances binned to a of width $\sqrt{2}/15$) verifies our calculation:
 %------------------------------------------------
 \marginpar{\vspace{1.8cm}\\ label:
   \textcolor{gray}{\texttt{3264af15}}\\ \smallskip More about labels
-  in Appendix~\ref{sec:reproducibility}} %?? correct ref
+  in Appendix~\ref{sec:reproducibility}} 
 %------------------------------------------------
 \begin{figure}[h] \centering
   \includegraphics[width=0.7\textwidth, keepaspectratio]{%
@@ -712,14 +757,14 @@ distances binned to a of width $\sqrt{2}/15$) verifies our calculation:
   \int_0^{\sqrt{2}} x f(x) \, dx = 1 - \frac{\mathbb{E}(X)}{\sqrt{2}}
   =
 \]
-
-We call this \textit{distance-dependent connection probability profile}. 
-Need to introduce Position function to use for anisotropic networks
-\ref{def:anisotropic_geometric_graph}.
+We compute $E(X) \approx 0.521405$ result confirmed by \textcite{Philip2007}.
 
 
-
-
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                           Connectivity Matrix 
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
 
 \section{Connectivity Matrix}
 
