@@ -623,11 +623,11 @@ Hello Proof
   Let $D$ be a random variable mapping to the distance of
   two random points in the square $[0,s]^2$ of side-length $s$. Then the
   distribution of $D$ is given by the probability density function
-  \begin{align*}
+  \begin{align}\label{eq:distance_unit_square}
     f(x) = \begin{cases} 2x^3 -8x^2 + 2\pi x & x \in [0,s) \\ %
                          other term         &  x \in [s,\sqrt{2}s) %
            \end{cases}%
-  \end{align*}
+  \end{align}
   where
   \begin{align*}
     H(x) = & - 4x -2x^3 + \frac{2x}{\sqrt{x^2-1}} + \frac{2 x^3}{\sqrt{x^2-1}} + 
@@ -670,13 +670,13 @@ x^2}{x^2}\right)
   Thus we may only obtain non-zero values in (\ref{eq:f_delta_x}) for $d
   \in (-s,s]$, as otherwise either one of the factors in the integrand
   is zero. In full we obtain the triangular distribution \parencite{Simpson1755},
-  \begin{align}
+  \begin{align*}
     f_{\Delta_x}(d) =  \begin{cases}
                          0 & d \notin (-s,s] \\
                          \frac{s+d}{s^2} & d \in (-s,0] \\
                          \frac{s-d}{s^2} & d \in (0,s].\\
                        \end{cases}
-  \end{align}  
+  \end{align*}  
   %
   Next we calculate the distribution for $\Delta_x^2 =
   (x_1-x_2)^2$. Using Lemma~\ref{lemma:transform_random_variable} once
@@ -692,21 +692,28 @@ x^2}{x^2}\right)
   function as $f_\Delta^2$. Convolution yields again the probability
   density function for the sum of the random variables $\Delta_x^2$
   and $\Delta_y^2$,
-  \[
+  \begin{align*}%\label{eq:f_DeltaSum}
     f_{\Delta_x^2 + \Delta_y^2}(d) = \int_{\mathbb{R}} f_{\Delta^2}(z)
     f_{\Delta^2}(d-z)\, dz.
-  \]
+  \end{align*}
+
   Finally Lemma~\ref{lemma:transform_random_variable} lets us compute
-  \[
+  \begin{align*}%\label{eq:f_D}
   f_D(d) = f_{\sqrt{\Delta_x^2 + \Delta_y^2}}(d) = 2d\, f_{\Delta_x^2 +
     \Delta_y^2}(d^2),
-  \]
-  for $d \geq 0$. Otherwise, of course, $f_D(d) = 0$. Computation in
-  Mathematica (see) yields th 
+  \end{align*}
+  for $d \geq 0$. Otherwise, of course, $f_D(d) = 0$. Computing the
+  last two steps
+  % steps  (\ref{eq:f_DeltaSum}) and (\ref{eq:f_D}) 
+  in  Mathematica (see ??)
+  yields then expression (\ref{eq:distance_unit_square}) for
+  probability density function of $D$. 
 \end{proof}
 
-For random points on the unit square $[0,1]^2$, the distribution $f$
-becomes
+The distribution for the distance between two random points in the
+unit square $[0,1]^2$, is then obtained from
+(\ref{eq:distance_unit_square}) by setting $s=1$. The probability
+density function $f$ becomes
   \begin{align}\label{eq:dist_pdf}
     f(x) = \begin{cases} 2x^3 -8x^2 + 2\pi x & x \in [0,1) \\ %
                          - 4x -2x^3 + H(x)   &  x \in [1,\sqrt{2}) %
@@ -715,12 +722,12 @@ becomes
   with
   \begin{align*}
     H(x) = 
-      & \frac{2x}{\sqrt{x^2-1}} + \frac{2 x^3}{\sqrt{x^2-1}} + 
-        6x \sqrt{x^2-1} \\
-      & + \frac{-2 x^2 \left(\frac{2}{x} + 
-          \frac{2 (2 - x^2)}{x^3}\right)}{\sqrt{1 - \frac{(2 -
-            x^2)^2}{x^4}}} 
-        + 4 x \operatorname{arcsin}\left(\frac{2 -x^2}{x^2}\right)
+      & \frac{2(x+x^3)}{\sqrt{x^2-1}} +
+        6x \sqrt{x^2-1} 
+       - \frac{4x + 
+          \frac{4 (2 - x^2)}{x}}{\sqrt{1 - \frac{(2 -
+            x^2)^2}{x^4}}} \\
+      &  + 4 x \operatorname{arcsin}\left(\frac{2 -x^2}{x^2}\right)
   \end{align*}
 
 Plotting $f$ in combination with the results of a numerical simulation
@@ -738,26 +745,30 @@ distances binned to a of width $\sqrt{2}/15$) verifies our calculation:
   \label{fig:distance_distribution}
 \end{figure}
 
-\begin{proposition} Let $v \neq w$ be vertices in an arbitrary
+\begin{theorem}\label{th:distance_p} Let $v \neq w$ be vertices in an arbitrary
   realization of $G_{\Phi}(n,C)$. The probability $p$ for an edge
   from $v$ to $w$ is given by 
   \[
     p = \int_0^{\sqrt{2}} C(x) f(x) \, dx,
   \]
   where $f(x)$ is the probability density function~(\ref{eq:dist_pdf}).
-\end{proposition}
+\end{theorem}
 %
 \begin{proof}
   proofing this
 \end{proof}
 
-\textbf{Example} $C(x) = 1 - \frac{x}{\sqrt{2}}$. Then 
+\textbf{Example} Let $C(x) = 1 - \frac{x}{\sqrt{2}}$. Then we compute
+the probability to find an edge between a random vertex pair in
+$G_{\Phi}(n,C)$ according to Theorem~\ref{th:distance_p} as
 \[
   p = \int_{0}^{\sqrt{2}} f(x) \, dx - \frac{1}{\sqrt{2}}
-  \int_0^{\sqrt{2}} x f(x) \, dx = 1 - \frac{\mathbb{E}(X)}{\sqrt{2}}
-  =
+  \int_0^{\sqrt{2}} x f_D(x) \, dx = 1 - \frac{1}{\sqrt{2}} E(D).
 \]
-We compute $E(X) \approx 0.521405$ result confirmed by \textcite{Philip2007}.
+The expected distance between two random points on the unit square is
+computed as $E(D) \approx 0.521405$ (see ??), a result confirmed by
+\textcite{Philip2007}. Thus we obtain the probability for connection
+of $p \approx 0.631311$
 
 
 % ######################################################################### %
