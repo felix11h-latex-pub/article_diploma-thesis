@@ -8,17 +8,34 @@
 
 \section{Mathematica}
 
-\begin{mathematica}[h!]
-\includegraphics[width=1.2\linewidth, cframe=RoyalBlue 1pt]{mathematica/distance_theorem.pdf}
-\caption{some code}
-\label{mathematica:distances}
+% \newgeometry{left=1.0in,right=1.0in}
+
+\begin{mathematica}[ht!]
+  \centering
+  \captionsetup{format=plain, font=normal}
+  \includegraphics[width=\linewidth, cframe=RoyalBlue 1pt]{mathematica/distance_theorem.pdf}
+  \caption{Computation of probability density function for distance
+    between to random points in square of side length $s$ as supplement
+    to proof of Theorem~\ref{theorem:distance_square}. Note that form of
+    final result \texttt{Out[7]} differs from solution given in
+    \ref{theorem:distance_square}. While proof of equivalence could not
+    be achieved analytically, expressions given are numerically
+    equivalent, see \autoref{mathematica:comparison}.}
+  \label{mathematica:distances}
 \end{mathematica} 
 
-\begin{remark} Analytic verification that the distribution reported by
-  \textcite{Moltchanov2012} in Mathematica.
-However the functions behave in the domain numerically equivalent,
-shown by 
-\end{remark}
+
+\begin{mathematica}[t]
+  \centering
+  \captionsetup{format=plain, font=normal}
+  \includegraphics[width=\linewidth, cframe=RoyalBlue 1pt]{mathematica/distance_theorem.pdf}
+  \caption{Computation of probability density function for distance
+    between to random points in square of side length $s$ as supplement
+    to proof of Theorem~\ref{theorem:distance_square}. Note that form of
+    final result \texttt{Out[7]} differs from solut}
+  \label{mathematica:comparison}
+\end{mathematica} 
+
 
 
 
@@ -28,9 +45,9 @@ shown by
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
 
-\section{Reproducibility in Computational Research}\label{sec:reproducibility}
+%\section{Reproducibility in Computational Research}\label{sec:reproducibility}
 
-\textcite{Sumatra2012}
+%\textcite{Sumatra2012}
 
 
 

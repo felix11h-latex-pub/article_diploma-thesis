@@ -11,11 +11,20 @@ biological neural networks. We begin with the definition of directed
 graphs: %?? needs rework
 
 
+
+
+
+
+
+
 % ######################################################################### %
 % ------------------------------------------------------------------------- %
-  \section{Directed graphs}\label{sec:directed_graphs}
+%                             Directed Graphs 
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
+
+
+\section{Directed graphs}\label{sec:directed_graphs}
 
 
 %  \begin{definition}[Graph, Order] A \textbf{graph} is a pair of sets $G
@@ -275,12 +284,18 @@ out-degree, equal the total number of edges:
 
 
 
+
+
+
+
 % ######################################################################### %
 % ------------------------------------------------------------------------- %
-  \section{Walks and distances}\label{sec:walks_and_distances}
+%                          Walks and Distances
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
 
+
+\section{Walks and distances}\label{sec:walks_and_distances}
 
 
 Let $G$ be a directed graph \red{(what does it mean here?)}. A
@@ -378,11 +393,17 @@ References for this chapter:
 
 
 
+
+
+
 % ######################################################################### %
 % ------------------------------------------------------------------------- %
-  \section{Random Graph Theory}\label{sec:random_graph_theory}
+%                          Random Graph Theory
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
+
+
+\section{Random Graph Theory}\label{sec:random_graph_theory}
 
 
 From this chapter on, as it is common and practical when talking about
@@ -516,18 +537,30 @@ graph models.
 
 
 
+
+
+
+
 % ######################################################################### %
 % ------------------------------------------------------------------------- %
+%                            Geometric Graphs
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
 \section{Geometric Graphs}\label{sec:geometric_graphs} 
-% ------------------------------------------------------------------------- %
-% ######################################################################### %
 
 
 The theory of geometric graphs address the embedding of graphs in
-$\mathbb{R}^d$.  Planar graphs are graph that can be drawn on a
-surface, their edges drawn as straight lines connecting the vertices,
-such that no two lines intersect \parencite{Diestel_Graph-theory}. %Maybe West?
-Here we relevant for us is a notion \textcite{Penrose_Geometric-graph}
+$\mathbb{R}^d$.  Planar graphs are graphs that can be drawn on a
+surface with their edges drawn as straight lines between the vertices,
+such that no two lines intersect
+\parencite{Diestel_Graph-theory}. %Maybe West?
+Here we are interested in graphs embedded on surface. In the models
+introduced, connectivity then depends on geometric properties, such as
+distance between nodes or relative orientation between vertices. The
+basic graph type to allow for such connectivity rules is a geometric
+graph.
 
 \begin{definition}[Geometric directed graph]
   \index{geometric graph} 
@@ -541,17 +574,16 @@ Here we relevant for us is a notion \textcite{Penrose_Geometric-graph}
 
 This definition diverges from the usual notion of a geometric graph,
 which determines the existence of edges only between nodes within a
-spatial distance $x$ in a specified norm (commonly
-$l_2$) \parencite[108]{Mesbahi_Multiagent-networks}. Moreover,
-geometric graphs are usually only discussed in the context of random
-graph models, first introduced by \textcite{Gilbert1961}.
-
-Denote the set of geometric graphs with $n$ edges by $G_{\Phi}^n$. The
-spatial embedding of geometric graphs allows us to define (random)
-connectivity depending on vertex positions and inter-vertex distances.
-Central to this study is the distance-dependent random graph model, in
-which edges are added with probability $p(x)$ depending on the
-distance $x$ between vertex pairs:
+spatial distance $x$ in a specified
+norm \parencite{Penrose_Geometric-graph}. Moreover, geometric graphs
+are usually only discussed in the context of random graph models, a
+concept first introduced by \textcite{Gilbert1961}. Denote the set of
+geometric graphs with $n$ edges by $G_{\Phi}^n$. The spatial embedding
+of geometric graphs allows us to define (random) connectivity
+depending on vertex positions and inter-vertex distances.  Central to
+this study is the distance-dependent random graph model, in which
+edges are added with probability $p(x)$ depending on the distance $x$
+between vertex pairs:
 
 \begin{definition}[Distance-dependent random graph model]
   \index{distance-dependent!random graph model}
@@ -586,7 +618,7 @@ to the calculation:
   Let $X,Y$ be independent continuous random variables with values in
   $\mathbb{R}$, denote with $f_X$ and $f_Y$ their probability
   distribution functions.%
-  \begin{enumerate}[label=(\arabic*),ref=(\arabic*), itemsep=-0.4cm]
+  \begin{enumerate}[label=(\arabic*),ref=(\arabic*), itemsep=-0.6cm]
     \item The distribution of the random variable $X+Y$ is given by
       the probability density function%
       \[%
@@ -597,9 +629,8 @@ to the calculation:
       \[
         f_{X^2}(x) = %
         \begin{cases} 
-          0     & x \leq 0 \\
           \frac{1}{2\sqrt{x}}\left(f_X(\sqrt{x})+f_X(-\sqrt{x})\right)
-           & x > 0 \\
+           & x > 0 \\           0     & x \leq 0 \\
         \end{cases}
       \]
     \item Let $X$ only take positive values. Then the distribution of
@@ -608,8 +639,7 @@ to the calculation:
       \[
         f_{\sqrt{X}}(x) = %
         \begin{cases}
-          0   & x < 0 \\
-          2x f_X(x^2) & x \geq 0 
+          2x f_X(x^2) & x \geq 0 \\0   & x < 0 \\
         \end{cases}
       \]
   \end{enumerate}
@@ -619,23 +649,21 @@ to the calculation:
 Hello Proof
 \end{proof}
 
-\begin{theorem} \label{lemma:distance_unit_square}
+\begin{theorem} \label{theorem:distance_square}
   Let $D$ be a random variable mapping to the distance of
   two random points in the square $[0,s]^2$ of side-length $s$. Then the
   distribution of $D$ is given by the probability density function
-  \begin{align}\label{eq:distance_unit_square}
-    f(x) = \begin{cases} 2x^3 -8x^2 + 2\pi x & x \in [0,s) \\ %
-                         other term         &  x \in [s,\sqrt{2}s) %
-           \end{cases}%
+  \vspace{0.25cm}
+  \begin{align}\label{eq:distance_square}
+    f(x) = \begin{cases} \frac{2 x^4 - 8 s x^3 + 2 \pi s^2 x}{s^4} & x \in
+      [0,s]\\ \frac{H(x)}{s^4} & x \in [s,s\sqrt{2}),\\0 & x \notin [0,s\sqrt{2})
+               \end{cases}
   \end{align}
   where
-  \begin{align*}
-    H(x) = & - 4x -2x^3 + \frac{2x}{\sqrt{x^2-1}} + \frac{2 x^3}{\sqrt{x^2-1}} + 
- 6x \sqrt{x^2-1} \\
-           & + \frac{-2 x^2 \left(\frac{2}{x} + \frac{2 (2 - x^2)}{x^3}\right)}{\sqrt{
- 1 - \frac{(2 - x^2)^2}{x^4}}} + 4 x \operatorname{arcsin}\left(\frac{2 -
-x^2}{x^2}\right)
-  \end{align*}
+  \[
+    H(x)=8 s x \sqrt{-s^2+x^2} - 2x^3  
+          - 4 s^2 x \left(1+\arcsin\left(1-\frac{2 s^2}{x^2}\right)\right).
+  \]
 \end{theorem}
 %
 \begin{proof}
@@ -646,7 +674,6 @@ x^2}{x^2}\right)
   \[
     \norm{p_1 - p_2} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}.
   \]
-
   As a first step we calculate the distribution for $\Delta_x = x_1 -
   x_2$. 
   % ------------------------------------------------
@@ -702,73 +729,81 @@ x^2}{x^2}\right)
   f_D(d) = f_{\sqrt{\Delta_x^2 + \Delta_y^2}}(d) = 2d\, f_{\Delta_x^2 +
     \Delta_y^2}(d^2),
   \end{align*}
-  for $d \geq 0$. Otherwise, of course, $f_D(d) = 0$. Computing the
-  last two steps
-  % steps  (\ref{eq:f_DeltaSum}) and (\ref{eq:f_D}) 
-  in  Mathematica (see \autoref{mathematica:distances})
-  yields then expression (\ref{eq:distance_unit_square}) for
-  probability density function of $D$. 
+  for $d \geq 0$, yielding expression (\ref{eq:distance_square}) for
+   probability density function of $D$
+   (Mathematica~\ref{mathematica:distances}, \ref{mathematica:comparison}). 
+  % Otherwise, of course, $f_D(d) = 0$. Computing the
+  % last two steps
+  % % steps  (\ref{eq:f_DeltaSum}) and (\ref{eq:f_D}) 
+  % in  Mathematica (see \autoref{mathematica:distances})
+  % yields then expression (\ref{eq:distance_square}) for
+  % probability density function of $D$. 
 \end{proof}
 
 The distribution for the distance between two random points in the
 unit square $[0,1]^2$, is then obtained from
-(\ref{eq:distance_unit_square}) by setting $s=1$. The probability
+(\ref{eq:distance_square}) by setting $s=1$. The probability
 density function $f$ becomes
-  \begin{align}\label{eq:dist_pdf}
-    f(x) = \begin{cases} 2x^3 -8x^2 + 2\pi x & x \in [0,1) \\ %
-                         - 4x -2x^3 + H(x)   &  x \in [1,\sqrt{2}) %
+  \begin{align}\label{eq:distance_unit_square}
+    f(x) = \begin{cases} 2 x^3 - 8 x^2 +  2 \pi x & x \in
+      [0,1)\\ 8x \sqrt{x^2-1}-2x^3\\ -4x- 4x\arcsin\left(1-\frac{2}{x^2}\right)  & x \in [1,\sqrt{2})
            \end{cases}
   \end{align}
-  with
-  \begin{align*}
-    H(x) = 
-      & \frac{2(x+x^3)}{\sqrt{x^2-1}} +
-        6x \sqrt{x^2-1} 
-       - \frac{4x + 
-          \frac{4 (2 - x^2)}{x}}{\sqrt{1 - \frac{(2 -
-            x^2)^2}{x^4}}} \\
-      &  + 4 x \operatorname{arcsin}\left(\frac{2 -x^2}{x^2}\right)
-  \end{align*}
-
+  %
+  % \begin{align}\label{eq:dist_pdf}
+  %   f(x) = \begin{cases} 2 \pi x - 8 x^2 + 2 x^3 & x \in
+  %     [0,s)\\ \begin{aligned} &8 x \sqrt{-1+x^2}-4 x-2 x^3\\ &-4 x
+  %     \left(\frac{1}{\sqrt{-1+x^2}}\right)+4 x
+  %     \arctan\left(\frac{1}{\sqrt{-1+x^2}}\right) \end{aligned}& x \in (1,\sqrt{2})
+  %          \end{cases}
+  % \end{align}
+  % 
+ 
 Plotting $f$ in combination with the results of a numerical simulation
-(10.000 points randomly distributed on unit square, extracted
+($10000$ points randomly distributed on unit square, extracted
 distances binned to a of width $\sqrt{2}/15$) verifies our calculation: 
-
+%
 %------------------------------------------------
 \marginpar{\vspace{1.8cm}\\ label:
-  \textcolor{gray}{\texttt{3264af15}}\\ \smallskip More about labels
+  \textcolor{gray}{\texttt{01a179d9}}\\ \smallskip More about labels
   in Appendix~\ref{sec:reproducibility}} 
 %------------------------------------------------
-\begin{figure}[h] \centering
+\begin{figure}[H]
+  \centering
   \includegraphics[width=0.7\textwidth, keepaspectratio]{%
-    plots/3264af15.pdf}%
+    plots/01a179d9.pdf}%
   \label{fig:distance_distribution}
 \end{figure}
+%
+\vspace{-0.8cm} Density functions \ref{eq:distance_square} and
+\ref{eq:distance_unit_square} are of high importance. %?? Where when
+Here we use \ref{eq:distance_unit_square} to compute the probability
+that a random pair of vertices in the distance-dependent random graph
+model is connected:
 
-\begin{theorem}\label{th:distance_p} Let $v \neq w$ be vertices in an arbitrary
+\begin{corollary}\label{th:distance_p} Let $v \neq w$ be vertices in an arbitrary
   realization of $G_{\Phi}(n,C)$. The probability $p$ for an edge
   from $v$ to $w$ is given by 
   \[
     p = \int_0^{\sqrt{2}} C(x) f(x) \, dx,
   \]
-  where $f(x)$ is the probability density function~(\ref{eq:dist_pdf}).
-\end{theorem}
-%
-\begin{proof}
-  proofing this
-\end{proof}
+  where $f(x)$ is the probability density function~(\ref{eq:distance_unit_square}).
+\end{corollary}
 
 \textbf{Example} Let $C(x) = 1 - \frac{x}{\sqrt{2}}$. Then we compute
 the probability to find an edge between a random vertex pair in
 $G_{\Phi}(n,C)$ according to Theorem~\ref{th:distance_p} as
 \[
   p = \int_{0}^{\sqrt{2}} f(x) \, dx - \frac{1}{\sqrt{2}}
-  \int_0^{\sqrt{2}} x f_D(x) \, dx = 1 - \frac{1}{\sqrt{2}} E(D).
+  \int_0^{\sqrt{2}} x f_D(x) \, dx = 1 - \frac{1}{\sqrt{2}}\, \mathbf{E}[D].
 \]
 The expected distance between two random points on the unit square is
-computed as $E(D) \approx 0.521405$ (\autoref{mathematica:distances}), a result confirmed by
-\textcite{Philip2007}. Thus we obtain the probability for connection
-of $p \approx 0.631311$
+computed as $\mathbf{E}[D] \approx 0.521405$ (\autoref{mathematica:distances}),
+a result confirmed by \textcite{Philip2007}. Thus we obtain the
+probability for connection of $p \approx 0.631311$
+
+
+
 
 
 % ######################################################################### %
@@ -779,13 +814,18 @@ of $p \approx 0.631311$
 
 \section{Connectivity Matrix}
 
+
+
+An important concept in computation
+
 \begin{definition}[Connectivity matrix]
-% NEED LABELED GRAPH!!
-Let $G$ be a directed graph with $n$ vertices. Then the
-\textit{connectivity matrix} $C(G)$ of $G$, is such that $C(G)_{ij} =
-1$ if there exists an edge $e \in E(G)$ with 
+  Let $G$ be a labeled directed graph with $n$ vertices. Then the
+  \textit{connectivity matrix} $A(G)$ of $G$, is a matrix such that
+  $A(G)_{ij} = 1$ if there exists an edge $e \in E(G)$ with $s(e)=i$
+  and $t(e)=j$ and $A(G)_{ij} = 0$ otherwise.
 \end{definition}
 
+Also known as \textit{adjacency matrix}. $\sum = degree$.
 
 
 % From Graph clustering - Satu Elisa Schaeffer - 2007
