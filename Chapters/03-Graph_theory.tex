@@ -645,9 +645,9 @@ to the calculation:
   \end{enumerate}
 \end{lemma}
 %
-\begin{proof}
-Hello Proof
-\end{proof}
+% \begin{proof}
+% Hello Proof
+% \end{proof}
 
 \begin{theorem} \label{theorem:distance_square}
   Let $D$ be a random variable mapping to the distance of
@@ -661,7 +661,7 @@ Hello Proof
   \end{align}
   where
   \[
-    H(x)=8 s x \sqrt{-s^2+x^2} - 2x^3  
+    H(x)=8 s x \sqrt{x^2-s^2} - 2x^3  
           - 4 s^2 x \left(1+\arcsin\left(1-\frac{2 s^2}{x^2}\right)\right).
   \]
 \end{theorem}
@@ -812,20 +812,20 @@ probability for connection of $p \approx 0.631311$
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
 
-\section{Connectivity Matrix}
+% \section{Connectivity Matrix}
 
 
 
-An important concept in computation
+% An important concept in computation
 
-\begin{definition}[Connectivity matrix]
-  Let $G$ be a labeled directed graph with $n$ vertices. Then the
-  \textit{connectivity matrix} $A(G)$ of $G$, is a matrix such that
-  $A(G)_{ij} = 1$ if there exists an edge $e \in E(G)$ with $s(e)=i$
-  and $t(e)=j$ and $A(G)_{ij} = 0$ otherwise.
-\end{definition}
+% \begin{definition}[Connectivity matrix]
+%   Let $G$ be a labeled directed graph with $n$ vertices. Then the
+%   \textit{connectivity matrix} $A(G)$ of $G$, is a matrix such that
+%   $A(G)_{ij} = 1$ if there exists an edge $e \in E(G)$ with $s(e)=i$
+%   and $t(e)=j$ and $A(G)_{ij} = 0$ otherwise.
+% \end{definition}
 
-Also known as \textit{adjacency matrix}. $\sum = degree$.
+% Also known as \textit{adjacency matrix}. $\sum = degree$.
 
 
 % From Graph clustering - Satu Elisa Schaeffer - 2007

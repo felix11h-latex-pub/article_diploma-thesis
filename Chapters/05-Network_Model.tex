@@ -379,7 +379,7 @@ In this section we formulate a model of network connectivity
 incorporating anisotropy as outlined in the last section. A 
 
 With this in mind, we propose the following model: On a square surface
-of side length $e$, a number of $N$ point neurons are randomly,
+of side length $s$, a number of $N$ point neurons are randomly,
 uniformly distributed.  Connected neighbors are then calculated for
 each neuron separately and independently, by determining the randomly,
 uniformly distributed direction of the neuron's axon. In this
@@ -438,29 +438,29 @@ dendritic morphological profiles would result in a \enquote{vertically
 located below them.  It is in fact not a vertical alignment of axon
 orientation, but the anisotropy in neural connectivity - the
 observation of neuronal targets aligning with the axonal projection -
-that this model tries to capture. 
+that we try to capture and analyze in this model. 
 
-
-
-We will commonly refer to the model defined above as the
-\textit{anisotropic geometric network model}. The resulting object of
-a realization of the model consists of a geometric directed graph
-with a special mode of connectivity. We can formally define such
-realization as:
+We will refer to the model as the \textit{anisotropic geometric
+  network model}. Mathematically it is interpreted as a random graph
+model, in which the resulting object of a realization of the random
+process is a geometric directed graph with a special mode of
+connectivity. We can formally define such realization as:
 
 \begin{definition}[Anisotropic geometric graph]
   \label{def:anisotropic_geometric_graph} 
   \index{anisotropic geometric!graph}
   Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
   \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
-  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$ and
-  maps \[\Phi:V(G)\to[0,1]^2, \quad a:V(G)\to[0,2\pi),\] such that for every
+  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$ vertices and
+  the maps \[\Phi:V(G)\to[0,1]^2, \quad a:V(G)\to[0,2\pi),\] such that for every
   vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
-  $t(e)=v'$ exists if and only if $\le w$. %what is \le w??
+  $t(e)=v'$ exists if and only if $\le w$. where denotes euclidean
+  distance l2 norm %what is \le w?? Norm ??
 \end{definition}
 
-We can then also formally define a random graph model generatin
-
+The anisotropic random graph model then is then giving the probability
+distribution over the set of anisotropic random graphs by describing a
+random process generating such graph.
 
 \begin{definition}[Anisotropic random graph model]
   \index{anisotropic geometric!random graph model} 
@@ -484,18 +484,17 @@ We can then also formally define a random graph model generatin
 % \end{definition}
 
 \begin{remark}
-Unit square, scale later; edge width and axon width combined to ;
-Geometric graph relation
-\end{remark}
-
-
-\begin{remark} 
-Here $l_2$ norm, others thinkable but for us irrelevant.
-We write $N_G, N_p$ and $N_a$ to refer to the networks directed graph,
-position map and axonal orientation, respectively. 
-An \textit{anisotropic random graph} $G(n,e,w)$ is a anisotropic
-geometric graph obtained by uniformly distributing p and a. %??
-%?? Randomness!! 
+  As with every geometric graph model introduced, we restrict the
+  surface to be the unit square. This does not limit the model, as in
+  fact only the relative width of the axon band in regards to the
+  surface's side length is determining connectivity statistics;
+  % ------------------------------------------------ 
+  \marginpar{anisotropic model is scale-free}
+  % ------------------------------------------------
+  the expected number of connections is easily obtained by division of
+  the area covered by the axon and the area of the square, making
+  connectivity statistics int the anisotropic random graph model
+  scale-free. 
 \end{remark}
 
 
@@ -570,13 +569,13 @@ p = \frac{L w}{E^2},
 where $L$ is the average length of the axon until it terminates on a
 surface edge. 
 
-\begin{proposition}
-Average L
-\end{proposition}
+% \begin{proposition}
+% Average L
+% \end{proposition}
 
-\begin{proof}
-Hello
-\end{proof}
+% \begin{proof}
+% Hello
+% \end{proof}
 
 Having established the connection between , 
 
