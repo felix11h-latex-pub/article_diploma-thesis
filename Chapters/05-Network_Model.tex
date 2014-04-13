@@ -687,7 +687,7 @@ structural features.
   From \ref{def:anisotropic_geometric_graph} we have the necessary and
   sufficient conditions
   \[
-   x \cos(\theta) \geq 0 \quad \mathrm{and} \quad \abs{x\sin(\theta)}
+   x \cos \theta \geq 0 \quad \mathrm{and} \quad \abs{x\sin \theta}
   \leq \frac{w}{2}.
   \]
   Choosing uniformly at random $\theta$ in the range of $[0,2\pi)$,
@@ -695,13 +695,13 @@ structural features.
   $\frac{1}{2}$. Consider for the second condition $\theta \in
   [0,\pi)$. We have 
   \[ 
-  \sin(\theta) \leq \frac{w}{2x},
+  \sin \theta \leq \frac{w}{2x},
   \]
   and for $x \leq \frac{w}{2}$ the inequality holds for all $\theta$
-  by definition of $\sin(\theta)$. In the case of $x > \frac{w}{2}$,
+  by definition of $\sin \theta$. In the case of $x > \frac{w}{2}$,
   we have the condition $\theta$ as
   \[
-    \theta \leq \operatorname{arcsin}\left(\frac{w}{2x}\right),
+    \theta \leq \operatorname{arcsin}\frac{w}{2x},
   \]
   yielding $C(x)$.%
   % 
@@ -724,9 +724,11 @@ structural features.
       Theorem~\ref{theorem:distance_prof}} Distance-dependent
     connectivity profile $C(x)$ in an anisotropic geometric graph
     calculated from geometric dependencies. \textbf{A)} In the case of
-    $x\leq \frac{w}{2}$, target $v'$ may die and therefore receives input
-    from $v$ with probability $\frac{1}{2}$. \textbf{B)} For $x >
-    \frac{w}{2}$, suitable positions for target $v'$ are leading to a
+    $x\leq \nicefrac{w}{2}$, target $v'$ may be located anywhere on the
+    shown semicircle and therefore receives input from $v$ with
+    probability $\nicefrac{1}{2}$. \textbf{B)} For $x > \nicefrac{w}{2}$,
+    suitable positions for target $v'$ are dependent on $x$. The
+    geometric relation $\sin \theta = \nicefrac{w}{2x}$ leads to the
     distance-dependent connectivity profile as described in
     Theorem~\ref{theorem:distance_prof}.}
   \label{fig:geomtr_prb}
