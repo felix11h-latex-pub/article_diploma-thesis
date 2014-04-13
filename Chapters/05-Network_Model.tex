@@ -448,14 +448,22 @@ connectivity. We can formally define such realization as:
 
 \begin{definition}[Anisotropic geometric graph]
   \label{def:anisotropic_geometric_graph} 
-  \index{anisotropic geometric!graph}
-  Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
-  \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
-  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$ vertices and
-  the maps \[\Phi:V(G)\to[0,1]^2, \quad a:V(G)\to[0,2\pi),\] such that for every
-  vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$ with $s(e)=v$ and
-  $t(e)=v'$ exists if and only if $\le w$. where denotes euclidean
-  distance l2 norm %what is \le w?? Norm ??
+  \index{anisotropic geometric!graph} Let $n \in \mathbb{N}$ and $w
+  \in (0,\infty)$. An \textit{anisotropic geometric graph} $G_{n,w}$
+  then consists of a tuple $(G,\Phi,a)$, of a simple directed graph
+  $G$ with $|V(G)|=n$ vertices and the maps $\Phi:V(G)\to[0,1]^2$ and
+  $a:V(G)\to[0,2\pi)$, such that for every vertex pair $v,v' \in V(G)$
+  and edge $e\in E(G)$ with $s(e)=v$ and $t(e)=v'$ exists if and only
+  if the identities
+  \[
+  R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 \quad \mathrm{and} \quad
+  \abs{R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} \leq \frac{w}{2}
+  \]
+  hold, where $R_{\varphi}$ is the rotation matrix of angle $\varphi$
+  in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
+  unit vectors.
+  % for $y=A_{\alpha(v)}(v'-v)$ the identities $y\hat{e}_x > 0$
+  % and $\abs{y \hat{e}_y} \le \frac{w}{2}$ hold.
 \end{definition}
 
 The anisotropic random graph model then is then giving the probability
@@ -485,16 +493,16 @@ random process generating such graph.
 
 \begin{remark}
   As with every geometric graph model introduced, we restrict the
-  surface to be the unit square. This does not limit the model, as in
-  fact only the relative width of the axon band in regards to the
-  surface's side length is determining connectivity statistics;
+  surface to be the unit square. This does not limit the model, as
+  only the relative width of the axon band in regard to the surface's
+  side length is determining connectivity statistics -
   % ------------------------------------------------ 
   \marginpar{anisotropic model is scale-free}
   % ------------------------------------------------
-  the expected number of connections is easily obtained by division of
-  the area covered by the axon and the area of the square, making
-  connectivity statistics int the anisotropic random graph model
-  scale-free. 
+  the expected number of connections is easily obtained by the
+  quotient of the area covered by the axon and the surface area,
+  making connectivity statistics in the anisotropic random graph
+  model scale-free.
 \end{remark}
 
 
@@ -632,11 +640,11 @@ With this parameter set we generate a sample of 25 graphs %?? Sumatra:
 In Gilbert's random graph model $G(n,p)$,
 %------------------------------------------------ 
 \marginpar{random graph
-  models in section~\ref{sec:random_graph_theory}}
+  models in Section~\ref{sec:random_graph_theory}}
 %------------------------------------------------
 probability of connection $p$ is independently chosen and a fixed
 value for all vertex pairs. The anisotropic geometric graph model
-introduced in section~\ref{sec:anisotropic_network_model} is itself a
+introduced in Section~\ref{sec:anisotropic_network_model} is itself a
 random graph model - node positions as well as preferred directions of
 connection are uniformly at random distributed. In contrast to
 Gilbert's model however, neither is the probability of connection
@@ -648,7 +656,7 @@ introduced.
 Analyzing dependencies in the anisotropic model, specifically by
 identifying prevalent patterns of connectivity and relating these
 modes of non-randomness to biological findings, is the main focus of
-chapter~\ref{ch:structural_aspects}. However, such structural
+Chapter~\ref{ch:structural_aspects}. However, such structural
 correlations may not necessarily be an inherent feature of the
 network's anisotropy - distance dependent connectivity alone, as
 imposed by the model's specific geometry, may be the cause for
@@ -659,8 +667,6 @@ internode distance and comparing it with computational results, in
 this section we explore distance connectivity of the anisotropic
 network model, securing a vital component in the analysis of
 structural features.
-
-
 
 % Consider a graph $G$. In Gilbert's random graph model the probability
 % $p$ for a edge between nodes $v,w \in V(G)$ to be realized is a fixed
@@ -674,7 +680,7 @@ structural features.
 % Owning to the abstract geometric model we defined, this connection
 % probability is easily computed.
 
-\begin{theorem} \label{distance_prof} Let $(G,\Phi, a)$ represent an
+\begin{theorem} \label{theorem:distance_prof} Let $(G,\Phi, a)$ represent an
   arbitrary realization of the anisotropic random graph model
   $G(n,w)$. Define $C:[0,\sqrt{2}] \to [0,1]$ as the
   distance-dependent connection probability profile of $(G,\Phi)$,
@@ -683,43 +689,71 @@ structural features.
   \norm{\Phi(v)-\Phi(v')}$ the vertex $v$ projects to vertex $v'$. Then
   \[
     C(x) = \begin{cases}%
-             0.5 & \mathrm{for} \,\, x\le w/2 \\
+             \frac{1}{2} & \mathrm{for} \,\, x\le w/2 \\
              \frac{1}{\pi}
-             \operatorname{arcsin}\left(\frac{x}{2w}\right) &
+             \operatorname{arcsin}\left(\frac{w}{2x}\right) &
              \mathrm{for} \,\, x >  w/2. %
            \end{cases}
   \]
 \end{theorem} 
 
 \begin{proof}
-  Let $v,v'$ be a pair of vertices in $V(G)^2 \setminus \Delta_{V(G)}$ in
-  distance $\norm{\Phi(v)-\Phi(v')} = x$ of each other. The vertex $v$
-  projects $v'$ only for suitable axonal orientations $a(v)$. 
+  Let $v,v'$ be a pair of vertices in $V(G)^2 \setminus \Delta_{V(G)}$
+  in euclidean distance $x$ of each other. The vector difference
+  $\Phi(v')-\Phi(v)$ may then be written as $x e^{i\theta}$, with $0
+  \leq \theta < 2\pi$. We have 
+  \[
+    R_{-\alpha(v)} xe^{i\theta} = xe^{i(\theta - \alpha(v))}.
+  \]
+  Only for suitable combination of $\theta$ and $\alpha(v)$ an edge
+  from $v$ to $v'$ exists. Assuming $\alpha(v)$ fixed, we calculate
+  the probability of connection depending on the random choice of
+  $theta$. We can assume $\alpha(v) = 0$.
 
-  
-
-  To see this, consider a given source vertex $v$ at $(0,0)$ and a
-  possible target $w$, such that $d(v,w) = x$. We may then express the
-  target coordinates as $x e^{i\varphi}$, $0 \le \varphi < 2\pi$.
-
-  Figure~\ref{fig:geomtr_prb} illustrates for which angles
-  $\varphi$ the node $w$ becomes a valid target for an edge from
-  $v$. This intervall
-
-  \begin{figure}[h] 
-    \centering 
-    \makebox[0.85\textwidth]{%
-      \includegraphics[width=0.4\textwidth]{tikz/geomtr_prb_05.pdf}%
-      \hfill
-      \includegraphics[width=0.4\textwidth]{tikz/geomtr_prb.pdf}% 
-    }%
-    %\caption{}%??
-    \label{fig:geomtr_prb}
-  \end{figure}
-
-  For a general $v$ make coordinate transformation
-
+  From \ref{def:anisotropic_geometric_graph} we have the necessary and
+  sufficient conditions
+  \[
+   x \cos(\theta) \geq 0 \quad \mathrm{and} \quad \abs{x\sin(\theta)}
+  \leq \frac{w}{2}.
+  \]
+  Choosing uniformly at random $\theta$ in the range of $[0,2\pi)$,
+  the first condition is satisfied with a probability of
+  $\frac{1}{2}$. Consider for the second condition $\theta \in
+  [0,\pi)$. We have 
+  \[ 
+  \sin(\theta) \leq \frac{w}{2x},
+  \]
+  and for $x \leq \frac{w}{2}$ the inequality holds for all $\theta$
+  by definition of $\sin(\theta)$. In the case of $x > \frac{w}{2}$,
+  we have the condition $\theta$ as
+  \[
+    \theta \leq \operatorname{arcsin}\left(\frac{w}{2x}\right),
+  \]
+  yielding $C(x)$.%
+  % 
 \end{proof}
+
+\begin{figure}[h] 
+  \centering 
+  \makebox[0.8\textwidth]{%
+    \begin{overpic}[width=0.35\textwidth]{%
+        tikz/geomtr_prb_05.pdf}%
+      \put(3,92){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.35\textwidth]{%
+        tikz/geomtr_prb.pdf}% 
+      \put(3,92){\small\textbf{B}}
+    \end{overpic}  
+  }%
+  \caption{\textbf{Illustration of proof to
+      Theorem~\ref{theorem:distance_prof}} Distance-dependent
+    connectivity profile $C(x)$ in an anisotropic geometric graph
+    calculated from geometric dependencies. \textbf{A)} In the case of
+    $x\leq \frac{w}{2}$, \textbf{B)} }
+  \label{fig:geomtr_prb}
+\end{figure}
+
 
 We can verify this result by computationally extracting the distance
 dependencies in the sample graphs generated. 
