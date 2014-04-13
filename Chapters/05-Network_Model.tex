@@ -454,12 +454,12 @@ connectivity. We can formally define such realization as:
   $G$ with $|V(G)|=n$ vertices and the maps $\Phi:V(G)\to[0,1]^2$ and
   $a:V(G)\to[0,2\pi)$, such that for every vertex pair $v,v' \in V(G)$
   and edge $e\in E(G)$ with $s(e)=v$ and $t(e)=v'$ exists if and only
-  if the identities
+  if the inequalities
   \[
   R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 \quad \mathrm{and} \quad
   \abs{R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} \leq \frac{w}{2}
   \]
-  hold, where $R_{\varphi}$ is the rotation matrix of angle $\varphi$
+  hold. Here $R_{\varphi}$ is the rotation matrix of angle $\varphi$
   in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
   unit vectors.
   % for $y=A_{\alpha(v)}(v'-v)$ the identities $y\hat{e}_x > 0$
@@ -482,15 +482,6 @@ random process generating such graph.
   geometric graph $G_{n,w}$.
 \end{definition}
 
-%  and  be a simple
-%   directedThe random process 
-%   first placing uniformly at random the $n$ vertices in the unit
-%   square and then iteratively choosing uniformly at random and
-%   independently an axonal orientation  for every
-%   vertex $v$ and
-%   connecting edges .
-% \end{definition}
-
 \begin{remark}
   As with every geometric graph model introduced, we restrict the
   surface to be the unit square. This does not limit the model, as
@@ -506,16 +497,10 @@ random process generating such graph.
 \end{remark}
 
 
-
-% \begin{definition}[anisotropic geometric random graph] A anisotropic
-%   geometric graph $G(n,e,w)$ is a ran
-% \end{definition}
-
 The subsequent is a study of anisotropic geometric graphs. To enable
 this analysis, some prior work which composes the rest of this
 chapter. Integral to is a numerical implementation. The anisotropic
 network model is 
-
 
 
 
@@ -531,7 +516,15 @@ network model is
 
 \section{Numerical Implementation}\label{numerical_implementation}
 
-for numerical considerations was achieved in Python. Using convenient 
+Numerical implementation of the anisotropic random graph model was
+achieved in Python.
+
+The model , while was
+
+The model still holds the following parameter
+
+
+considerations was achieved in Python. Using convenient 
 
 
 
@@ -577,13 +570,6 @@ p = \frac{L w}{E^2},
 where $L$ is the average length of the axon until it terminates on a
 surface edge. 
 
-% \begin{proposition}
-% Average L
-% \end{proposition}
-
-% \begin{proof}
-% Hello
-% \end{proof}
 
 Having established the connection between , 
 
@@ -668,18 +654,6 @@ this section we explore distance connectivity of the anisotropic
 network model, securing a vital component in the analysis of
 structural features.
 
-% Consider a graph $G$. In Gilbert's random graph model the probability
-% $p$ for a edge between nodes $v,w \in V(G)$ to be realized is a fixed
-% value; in a geometric graph it is more generally a function of the
-% distance between the nodes, $d(v,w)$. In short, we write $p(x)$ to
-% denote the probability that a vertex pair of distance $x$ is
-% connected,
-% \[
-%   p(x) := P\left[(v,w)|\,d(v,w)=x\right].
-% \]
-% Owning to the abstract geometric model we defined, this connection
-% probability is easily computed.
-
 \begin{theorem} \label{theorem:distance_prof} Let $(G,\Phi, a)$ represent an
   arbitrary realization of the anisotropic random graph model
   $G(n,w)$. Define $C:[0,\sqrt{2}] \to [0,1]$ as the
@@ -708,7 +682,7 @@ structural features.
   Only for suitable combination of $\theta$ and $\alpha(v)$ an edge
   from $v$ to $v'$ exists. Assuming $\alpha(v)$ fixed, we calculate
   the probability of connection depending on the random choice of
-  $theta$. We can assume $\alpha(v) = 0$.
+  $\theta$. We can assume $\alpha(v) = 0$.
 
   From \ref{def:anisotropic_geometric_graph} we have the necessary and
   sufficient conditions
@@ -746,11 +720,15 @@ structural features.
       \put(3,92){\small\textbf{B}}
     \end{overpic}  
   }%
-  \caption{\textbf{Illustration of proof to
+  \caption{\textbf{Illustrating the proof of
       Theorem~\ref{theorem:distance_prof}} Distance-dependent
     connectivity profile $C(x)$ in an anisotropic geometric graph
     calculated from geometric dependencies. \textbf{A)} In the case of
-    $x\leq \frac{w}{2}$, \textbf{B)} }
+    $x\leq \frac{w}{2}$, target $v'$ may lie and therefore receives input
+    from $v$ with probability $\frac{1}{2}$. \textbf{B)} For $x >
+    \frac{w}{2}$, suitable positions for target $v'$ are leading to a
+    distance-dependent connectivity profile as described in
+    Theorem~\ref{theorem:distance_prof}.}
   \label{fig:geomtr_prb}
 \end{figure}
 
