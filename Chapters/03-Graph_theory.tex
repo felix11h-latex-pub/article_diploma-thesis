@@ -745,8 +745,13 @@ unit square $[0,1]^2$, is then obtained from
 (\ref{eq:distance_square}) by setting $s=1$. The probability
 density function $f$ becomes
   \begin{align}\label{eq:distance_unit_square}
-    f(x) = \begin{cases} 2 x^3 - 8 x^2 +  2 \pi x & x \in
-      [0,1)\\ 8x \sqrt{x^2-1}-2x^3\\ -4x- 4x\arcsin\left(1-\frac{2}{x^2}\right)  & x \in [1,\sqrt{2})
+    f(x) = %
+      \begin{cases} 
+        2 x^3 - 8 x^2 +  2 \pi x 
+          & x \in [0,1) \vspace{0.15cm}\\ 
+        8x \sqrt{x^2-1}-2x^3\\ 
+        -4x- 4x\arcsin\left(1-\frac{2}{x^2}\right) 
+          & x \in [1,\sqrt{2})
            \end{cases}
   \end{align}
   %
