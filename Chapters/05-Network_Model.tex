@@ -326,19 +326,14 @@ present in spiny stellate neurons located in lower-layer-4.
 % specifically, thick tufted layer V have been the target of studies. 
 % \marginpar{focus on TTL5 neurons}
 
-
 % Neuron morphology and connectivity in the rat's somatosensory cortex
 % has been thoroughly studied. As s. 
-
-
-
 
 % the respective axonal
 % trees where traced using image manipulation o 
 
 % , showing an apparent anisotropy in neural connectivity, aligning with
 % the growth direction of axon's main stem (\autoref{fig:axon_heat}).
-
 
 % Combing the heatmaps, we obtain clear evidence for anisotropy. In the
 % next section we will combine dendritic and axonal morphological
@@ -448,16 +443,18 @@ connectivity. We can formally define such realization as:
 
 \begin{definition}[Anisotropic geometric graph]
   \label{def:anisotropic_geometric_graph} 
-  \index{anisotropic geometric!graph} Let $n \in \mathbb{N}$ and $w
-  \in (0,\infty)$. An \textit{anisotropic geometric graph} $G_{n,w}$
-  then consists of a tuple $(G,\Phi,a)$, of a simple directed graph
-  $G$ with $|V(G)|=n$ vertices and the maps $\Phi:V(G)\to[0,1]^2$ and
-  $a:V(G)\to[0,2\pi)$, such that for every vertex pair $v,v' \in V(G)$
-  and edge $e\in E(G)$ with $s(e)=v$ and $t(e)=v'$ exists if and only
-  if the inequalities
+  \index{anisotropic geometric!graph} %
+  Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
+  \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
+  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$
+  vertices and the maps $\Phi:V(G)\to[0,1]^2$ and $a:V(G)\to[0,2\pi)$,
+  such that for every vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$
+  with $s(e)=v$ and $t(e)=v'$ exists if and only if the inequalities
   \[
-  R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 \quad \mathrm{and} \quad
-  \abs{R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} \leq \frac{w}{2}
+    R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 
+      \quad \mathrm{and} \quad
+    \abs{R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} 
+      \leq \frac{w}{2}
   \]
   hold. Here $R_{\varphi}$ is the rotation matrix of angle $\varphi$
   in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
@@ -482,20 +479,18 @@ random process generating such graph.
   geometric graph $G_{n,w}$.
 \end{definition}
 
-\begin{remark}
-  As with every geometric graph model introduced, we restrict the
-  surface to be the unit square. This does not limit the model, as
-  only the relative width of the axon band in regard to the surface's
-  side length is determining connectivity statistics -
-  % ------------------------------------------------ 
-  \marginpar{anisotropic model is scale-free}
-  % ------------------------------------------------
-  the expected number of connections is easily obtained by the
-  quotient of the area covered by the axon and the surface area,
-  making connectivity statistics in the anisotropic random graph
-  model scale-free.
-\end{remark}
 
+As with every geometric graph model introduced, we restrict the
+surface to be the unit square. This does not limit the model, as only
+the relative width of the axon band in regard to the surface's side
+length is determining connectivity statistics -
+%------------------------------------------------
+\marginpar{anisotropic model is scale-free} %
+%------------------------------------------------ 
+the expected number of connections is easily obtained by the quotient
+of the area covered by the axon and the surface area, making
+connectivity statistics in the anisotropic random graph model
+scale-free.
 
 The subsequent is a study of anisotropic geometric graphs. To enable
 this analysis, some prior work which composes the rest of this
@@ -682,9 +677,10 @@ structural features.
   Only for suitable combination of $\theta$ and $\alpha(v)$ an edge
   from $v$ to $v'$ exists. Assuming $\alpha(v)$ fixed, we calculate
   the probability of connection depending on the random choice of
-  $\theta$. We can assume $\alpha(v) = 0$.
+  $\theta$. We can assume $\alpha(v) = 0$, otherwise the same argument
+  holds for $\theta' = \theta - \alpha(v)$.
 
-  From \ref{def:anisotropic_geometric_graph} we have the necessary and
+  From \ref{def:anisotropic_geometric_graph} we obtain the necessary and
   sufficient conditions
   \[
    x \cos \theta \geq 0 \quad \mathrm{and} \quad \abs{x\sin \theta}
@@ -698,15 +694,18 @@ structural features.
   \sin \theta \leq \frac{w}{2x},
   \]
   and for $x \leq \frac{w}{2}$ the inequality holds for all $\theta$
-  by definition of $\sin \theta$. In the case of $x > \frac{w}{2}$,
-  we have the condition $\theta$ as
+  by definition of $\sin \theta$. In the case of $x > \frac{w}{2}$, we
+  note that for the first condition to hold $\theta$ must already be in
+  $[0,\frac{\pi}{2})$ and can thus write the second condition $\theta$ as
   \[
     \theta \leq \operatorname{arcsin}\frac{w}{2x},
   \]
-  yielding $C(x)$.%
+  yielding $C(x)$ by combining the considerations above and using the
+  symmetry of sine for $\theta$ in the third and fourth quadrant.
   % 
 \end{proof}
 
+\vspace{0.2cm}%??
 \begin{figure}[h] 
   \centering 
   \makebox[0.8\textwidth]{%
