@@ -802,22 +802,20 @@ connectivity by consecutively rewiring existing connections to new
 suitable targets.
 
 
-\begin{algorithm}
-Let $N(n,e,w) = (G,P,a)$ be  Then 
-\normalfont
-\begin{algorithmic}%[1] <-- gives line numbers
-\For {$v \in V(N_G)$}
-  \For {$e \in E_{\textrm{out}}(v)$}
-     \State $x \gets \norm{N_P(v)-t(e)}$
-     \State $T \gets \{w \in V(N_G) \mid  x-\varepsilon \leq
-     \norm{N_P(v)-N_P(w)} < x+\varepsilon\}$
-     \State $t(e) \gets \textrm{choice} T$
-  \EndFor
-\EndFor
+\begin{definition}
+Let $G$ be an anisotropic geometric graph with $\abs{V(G)} = n$. Then we define a
+rewiring of $G$ to be probability space over $G^n_{\Phi}$, obtained by
+choosing for every edge $e \in E(G)$ uniformly at random a potential new target $t'(e)$
+from the set $M_e$ of all vertices that differ in their distance to
+$s(e)$ not more than $\varepsilon$ from the distance of $s(e)$ to $t(e)$,
+\[
+M_e =  \left\{v \in V(G) \setminus s(e) \mid \abs{\mathrm{d}(s(e),v) -
+      \mathrm{d}(s(e),t(e))} \leq \varepsilon \right\}.
+\]
 
-\end{algorithmic}
-is defined.
-\end{algorithm}
+\end{definition}
+
+
 
 \begin{proposition}
 Preserves distance-connectivity.
@@ -853,6 +851,23 @@ for $\in V(G)$ do
 \end{figure}
 
  
+
+% \begin{algorithm}
+% Let $N(n,e,w) = (G,P,a)$ be  Then 
+% \normalfont
+% \begin{algorithmic}%[1] <-- gives line numbers
+% \For {$v \in V(N_G)$}
+%   \For {$e \in E_{\textrm{out}}(v)$}
+%      \State $x \gets \norm{N_P(v)-t(e)}$
+%      \State $T \gets \{w \in V(N_G) \mid  x-\varepsilon \leq
+%      \norm{N_P(v)-N_P(w)} < x+\varepsilon\}$
+%      \State $t(e) \gets \textrm{choice} T$
+%   \EndFor
+% \EndFor
+
+% \end{algorithmic}
+% is defined.
+% \end{algorithm}
 
 
 
