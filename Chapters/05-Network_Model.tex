@@ -219,6 +219,7 @@ soma, much in the contrast to the findings of axonal branch densities
 before.
 
 \begin{figure}[!ht]
+  \centering
   \makebox[0.875\textwidth]{%
     \begin{overpic}[width=0.4\textwidth]{%
         img/network_model/p14rr_1.pdf}
@@ -774,6 +775,9 @@ dependencies in the sample graphs generated.
 \end{figure}
 
 
+Create additionally a new distance depenedent network sample graphs
+and great! 
+
 
 
 % ######################################################################### %
@@ -807,10 +811,10 @@ Let $G$ be an anisotropic geometric graph with $\abs{V(G)} = n$. Then we define 
 rewiring of $G$ to be probability space over $G^n_{\Phi}$, obtained by
 choosing for every edge $e \in E(G)$ uniformly at random a potential new target $t'(e)$
 from the set $M_e$ of all vertices that differ in their distance to
-$s(e)$ not more than $\varepsilon$ from the distance of $s(e)$ to $t(e)$,
+$s(e)$ less than $\varepsilon$ from the distance of $s(e)$ to $t(e)$,
 \[
 M_e =  \left\{v \in V(G) \setminus s(e) \mid \abs{\mathrm{d}(s(e),v) -
-      \mathrm{d}(s(e),t(e))} \leq \varepsilon \right\}.
+      \mathrm{d}(s(e),t(e))} < \varepsilon \right\}.
 \]
 
 \end{definition}
@@ -827,30 +831,36 @@ Preserves distance-connectivity.
 
 
 \begin{remark}
-Partial rewiring.
+Partial rewiring. $R_{\varepsilon, \eta}$
 \end{remark} 
 
+Here we choose $\varepsilon = ??$.
 
-\vspace{0.5cm}
-\begin{figure}[!htbp]
+\vspace{0.2cm}
+\begin{figure}[H]
   \centering 
-  \makebox[0.85\textwidth]{%
+  \makebox[0.875\textwidth]{%
     %\includegraphics[width=0.4\textwidth]{dist_rew_org.pdf}%
     \begin{overpic}[width=0.4\textwidth, frame]{%
         tikz/distance_rewire_L3.pdf}
-      \put(3,105){\small\textbf{Before}}
+      \put(2,102){\small{Before}}
     \end{overpic}
     \hfill
     \begin{overpic}[width=0.4\textwidth, frame]{%
         tikz/distance_rewire_L4.pdf}
-      \put(3,105){\small\textbf{After}}
+      \put(2,102){\small{After}}
     \end{overpic} 
   }%
-  \caption{\textbf{Rewiring transforms anisotropic geometric graphs to networks
-      with isotropic connectivity} d For a given edge between vertices
-    $v$ in distance $x$ of each other, potential new targets
-    (striped) are in distance $ $. The rewired edge projects from $v$
-    to randomly chosen from this set of potential targets.}
+  \caption{\textbf{Rewiring transforms anisotropic geometric graphs to
+      networks with isotropic connectivity} For a given edge $e$ with
+    a distance $x$ from its source vertex $v$ to its target vertex
+    $t(e)$, potential new targets (striped) are found in within a
+    distance $(x-\varepsilon, x+\varepsilon)$ of $v$. The rewired edge
+    then projects from $v$ to a new target $t'(e)$, randomly chosen
+    from the set of vertices within in this range. Inter-vertex
+    distance between $v$ and $t'(e)$ differs by less than
+    $\varepsilon$ from $x$, ensuring that for small $\varepsilon$ the
+    original distance-dependent connectivity is preserved.}
   \label{fig:distance_rewiring}
 \end{figure}
 
@@ -880,8 +890,69 @@ Partial rewiring.
 %                           Anisotropy Measure
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
+\cleardoublepage
+\newpage
 
 \section{Anisotropy Measure}
+
+In the last section a method to rewire an anisotropic geometric graph,
+such that was introduced. From an . In this chapter we
+introduce.. capturing ..
+
+The $G_{n, \Phi}$ be a geometric graph. Then, for every is the
+\textit{preferred direction} and its length is \index{preferred direction}
+
+\textcite{Mardia_Directional-statistics}
+ 
+\begin{figure}[H]
+\caption{\textbf{illustrate varying levels of anisotropy}}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \makebox[0.75\textwidth]{%
+    \renewcommand{\tabcolsep}{2pt}
+    \setlength\extrarowheight{0pt}
+    \begin{tabular}{ccc}
+      \begin{overpic}[width=0.28\textwidth]{%
+          plots/038f5b8c.pdf}
+         \put(10,57){\small$0$}
+      \end{overpic}
+      &
+      \begin{overpic}[width=0.28\textwidth]{%
+          plots/9893ab1f.pdf}
+        \put(10,57){\small$0.25$}
+      \end{overpic}
+      &
+      \begin{overpic}[width=0.28\textwidth]{%
+          plots/0c429f3c.pdf}
+        \put(10,57){\small$0.5$}
+      \end{overpic}
+      \\
+      \begin{overpic}[width=0.28\textwidth]{%
+          plots/400a41bc.pdf}
+        \put(10,57){\small$0.75$}
+      \end{overpic}
+      &
+      \begin{overpic}[width=0.28\textwidth]{%
+          plots/a5f54cb4.pdf}
+        \put(10,57){\small$1$}
+      \end{overpic}
+      & \\
+    \end{tabular}
+  }
+  %
+  \caption{\textbf{Isotropy distribution changes significantly through
+    rewiring} x from 0 to 1, y from 0 to 9., histograms normed}%?? sumatra label
+  \label{fig:anisotropy} %??
+\end{figure}
+
+
+
+
+
+
 
 
 
