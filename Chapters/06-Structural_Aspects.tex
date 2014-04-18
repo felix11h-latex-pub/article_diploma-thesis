@@ -269,22 +269,9 @@ therefore . We note, however, two important questions should be answered
 here. First we test whether anis The anisotropic no difference to
 distance dependent (\autoref{fig:in_degree_rewiring}). However, long
 tailed in comparison to random graph
-(\autoref{fig:in_degre_RG_compare}).
+(\autoref{fig:in_degree_RG_compare}).
 
-While the out-degree distribution of vertices in the anisotropic
-network also shows itself stable under rewiring, its distribution is
-drastically different from the out-degree distribution in a comparable
-distance-dependent network (\autoref{fig:out_degree_rewiring}). The
-asymmetric, long-tailed distribution is identified as an artifact of
-the anisotropic network's boundary, in which a neuron, closely located
-near the surface edge, might have an axon projection out of the
-square, causing mininal out-degree or projecting through the entire
-length of the surface, resulting in a maximal out-degree of
-$s\sqrt{2}$ on the 
-\[
-N \frac{ws\sqrt{2}}{s^2} = N \frac{w}{s} \sqrt{2} \approx 350
-\]
-with $N = 1000$ and $\frac{w}{s} = 0.252$.
+
 
 \begin{figure}[H]
   \centering
@@ -333,13 +320,30 @@ with $N = 1000$ and $\frac{w}{s} = 0.252$.
   \centering
   \includegraphics[width=0.7\textwidth]{%
     plots/9326138e.pdf}
-  \caption{\textbf{In-degree distribution in anisotropic networks      
-      the binomial distribution of Gilbert random graphs} For
-    comparison, binomial degree distribution in the Gilbert random
-    graph model is shown in red. (\smtcite{9326138e})}
-  \label{fig:in_degre_RG_compare}
+  \caption{\textbf{In-degree distribution in anisotropic networks the
+      binomial distribution of Gilbert random graphs} From 250
+    anisotropic networks in-degree distributions were extracted and
+    are shown in a histogram plot, errorbars SEM. In red the binomial
+    degree distribution of a Gilbert random graph model with matching
+    parameter set (number of vertices, connection probability) shows
+    . Skewness is (\smtcite{9326138e})}
+  \label{fig:in_degree_RG_compare}
 \end{figure}
 
+While the out-degree distribution of vertices in the anisotropic
+network also shows itself stable under rewiring, its distribution is
+drastically different from the out-degree distribution in a comparable
+distance-dependent network (\autoref{fig:out_degree_rewiring}). The
+asymmetric, long-tailed distribution is identified as an artifact of
+the anisotropic network's boundary, in which a neuron, closely located
+near the surface edge, might have an axon projection out of the
+square, causing mininal out-degree or projecting through the entire
+length of the surface, resulting in a maximal out-degree of
+$s\sqrt{2}$ on the 
+\[
+N \frac{ws\sqrt{2}}{s^2} = N \frac{w}{s} \sqrt{2} \approx 350
+\]
+with $N = 1000$ and $\frac{w}{s} = 0.252$.
 
 \begin{figure}[H]
   \centering
@@ -383,6 +387,17 @@ with $N = 1000$ and $\frac{w}{s} = 0.252$.
   \caption{\textbf{Out-degree distribution is does not artefact of
       boundary conditions}}
   \label{fig:out_degree_rewiring}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{%
+    plots/019555b0.pdf}
+  \caption{\textbf{s} The incline at the beginning is only barely
+    visible due to the choice of bin size. Supplementary figures
+    (\autoref{suppfig:out_degree}) (\smtcite{019555b0})}
+  \label{fig:in_degre_RG_compare}
 \end{figure}
 
 
