@@ -455,14 +455,14 @@ connectivity. We can formally define such realization as:
   such that for every vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$
   with $s(e)=v$ and $t(e)=v'$ exists if and only if the inequalities
   \[
-    R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 
+    R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 
       \quad \mathrm{and} \quad
-    \abs{R_{-\alpha(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} 
+    \abs{R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} 
       \leq \frac{w}{2}
   \]
   hold. Here $R_{\varphi}$ is the rotation matrix of angle $\varphi$
   in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
-  unit vectors.
+  unit vectors. % ?? Alpha or A??
   % for $y=A_{\alpha(v)}(v'-v)$ the identities $y\hat{e}_x > 0$
   % and $\abs{y \hat{e}_y} \le \frac{w}{2}$ hold.
 \end{definition}
@@ -555,7 +555,7 @@ value report by Song et al. and obtain $w = 12.6$
     \end{overpic}
     \hfill
     \begin{overpic}[width=0.5\textwidth]{%
-        plots/d8378d0c.pdf}
+        plots/585a946f.pdf}
       \put(24.5,57.5){\small\textbf{B}}
       %\put(12,5){\small\textbf{B}}
     \end{overpic}
@@ -571,9 +571,10 @@ value report by Song et al. and obtain $w = 12.6$
     $p=0.5$, as axon bands are essentially \enquote{cutting} the
     square in a connected and unconnected half
     (\smtcite{c5b64f3e}). \textbf{B)} For small $w$ the connection
-    probability is a linear function of $w$, allowing the width $w_S$
-    at which $p(w_S)=11.6$ to be determined by a linear fit as $w_S =
-    12.6$ (\smtcite{d8378d0c}).}
+    probability is a linear function of $w$, allowing the width $\nicefrac{w_S}{2}$
+    at which $p(w_S)=11.6$ to be determined by a linear fit as
+    $\nicefrac{w_S}{2} =
+    12.6$ (\smtcite{585a946f}).} %?? fix width issue!!
   \label{fig:determine_axon_width}
 \end{figure}
 
@@ -893,7 +894,7 @@ Here we choose $\varepsilon = ??$.
 \cleardoublepage
 \newpage
 
-\section{Anisotropy Measure}
+\section{Anisotropy Measure}\label{sec:anisotropy_measure}
 
 In the last section a method to rewire an anisotropic geometric graph,
 such that was introduced. From an . In this chapter we
@@ -917,34 +918,42 @@ The $G_{n, \Phi}$ be a geometric graph. Then, for every is the
     \begin{tabular}{ccc}
       \begin{overpic}[width=0.28\textwidth]{%
           plots/038f5b8c.pdf}
-         \put(10,57){\small$0$}
+         \put(10,57){\small $\eta = 0$}
       \end{overpic}
       &
       \begin{overpic}[width=0.28\textwidth]{%
           plots/9893ab1f.pdf}
-        \put(10,57){\small$0.25$}
+        \put(10,57){\small $\eta = 0.25$}
       \end{overpic}
       &
       \begin{overpic}[width=0.28\textwidth]{%
           plots/0c429f3c.pdf}
-        \put(10,57){\small$0.5$}
+        \put(10,57){\small $\eta = 0.5$}
       \end{overpic}
       \\
       \begin{overpic}[width=0.28\textwidth]{%
           plots/400a41bc.pdf}
-        \put(10,57){\small$0.75$}
+        \put(10,57){\small $\eta = 0.75$}
+        \put(4,-4){$0$}\put(90,-4){$1$}
       \end{overpic}
       &
       \begin{overpic}[width=0.28\textwidth]{%
           plots/a5f54cb4.pdf}
-        \put(10,57){\small$1$}
+        \put(10,57){\small $\eta = 1$}
+        \put(4,-4){$0$}\put(90,-4){$1$}
       \end{overpic}
-      & \\
+      & 
+      \begin{overpic}[width=0.28\textwidth]{%
+          plots/a5b674f0.pdf}
+        \put(11,57){\small distance-}
+        \put(11,45){\small dependent}
+        \put(4,-4){$0$}\put(90,-4){$1$}
+      \end{overpic} 
     \end{tabular}
   }
   %
   \caption{\textbf{Isotropy distribution changes significantly through
-    rewiring} x from 0 to 1, y from 0 to 9., histograms normed}%?? sumatra label
+    rewiring} }%?? sumatra label
   \label{fig:anisotropy} %??
 \end{figure}
 
