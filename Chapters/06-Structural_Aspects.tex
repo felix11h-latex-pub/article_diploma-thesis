@@ -286,13 +286,16 @@ distance-dependent connection profiles alone.
   \centering
   \includegraphics[width=0.7\textwidth]{%
     plots/9326138e.pdf}
-  \caption{\textbf{In-degree distribution in anisotropic networks the
-      binomial distribution of Gilbert random graphs} From 250
+  \caption{\textbf{In-degree distribution in anisotropic networks
+      shows comparably high variance and is skewed to the left} From 250
     anisotropic networks in-degree distributions were extracted and
-    are shown in a histogram plot, errorbars SEM. In red the binomial
-    degree distribution of a Gilbert random graph model with matching
-    parameter set (number of vertices, connection probability) shows
-    . Skewness is (\smtcite{9326138e})}
+    are shown in a normed histogram plot, errorbars SEM. Comparison with the
+    binomial degree distribution (red) of a Gilbert random graph model
+    with matching parameter set ($N=1000$, $p =0.116$) shows higher
+    variance of in-degrees in anisotropic networks (sample variance $=
+    344.54$, variance of binomial distribution $Np(1-p) = 102.44$.)
+    Skewness to the left of the sample is $-0.1763.$
+    (\smtcite{9326138e})}
   \label{fig:in_degree_ER_compare}
 \end{figure}
 
@@ -336,7 +339,14 @@ distance-dependent connection profiles alone.
     \\
   \end{tabular}
   \caption{\textbf{In-degree distribution not affected by varying
-      degrees of anisotropy}}
+      degrees of anisotropy} In-degree distributions from the 25
+    sample graphs (ref ??) and their rewiring stages are plotted in
+    normed histograms and listed from rewiring factor $\eta =0$
+    (original anisotropic) to $\eta = 1$ (completely rewired, maximal
+    isotropy). Comparison shows that varying degrees of anisotropy do
+    not influence the degree distribution, in fact in-degree
+    distributions match with the degree distribution of an equivalent
+    distance-dependent network shown bottom-right (\smtcite{77995b6b}). }
   \label{fig:in_degree_rewiring}
 \end{figure}
 
@@ -397,7 +407,7 @@ out-degree extracted from the simulated anisotropic networks (\autoref{fig:out_d
     \end{overpic}
     \\
   \end{tabular}
-  \caption{\textbf{Out-degree distribution is does not artefact of
+  \caption{\textbf{Out-degree distribution  does not artefact of
       boundary conditions}}
   \label{fig:out_degree_rewiring}
 \end{figure}
