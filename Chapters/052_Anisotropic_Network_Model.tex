@@ -1,0 +1,160 @@
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                   Anisotropic geometric network model
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
+\section{Anisotropic geometric network model}
+\label{sec:anisotropic_network_model}
+
+% Model tries to be geometric and simple. We therefore
+
+% and propose the following model: along the main stem of the axon in
+% constant width. \marginpar{Variable
+
+% width later!}%?? When?
+
+
+% Implementing the concept of anisotropy in neuronal connectivity
+% developed in the last section in a model, we're faced with
+% challenges. 
+
+% A first approach. The approach taken here tries to, making anisotropy
+% a salient feature in an otherwise standard model. 
+
+In this section we formulate a model of network connectivity
+incorporating anisotropy as outlined in the last section. A 
+
+With this in mind, we propose the following model: On a square surface
+of side length $s$, a number of $N$ point neurons are randomly,
+uniformly distributed.  Connected neighbors are then calculated for
+each neuron separately and independently, by determining the randomly,
+uniformly distributed direction of the neuron's single axon. In this
+direction the axon traverses over the surface describing a straight
+path, terminating only when an edge of the surface is
+reached. Directed contacts are made with every neuron that is within a
+width $w(x)$ of the axon's trajectory, where in general $w$ depends on
+the axon length $x$ at this point
+(\autoref{fig:anisotropic_network_model}).
+
+\begin{figure}[!htbp]
+  \centering 
+  \makebox{%
+    \begin{overpic}[width=0.325\textwidth,frame]{%
+        img/network_model/model_dendrite_w.pdf}
+      \put(3,91){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.325\textwidth,frame]{%
+        img/network_model/model_axon_w.pdf}
+      \put(3,91){%
+        \fboxsep=0pt\colorbox{white}{\small\textbf{B}}
+        }
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.325\textwidth,frame]{%
+        img/network_model/connectivity.pdf}
+      \put(3,91){\small\textbf{C}}
+    \end{overpic}
+    }%
+    \caption{%
+      \textbf{Anisotropic geometric network model and interpretations
+        of width parameter $\boldsymbol w$} Illustrating the process of
+      finding connections for one neuron (large triangle, black), the
+      axon describes a linear trajectory in an arbitrary direction and
+      until terminating on the surface's edge. Target neurons (red)
+      are encountered along the path within a distance $w$, which is in
+      \textbf{A)} interpreted as a dendritic radius or, equivalently,
+      in \textbf{B)} as a \enquote{bandwith} of the axon. Connections
+      to the encountered targets are then established as projections
+      in \textbf{C)}, consistent with the directed nature of synapses
+      in biological networks (cf. Chapter~\ref{ch:Biology}).}
+  \label{fig:anisotropic_network_model}
+\end{figure}
+
+The implementation of arbitrary axonal orientation is crucial to the
+model. Although cortical axons are described as consistently
+%------------------------------------------------
+\marginpar{random axonal orientation yields relevant connectivity} 
+%------------------------------------------------ 
+projecting downwards \parencite[%
+cf. Section~\ref{sec:biol_anisotropy}]{Braitenberg_Cortex}, combining
+exclusively vertically aligned axons with the simplified axonal and
+dendritic morphological profiles would result in a \enquote{vertically
+  staggered connectivity} - neurons could then only project to targets
+located below them.  It is in fact not a vertical alignment of axon
+orientation, but the anisotropy in neural connectivity - the
+observation of neuronal targets aligning with the axonal projection -
+that we try to capture and analyze in this model. 
+
+We will refer to the model as the \textit{anisotropic geometric
+  network model}. Trying to provide a simple, abstract model isolating
+anisotropy in connectivity, in most of this study the width $w$ is
+assumed to be constant, a notable exception being the exploration in
+??. In the graph theoretic context the anisotropic network model is a
+random graph model, in which a realization of the random
+process results in a geometric directed graph with a special mode of
+connectivity. We can formally define such realization as:
+
+\begin{definition}[Anisotropic geometric graph]
+  \label{def:anisotropic_geometric_graph} 
+  \index{anisotropic geometric!graph} %
+  Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
+  \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
+  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$
+  vertices and the maps $\Phi:V(G)\to[0,1]^2$ and $a:V(G)\to[0,2\pi)$,
+  such that for every vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$
+  with $s(e)=v$ and $t(e)=v'$ exists if and only if the inequalities
+  \[
+    R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 
+      \quad \mathrm{and} \quad
+    \abs{R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} 
+      \leq \frac{w}{2}
+  \]
+  hold. Here $R_{\varphi}$ is the rotation matrix of angle $\varphi$
+  in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
+  unit vectors. % ?? Alpha or A??
+  % for $y=A_{\alpha(v)}(v'-v)$ the identities $y\hat{e}_x > 0$
+  % and $\abs{y \hat{e}_y} \le \frac{w}{2}$ hold.
+\end{definition}
+
+The anisotropic random graph model then is then giving the probability
+distribution over the set of anisotropic random graphs by describing a
+random process generating such graph.
+
+\begin{definition}[Anisotropic random graph model]
+  \index{anisotropic geometric!random graph model} 
+  Let $n \in \mathbb{N}$ and $w > 0$. The \textit{anisotropic random
+    graph model} $G(n,w)$ is a probability space over the set of
+  anisotropic geometric graphs with a probability distribution induced
+  by the following process: Let $G$ be an empty graph with $n$
+  vertices. Assign randomly and uniformly to every vertex $v \in V(G)$
+  a position $\Phi(v) \in [0,1]^2$ and axonal orientation $0\leq a(v)
+  < 2\pi$. Then add edges such that $(G,\Phi,a)$ is an anisotropic
+  geometric graph $G_{n,w}$.
+\end{definition}
+
+
+As with every geometric graph model introduced, we restrict the
+surface to be the unit square. This does not limit the model, as only
+the relative width of the axon band in regard to the surface's side
+length is determining connectivity statistics -
+%------------------------------------------------
+\marginpar{anisotropic model is scale-free} %
+%------------------------------------------------ 
+the expected number of connections is easily obtained by the quotient
+of the area covered by the axon and the surface area, making
+connectivity statistics in the anisotropic random graph model
+scale-free.
+
+This study of anisotropic geometric graphs. To enable
+this analysis, some prior work which composes the rest of this
+chapter. Integral to our is a numerical implementation of the model. 
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../dplths_document"
+%%% End: 

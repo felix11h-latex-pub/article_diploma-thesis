@@ -1,0 +1,124 @@
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                         Numerical Implementation
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
+\section{Numerical Implementation}\label{numerical_implementation}
+
+Numerical implementation of the anisotropic random graph model was
+achieved in Python\footnote{Python Software Foundation. Python
+  Language Reference, version 2.7. Available at
+  \url{http://www.python.org}}. Relying on the NumPy for mathematical
+as part of the scientific library \parencite{scipy} %?? Year format?
+and graph tool, a graph manipulation \parencite{graph_tool},
+convenience as well as potency could be secured.
+
+The algorithm for the generation of anisotropic networks, closely
+zresembles the Definition~\ref{def:anisotropic_geometric_graph}. 
+
+
+To harness the numerical implemenation to generate networks, a set of
+parameters needs to be chosen. The network size $N$ strongly
+influences
+%------------------------------------------------
+\marginpar{determine parameter set to generate sample graphs}
+%------------------------------------------------ 
+the needed computational efforts in calculations based on the
+generated graphs and has thus been set to $N = 1000$. Choosing the
+surface side-length arbitrarily as $s=100$, the axon width $w$
+determines connectivity in the network, the relation between width $w$
+and overall connection probability $p$ being shown in
+\autoref{fig:determine_axon_width}. In their analysis of connectivity
+of thick-tufted layer V pyramidal cells in neonatal rats (day 14),
+\textcite{Song2005} report an overall connection probability of
+$p=0.116$, consistent with prior reports of a cortical connection
+probability of $p \approx 0.1$. Choosing $w$ to be constant, we
+determine the axon width such that overall connectivity matches the
+value report by Song et al. and obtain $w = 12.6$
+(\autoref{fig:determine_axon_width}).
+
+\begin{figure}[!htbp]
+  \centering
+  \makebox{%
+    \begin{overpic}[width=0.5\textwidth]{%
+        plots/c5b64f3e.pdf}
+      \put(22.5,57.5){\small\textbf{A}}
+      %\put(12,5){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.5\textwidth]{%
+        plots/585a946f.pdf}
+      \put(24.5,57.5){\small\textbf{B}}
+      %\put(12,5){\small\textbf{B}}
+    \end{overpic}
+  }%
+  \vspace{-0.15cm}
+  \caption{\textbf{Axon width dependent connection probability
+      determines parameter for numerical analysis} Generating
+    anisotropic networks with different axon widths $w$ and extracting
+    probability $p$ of directed connection between two random nodes,
+    demonstrates the dependency of $p$ on the width parameter $w$.
+    \textbf{A)} At an axon width of over $w=100$, exceeding the
+    square's side length, the connection probability saturates at
+    $p=0.5$, as axon bands are essentially \enquote{cutting} the
+    square in a connected and unconnected half
+    (\smtcite{c5b64f3e}). \textbf{B)} For small $w$ the connection
+    probability is a linear function of $w$, allowing the width $\nicefrac{w_S}{2}$
+    at which $p(w_S)=11.6$ to be determined by a linear fit as
+    $\nicefrac{w_S}{2} =
+    12.6$ (\smtcite{585a946f}).} %?? fix width issue!!
+  \label{fig:determine_axon_width}
+\end{figure}
+
+
+
+Having determined parameters...
+With this parameter set we generate a sample of 25 graphs %?? Sumatra:
+                                %"N1000w_ax126-flat_graph0-24"
+
+
+
+
+
+
+
+
+% As shown in ??, only the
+% quotient of the side length parameter $e$ and axon width $w$ . As
+% such, side length $e$ is arbitrarily set as $e = 100$ and leaves axon
+% width for determination.
+
+
+% First, we determine $w$ to be constant. Although simplistic profiles
+% (\autoref{fig:axon_heat}) and makes for characteristic distance
+% distribution as we will see later
+% (\autoref{fig:distance_theory_compare}), more in line with idea of
+% abstractness and simplisticity. For small $w$ then, the overall
+% connection probability $p$ can be approximated as
+% \[
+% p = \frac{L w}{E^2},
+% \]
+% where $L$ is the average length of the axon until it terminates on a
+% surface edge. 
+
+% Having established the connection between , 
+
+% The final parameter is then the axon-profile width $w$. In their
+% analysis of connectivity of thick-tufted layer V pyramidal cells in
+% neonatal rats (day 14), \textcite{Song2005} report an overall connection
+% probability of $p=0.116$, consistent with prior reports of a cortical
+% connection probability of $p \approx 0.1$. %?? Which reports?  
+
+
+% \cite{Thomson2002} Axons are not looking for their targets but
+% dendrites might, further evidence to focus on axon geometry.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../dplths_document"
+%%% End: 
