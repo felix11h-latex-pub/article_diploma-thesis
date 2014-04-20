@@ -1,0 +1,272 @@
+
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                             Directed Graphs 
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
+\section{Directed graphs}\label{sec:directed_graphs}
+
+
+%  \begin{definition}[Graph, Order] A \textbf{graph} is a pair of sets $G
+% =(V,E)$, consisting of the \textbf{vertex set} $V(G)=V$ and the
+% \textbf{edge set} $E(G)=E$, such that $E \subseteq V \times V$.  The
+% number of vertices of a graph $G$ is its \textbf{order} $|G|$, the
+% number of edges is denoted by $||G||$.  A graph of order $0$ or $1$ is
+% called \textit{trivial}.
+%   \end{definition}
+
+%   The object of interest in my thesis will be directed pseudographs,
+% but I will still have to think about how to
+%   \begin{itemize}
+%   \item call them, graphs, directed graphs, etc..
+%   \item think about the weights(!!)
+%   \item think about definitions
+%   \end{itemize}
+
+
+\begin{definition}[Directed graphs]
+  \index{directed graph} \index{simple graph} \index{pseudograph}
+  \index{multigraph} \index{loop graph}
+  \label{def:directed_graphs}
+  A \textit{directed pseudograph} $G$ consists of two finite
+  %
+  % Non-empty? -> No. Empty graph allowed for random 
+  % graph process that adds edges and or vertices
+  % 
+  $V$, the \textit{set of vertices} of $G$, and $E$, the \textit{set
+    of edges} of $G$, and two maps $ s,t: E \to V, $ the
+  \textit{source} and \textit{target functions} of $G$. A
+  \textit{directed multigraph} is a directed pseudograph without
+  loops, that is the map $d = (s,t):E \to V^2$ already maps
+  maps to $V^2\setminus\Delta_V$, where $V^2 = V \times V$ denotes the
+  cartesian product and $\Delta_V = \{(x,x) \mid x \in V\} \subseteq
+  V^2$ the diagonal. Similarily, a \textit{directed loop graph} is a
+  directed pseudograph where $d$ is injective. Finally, a
+  \textit{simple directed graph} can be defined as a directed
+  pseudograph where $d$ is both injective and already maps to
+  $V^2\setminus\Delta_V$.
+\end{definition}
+
+Thus, in simple directed graphs, neither parallel edges nor loops -
+edges between the same vertex - are allowed, whereas directed
+multigraphs and directed loop graphs admit one of them respectively.
+
+\red{Say something about what "directed graph" means here, do all
+  definition until random graphs work for all types of directed graphs?}
+
+\begin{figure}[!htbp]
+  \centering 
+  \makebox[0.6\textwidth]{%
+    \begin{overpic}[width=0.25\textwidth]{%
+        tikz/directed_pseudograph.pdf}
+      \put(-15,35){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.25\textwidth]{%
+        tikz/directed_multigraph.pdf}
+      \put(3,35){\small\textbf{B}}
+    \end{overpic}
+    }%
+  \vfill
+  \vspace{0.25cm}
+  \makebox[0.6\textwidth]{%
+    \begin{overpic}[width=0.25\textwidth]{%
+        tikz/directed_loopgraph.pdf}
+      \put(-15,35){\small\textbf{C}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.25\textwidth]{%
+        tikz/directed_simple_graph.pdf}
+      \put(3,35){\small\textbf{D}}
+    \end{overpic}
+    }%
+    \caption{%
+      \textbf{Typical examples of the directed graph types}
+      \textbf{A)} directed pseudograph \textbf{B)} directed
+      multigraph \textbf{C)} directed loop graph \textbf{D)} simple
+      directed graph.} %??
+  \label{fig:directed_graph_types}
+\end{figure}
+
+Given a directed graph $G$, we denote with $V(G)$ the set of vertices
+of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
+\textbf{edge set} $E(G)$ of $G$ denotes the set of edges of $G$. This
+means, for a directed graph specified as $G = (V,E,s,t)$, we
+have $V(G) = V$ and $E(G) = E$.
+
+A \textbf{morphism} $\phi: G \to H$, between two directed graphs
+$G=(V_G,E_G,s_G,t_G)$ and $H=(V_H,E_H,s_H,t_H)$, consists of a pair of
+maps $\phi_V: V_G \to V_H$ and $\phi_E: E_G \to E_H$, such that
+\[
+s_H \circ \phi_E = \phi_V \circ s_G \mathrm{\quad and \quad} t_H \circ
+\phi_E = \phi_V \circ t_G,
+\]
+that is such that the following diagram commutes:
+%
+\begin{align*} 
+  \xymatrix@+=1.3cm{E_G \ar^{t_G}@<0.66ex>[d] \ar_{s_G}@<-0.66ex>[d]
+    \ar^{\phi_E}[r] & E_H \ar^{t_H}@<0.66ex>[d]
+    \ar_{s_H}@<-0.66ex>[d]\\ V_G \ar^{\phi_V}[r] & V_H}
+\end{align*}
+%
+A morphism $\varphi: G \to H$, between two directed pseudographs $G$
+and $H$ is an \textbf{isomorphism}, if the maps $\varphi_V: V_G \to
+V_H$ and $\varphi_E: E_G \to E_H$ are bijective. Two directed
+pseudographs are called \textit{isomorphic} if there exists an
+isomorphism inbetween them.
+
+\begin{remark}
+  The last definition implies that, if there exists an isomorphism
+  $\varphi: G \to H$, an isomorphism $\psi: H \to G$ can be
+  found. This isomorphism is, of course, easily constructed via
+  $\psi_V: V_H \to V_G, v \mapsto \varphi_V^{-1}(v)$, $\psi_E: E_H \to
+  E_G, e \mapsto \varphi_E^{-1}(e)$.
+\end{remark}
+
+\begin{definition}[Weighted directed graphs]
+  \index{weighted graph}
+  An \textit{edge-weighted directed graph} is a directed graph $G$ along
+  with a mapping $\omega: E(G) \to \mathbb{R}$, called the
+  \textit{weight function}. Similarly, a \textit{vertex-weighted
+    directed graph} is a directed graph with a mapping $\nu: V(G) \to
+  \mathbb{R}$.
+\end{definition}
+
+\begin{remark} \red{(heavy draft)}
+
+  % 
+  % Think about
+  %  - synaptic integration (non-linear)
+  %  - self excitation, interessed in axonal-dendritic connections, so
+  %    probably not for structure but maybe dynamics?
+  % 
+
+  % Title: A directed graph category for biological neural networks
+
+  Certainly, a weighted directed pseudograph is the most fitting
+  mathematical modelling to the biological situation, since self
+  connections and multiple synapse are not only plausibel (source?)
+  but the rule. However there is one abstraction we can make by adding
+  together the synaptic weights - NEST is doing it. While linear
+  synaptic integration was shown to be, it is a prevalent model in
+  network (ref Nest).\\ 
+
+  Also think about \textbf{inhibitory, excitatory}. Suggestion: edge
+  weights $\omega: E(G) \to \mathbb{R}^{+}$ \textbf{and} vertex
+  weights $\nu: V(G) \to \{-1, 1\}$. Synaptic weight $\mathrm{syn}(e)$
+  for edge $e$ is then \[\mathrm{syn}(e) = \nu(s(e))\,\omega(e).\]
+  Benefit: Synapse from one neuron are either excitatory or inhibitory
+  but not mixed as in bio.
+\end{remark}
+
+
+\begin{remark}[Equivalent definiton for directed loop graphs]
+
+  A directed loop graph $G$ can be equivalently defined as a pair of
+  finite\red{(, non-empty?)} sets $V$, the \textit{set of vertices} of
+  $G$, and $E \subseteq V^2$ the \textit{set of edges} of $G$. For an
+  edge $(x,y) \in E$, we call $x$ the \textit{source} and $y$ the
+  target of the edge $(x,y)$.
+
+  Source and target functions are then uniquely determined as the
+  projections on the first and second component, $s = \mathrm{pr}_1, t
+  = \mathrm{pr}_2: E(G) \to V.$ Conversely, the edge set $E(G)
+  \subseteq V^2$ can be determined from the source and target
+  functions as $E:=\{(s(e),t(e)) \mid e \in E\}$. The trivial identities
+  $(x,y) = (\mathrm{pr}_1(x,y),\mathrm{pr}_2(x,y))$ and
+  $\mathrm{pr_1}(s(e), t(e)) = s(e)$ with $\mathrm{pr_2}(s(e), t(e)) =
+  t(e)$ quickly verify the equivalence of the definitions.
+
+  Given a directed loop graph $G$, we often assume the graph to be
+  given in this form and write edges as $e=(x,y)$. Note that this
+  concept is more complicated to introduce for directed pseudographs,
+  since parallel edges $e$ and $e'$ should to be differentiated in the
+  egde set of $G$, establishing the need for $E(G)$ to be a multi- or
+  indexed set, notions we are trying to avoid in this document.
+
+\end{remark}
+
+
+
+% A given directed loop graph $G = (V,E,s,t)$, can always be
+% represented by a canonical isomorphic directed loop graph $G' =
+% (V,E')$, where $E':=\{(s(e),t(e)) | e \in E\} \subseteq V^2$. For a
+% directed loop graph $G'$ in canonical form, the source and target
+% functions $s',t'$ do not need to be specified, since they are uniquely
+% determined as the projections on the first and second component, $s' =
+% \mathrm{pr}_1, t' = \mathrm{pr}_2$. Wait, not so easy because
+% multi-sets, however add synaptic strength of parallel edges to make
+% directed loop-graphs! (Bang-Jensen)
+
+
+
+From now on any \textit{directed graph} is assumed to be a directed
+loop graph. Although most, if not all, concepts work for directed
+pseudographs just as well, we want to start to heavily use the
+canonical edge representation, which when talking about pseudograps
+makes problems as mentioned before.
+
+\begin{remark}[More Notation] 
+  \red{- Check, do I really need this?} For a pair of vertex sets $X,Y
+  \subseteq V(G)$ of a directed graph $G$ we write
+  \[
+  (X,Y)_G = \{(x,y) \in E(G) | x \in X, y \in Y \}
+  \]
+  for the set of edges with source in $X$ and target in $Y$. For
+  vertex sets with a single element $X = {x}$, we also write $(x,Y)_G$
+  and mean the edges with source $x$ and target in $Y$.
+\end{remark}
+
+
+\begin{definition}[In- and out-degree]  
+  \index{in-degree}\index{out-degree}\label{def:in_out_degree}
+  For a directed graph $G$ the \textbf{in-degree} $d^-_G(x)$ of a
+  vertex $x$ is defined as the number of edges of $G$ with target $x$,
+  that is
+  \[
+  d^-_G(x) = \left|(V(G),x)_G\right|.
+  \]
+  Similarily, the \textbf{out-degree} $d^+_G(x)$ of $x$ is defined as
+  \[
+  d^+_G(x) = \left|(x, V(G))_G\right|,
+  \]
+  the number of edges in $G$ with source $x$.
+\end{definition}
+
+\begin{remark}[Side]
+  In some literature about directed graphs (Bang-Jensen), loops are
+  \textit{not} counting towards the in- or out-degree of vertex. In
+  the light of neural network however, we specifically want to count
+  loops as well.
+\end{remark}
+
+A basic property of the in- and out-degree in directed graphs is that
+number of in-degrees of every vertex, as well the sum of every
+out-degree, equal the total number of edges:
+
+\begin{proposition}
+  In every directed graph $G$, we have
+  \[
+  \sum_{x \in V(G)} d^-(x) = \sum_{x \in V(G)} d^+(x) = | E(G) |.
+  \]
+\end{proposition}
+
+\begin{proof}
+  Since $(V(G),x)_G \cap (V(G),y)_G = \emptyset$ for $x \ne y$, we can
+  write
+  \[
+  \sum_{x \in V(G)} d^-(x) = \left| \bigcup_{x \in V(G)} (V(G),x)_G
+  \right| = \left| (V(G),V(G))_G \right| = | E(G) |.
+  \]
+  Analogously for the out-degree.
+\end{proof}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../dplths_document"
+%%% End: 

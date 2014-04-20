@@ -1,0 +1,114 @@
+
+
+
+
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                          Walks and Distances
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+
+\section{Walks and distances}\label{sec:walks_and_distances}
+
+
+Let $G$ be a directed graph \red{(what does it mean here?)}. A
+\textbf{walk} $W$ in $G$ is an alternating sequence
+$(x_1,e_1,x_2,e_2,x_3,\ldots,x_{n-1},e_{n-1},x_n)$ of of vertices
+$x_i$ and edges $e_i$ from $G$, such that
+\[
+s(e_i) = x_i \quad \mathrm{and} \quad t(e_i) = x_{i+1}, \:\,
+\mathrm{for}\, i=1,..,n-1,
+\]
+that is, such that the vertices are connected by the edges inbetween
+them. We denote the set of vertices $(x_1,\ldots,x_n)$ of $W$ as
+$V(W)$ and the sequence of edges $(e_1,\dots,e_{n-1})$ as $E(W)$
+\red{(need it?)}.
+
+The vertices $x_1$ and $x_n$ are called the \textit{end vertices} of
+$W$ and we also say that $W$ is an $(x,y)$-walk. The \textbf{length}
+of $W$ is defined as the length of the sequence of edges; a walk
+consisting of only one vertex has length zero. \red{ colon, really?}
+
+
+\begin{definition}[Distance]
+  The \textbf{distance} of two vertices $x$,$y$ in a directed graph
+  $G$ \red{(means?)}, is defined as the minimum length of an
+  $(x,y)$-walk, if any such walk exists, otherwise
+  $\operatorname{dist}(x,y)=\infty$. In short,
+  \[
+  \operatorname{dist}(x,y) = \inf \{|E(W)| \mid
+  W\,\mathrm{is}\,(x,y)\mathrm{-walk}\}.
+  \]
+  \red{$|E(W)|$ is not explained. Necessary?}
+\end{definition}
+
+\begin{proposition}
+  The distance function $\operatorname{dist}: V(G) \times V(G) \to
+  \mathbb{N}$ of a directed graph $G$ satisfies the triangle equality,
+  \[
+  \operatorname{dist}(x,z) \le \operatorname{dist}(x,y) +
+  \operatorname{dist}(y,z), \:\: \mathrm{for}\:\, x,y,z \in V(G).
+  \]
+\end{proposition}
+
+\begin{proof}
+  Let $x,y,z$ be vertices in $G$. If either no $(x,y)$-walk or
+  $(y,z)$-walk exists, the inequality holds by definition. Other wise,
+  let $W$ be an $(x,y)$-walk of minimal length and let $U$ be a
+  $(y,z)$-walk of minimal length. Certainly, by concatenating $W$ and
+  $U$ we obtain an $(x,z)$-walk of length $|E(W)| + |E(U)| =
+  \operatorname{dist}(x,y) + \operatorname{dist}(y,z)$, proofing
+  that \[ \operatorname{dist}(x,z) \le \operatorname{dist}(x,y) +
+  \operatorname{dist}(y,z).
+  \]
+\end{proof}
+
+
+
+
+
+%   \begin{definition}[Neighbour, adjacent] Two \textbf{vertices} $x,y \in
+% V(G)$ of $G$ are called \textit{adjacent} or \textit{neighbours} if
+% there is an edge between $x$ and $y$, $(x,y) \in E(G)$. Two
+% \textbf{edges} $e \neq f$ are \textit{adjacent} if they have an end in
+% common.
+%   \end{definition}
+
+
+More to do:
+
+\begin{itemize}
+\item summarize category of directed (weighted) pseudographs
+\item weights!
+\item vertices will also be called nodes and neurons, edges will also
+  be connections or synapses.
+\item subgraphs
+\item \sout{vertex set, edge set $E(G), V(G)$.}
+\item $\omega(e)$ is weight, connection strength or synaptic weight
+  (as a side remark
+\item extend to category of weighted directed pseudographs
+  (isomorphisms)
+\item path
+\item adjacency matrix
+\item converses of graph related to opposite category?
+\item \sout{in- and out-degree}
+\item \sout{triangle inequality for distance, $\mathrm{dist}(x,z) \leq
+  \mathrm{dist}(x,y) + \mathrm{dist}(y,z)$}
+\end{itemize}
+
+
+
+References for this chapter:
+\url{http://nlab.mathforge.org/nlab/show/graph},
+\url{http://nlab.mathforge.org/nlab/show/quiver}, \parencite{Bang-Jensen_Digraphs}
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../dplths_document"
+%%% End: 
