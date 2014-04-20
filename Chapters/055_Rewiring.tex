@@ -40,10 +40,22 @@ M_e =  \left\{v \in V(G) \setminus s(e) \mid \abs{\mathrm{d}(s(e),v) -
 
 \end{definition}
 
+Let $\tilde{C}(x)$ be the distance-dependent connectivity profile of a
+rewiring $R_{\varepsilon}$ of an anisotropic graph $G_{n,w}$. Denote
+with $C(x)$ the distance-dependent connection probability of the
+$G_{n,w}$. We can estimate the
+\begin{align*}
+  \mathbf{E}[\tilde{C}(x)] - C(X) 
+    & = \int_{x-\varepsilon}^{x+\varepsilon} f(x') C(x') \, dx -
+        C(x)\\
+    & = \frac{1}{2\varepsilon}\int_{x-\varepsilon}^{x+\varepsilon}
+        C(x') - C(x) \, dx \\
+    & = \frac{1}{2\varepsilon} \left\{ \int_{x-\varepsilon}^{x} C(x') -
+        C(x) \, dx - \int_x^{x+\varepsilon} C(x') - C(x) \, dx
+        \right\} \\
+    & = \frac{1}{2\varepsilon} 
+\end{align*}
 
-\begin{proposition}
-Preserves distance-connectivity.
-\end{proposition}
 
 % for every neuron:
 %    for every outgoing connection:
