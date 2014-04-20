@@ -99,7 +99,7 @@ structural features.
 \end{proof}
 
 \vspace{0.2cm}%??
-\begin{figure}[h] 
+\begin{figure}[H] 
   \centering 
   \makebox[0.8\textwidth]{%
     \begin{overpic}[width=0.35\textwidth]{%
@@ -127,30 +127,29 @@ structural features.
 \end{figure}
 
 
-We can verify this result by computationally extracting the distance
-dependencies in the sample graphs generated. 
+We can verify this result by extracting the distance-dependent
+connection probabilities in the sample graphs created
+in Section~\ref{sample_graphs}. Combining data of all 25
+graphs, we find that connection probabilities perfectly match the
+theoretical prediction (\autoref{fig:distance_theory_compare}).
 
-\begin{figure}[!htbp]
+
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\linewidth]{%
-    /users/hoffmann/research/data/sample_graph_analysis/distance_profiles/original/test.pdf} %??
+    plots/dbffa88e.pdf} 
+  \captionsetup{skip=0pt}
   \caption{\textbf{Predicted distance-dependent connection probability
-    profile is matched by numerical computation} In a
-    3-D model reconstructed from biocytin-labeled thick-tufted layer V
-    pyramidal cells in the somatosensory cortex of postnatal (day 14)
-    Wistar rats, \textcite{Romand2011} depict dendritic compartments in
-    red, axonal compartments in blue.  \textbf{A)} A
-    \SI{600}{\micro\meter} window centered on the soma of the pyramidal
-    cell shows the main stem of the cell's axon projecting downwards in a
-    straight line, collaterals branching at various angles. \textbf{B)}
-    Using image manipulation software, axon morphology was manually traced
-    and is emphasized in black.} %??
-  \label{fig:distance_theory_compare}%??
+    profile is matched by numerical results} (\smtcite{dbffa88e}) }
+  \label{fig:distance_theory_compare}
 \end{figure}
 
 
 Create additionally a new distance depenedent network sample graphs
-and great! 
+%------------------------------------------------ 
+\marginpar{distance-dependent graphs as null-hypothesis}
+%------------------------------------------------
+and great! \label{distance_dependent_sample}
 
 
 %%% Local Variables: 
