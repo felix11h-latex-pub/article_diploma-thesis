@@ -12,36 +12,45 @@
 Numerical implementation of the anisotropic random graph model was
 achieved in Python\footnote{Python Software Foundation. Python
   Language Reference, version 2.7. Available at
-  \url{http://www.python.org}}. Relying on the NumPy for mathematical
-as part of the scientific library \parencite{scipy} %?? Year format?
-and graph tool, a graph manipulation \parencite{graph_tool},
-convenience as well as potency could be secured.
+  \url{http://www.python.org}}. Relying on NumPy as part of the
+scientific Python library SciPy\footnote{Eric Jones, Travis Oliphant,
+  Pearu Peterson and others. NumPy version 1.6.1. Available at \url{http://www.scipy.org}}
+for the more complex mathematical computations, the implementation
+also uses graph-tool\footnote{Tiago
+  P. Peixoto. Efficient network analysis. Version 2.2.18. Available at
+  \url{http://graph-tool.skewed.de/}}, to ensure convenient and
+efficient handling of the created networks.
 
-The algorithm for the generation of anisotropic networks, closely
-zresembles the Definition~\ref{def:anisotropic_geometric_graph}. 
-
+The algorithm for the generation of anisotropic networks closely
+resembles Definition~\ref{def:anisotropic_geometric_graph}. After
+randomly distributing $N$ neurons on the square of side-length $s$,
+for every neuron a random axon horientation $a \in [0,2\pi)$ is chosen
+and an affine transformation, such that the current neuron is located
+at the origin and its axon projection aligns with the positive x-axis,
+secures a straightforward implementation of connectivity, using the
+the inequalities in Definition~\ref{def:anisotropic_geometric_graph}
+as a rule for establishing connections.
 
 To harness the numerical implemenation to generate networks, a set of
 parameters needs to be chosen. The network size $N$ strongly
-influences
+influences the needed computational efforts in calculations based on
+the generated graphs and has thus been set to $N = 1000$. 
 %------------------------------------------------
-\marginpar{determine parameter set to generate sample graphs}
-%------------------------------------------------ 
-the needed computational efforts in calculations based on the
-generated graphs and has thus been set to $N = 1000$. Choosing the
-surface side-length arbitrarily as $s=100$, the axon width $w$
-determines connectivity in the network, the relation between width $w$
-and overall connection probability $p$ being shown in
-\autoref{fig:determine_axon_width}. In their analysis of connectivity
+\marginpar{parameter set chosen to resemble cortical circuits}
+% ------------------------------------------------
+Choosing the surface side-length arbitrarily as $s=100$, the axon
+width $w$ determines connectivity in the network, the relation between
+width $w$ and overall connection probability $p$ being shown in
+\autoref{fig:determine_axon_width}.  In their analysis of connectivity
 of thick-tufted layer V pyramidal cells in neonatal rats (day 14),
 \textcite{Song2005} report an overall connection probability of
 $p=0.116$, consistent with prior reports of a cortical connection
 probability of $p \approx 0.1$. Choosing $w$ to be constant, we
 determine the axon width such that overall connectivity matches the
-value report by Song et al. and obtain $w = 12.6$
+value report by Song et al. and obtain $w/2 = 12.6$
 (\autoref{fig:determine_axon_width}).
 
-\begin{figure}[!htbp]
+\begin{figure}[htp]
   \centering
   \makebox{%
     \begin{overpic}[width=0.5\textwidth]{%
@@ -76,9 +85,18 @@ value report by Song et al. and obtain $w = 12.6$
 
 
 
-Having determined parameters...
-With this parameter set we generate a sample of 25 graphs %?? Sumatra:
-                                %"N1000w_ax126-flat_graph0-24"
+\label{sample_graphs}Having determined a suitable set of parameters as
+$N=1000$, $s=100$ and $w=25.2$, we generate 25 graphs with this parameter
+set (label: \smtcite{N1000w\char`_ax126-flat\char`_graph0-24}).
+%------------------------------------------------
+\marginpar{sample graphs as reference for structural analysis}
+%------------------------------------------------ 
+This set of sample graphs will serve as a reference for the following
+structural analysis. Extending the set by the (partially) rewired
+sample graphs (see Section~\ref{sec:rewiring}) we obtain a resourceful
+reference for the analysis of structural features of anisotropic
+geometric graphs, that we will frequently employ to obtain
+quantitative and qualitative results.
 
 
 
@@ -87,31 +105,7 @@ With this parameter set we generate a sample of 25 graphs %?? Sumatra:
 
 
 
-% As shown in ??, only the
-% quotient of the side length parameter $e$ and axon width $w$ . As
-% such, side length $e$ is arbitrarily set as $e = 100$ and leaves axon
-% width for determination.
 
-
-% First, we determine $w$ to be constant. Although simplistic profiles
-% (\autoref{fig:axon_heat}) and makes for characteristic distance
-% distribution as we will see later
-% (\autoref{fig:distance_theory_compare}), more in line with idea of
-% abstractness and simplisticity. For small $w$ then, the overall
-% connection probability $p$ can be approximated as
-% \[
-% p = \frac{L w}{E^2},
-% \]
-% where $L$ is the average length of the axon until it terminates on a
-% surface edge. 
-
-% Having established the connection between , 
-
-% The final parameter is then the axon-profile width $w$. In their
-% analysis of connectivity of thick-tufted layer V pyramidal cells in
-% neonatal rats (day 14), \textcite{Song2005} report an overall connection
-% probability of $p=0.116$, consistent with prior reports of a cortical
-% connection probability of $p \approx 0.1$. %?? Which reports?  
 
 
 % \cite{Thomson2002} Axons are not looking for their targets but
