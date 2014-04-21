@@ -16,6 +16,7 @@
 %   direction}, that is they connect to other nodes which cluster around
 % a. In this section we introduce an algorithm
 
+
 It is in our highest interest to compare results to. 
 %------------------------------------------------
 \marginpar{eliminate anisotropy through rewiring}
@@ -27,17 +28,52 @@ connectivity by consecutively rewiring existing connections to new
 suitable targets.
 
 
-\begin{definition}
-Let $G$ be an anisotropic geometric graph with $\abs{V(G)} = n$. Then we define a
-rewiring of $G$ to be probability space over $G^n_{\Phi}$, obtained by
-choosing for every edge $e \in E(G)$ uniformly at random a potential new target $t'(e)$
-from the set $M_e$ of all vertices that differ in their distance to
-$s(e)$ less than $\varepsilon$ from the distance of $s(e)$ to $t(e)$,
-\[
-M_e =  \left\{v \in V(G) \setminus s(e) \mid \abs{\mathrm{d}(s(e),v) -
-      \mathrm{d}(s(e),t(e))} < \varepsilon \right\}.
-\]
+Rewiring as presented here, will provide the transition from
+anistropic connectivity to networks isotropic in connectivity, closely
+resembling purely distance-dependent networks. Applying this process
+only partially will then allow us to analyse structural features as
+they change with a varying degree of isotropy, asserting the
+importance of this process to our study.
 
+In designing the specific rewiring algorithm we identify two
+requirements that our implementation should satisfy:
+\vspace{-6pt}
+\begin{enumerate}
+  \itemsep-11pt
+  \item elimination of anisotropy in connectivity 
+  \item preservation of distance-dependent connectivity
+\end{enumerate}
+\vspace{-6pt}%
+The second point is especially important to us, as we want to impose
+isotropy on the network at \enquote{minimal cost}, that is by changing
+as little as possible about the other characteristics of the network's
+connectivity. The following process respects both of the points above:
+For every edge between vertices $v$ and $v'$ with inter-vertex
+distance $x$, identify neurons with distance to $v$ in the range of
+$(x-\varepsilon, x+\varepsilon)$ as potential new targets. Then pick
+at random one of these vertices, including $v'$, as a new target for
+the current edge, if such an edge doesn't already exist. %??
+In the graph theoretic context we formally define rewiring as follows:
+
+\begin{definition}
+  Let $G$ be an anisotropic geometric graph with $\abs{V(G)} =
+  n$. Then we define a rewiring of $G$ to be probability space over
+  $G^n_{\Phi}$, induced by the following process: For every edge $e
+  \in E(G)$ uniformly at random pick a potential new target $t'(e)$
+  from the set $M_e = T_e \setminus K_e$, where $T_e$ is the set of all
+  vertices that differ in their distance to $s(e)$ less than
+  $\varepsilon$ from the distance of $s(e)$ to $t(e)$,
+  \[ 
+  T_e = \left\{v \in V(G) \setminus s(e) \mid \abs{\mathrm{d}(s(e),v)
+      - \mathrm{d}(s(e),t(e))} < \varepsilon \right\} %?? definition
+                                %of distance d?
+  \]
+  and $K_e$ the set vertices that already are connected to $s(e)$ by
+  another edge, 
+  \[
+  K_e = \left\{v \in V(G) \mid \exists\, e' \in E(G): s(e') = s(e),
+      t(e') =v \right\}.
+  \]
 \end{definition}
 
 Let $\tilde{C}(x)$ be the distance-dependent connectivity profile of a
@@ -57,10 +93,11 @@ $G_{n,w}$. We can estimate the
 \end{align*}
 
 
-% for every neuron:
+% for every neuron: 
 %    for every outgoing connection:
 %        x = distance to target
 %        new_targets = all nodes in distance $(x-\epsilon,x+\epsilon)$
+
 
 
 \begin{remark}
