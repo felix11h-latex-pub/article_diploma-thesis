@@ -128,10 +128,27 @@ structural features.
 
 
 We can verify this result by extracting the distance-dependent
-connection probabilities in the sample graphs created
-in Section~\ref{sample_graphs}. Combining data of all 25
-graphs, we find that connection probabilities perfectly match the
-theoretical prediction (\autoref{fig:distance_theory_compare}).
+connection probabilities in the sample graphs created in
+Section~\ref{sample_graphs}. Combining data of all 25 graphs, we find
+that connection probabilities perfectly match the theoretical
+prediction (\autoref{fig:distance_theory_compare}). Additionally we're
+able to extend the reference sample graphs by distance-dependent
+%------------------------------------------------ 
+\marginpar{distance-dependent graphs as null-hypothesis}
+\label{distance_dependent_sample}
+%------------------------------------------------
+networks (Definition~\ref{def:distance_dependent_graph}). Using
+Theorem~\ref{theorem:distance_prof} in conjunction with the sample
+graph parameter set ($N=1000$, $s=100$\footnote{The generalization of
+Theorem~\ref{theorem:distance_prof} to allow for arbitrary side-length
+$s$ is trivial and omitted here}, $w=25.2$) we easily obtain the
+expected distance-dependent connectivity profile for the created
+sample graphs and, using this profile, generate purely
+distance-dependent networks\footnote{label:
+\smtcite{N1000-dist\char`_depend-flat\char`_graph-00-24.xml.gz}}. the
+numerical will heavily rely on these distance-dependent networks to
+identify aspects 
+
 
 
 \begin{figure}[H]
@@ -140,16 +157,17 @@ theoretical prediction (\autoref{fig:distance_theory_compare}).
     plots/dbffa88e.pdf} 
   \captionsetup{skip=0pt}
   \caption{\textbf{Predicted distance-dependent connection probability
-    profile is matched by numerical results} (\smtcite{dbffa88e}) }
+      profile is matched by numerical results} Averaging
+    distance-dependent connection probabilities over the 25 sample
+    graphs, we find the expected profile calculated in
+    Theorem~\ref{theorem:distance_prof} is matched perfectly by the
+    numerical results. (\smtcite{dbffa88e}) }
   \label{fig:distance_theory_compare}
 \end{figure}
 
 
-Create additionally a new distance depenedent network sample graphs
-%------------------------------------------------ 
-\marginpar{distance-dependent graphs as null-hypothesis}
-%------------------------------------------------
-and great! \label{distance_dependent_sample}
+
+
 
 
 %%% Local Variables: 
