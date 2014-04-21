@@ -52,12 +52,45 @@ For every edge between vertices $v$ and $v'$ with inter-vertex
 distance $x$, identify neurons with distance to $v$ in the range of
 $(x-\varepsilon, x+\varepsilon)$ as potential new targets. Then pick
 at random one of these vertices, including $v'$, as a new target for
-the current edge, if such an edge doesn't already exist. %??
-In the graph theoretic context we formally define rewiring as follows:
+the current edge, if such an edge doesn't already exist
+(\autoref{fig:distance_rewiring}). In the graph theoretic context we
+formally define a rewiring as follows:
+
+\vspace{0.2cm}
+\begin{figure}[!htb]
+  \centering 
+  \makebox[0.875\textwidth]{%
+    %\includegraphics[width=0.4\textwidth]{dist_rew_org.pdf}%
+    \begin{overpic}[width=0.4\textwidth, frame]{%
+        tikz/distance_rewire_L3.pdf}
+      \put(2,102){\small{Before}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.4\textwidth, frame]{%
+        tikz/distance_rewire_L4.pdf}
+      \put(2,102){\small{After}}
+    \end{overpic} 
+  }%
+  \caption{\textbf{Rewiring transforms anisotropic geometric graphs to
+      networks with isotropic connectivity} For a given edge $e$ with
+    a distance $x$ from its source vertex $v$ to its target vertex
+    $t(e)$, potential new targets (striped) are found in within a
+    distance $(x-\varepsilon, x+\varepsilon)$ of $v$. The rewired edge
+    then projects from $v$ to a new target $t'(e)$, randomly chosen
+    from the set of vertices within in this range. Inter-vertex
+    distance between $v$ and $t'(e)$ differs by less than
+    $\varepsilon$ from $x$, ensuring that for small $\varepsilon$ the
+    original distance-dependent connectivity is preserved. (Note that
+    all targets within range are eligible for rewiring as no other
+    edges exist. In general this is not the case.)}
+  \label{fig:distance_rewiring}
+\end{figure}
+
 
 \begin{definition}
+  \label{def:rewiring}
   Let $G$ be an anisotropic geometric graph with $\abs{V(G)} =
-  n$. Then we define a rewiring of $G$ to be probability space over
+  n$. Then we define a \textit{rewiring} of $G$ to be probability space over
   $G^n_{\Phi}$, induced by the following process: For every edge $e
   \in E(G)$ uniformly at random pick a potential new target $t'(e)$
   from the set $M_e = T_e \setminus K_e$, where $T_e$ is the set of all
@@ -69,12 +102,19 @@ In the graph theoretic context we formally define rewiring as follows:
                                 %of distance d?
   \]
   and $K_e$ the set vertices that already are connected to $s(e)$ by
-  another edge, 
+  another rewired edge, 
   \[
-  K_e = \left\{v \in V(G) \mid \exists\, e' \in E(G): s(e') = s(e),
-      t(e') =v \right\}.
+  K_e = \left\{v \in V(G) \mid \exists\, e' \in E'(G): s(e') = s(e),
+      t(e') =v \right\},
   \]
+  where $E'(G)$ is the set of all edges that have been rewired already.
 \end{definition}
+
+\begin{remark} In the way Definition~\ref{def:rewiring} is formulated,
+  it is possible for $M_e$ to be empty for an edge $e$. In this case
+  no new edge is realized and the resulting, rewired network has
+  $\abs{E(G)}-1$ edges. In practice this happens less than
+\end{remark}
 
 Let $\tilde{C}(x)$ be the distance-dependent connectivity profile of a
 rewiring $R_{\varepsilon}$ of an anisotropic graph $G_{n,w}$. Denote
@@ -98,41 +138,36 @@ $G_{n,w}$. We can estimate the
 %        x = distance to target
 %        new_targets = all nodes in distance $(x-\epsilon,x+\epsilon)$
 
+As a generalization of Definition~\ref{def:rewiring}, we define a
+partial rewiring $R_{\varepsilon, \eta}$, finding new targets only for
+a fraction $\eta$ of all edges:
 
-
-\begin{remark}
-Partial rewiring. $R_{\varepsilon, \eta}$
-\end{remark} 
+\begin{definition}Let $\varepsilon > 0$ and $0 \leq \eta \leq 1$. A
+  \textit{partial rewiring} $R_{\varepsilon,\eta}$ of an anisotropic
+  geometric graph $G_{n,w}$ is then a rewiring $R_{\varepsilon}$ of
+  $G_{n,w}$, in which every edge is rewired with a probability of
+  $\eta$, otherwise it remains. To avoid the occurrence of multiple
+  edges, $K_e$ is then extended to include the targets of all edges
+  originating from $s(e)$ that will not be rewired.
+\end{definition}
 
 Here we choose $\varepsilon = ??$.
 
-\vspace{0.2cm}
+
 \begin{figure}[H]
-  \centering 
-  \makebox[0.875\textwidth]{%
-    %\includegraphics[width=0.4\textwidth]{dist_rew_org.pdf}%
-    \begin{overpic}[width=0.4\textwidth, frame]{%
-        tikz/distance_rewire_L3.pdf}
-      \put(2,102){\small{Before}}
-    \end{overpic}
-    \hfill
-    \begin{overpic}[width=0.4\textwidth, frame]{%
-        tikz/distance_rewire_L4.pdf}
-      \put(2,102){\small{After}}
-    \end{overpic} 
-  }%
-  \caption{\textbf{Rewiring transforms anisotropic geometric graphs to
-      networks with isotropic connectivity} For a given edge $e$ with
-    a distance $x$ from its source vertex $v$ to its target vertex
-    $t(e)$, potential new targets (striped) are found in within a
-    distance $(x-\varepsilon, x+\varepsilon)$ of $v$. The rewired edge
-    then projects from $v$ to a new target $t'(e)$, randomly chosen
-    from the set of vertices within in this range. Inter-vertex
-    distance between $v$ and $t'(e)$ differs by less than
-    $\varepsilon$ from $x$, ensuring that for small $\varepsilon$ the
-    original distance-dependent connectivity is preserved.}
-  \label{fig:distance_rewiring}
+  \centering
+  \includegraphics[width=0.8\linewidth]{%
+    plots/4f4dfcf1.pdf} 
+  \captionsetup{skip=0pt}
+  \caption{\textbf{Predicted distance-dependent connection probability
+      profile is matched by numerical results} Averaging
+    distance-dependent connection probabilities over the 25 sample
+    graphs, we find the expected profile calculated in
+    Theorem~\ref{theorem:distance_prof} is matched perfectly by the
+    numerical results. (\smtcite{4f4dfcf1}) } %?? caption
+  \label{fig:rewiring_dst_prf_compare}
 \end{figure}
+
 
  
 
@@ -148,7 +183,6 @@ Here we choose $\varepsilon = ??$.
 %      \State $t(e) \gets \textrm{choice} T$
 %   \EndFor
 % \EndFor
-
 % \end{algorithmic}
 % is defined.
 % \end{algorithm}
