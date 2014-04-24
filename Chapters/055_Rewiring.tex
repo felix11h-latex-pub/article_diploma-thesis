@@ -17,33 +17,46 @@
 % a. In this section we introduce an algorithm
 
 
-It is in our highest interest to compare results to. 
-%------------------------------------------------
-\marginpar{eliminate anisotropy through rewiring}
-%------------------------------------------------ 
-To this end we introduce an algorithm that preserves
-distance-dependent connectivity as found in
-Proposition~\ref{distance_prof}, but eliminates anisotropy in network
-connectivity by consecutively rewiring existing connections to new
-suitable targets.
+% It is in our highest interest to compare results to. 
+% %------------------------------------------------
+% \marginpar{eliminate anisotropy through rewiring}
+% %------------------------------------------------ 
+% To this end we introduce an algorithm that preserves
+% distance-dependent connectivity as found in
+% Proposition~\ref{distance_prof}, but eliminates anisotropy in network
+% connectivity by consecutively rewiring existing connections to new
+% suitable targets.
 
 
-Rewiring as presented here, will provide the transition from
-anistropic connectivity to networks isotropic in connectivity, closely
-resembling purely distance-dependent networks. Applying this process
-only partially will then allow us to analyse structural features as
-they change with a varying degree of isotropy, asserting the
-importance of this process to our study.
+Distance-dependency in the anisotropic networks may already attribute
+to many of the . A central question of this study is: What structural
+aspects in the network are features of the anisotropy in connectivity
+alone?  Although a quantitative measure for anisotropy will only be
+introduced in the next section, already here we are able to
+qualitatively observe the strong directionality in connectivity; edges
+originating from one node \enquote{point in the same direction},
+effectively aligning with the orientation of the axonal projection of
+the source node (cf. \autoref{fig:anisotropic_network_model}). To
+answer the question above, we need to introduce a method that
+eliminates this directionally making networks essentially
+isotropic. Structural aspects present in original anisotropic
+networks, but not in their rewired, isotropic counterparts may then be
+attributed to anisotropy.
 
-In designing the specific rewiring algorithm we identify two
-requirements that our implementation should satisfy:
-\vspace{-6pt}
+Rewiring as introduced here, provides the transition from anistropic
+connectivity to networks isotropic in connectivity, closely resembling
+purely distance-dependent networks. Applying this process only
+partially, allows us to analyse structural features as they change with
+a varying degree of isotropy, asserting the importance of this process
+to our study. In designing the specific rewiring algorithm we identify
+two requirements that our implementation should satisfy: 
+%\vspace{-3pt}
 \begin{enumerate}
   \itemsep-11pt
   \item elimination of anisotropy in connectivity 
   \item preservation of distance-dependent connectivity
 \end{enumerate}
-\vspace{-6pt}%
+%\vspace{-3pt}%
 The second point is especially important to us, as we want to impose
 isotropy on the network at \enquote{minimal cost}, that is by changing
 as little as possible about the other characteristics of the network's
