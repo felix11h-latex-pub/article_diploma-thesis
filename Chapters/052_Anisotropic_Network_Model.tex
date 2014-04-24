@@ -8,23 +8,14 @@
 \section{Anisotropic geometric network model}
 \label{sec:anisotropic_network_model}
 
-% Model tries to be geometric and simple. We therefore
-
-% and propose the following model: along the main stem of the axon in
-% constant width. \marginpar{Variable
-
-% width later!}%?? When?
-
-
-% Implementing the concept of anisotropy in neuronal connectivity
-% developed in the last section in a model, we're faced with
-% challenges. 
-
-% A first approach. The approach taken here tries to, making anisotropy
-% a salient feature in an otherwise standard model. 
-
-In this section we formulate a model of network connectivity
-incorporating anisotropy as outlined in the last section. A 
+Taking up the concept of anisotropy in neural connectivity introduced
+in the last section, we propose here, as basis for this study, a
+simple geometric network model featuring anisotropic
+connectivity. Constructing such a model, we're challenged with
+resembling the anisotropic aspects outlined last section as closely as
+possible, while at the same time making the model as simple and as
+abstract as possible, to allow for an abstract and analytical study of
+such anisotropic networks.
 
 With this in mind, we propose the following model: On a square surface
 of side length $s$, a number of $N$ point neurons are randomly,
@@ -60,16 +51,17 @@ the axon length $x$ at this point
     }%
     \caption{%
       \textbf{Anisotropic geometric network model and interpretations
-        of width parameter $\boldsymbol w$} Illustrating the process of
-      finding connections for one neuron (large triangle, black), the
-      axon describes a linear trajectory in an arbitrary direction and
-      until terminating on the surface's edge. Target neurons (red)
-      are encountered along the path within a distance $w$, which is in
-      \textbf{A)} interpreted as a dendritic radius or, equivalently,
-      in \textbf{B)} as a \enquote{bandwith} of the axon. Connections
-      to the encountered targets are then established as projections
-      in \textbf{C)}, consistent with the directed nature of synapses
-      in biological networks (cf. Chapter~\ref{ch:Biology}).}
+        of width parameter $\boldsymbol w$} Illustrating the process
+      of finding connections for one neuron (large triangle, black),
+      the axon describes a linear trajectory in an arbitrary direction
+      and until terminating on the surface's edge. Target neurons
+      (red) are encountered along the path within a (here constant)
+      distance $w$, which is in \textbf{A)} interpreted as a dendritic
+      radius or, equivalently, in \textbf{B)} as a \enquote{bandwith}
+      of the axon. Connections to the encountered targets are then
+      established as projections in \textbf{C)}, consistent with the
+      directed nature of synapses in biological networks
+      (cf. Chapter~\ref{ch:Biology}).}
   \label{fig:anisotropic_network_model}
 \end{figure}
 
@@ -90,8 +82,8 @@ that we try to capture and analyze in this model.
 
 We will refer to the model as the \textit{anisotropic geometric
   network model}. Trying to provide a simple, abstract model isolating
-anisotropy in connectivity, in most of this study the width $w$ is
-assumed to be constant, a notable exception being the exploration in
+anisotropy in connectivity, in most of this study the width $w(x)$ is
+assumed to be constant, $w(x) =w$, a notable exception being the exploration in
 ??. In the graph theoretic context the anisotropic network model is a
 random graph model, in which a realization of the random
 process results in a geometric directed graph with a special mode of
@@ -148,9 +140,11 @@ of the area covered by the axon and the surface area, making
 connectivity statistics in the anisotropic random graph model
 scale-free.
 
-This study of anisotropic geometric graphs. To enable
-this analysis, some prior work which composes the rest of this
-chapter. Integral to our is a numerical implementation of the model. 
+The following maybe interpreted as a study of anisotropic geometric
+graphs in the light of a neuroscientific context. To enable such an
+analysis, a few more concepts are needed. The introduction of
+those concepts composes the rest of the chapter. A first important
+step is the numerical implementation of the anisotropic network model.
 
 
 
