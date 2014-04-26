@@ -139,43 +139,52 @@ of $4.51$ and accounting for roughly $0.02\%$ of the rewired edges, are \enquote
 in this process (\smtcite{4afc2727}). 
 
 We formulated Definition~\ref{def:rewiring} in such a way, that
-distance-dependent connectivity is preserved. Here we verify by the
+distance-dependent connectivity is preserved. We verify this claim by the
 following estimation:
 
 Let $\tilde{C}(x)$ be the distance-dependent connectivity profile of a
 rewiring $R_{\varepsilon}$ of an anisotropic graph $G_{n,w}$. Denote
 with $C(x)$ the distance-dependent connection probability of the
-$G_{n,w}$. We can estimate the
-\begin{align*}
-  \mathbf{E}[\tilde{C}(x)] - C(X) 
+$G_{n,w}$. The expected value for $\tilde{C}(x)$ at any point $x$ We
+estimate the expected difference between $\tilde{C}(x)$ and $C(x)$ at
+any point $x$ as
+\begin{align}
+  \mathbf{E}\left[\tilde{C}(x) - C(X)\right]  
     & = \int_{x-\varepsilon}^{x+\varepsilon} f(x') C(x') \, dx -
-        C(x)\\
+        C(x)\notag\\
     & = \frac{1}{2\varepsilon}\int_{x-\varepsilon}^{x+\varepsilon}
-        C(x') - C(x) \, dx \\
+        C(x') - C(x) \, dx \notag\\
     & = \frac{1}{2\varepsilon} \left\{ \int_{x-\varepsilon}^{x} C(x') -
         C(x) \, dx - \int_x^{x+\varepsilon} C(x') - C(x) \, dx
-        \right\} \\
-    & = \frac{1}{2\varepsilon} 
-\end{align*}
+        \right\} \notag\\
+    & = \frac{1}{2\varepsilon} \label{eq:rewiring_est}
+\end{align}
 
-The bandwidth parameter $\varepsilon$ this way simulatenously governs
-how many rewired new targets are available and how well the distance
-is preserved. Setting $\varepsilon = ??$, we find that in the distance
-dependent we observe as well as estimation
-\autoref{fig:rewiring_dst_prf_compare} while at the same time ensuring
-that enough for rewiring (\autoref{suppfig:rew_stats}).
+The rewiring margin $\varepsilon$ thus simultaneously governs how many
+new targets are available for each edge and how well
+distance-dependency is preserved. Setting $\varepsilon = 1.25$ %??
+                                %right value check!
+and applying the rewiring algorithm to the 25 sample graphs, we find
+that distance-dependent connectivity of the original graphs is matched
+(\autoref{fig:rewiring_dst_prf_compare}) while at the same time
+ensuring that for any edge $e$ sufficiently many new rewiring targets
+are available (\autoref{suppfig:rew_stats}).
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\linewidth]{%
     plots/4f4dfcf1.pdf} 
   \captionsetup{skip=0pt}
-  \caption{\textbf{Predicted distance-dependent connection probability
-      profile is matched by numerical results} Averaging
-    distance-dependent connection probabilities over the 25 sample
-    graphs, we find the expected profile calculated in
-    Theorem~\ref{theorem:distance_prof} is matched perfectly by the
-    numerical results. (\smtcite{4f4dfcf1}) } %?? caption
+  \caption{\textbf{Rewiring with \boldmath$\varepsilon = 1.25$
+      preserves distance-dependent profile in sample graphs} Comparing
+    the distance-dependent connection probabilities of the original
+    graph (Theorem~\ref{theorem:distance_prof}) in red with extracted
+    of probabilities from the rewired ($\varepsilon = 1.25$) sample
+    graphs in gray (errorbars SEM) we verify that distance-dependent
+    connectivity is preserved when rewiring. The green curve shows the
+    expected difference between the original and rewired
+    distance profiles as estimated in
+    Equation~\ref{eq:rewiring_est}. (\smtcite{4f4dfcf1})}
   \label{fig:rewiring_dst_prf_compare}
 \end{figure}
 
@@ -192,7 +201,6 @@ a fraction $\eta$ of all edges:
   edges, $K_e$ is then extended to include the targets of all edges
   originating from $s(e)$ that will not be rewired.
 \end{definition}
-
 
 
 
