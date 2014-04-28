@@ -1,14 +1,40 @@
 
-\section{Introduction}\label{sec:intro_model}
+\section{Overview}\label{sec:intro_model}
 
 This chapter introduces the central object of this study, the
 \textit{anisotropic network model}. Reviewing connectivity in local
-cortical circuits in Section~\ref{sec:biol_anisotropy}, we find
-evidence of anisotropy in connectivity that we try capture in the
-network model introduced in
-Section~\ref{sec:anisotropic_network_model}. Building a simple and
-abstract model, Forcing this specific
-geometry in network however, causes for . For our ana
+cortical circuits in Section~\ref{sec:biol_anisotropy}, we identify an
+anisotropy in connectivity in layer V pyramidal cells, inferred by
+their specific neuronal anatomy. Reducing the complex neuron
+morphology to characteristic axonal and dendritic profiles, we
+introduce the anisotropic network model in
+Section~\ref{sec:anisotropic_network_model}.  While a graph theoretic
+definition allows for analytical considerations, a numerical
+implementation enables us not only to support the analytical
+observations but also yields results that go beyond the analytical
+results presented here. To fully harness this implementation we argue
+for the choice of a specific parameter set in
+Section~\ref{sec:numerical_implementation}, allowing us to generate a
+set of \enquote{sample graphs} to which we will refer through this
+study.
+
+Using the analytical and numerical approach in conjunction, we are
+most interested in identifying structural aspects in the anisotropic
+network model that are due to the network's anisotropy in connectivity
+and do not occur in similar, isotropic networks. To be able to make
+this distinction, in Section~\ref{sec:distance_connectivity} we
+extract the distance-dependent connectivity of anisotropic networks,
+as it is imposed by the specific geometric relations present in the
+network.  We then go on to introduce \enquote{rewiring} in
+Section~\ref{sec:rewiring}, a method that allows us to manipulate the
+anisotropic networks to eventually display isotropy in connectivity,
+yielding us a method for the generation of geometric graphs,
+. Finally then, Section~\ref{sec:anisotropy_measure} ties together the
+previous by providing a measure for anisotropy and showing how
+rewiring is imposing isotropy upon the networks. 
+
+
+
 
 
 %%% Local Variables: 
