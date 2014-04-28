@@ -123,8 +123,9 @@ formally define a rewiring as follows:
                                 %of distance d?
   \]
   % ------------------------------------------------
-  \marginpar{\vspace{-0.5cm}\\\mbox{$\mathrm{d}(v,w) = \norm{\Phi(v)-\Phi(w)}$}
-    \vspace{-0.24cm}\\Euclidean distance between vertices}
+  \marginpar{\vspace{-0.5cm}\\\mbox{$\mathrm{d}(v,w) =
+      \norm{\Phi(v)-\Phi(w)}$} \vspace{-0.24cm}\\Euclidean distance
+    between vertices}
   % ------------------------------------------------ 
   and $K_e$ the set vertices that already are connected to $s(e)$ by
   another rewired edge, 
@@ -216,11 +217,23 @@ a fraction $\eta$ of all edges:
   originating from $s(e)$ that will not be rewired.
 \end{definition}
 
-Clearly the result above of partial rewirings preserve
-distance-dependent connectivity. Using the we extend our set of sample
-graphs once more adding rewired graphs with rewiring margin
-$\varepsilon = 1.25$ with fractions $\eta = 0.25$, $\eta = 0.5$, $\eta
-= 0.75$ and $\eta = 1$, presenting a complete rewiring.
+Clearly, as with full rewiring, partial rewiring also preserves
+distance-dependent connectivity. Using the algorithm we
+extend our set of sample graphs once more by adding rewired versions
+% ------------------------------------------------
+\marginpar{rewiring of sample graphs}
+% ------------------------------------------------ 
+of each graph. Choosing a rewiring margin of $\varepsilon = 1.25$,
+with fractions $\eta = 0.25$, $\eta = 0.5$, $\eta = 0.75$ and $\eta =
+1$ we obtain through rewiring five stages of the sample graphs, from
+complete anisotropy in connectivity in the original graphs to the
+isotropic, fully rewired graphs. By introducing a measure for
+anisotropy and applying it to the rewired and original version of the
+sample graphs, we're able to solidify this notion and tie together the
+concepts introduced through this chapter in the next section.
+
+% (labels:\smtcite{N1000w\char`_ax126-flat\char`_graph0-25\-rewired\char`_frac025},
+% \smtcite{-50},-75,-100)
 
 
 
