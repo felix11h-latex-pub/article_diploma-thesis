@@ -5,15 +5,77 @@
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
 
-
+\newpage
 \section{Small World Properties}\label{sec:small_world}
+
+Small-world networks, as described in
+Section~\ref{sec:small_world_intro}, are characterized by small a
+average path length and comparably high clustering coefficient. In the
+of brain networks, small-world
+
+\parencite{Watts1998}
+
+Here we are interested in exploring the question if network anisotropy
+has effect on the small-worldness of geometric networks. Using
+distance-dependent networks as a reference, we find that eliminating
+anisotropy through rewiring does affect the small-world properties to
+some degree; with rising isotropy in the network, the characteristic
+path length declines, while the network clustering coefficient
+increases resulting together in rewired networks to display a higher
+degree of small-worldness (\autoref{fig:small_world_props}).
+
+\begin{figure}[htp]
+  \centering
+  \makebox{%
+    \hspace{-0.45cm}
+    \begin{overpic}[height=0.225\textheight]{%
+        plots/064f9b10_apl.pdf}
+      %\put(89.8,56.5){\small\textbf{A}}
+      \put(14.3,78.9){\small\textbf{A}}
+    \end{overpic}
+    \hspace{-0.15cm}
+    \begin{overpic}[height=0.225\textheight]{%
+        plots/064f9b10_lcl_all.pdf}      
+       \put(16.2,78.9){\small\textbf{B}}
+      %\put(12,5){\small\textbf{B}}
+    \end{overpic}
+  }%
+  \caption{\textbf{Higher degree of small-worldness in
+      isotropic than in anisotropic networks} Generating
+    anisotropic networks with different axon widths $w$ and extracting
+    probability $p$ of dcirected connectin between two random nodes,
+    demonstrates the dependency of $p$ on the width parameter $w$.
+    \textbf{A)} At an axon width of over $w=100$, exceeding the
+    square's side length, the connection probability saturates at
+    $p=0.5$, as axon bands are essentially \enquote{cutting} the
+    square in a connected and unconnected half
+    (\smtcite{c5b64f3e}). \textbf{B)} For small $w$ the connection
+    probability is a linear function of $w$, allowing the width $\nicefrac{w_S}{2}$
+    at which $p(w_S)=11.6$ to be determined by a linear fit as
+    $\nicefrac{w_S}{2} =
+    12.6$ (\smtcite{064f9b10}).} %?? fix width issue!!
+  \label{fig:small_world_props}
+\end{figure}  
+
+
+In ER networks avg and cc are ...
+
+
+Comparing path length we find ... 
+
+The analysis . Here we present the influence on anisotropy of
+
+Charactersitic path length
+
 
 
 Average path length and so forth
 
 Sporns papers   newest Butz
 
-
+While the transitivity ratio of a network, its correlation with the
+network's anisotropy degree gives hint of deeper structural
+relationships found in the subsequent sections.
 
 
 
