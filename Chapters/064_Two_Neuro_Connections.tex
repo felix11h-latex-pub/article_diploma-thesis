@@ -6,6 +6,18 @@ described by Markram 1997, finding across have confirmed .
 
 A first result
 
+In anisotropic networks an overrepresentation of reciprocal
+connections is present. Counting and comparing it with our expectation
+from Gilbert random graphs $G(n,p)$, In random graphs the probabilities
+that a random pair of vertices are 
+
+\begin{align*}
+Pr[\abs{}\mathrm{unconnected}] & = (1-p)^2, \\
+& = 2 p (1-p) \quad \mathrm{and}\\
+& = p^2 \\
+\end{align*}
+ 
+
 
 \begin{figure}[htp]
   \centering
@@ -23,9 +35,57 @@ A first result
     \end{overpic}
   }%
   \vspace{0.2cm}
-  \caption{\textbf{Title} SEM!  (\smtcite{c5f1462b}).} %?? fix width issue!!
+  \caption{\textbf{Overrepresentation of reciprocal connections in
+      anisotropic networks due to distance-dependent connectivity}
+    Extracting the counts of unconnected, one-directionally and
+    bidirectionally connected neuron pairs in the anisotropic sample
+    graphs, overrepresentation of reciprocally connected pairs is
+    identified as a feature of the network's distance dependency as
+    opposed to anisotropy in connectivity. \textbf{A)} Showing the
+    quotient of the counts for the three pair types, extracted from the
+    set of sample graphs, with the number of expected pairs in Gilbert
+    random graphs $G(n,p)$, where $n=1000$ and $p=0.116$ were matched
+    to the sample graph parameters. While single connections appear
+    less often than in Gilbert random graphs, reciprocal connections
+    are significantly overrepresented. Errorbars SEM. \textbf{B)}
+    Comparing appearance of connection pairs in the anisotropic sample
+    graphs with their respective appearance in the rewired sample
+    graphs, we find that eliminating anisotropy does not significantly
+    change the counts for the connection types, indicating that
+    anisotropy does not influence two neuron connection
+    probabilities. Errorbars SEM.  (\smtcite{c5f1462b})}
   \label{fig:two_neuron_probs}
 \end{figure}  
+
+We can further support our hypothesis that anisotropy does not
+influence two neuro connection probabilities by calculating them
+. Taking distance-dependent connection probability $C(x)$ in
+anisotropic networks from Theorem ?? and the , we find the expressions
+
+\begin{align*}
+Pr[\abs{}\mathrm{unconnected}] & = \int_0^{\sqrt{2}} (1-C(x))^2 f(x)\,
+dx, \\
+& = \int_0^{\sqrt{2}} 2 C(x) (1-C(x)) f(x) \, dx \quad \mathrm{and}\\
+& = \int_0^{\sqrt{2}} C(x)^2 f(x) \, dx \\
+\end{align*}
+
+% From Python c5f1462b
+% Unconn:       0.790732332332  +- 0.000817274958369
+% Single:       0.184638238238  +- 0.00074516663005
+% Recip:        0.0246294294294  +- 8.63947164473e-05
+
+
+% Mathematica (expected_two_neuron.nb)
+% Unconn:       0.791336
+% Single:       0.184151
+% Recip:        0.0245132 
+
+
+Maybe simplicity of the model makes stuff wrong. Tune to Perin
+distance profile.
+
+Let 
+
 
 
 %%% Local Variables: 
