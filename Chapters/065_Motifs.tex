@@ -14,7 +14,7 @@ Song motifs:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.95\linewidth]{%
-    plots/4839ce41_aniso_rand.pdf} 
+    plots/4839ce41_aniso_dist.pdf} 
   \captionsetup{skip=8pt}
   \caption{\textbf{Relative occurrence of three-neuron patterns}
     Extracting the counts of three-node motifs in anisotropic (filled
@@ -32,6 +32,53 @@ Song motifs:
     influence on the relative occurrence of three-neuron
     patterns. (\smtcite{4839ce41}) }
   \label{fig:distance_theory_compare}
+\end{figure}
+
+
+
+\begin{figure}[H]
+  \centering
+  \renewcommand{\tabcolsep}{0pt}
+  \setlength\extrarowheight{0pt}
+  \begin{tabular}{ll}
+    \begin{overpic}[width=0.5\textwidth]{%
+        /users/hoffmann/research/cn_k_test.pdf}
+      %\put(12,56){\small $\eta = 0$}
+    \end{overpic}
+    &
+    \begin{overpic}[width=0.5\textwidth]{%
+        /users/hoffmann/research/cn_k_test.pdf}
+      %\put(12,56){\small $\eta = 0.25$}
+    \end{overpic}
+    \\
+    \begin{overpic}[width=0.5\textwidth]{%
+        /users/hoffmann/research/cn_k_test.pdf}
+      %\put(12,56){\small $\eta = 0.5$}
+    \end{overpic}
+    &
+    \begin{overpic}[width=0.5\textwidth]{%
+        /users/hoffmann/research/cn_k_test.pdf}
+      % \put(12,56){\small $\eta = 0.75$}
+      %\put(4,-4){\small$0$}\put(78,-4){\small$200$}
+    \end{overpic}
+    \\
+    % \begin{overpic}[width=0.28\textwidth]{%
+    %     plots/77995b6b_in100.pdf}
+    %   \put(12,56){\small $\eta = 1$}
+    %   \put(4,-4){\small$0$}\put(78,-4){\small$200$}
+    % \end{overpic}
+    % & 
+    % \begin{overpic}[width=0.28\textwidth]{%
+    %     plots/77995b6b_indst.pdf}
+    %   \put(12,56){\small distance}
+    %   \put(4,-4){\small$0$}\put(78,-4){\small$200$}
+    % \end{overpic}
+    % \\
+  \end{tabular}
+  \caption{\textbf{In-degaree distrbution not affected by varying
+      degrees of anisotropy} 
+    (\smtcite{77995b6b}). }
+  \label{fig:in_degree_rewiring}
 \end{figure}
 
 
