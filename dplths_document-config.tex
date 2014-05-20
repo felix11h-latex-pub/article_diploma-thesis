@@ -124,7 +124,7 @@
 
 
 \usepackage[style=authoryear,   %  authoryear-comp maybe?
-            url=false,          %
+            url=true,          %
             maxbibnames=99,     %
             doi=true,           %
             maxcitenames=2,     %
@@ -136,6 +136,16 @@
 %      
 %       John Doe 2012  ->   John Doe 2012
 %       ----  2013          John Doe 2013
+
+
+
+\AtEveryBibitem{%
+  \ifentrytype{misc}{%
+  }{%
+    \clearfield{url}%
+    \clearfield{urldate}%
+  }%
+}
 
 
 \AtEveryBibitem{\clearlist{language}}

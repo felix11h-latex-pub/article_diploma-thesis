@@ -27,6 +27,10 @@
 %   \item think about definitions
 %   \end{itemize}
 
+Here we introduce the various categories of directed graphs. The main
+reference for this section is the work of
+\textcite{Bang-Jensen_Digraphs}. For the formal definition below we
+follow \textcite{nLab}.
 
 \begin{definition}[Directed graphs]
   \index{directed graph} \index{simple graph} \index{pseudograph}
@@ -51,8 +55,8 @@
   $V^2\setminus\Delta_V$.
 \end{definition}
 
-Thus, in simple directed graphs, neither parallel edges nor loops -
-edges between the same vertex - are allowed, whereas directed
+Thus, in simple directed graphs, neither parallel edges nor loops
+(edges between the same vertex) are allowed, whereas directed
 multigraphs and directed loop graphs admit one of them respectively.
 
 \red{Say something about what "directed graph" means here, do all
@@ -115,7 +119,7 @@ that is such that the following diagram commutes:
 %
 A morphism $\varphi: G \to H$, between two directed pseudographs $G$
 and $H$ is an \textbf{isomorphism}, if the maps $\varphi_V: V_G \to
-V_H$ and $\varphi_E: E_G \to E_H$ are bijective. Two directed
+V_H$ and $\varphi_E: E_G \to E_H$ are bijections. Two directed
 pseudographs are called \textit{isomorphic} if there exists an
 isomorphism inbetween them.
 
@@ -136,58 +140,64 @@ isomorphism inbetween them.
   \mathbb{R}$.
 \end{definition}
 
-\begin{remark} \red{(heavy draft)}
 
-  % 
-  % Think about
-  %  - synaptic integration (non-linear)
-  %  - self excitation, interessed in axonal-dendritic connections, so
-  %    probably not for structure but maybe dynamics?
-  % 
+% \vspace{-0.21cm}
+% \definecolor{lightgray}{rgb}{0.88, 0.88, 0.88}
+% \begin{center}
+%  \setlength{\fboxrule}{0pt}
+%  \fcolorbox{black}{lightgray}{
+%    \begin{minipage}[c]{0.95\textwidth}
 
-  % Title: A directed graph category for biological neural networks
+%      \vspace{0.2cm}
 
-  Certainly, a weighted directed pseudograph is the most fitting
-  mathematical modelling to the biological situation, since self
-  connections and multiple synapse are not only plausibel (source?)
-  but the rule. However there is one abstraction we can make by adding
-  together the synaptic weights - NEST is doing it. While linear
-  synaptic integration was shown to be, it is a prevalent model in
-  network (ref Nest).\\ 
+%      \setlength{\intextsep}{0pt}%
+%      \setlength{\columnsep}{8pt}%
 
-  Also think about \textbf{inhibitory, excitatory}. Suggestion: edge
-  weights $\omega: E(G) \to \mathbb{R}^{+}$ \textbf{and} vertex
-  weights $\nu: V(G) \to \{-1, 1\}$. Synaptic weight $\mathrm{syn}(e)$
-  for edge $e$ is then \[\mathrm{syn}(e) = \nu(s(e))\,\omega(e).\]
-  Benefit: Synapse from one neuron are either excitatory or inhibitory
-  but not mixed as in bio.
-\end{remark}
+%      \textbf{A directed graph category for neural networks}\\
+
+%      In brain networks, synaptic connections between neuron are
+%      inherently directed. While there is some feedback, pre- and
+%      postsynaptic neuron are clearly differentiate. Existing
+%      connections between neurons are often mediated over several
+%      synapses with different synaptic weights which .
+
+%      Therefore . In dynamic two neuron types . 
 
 
-\begin{remark}[Equivalent definiton for directed loop graphs]
+%      A vertex
 
-  A directed loop graph $G$ can be equivalently defined as a pair of
-  finite\red{(, non-empty?)} sets $V$, the \textit{set of vertices} of
-  $G$, and $E \subseteq V^2$ the \textit{set of edges} of $G$. For an
-  edge $(x,y) \in E$, we call $x$ the \textit{source} and $y$ the
-  target of the edge $(x,y)$.
+%      $\omega: E(G) \to \mathbb{R}^{+}$ \textbf{and}
+%      vertex weights $\nu: V(G) \to \{-1, 1\}$. Synaptic weight
+%      $\mathrm{syn}(e)$ for edge $e$ is then \[\mathrm{syn}(e) =
+%      \nu(s(e))\,\omega(e).\]
 
-  Source and target functions are then uniquely determined as the
-  projections on the first and second component, $s = \mathrm{pr}_1, t
-  = \mathrm{pr}_2: E(G) \to V.$ Conversely, the edge set $E(G)
-  \subseteq V^2$ can be determined from the source and target
-  functions as $E:=\{(s(e),t(e)) \mid e \in E\}$. The trivial identities
-  $(x,y) = (\mathrm{pr}_1(x,y),\mathrm{pr}_2(x,y))$ and
-  $\mathrm{pr_1}(s(e), t(e)) = s(e)$ with $\mathrm{pr_2}(s(e), t(e)) =
-  t(e)$ quickly verify the equivalence of the definitions.
 
+%      \vspace{0.2cm}
+%    \end{minipage}}
+% \end{center}
+
+
+
+\begin{remark}  
+  A directed graph $G$ can be equivalently defined
+  \marginpar{Equivalent definiton for directed loop graphs} as a pair
+  of finite sets $V$, the \textit{set of vertices} of $G$, and $E
+  \subseteq V^2$ the \textit{set of edges} of $G$.  For an edge $(x,y)
+  \in E$, we call $x$ the \textit{source} and $y$ the target of the
+  edge $(x,y)$. Source and target functions are then uniquely
+  determined as the projections on the first and second component, 
+  \[s = \mathrm{pr}_1, t = \mathrm{pr}_2: E(G) \to V.\] Conversely,
+  the edge set $E(G) \subseteq V^2$ can be determined from the source
+  and target functions as $E:=\{(s(e),t(e)) \mid e \in E\}$. The
+  trivial identities $(x,y) = (\mathrm{pr}_1(x,y),\mathrm{pr}_2(x,y))$
+  and $\mathrm{pr_1}(s(e), t(e)) = s(e)$ with $\mathrm{pr_2}(s(e),
+  t(e)) = t(e)$ quickly verify the equivalence of the definitions.
   Given a directed loop graph $G$, we often assume the graph to be
   given in this form and write edges as $e=(x,y)$. Note that this
   concept is more complicated to introduce for directed pseudographs,
   since parallel edges $e$ and $e'$ should to be differentiated in the
   egde set of $G$, establishing the need for $E(G)$ to be a multi- or
   indexed set, notions we are trying to avoid in this document.
-
 \end{remark}
 
 
@@ -236,13 +246,6 @@ makes problems as mentioned before.
   \]
   the number of edges in $G$ with source $x$.
 \end{definition}
-
-\begin{remark}[Side]
-  In some literature about directed graphs (Bang-Jensen), loops are
-  \textit{not} counting towards the in- or out-degree of vertex. In
-  the light of neural network however, we specifically want to count
-  loops as well.
-\end{remark}
 
 A basic property of the in- and out-degree in directed graphs is that
 number of in-degrees of every vertex, as well the sum of every
