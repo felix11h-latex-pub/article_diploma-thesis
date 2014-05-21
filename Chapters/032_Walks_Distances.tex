@@ -11,11 +11,11 @@
 % ######################################################################### %
 
 
-\section{Walks and distances}\label{sec:walks_and_distances}
+\section{Network measures}\label{sec:network_measures}
 
 
-Let $G$ be a directed graph \red{(what does it mean here?)}. A
-\textbf{walk} $W$ in $G$ is an alternating sequence
+Let $G$ be a (simple) directed graph. A \textbf{walk} $W$ in $G$ is an
+alternating sequence
 $(x_1,e_1,x_2,e_2,x_3,\ldots,x_{n-1},e_{n-1},x_n)$ of of vertices
 $x_i$ and edges $e_i$ from $G$, such that
 \[
@@ -24,25 +24,22 @@ s(e_i) = x_i \quad \mathrm{and} \quad t(e_i) = x_{i+1}, \:\,
 \]
 that is, such that the vertices are connected by the edges inbetween
 them. We denote the set of vertices $(x_1,\ldots,x_n)$ of $W$ as
-$V(W)$ and the sequence of edges $(e_1,\dots,e_{n-1})$ as $E(W)$
-\red{(need it?)}.
+$V(W)$ and the sequence of edges $(e_1,\dots,e_{n-1})$ as $E(W)$.
 
 The vertices $x_1$ and $x_n$ are called the \textit{end vertices} of
 $W$ and we also say that $W$ is an $(x,y)$-walk. The \textbf{length}
 of $W$ is defined as the length of the sequence of edges; a walk
-consisting of only one vertex has length zero. \red{ colon, really?}
-
+consisting of only one vertex has length zero.
 
 \begin{definition}[Distance]
   The \textbf{distance} of two vertices $x$,$y$ in a directed graph
-  $G$ \red{(means?)}, is defined as the minimum length of an
+  $G$, is defined as the minimum length of an
   $(x,y)$-walk, if any such walk exists, otherwise
   $\operatorname{dist}(x,y)=\infty$. In short,
   \[
   \operatorname{dist}(x,y) = \inf \{|E(W)| \mid
   W\,\mathrm{is}\,(x,y)\mathrm{-walk}\}.
   \]
-  \red{$|E(W)|$ is not explained. Necessary?}
 \end{definition}
 
 \begin{proposition}
@@ -62,12 +59,47 @@ consisting of only one vertex has length zero. \red{ colon, really?}
   $U$ we obtain an $(x,z)$-walk of length $|E(W)| + |E(U)| =
   \operatorname{dist}(x,y) + \operatorname{dist}(y,z)$, proofing
   that \[ \operatorname{dist}(x,z) \le \operatorname{dist}(x,y) +
-  \operatorname{dist}(y,z).
+  \operatorname{dist}(y,z).\]\end{proof}
+
+
+
+ \begin{definition}[Average path length] The \textit{average path
+     length} of a directed graph $G$ with $V(G)=n$ is defined as
+     \[
+     l = \frac{1}{n(n-1)} \sum_{x\neq y \in V(G)}
+     \operatorname{dist}(x,y). \]
+\end{definition}
+
+In practice, vertex pairs with $\operatorname{dist}(x,y) = \infty$, that is
+pairs that are not connected by a walk, are disregarded in the
+computation and the average path length is determined in the connected
+components of the graph, ensuring that $l$ is finite.
+
+The concept of a small-world property in graphs was introduced by
+\textcite{Watts1998}. Networks associated with the property are
+characterized by a small average path length, while however most nodes are
+organized in \enquote{cliques}, connecting to nodes that are
+themselves neighbors. A measure capturing this property is the (local)
+clustering coefficient:
+
+\begin{definition}[Clustering coefficient] The \textit{clustering
+    coefficient} of a vertex $x$ in a directed graph $G$ is defined as
+  ratio of realized and possible edges between the neighbors of
+  $x$. If $N_x$ is the neighborhood of all vertices reciprocally
+  connected to $x$,
+  \[
+    N_x = \{v \mid v \in T(x) \wedge v \in S(x)\},
+  \] 
+  then the clustering coefficient is given by
+  \[
+    \operatorname{clust}(x) = \frac{\abs{(N_x,N_x)_G}}{\abs{N_x}
+      (\abs{N_x} -1)}.
   \]
-\end{proof}
+\end{definition}
 
-
-
+Small-worldness is then described by a low average path length and
+high clustering coefficient, usually considered as the mean of all
+vertices. 
 
 
 %   \begin{definition}[Neighbour, adjacent] Two \textbf{vertices} $x,y \in
@@ -78,32 +110,27 @@ consisting of only one vertex has length zero. \red{ colon, really?}
 %   \end{definition}
 
 
-More to do:
 
-\begin{itemize}
-\item summarize category of directed (weighted) pseudographs
-\item weights!
-\item vertices will also be called nodes and neurons, edges will also
-  be connections or synapses.
-\item subgraphs
-\item \sout{vertex set, edge set $E(G), V(G)$.}
-\item $\omega(e)$ is weight, connection strength or synaptic weight
-  (as a side remark
-\item extend to category of weighted directed pseudographs
-  (isomorphisms)
-\item path
-\item adjacency matrix
-\item converses of graph related to opposite category?
-\item \sout{in- and out-degree}
-\item \sout{triangle inequality for distance, $\mathrm{dist}(x,z) \leq
-  \mathrm{dist}(x,y) + \mathrm{dist}(y,z)$}
-\end{itemize}
-
+% \begin{itemize}
+% \item summarize category of directed (weighted) pseudographs
+% \item weights!
+% \item vertices will also be called nodes and neurons, edges will also
+%   be connections or synapses.
+% \item subgraphs
+% \item \sout{vertex set, edge set $E(G), V(G)$.}
+% \item $\omega(e)$ is weight, connection strength or synaptic weight
+%   (as a side remark
+% \item extend to category of weighted directed pseudographs
+%   (isomorphisms)
+% \item path
+% \item adjacency matrix
+% \item converses of graph related to opposite category?
+% \item \sout{in- and out-degree}
+% \item \sout{triangle inequality for distance, $\mathrm{dist}(x,z) \leq
+%   \mathrm{dist}(x,y) + \mathrm{dist}(y,z)$}
+% \end{itemize}
 
 
-References for this chapter:
-\url{http://nlab.mathforge.org/nlab/show/graph},
-\url{http://nlab.mathforge.org/nlab/show/quiver}, \parencite{Bang-Jensen_Digraphs}
 
 
 

@@ -9,8 +9,7 @@
 \section{Small World Properties}\label{sec:small_world}
 
 Small-world networks, as described in
-Section~\ref{sec:small_world_intro}, are characterized by small a
-average path length and comparably high clustering coefficient. In the
+Section~\ref{sec:network_measures}, are characterized by a small average path length and comparably high clustering coefficient. In the
 of brain networks, small-world
 
 \parencite{Watts1998}
@@ -23,6 +22,7 @@ some degree; with rising isotropy in the network, the characteristic
 path length declines, while the network clustering coefficient
 increases resulting together in rewired networks to display a higher
 degree of small-worldness (\autoref{fig:small_world_props}).
+
 
 \begin{figure}[htp]
   \centering
@@ -40,23 +40,24 @@ degree of small-worldness (\autoref{fig:small_world_props}).
       %\put(12,5){\small\textbf{B}}
     \end{overpic}
   }%
-  \caption{\textbf{Higher degree of small-worldness in
-      isotropic than in anisotropic networks} Generating
-    anisotropic networks with different axon widths $w$ and extracting
-    probability $p$ of dcirected connectin between two random nodes,
-    demonstrates the dependency of $p$ on the width parameter $w$.
-    \textbf{A)} At an axon width of over $w=100$, exceeding the
-    square's side length, the connection probability saturates at
-    $p=0.5$, as axon bands are essentially \enquote{cutting} the
-    square in a connected and unconnected half
-    (\smtcite{c5b64f3e}). \textbf{B)} For small $w$ the connection
-    probability is a linear function of $w$, allowing the width $\nicefrac{w_S}{2}$
-    at which $p(w_S)=11.6$ to be determined by a linear fit as
-    $\nicefrac{w_S}{2} =
-    12.6$ (\smtcite{064f9b10}).} %?? fix width issue!!
+  \caption{\textbf{Anisotropy does not contribute to small-worldness}
+    In increasingly rewired networks, trends show a decreasing average
+    path length and rising clustering coefficient and thus possibly a
+    higher degree of small-worldness in the rewired, isotropically
+    connected networks.  \textbf{A)} Average path lengths for network
+    sizes $N=250$, $500$ and $1000$, where vertex pairs with no
+    existing are discarded. Individual value pairs are obtained by
+    averaging over a trial size of $20$, $15$ and $5$ respectively;
+    errorbars are SEM. \textbf{B)} Network configuration as in A),
+    additionally showing clustering coefficients for
+    distance-dependent networks.
+    (\smtcite{064f9b10})} %?? fix width issue!!
   \label{fig:small_world_props}
 \end{figure}  
 
+
+In distance dependent networks the average path length is in general
+smaller (\autoref{suppfig:small_world}), matching those of a random network.
 
 
 In ER networks avg and cc are ...

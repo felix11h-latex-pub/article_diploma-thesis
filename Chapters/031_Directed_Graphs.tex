@@ -11,25 +11,9 @@
 \section{Directed graphs}\label{sec:directed_graphs}
 
 
-%  \begin{definition}[Graph, Order] A \textbf{graph} is a pair of sets $G
-% =(V,E)$, consisting of the \textbf{vertex set} $V(G)=V$ and the
-% \textbf{edge set} $E(G)=E$, such that $E \subseteq V \times V$.  The
-% number of vertices of a graph $G$ is its \textbf{order} $|G|$, the
-% number of edges is denoted by $||G||$.  A graph of order $0$ or $1$ is
-% called \textit{trivial}.
-%   \end{definition}
-
-%   The object of interest in my thesis will be directed pseudographs,
-% but I will still have to think about how to
-%   \begin{itemize}
-%   \item call them, graphs, directed graphs, etc..
-%   \item think about the weights(!!)
-%   \item think about definitions
-%   \end{itemize}
-
 Here we introduce the various categories of directed graphs. The main
-reference for this section is the work of
-\textcite{Bang-Jensen_Digraphs}. For the formal definition below we
+reference for this section is \textcite{Bang-Jensen_Digraphs}, for the
+formal definition below however, we
 follow \textcite{nLab}.
 
 \begin{definition}[Directed graphs]
@@ -57,10 +41,9 @@ follow \textcite{nLab}.
 
 Thus, in simple directed graphs, neither parallel edges nor loops
 (edges between the same vertex) are allowed, whereas directed
-multigraphs and directed loop graphs admit one of them respectively.
-
-\red{Say something about what "directed graph" means here, do all
-  definition until random graphs work for all types of directed graphs?}
+multigraphs and directed loop graphs admit one of them
+respectively. We refer to any of the four graph types simply as a
+directed graph and only specify the type when needed.
 
 \begin{figure}[!htbp]
   \centering 
@@ -195,7 +178,7 @@ isomorphism inbetween them.
   Given a directed loop graph $G$, we often assume the graph to be
   given in this form and write edges as $e=(x,y)$. Note that this
   concept is more complicated to introduce for directed pseudographs,
-  since parallel edges $e$ and $e'$ should to be differentiated in the
+  since parallel edges $e$ and $Xe'$ should to be differentiated in the
   egde set of $G$, establishing the need for $E(G)$ to be a multi- or
   indexed set, notions we are trying to avoid in this document.
 \end{remark}
@@ -214,22 +197,23 @@ isomorphism inbetween them.
 
 
 
-From now on any \textit{directed graph} is assumed to be a directed
+From now on any directed graph is assumed to be a directed
 loop graph. Although most, if not all, concepts work for directed
 pseudographs just as well, we want to start to heavily use the
 canonical edge representation, which when talking about pseudograps
 makes problems as mentioned before.
 
-\begin{remark}[More Notation] 
-  \red{- Check, do I really need this?} For a pair of vertex sets $X,Y
-  \subseteq V(G)$ of a directed graph $G$ we write
-  \[
-  (X,Y)_G = \{(x,y) \in E(G) | x \in X, y \in Y \}
-  \]
-  for the set of edges with source in $X$ and target in $Y$. For
-  vertex sets with a single element $X = {x}$, we also write $(x,Y)_G$
-  and mean the edges with source $x$ and target in $Y$.
-\end{remark}
+For a pair of vertex sets $X,Y \subseteq V(G)$ of a directed graph $G$
+we write 
+\[ (X,Y)_G = \{(x,y) \in E(G) | x \in X, y \in Y \}\] for the set of
+edges with source in $X$ and target in $Y$. \marginpar{Notation for
+  target and source sets} Specifically we write $T(x) = (x,V(G))_G$
+for the set of \textit{targets} for edges originating from the vertex
+$x$ and $S(x) := (V(G),x)_G$ for the set of \textit{sources} for edges
+projecting to $x$.
+
+
+
 
 
 \begin{definition}[In- and out-degree]  
@@ -238,11 +222,11 @@ makes problems as mentioned before.
   vertex $x$ is defined as the number of edges of $G$ with target $x$,
   that is
   \[
-  d^-_G(x) = \left|(V(G),x)_G\right|.
+  d^-_G(x) = \left|S(x)\right|.
   \]
   Similarily, the \textbf{out-degree} $d^+_G(x)$ of $x$ is defined as
   \[
-  d^+_G(x) = \left|(x, V(G))_G\right|,
+  d^+_G(x) = \left|T(x)\right|,
   \]
   the number of edges in $G$ with source $x$.
 \end{definition}
