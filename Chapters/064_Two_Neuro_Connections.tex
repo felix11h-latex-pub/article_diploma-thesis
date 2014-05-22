@@ -1,25 +1,58 @@
+\newpage
 
 \section{Two Neuron Connections}
 
-Connectivity in cortical neural networks shows a specific . First
-described by Markram 1997, finding across have confirmed . 
+Connectivity in local cortical circuits displays a distinctive
+feature: Bidirectionally connected pairs of neurons appear much more
+frequent than one would expect from the overall connection
+probability. This aspect of local networks has been reported
+repeatedly,
 
-A first result
-
-In anisotropic networks an overrepresentation of reciprocal
-connections is present. Counting and comparing it with our expectation
-from Gilbert random graphs $G(n,p)$, In random graphs the probabilities
-that a random pair of vertices are 
-
-\begin{align*}
-Pr[\abs{}\mathrm{unconnected}] & = (1-p)^2, \\
-& = 2 p (1-p) \quad \mathrm{and}\\
-& = p^2 \\
-\end{align*}
- 
+% Makram 1997, Song 2005.
 
 
-\begin{figure}[htp]
+% . First
+% described by Markram 1997, finding across have confirmed . 
+
+% A first result
+
+% In anisotropic networks an overrepresentation of reciprocal
+% connections is present. Counting and comparing it with our expectation
+% from Gilbert random graphs $G(n,p)$, In random graphs the probabilities
+% that a random pair of vertices are 
+
+Here we investigate whether anisotropy in connectivity can be at cause
+for this overrepresentation of reciprocally connected pairs. In random
+networks, the chance to encounter a specific mode of connection in
+a random pair of neurons be can easily be computed from the overall
+connection probability $p$. For this let $X$ be the random variable of the
+number of edges between two different vertices in a Gilbert graph
+$G(n,p)$ with $n \ge 2$. As the edges are independently realized
+resulting in a simple directed graph, we have
+\begin{equation}
+  \label{eq:pairs}
+  \begin{aligned}%
+    & \mathbf{P}(X=0) = (1-p)^2   &&\text{unconnected pair,}  \\
+    & \mathbf{P}(X=1)= 2p(1-p)    &&\text{single connection,}\\
+    & \mathbf{P}(X=2) = p^2       &&\text{reciprocal connection};
+  \end{aligned}%
+\end{equation}
+in short $\mathbf{P}(X=k) = \mathcal{B}_{2,p}(k)$ for $k \in
+\{0,1,2\}$ and $P(X=k) = 0$ otherwise. This probability distribution
+reflects the expectation for connectivity of neuron pairs in
+anisotropic networks. A numeric analysis of the anisotropic sample
+graphs reveals that bidirectionally connected pairs appear almost
+twice as often as expected from the overall connection
+probability($p=0.116$) and equations \ref{eq:pairs}, similarly as
+reported by Song et al.~(\autoref{fig:two_neuron_probs}
+A). However, comparing pair probabilties in anisotropic networks with
+the probabilities in their rewired counterparts we find that
+anisotropy is does not influence the occurrence of two-neuron motifs
+(\autoref{fig:two_neuron_probs} B) In fact, expected connections in
+neuron pairs are identical in distance-dependent and rewired
+anisotropic networks (\autoref{suppfig:two_neuron_dist_rew}).
+
+\begin{figure}[ht]
   \centering
   \makebox{%
     \begin{overpic}[height=0.17\textheight]{%
@@ -56,16 +89,29 @@ Pr[\abs{}\mathrm{unconnected}] & = (1-p)^2, \\
   \label{fig:two_neuron_probs}
 \end{figure}  
 
-We can further support our hypothesis that anisotropy does not
-influence two neuro connection probabilities by calculating them
-. Taking distance-dependent connection probability $C(x)$ in
-anisotropic networks from Theorem ?? and the , we find the expressions
 
+
+
+We can further support this observation by computing the probability
+distribution for the expected number of edges between to random
+vertices in the anisotropic graph model. Explicitly assuming that only
+the distance-dependent connection probability $C(x)$ as calculated in
+Theorem~\ref{theorem:distance_prof} is decisive in determining the
+distribution for connections in neuron pairs, we can from $C(X)$ and
+the probability distribution $f(x)$ for the a random neuron pair to be
+at distance $x$ (Theorem~\ref{theorem:distance_square}), determine
+\textbf{P}.
 \begin{align*}
-Pr[\abs{}\mathrm{unconnected}] & = \int_0^{\sqrt{2}} (1-C(x))^2 f(x)\,
+\mathbf{P}(X=0) & = \int_0^{\sqrt{2}} (1-C(x))^2 f(x)\,
 dx, \\
-& = \int_0^{\sqrt{2}} 2 C(x) (1-C(x)) f(x) \, dx \quad \mathrm{and}\\
-& = \int_0^{\sqrt{2}} C(x)^2 f(x) \, dx \\
+\mathbf{P}(X=1) & = \int_0^{\sqrt{2}} 2 C(x) (1-C(x)) f(x) \, dx \quad \mathrm{and}\\
+\mathbf{P}(X=2) & = \int_0^{\sqrt{2}} C(x)^2 f(x) \, dx 
+\end{align*}
+which yields, using the and
+\begin{align*} 
+\mathbf{P}(X=0) & = 0.791336 && 0.7907  \pm 0.0008\\
+\mathbf{P}(X=1) & = 0.184151 && 0.1846  \pm 0.0007\\
+\mathbf{P}(X=2) & = 0.024513 && 0.02462  \pm 0.00009
 \end{align*}
 
 % From Python c5f1462b
@@ -77,7 +123,7 @@ dx, \\
 % Mathematica (expected_two_neuron.nb)
 % Unconn:       0.791336
 % Single:       0.184151
-% Recip:        0.0245132 
+% Recip:        0.024513 
 
 
 Maybe simplicity of the model makes stuff wrong. Tune to Perin

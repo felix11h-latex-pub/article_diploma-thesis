@@ -5,36 +5,43 @@
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
 
-\newpage
 \section{Small World Properties}\label{sec:small_world}
 
 Small-world networks, as described in
 Section~\ref{sec:network_measures}, are characterized by a small
 average path length and comparably high clustering coefficient. In
-brain networks, small-world properties are frequently discussed as the
-stemming from few long-rage projections. While most often
-reported on the macroscale \parencite{SpornsZwi2004}, small-worldness
-is also found in local cortical networks \parencite{Perin2011}.
+brain networks, combining advantages of sparse connectivity with
+mostly local and only few long-range projections, small-world
+properties are frequently discussed as a way of achieving high
+efficiency in the parallel processing of
+information \parencite[cf.][]{Achard2007}. While most often reported
+on the macroscale \parencite{SpornsZwi2004, Bassett2006},
+small-worldness is also found in local cortical
+networks \parencite[SI]{Perin2011}.
 
-Here we are interested in exploring the question whether network
-an\-iso\-tropy has effect on the small-worldness of geometric
-networks. While anisotropic networks display a relatively high
-clustering coefficient, $c = \pm $ at network size $N=1000$ (compared
-with $p = 0.116$ in random networks) and a comparable path length
-$l_{\mathrm{aniso}} = $ and $l_{\mathrm{random}} = 1.8820 \pm 0.0001$
-% label:251412db
-) in comparison with random graphs, we find that 
+Here we are interested in exploring the question whether
+an\-iso\-tropy in connectivity influences the small-worldness of
+geometric networks. First we find that at a network size $N=1000$,
+% ----------------------------------------
+\marginpar{in random networks from independence clustering = $p$}
+% ----------------------------------------
+anisotropic networks display a relatively high clustering coefficient,
+$c = 0.1581 \pm 0.0008$ compared with $p = 0.116$ in random networks,
+and a comparable path length, $l_{\mathrm{aniso}} = 1.937 \pm 0.002$
+and $l_{\mathrm{random}} = 1.8820 \pm 0.0001$, % label:251412db
+ascertaining a small-world property in the anisotropic network model.
 
-However, using distance-dependent networks as a reference, we find
-that successively eliminating anisotropy through rewiring contributes
-positively to the small-world property; with rising isotropy in the
-network, the characteristic path length declines, while the network
-clustering coefficient increases resulting together in rewired
-networks to display a higher degree of small-worldness
-(\autoref{fig:small_world_props}).
+However, is this degree of small-worldness inferred by anisotropy in
+connectivity? Using distance-dependent networks as a reference, we
+find that successively eliminating anisotropy through rewiring
+contributes positively to the small-world property; with rising
+isotropy in the network, the characteristic path length declines in
+small networks and remains unchanged in larger networks, while the
+clustering coefficient increases regardless of network size, resulting
+together in rewired networks to display a higher degree of
+small-worldness (\autoref{fig:small_world_props}).
 
-
-\begin{figure}[htp]
+\begin{figure}[!htb]
   \centering
   \makebox{%
     \hspace{-0.45cm}
@@ -50,6 +57,7 @@ networks to display a higher degree of small-worldness
       %\put(12,5){\small\textbf{B}}
     \end{overpic}
   }%
+  \captionsetup{skip=8pt}
   \caption{\textbf{Anisotropy does not contribute to small-worldness}
     In increasingly rewired networks, trends show a decreasing average
     path length and rising clustering coefficient and thus possibly a
@@ -65,15 +73,21 @@ networks to display a higher degree of small-worldness
   \label{fig:small_world_props}
 \end{figure}  
 
+In distance-dependent networks the average path length is generally
+smaller than in (rewired) anisotropic networks
+(\autoref{suppfig:small_world}), matching those of a random network as
+reported above. At the same time also the clustering coefficient is
+smaller than in anisotropic networks
+(\autoref{fig:small_world_props}), resulting overall in a comparable
+degree of small-worldness in distance-dependent networks
+\footnote{Differences in the absolute values of both path length and
+  clustering coefficient presumably relates to difference in the
+  out-degree distribution (\autoref{fig:out_degree_rewiring})} and
+leading to the conclusion that the observed small-worldness in the
+anisotropic networks is due to the imposed distant-dependent
+connectivity rather than the anisotropy in connectivity.
 
-In distance dependent networks the average path length is in general
-smaller (\autoref{suppfig:small_world}), matching those of a random
-network.
 
-The fact that rewired anisotropic networks show an overall higher
-clustering coefficient as purely distance-dependent networks is not
-fully explained, but presumably relates to the difference in the
-out-degree distribution (\autoref{fig:out_degree_rewiring}),
 
 
 %Conclusions:
