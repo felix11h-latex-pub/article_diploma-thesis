@@ -138,12 +138,12 @@
 %       ----  2013          John Doe 2013
 
 
+\DeclareFieldFormat*{urldate}{}
 
 \AtEveryBibitem{%
   \ifentrytype{misc}{%
   }{%
     \clearfield{url}%
-    \clearfield{urldate}%
   }%
 }
 
