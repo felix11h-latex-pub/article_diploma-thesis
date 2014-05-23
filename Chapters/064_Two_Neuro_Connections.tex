@@ -14,8 +14,8 @@ found an overrepresentation of reciprocally connected pairs of thick
 tufted pyramidal cells, an observation that has also been reported in
 layer 2/3 \parencite{Holmgren2003} and layer 5 \parencite{Song2005} of
 the visual cortex. The overrepresentation of bidirectionally connected
-pairs is significant, Song et al.~for example found such pairs four times the
-expected amount. 
+pairs is significant, Song et al.~for example found such pairs
+represented four times the expected amount.
 
 The underlying connection principle imposing this overrepresentation
 on the network however remains unclear. Song et al.~discuss the
@@ -24,35 +24,44 @@ a definitive answer open to further investigation. More recent studies
 find overrepresentation of reciprocally connected pairs \textit{in
   vitro} resulting from functional specificity \parencite{Ko2011} and
 \textit{in silico} from dense neuron clustering
-rules \parencite{Klinshove2014}. 
+rules \parencite{Klinshov2014}, identifying specific network
+characteristics that may contribute to the reported overrepresentation
+\textit{in vivo}. 
 
-Is anisotropy in connectivity a possible underlying principle
-affecting the occurrence of bidirectional connections?  Here we
-investigate whether anisotropy in connectivity can be at cause for the
-overrepresentation of reciprocally connected pairs in cortical
-circuits.  In random networks, the chance to encounter a specific mode
-of connection in a random pair of neurons be can easily be computed
-from the overall connection probability $p$. For this let $X$ be the
-random variable of the number of edges between two different vertices
-in a Gilbert graph $G(n,p)$ with $n \ge 2$. As the edges are
-independently realized resulting in a simple directed graph, we have
+% Is anisotropy in connectivity a possible underlying
+% connection principle inducing the occurrence of bidirectional
+% connections?  Here we investigate whether anisotropy in connectivity
+% can be at cause for the overrepresentation of reciprocally connected
+% pairs in cortical circuits.
+
+Here we examine anisotropy in connectivity as a possible candidate for
+an underlying principle explaining the characteristic two neuron
+connection distribution. In random networks, the chance to encounter a
+specific mode of connection in a random pair of neurons be can easily
+be computed from the overall connection probability $p$. For this let
+$X$ be the random variable of the number of edges between two
+different vertices in a Gilbert graph $G(n,p)$ with $n \ge 2$. As the
+edges are independently realized, resulting in a simple directed
+graph, we have
+\vspace{0.1cm}
 \begin{equation}
   \label{eq:pairs}
   \begin{aligned}%
-    & \mathbf{P}(X=0) = (1-p)^2   &&\text{unconnected pair,}  \\
-    & \mathbf{P}(X=1)= 2p(1-p)    &&\text{single connection,}\\
-    & \mathbf{P}(X=2) = p^2       &&\text{reciprocal connection};
+    & \mathbf{P}(X=0) = (1-p)^2    &&\text{unconnected pair,}  \\
+    & \mathbf{P}(X=1) = 2p(1-p)    &&\text{single connection,}\\
+    & \mathbf{P}(X=2) = p^2        &&\text{reciprocal connection};
   \end{aligned}%
 \end{equation}
+\vspace{0.1cm} \\
 in short $\mathbf{P}(X=k) = \mathcal{B}_{2,p}(k)$ for $k \in
-\{0,1,2\}$ and $\mathbf{P}(X=k) = 0$ otherwise. This probability
-distribution reflects the expectation for connectivity of neuron pairs
-in anisotropic networks. A numeric analysis of the anisotropic sample
+\{0,1,2\}$ and $\mathbf{P}(X=k) = 0$ otherwise. Using this probability
+distribution as the expectation for connectivity of neuron pairs
+in anisotropic networks, a numeric analysis of the anisotropic sample
 graphs reveals that bidirectionally connected pairs appear almost
 twice as often as expected from the overall connection
 probability ($p=0.116$) and equations \ref{eq:pairs}, similarly as
 reported by Song et al.~(\autoref{fig:two_neuron_probs} A). However,
-comparing pair probabilities in anisotropic networks with the
+comparing the pair probabilities in anisotropic networks with the
 probabilities in their rewired counterparts we find that anisotropy is
 does not influence the occurrence of two-neuron motifs
 (\autoref{fig:two_neuron_probs} B) In fact, expected connections in
@@ -141,7 +150,8 @@ occurrence of neuron pair motifs.
 
 
 Song and Perin report that distance-dependency is not the cause for
-overrepresentation. To test this tuned networks!
+overrepresentation. To test this tuned networks! Fig A remains
+unexplained, tune to be able to reproduce.
 
 
 
