@@ -51,7 +51,7 @@ between vertex pairs:
   \label{def:distance_dependent_graph}
   \index{distance-dependent!random graph model}
   Let $n \in \mathbb{N}$ and $C: [0,\sqrt{2}] \to [0,1]$ a
-  continuous %?? C0 analytic?
+  continuous %?? C0 analytic? 
   map.  A \textit{distance-dependent geometric random graph model}
   $G_{\Phi}(n,C)$ is a random graph model over $G^n_{\Phi}$, generated
   by distributing uniformly at random the $n$ vertices on the unit
@@ -61,21 +61,23 @@ between vertex pairs:
     \Phi(w)}$ between the vertices.
 \end{definition}
 
-We call the function $C$ the graph's \textit{distance-dependent connection
-  probability profile}\index{distance-dependent!connection
-  probability}.
+We call the function $C$ the graph's \textit{distance-dependent
+  connection probability profile}\index{distance-dependent!connection
+  probability}\index{distance-dependent!connection profile}.
+Note that the connection profile is \textit{not} a probability
+density but gives a probability of connection between a vertex pair
+at distance $x$. 
 %------------------------------------------------
 % \marginpar{profile $C$ and distance distribution determine
 %   connectivity}
 %------------------------------------------------
- Clearly, connectivity statistics in the
-distance-dependent graph model intrinsically depend on the choice
-$C$. To develop a thorough understanding of connectivity in the
-model however, mapping the distribution of inter-vertex distances is
-equally important. Here we calculate the distribution of the distance
-between two random points in a square of side-length~$s$. Being able
-to identify distributions of transformed random variables is integral
-to the calculation:
+Clearly, connectivity statistics in the distance-dependent graph model
+intrinsically depend on the choice of $C$. To develop a thorough
+understanding of connectivity in the model however, mapping the
+distribution of inter-vertex distances is equally important. Here we
+calculate the distribution of the distance between two random points
+in a square of side-length~$s$. Being able to identify distributions
+of transformed random variables is integral to the calculation:
 
 \begin{lemma} \label{lemma:transform_random_variable} 
   Let $X,Y$ be independent continuous random variables with values in
