@@ -91,24 +91,20 @@ used in Perin et al.'s experiment.
       %\put(12,5){\small\textbf{A}}
     \end{overpic}
     \hfill
-    \begin{overpic}[height=4cm]{%
+    \begin{overpic}[height=3.955cm]{%
         plots/ef0e785d.pdf}
       \put(88.5,58.2){\small\textbf{B}}
     \end{overpic}
   }%
-  
+  \captionsetup{skip=7pt}
   \caption{\textbf{Network side length adjusted to match overall
-      connection probability} 
-    \textbf{A-B)} Side length of the network's surface determines the
-    connection probability, in B) length $s$ is matched to $p =
-    0.116$, as reported by \textcite{Song2005}. \textbf{C)} Resulting
-    axon width function $w(x)$ from tuning to distance-dependent
-    connection profile as reported by \textcite{Perin2011}, see also
-    \autoref{fig:perin_profiles}. Note that $x \gg w(x)$ for most $x$,
-    justifying the approximation~\ref{eq:tanapprox}. \textbf{D)}
-    Showing for a single neuron (star) connected (red) and unconnected
-    (gray) neurons in the tuned anisotropic network, revealing
-    characteristic new axon shape.}
+      connection probability} Side length of the network's surface
+    determines the overall connection probability in the network when
+    axon width function $w(x)$ is fixed. \textbf{A)} Connection
+    probability declines with rising side length \textbf{B)}
+    Determining side length as $s=\SI{296}{\micro\meter}$ to match $p
+    = 0.116$ as reported by \textcite{Song2005}. (\smtcite{6154302f},
+    \smtcite{ef0e785d})}
   \label{fig:determine_side_length}
 \end{figure}
 
@@ -138,31 +134,26 @@ generated networks overall connection probability is extracted as $p
   \centering
   \hspace{0.05cm}
   \begin{overpic}[width=0.6\textwidth]{%
-      /users/hoffmann/research/tanfit_width_test.pdf}
+      plots/d45c02e4.pdf}
           \put(69.4,51.5){\small\textbf{A}}
   \end{overpic}
   \hfill
   \begin{overpic}[width=0.35\textwidth]{%
-      /users/hoffmann/research/connected_test.pdf}
+      plots/8f0d65e4.pdf}
     \put(81,86){%
       \fboxsep=2pt\colorbox{white}{\small\textbf{B}}
     }
   \end{overpic}
-
-  \vspace{-0.15cm}
-
+  \captionsetup{skip=7pt}
   \caption{\textbf{Anisotropic network model with tuned axon width
-      $\mathbf{w(x)}$} \textbf{A-B)} Side length of the network's
-    surface determines the connection probability, in B) length $s$ is
-    matched to $p = 0.116$, as reported by
-    \textcite{Song2005}. \textbf{C)} Resulting axon width function
+      $\mathbf{w(x)}$} \textbf{A)} Resulting axon width function
     $w(x)$ from tuning to distance-dependent connection profile as
     reported by \textcite{Perin2011}, see also
     \autoref{fig:perin_profiles}. Note that $x \gg w(x)$ for most $x$,
-    justifying the approximation~\ref{eq:tanapprox}. \textbf{D)}
+    supporting approximation~\ref{eq:tanapprox}. \textbf{B)}
     Showing for a single neuron (star) connected (red) and unconnected
     (gray) neurons in the tuned anisotropic network, revealing
-    characteristic new axon shape.}
+    the characteristic axon shape. (\smtcite{d45c02e4}, \smtcite{8f0d65e4})}
   \label{fig:perin_axwidth}
 \end{figure}
 
@@ -213,10 +204,13 @@ generated networks overall connection probability is extracted as $p
 % \end{figure}
 
 
+Overall distance-dependent connection probabilities in the anisotropic
+graphs clearly match the profile of Perin et al.~, presenting strongest the
+argument justifying the approximations made earlier
+(\autoref{fig:perin_profiles} A).
+\marginpar{revisiting two neuron connections} Can 
 
-
-
-
+Matching the profiles obtained from the overall unde , and not Perin.
 
 
 
