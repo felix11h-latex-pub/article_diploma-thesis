@@ -19,29 +19,6 @@ anisotropic networks to display a distance-dependent connectivity as
 reported by Perin et al. by adjusting the width $w(x)$ at any point
 $x$ along the axon's projection.
 
-% We note, however, that this conclusion was obtained using 
-
-% Does however distance-dependency affect the connections in neuron
-% pairs? Finding in matching probabilities in (rewired) anisotropic and
-% distance-dependent] networks, we relate the observed overrepresentation
-% (\autoref{fig:two_neuron_probs} A) to distance-dependent connection
-% probabilities. 
-
-%  that distance-dependency Song
-% et al.~as well as Perin eta al.~ report that distance-dependency is
-% not the cause for overrepresentation. To test this tuned networks! Fig
-% A remains unexplained, tune to be able to reproduce.
-
-
-% Stepping away, we 
-
-% Maybe simplicity of the model makes stuff wrong. Tune to Perin
-% distance profile.
-
-% In their study, \textcite{Perin2011} heavily rely on a
-% distance-dependent
-
-
 For this we introduce anisotropic networks tuned to reflect a given
 distance-dependent connection profile $C(x)$. We are facing the
 following problem: Given $C(x):[0,\sqrt{2}) \to [0,1]$, find
@@ -59,7 +36,8 @@ problem considering the following geometric relation:
         plots/bed7650b.pdf}
     \end{overpic}
   }%
-  \caption{Computing connection probability $C(x)$ from non-constant $w(x)$}
+  \caption{Computing connection probability $C(x)$ from non-constant
+    $w(x)$}
   \label{fig:dpp_wc}
 \end{figure}
 
@@ -188,63 +166,40 @@ generated networks overall connection probability is extracted as $p =
 \end{figure}
 
 
-% \begin{figure}[htp]
-%   \centering
-%   \makebox{%
-%     \begin{overpic}[height=4.05cm]{%
-%         plots/6154302f.pdf}
-%       \put(85.5,57.0){\small\textbf{A}}
-%       %\put(12,5){\small\textbf{A}}
-%     \end{overpic}
-%     \hfill
-%     \begin{overpic}[height=4cm]{%
-%         plots/ef0e785d.pdf}
-%       \put(88.5,58.2){\small\textbf{B}}
-%     \end{overpic}
-%   }%
-%   \vfill
-%   \hspace{0.05cm}
-%   \begin{overpic}[width=0.6\textwidth]{%
-%       /users/hoffmann/research/tanfit_width_test.pdf}
-%           \put(69.4,51.5){\small\textbf{C}}
-%   \end{overpic}
-%   \hfill
-%   \begin{overpic}[width=0.35\textwidth]{%
-%       /users/hoffmann/research/connected_test.pdf}
-%     \put(81,86){%
-%       \fboxsep=2pt\colorbox{white}{\small\textbf{D}}
-%     }
-%   \end{overpic}
-
-%   \vspace{-0.15cm}
-
-%   \caption{\textbf{Anisotropic network model with tuned axon width
-%       $\mathbf{w(x)}$} \textbf{A-B)} Side length of the network's
-%     surface determines the connection probability, in B) length $s$ is
-%     matched to $p = 0.116$, as reported by
-%     \textcite{Song2005}. \textbf{C)} Resulting axon width function
-%     $w(x)$ from tuning to distance-dependent connection profile as
-%     reported by \textcite{Perin2011}, see also
-%     \autoref{fig:perin_profiles}. Note that $x \gg w(x)$ for most $x$,
-%     justifying the approximation~\ref{eq:tanapprox}. \textbf{D)}
-%     Showing for a single neuron (star) connected (red) and unconnected
-%     (gray) neurons in the tuned anisotropic network, revealing
-%     characteristic new axon shape.}
-%   \label{fig:determine_side_length}
-% \end{figure}
 
 
-Overall distance-dependent connection probabilities in the anisotropic
-graphs clearly match the profile of Perin et al., presenting
-strongest the argument for the approximations made earlier
-(\autoref{fig:perin_profiles} A).  \marginpar{revisiting two neuron
-  connections} 
-
-
-
-
-
-
+Overall distance-dependent connection probabilities in the tuned
+an\-iso\-tro\-pic graphs clearly match the profile of Perin et
+al.~(\autoref{fig:perin_profiles} A), presenting strongest the
+argument in support of the chosen approximation. Analyzing two neuron
+connections \marginpar{revisiting two neuron connections} in the tuned
+networks, we affirm the findings of the last section. In their
+experiment, Perin et al.~were able to show an overrepresentation of
+reciprocal connections at any inter-neuron distance
+(\autoref{fig:perin_profiles} B-C). Rather than matching these
+profiles, we find that occurrences of one- and bidirectionally
+connected pairs in the anisotropic graphs align with probabilities
+obtained from the distance-dependent overall connection probability
+$p(x)$ under the assumption of independence (cf. Equation~\ref{eq:pairs}),
+\begin{equation*}
+  \label{eq:pairs}
+  \begin{aligned}%
+    & \mathbf{P}_{X=1}(x) = 2p(x) \left(1-p(x) \right)    
+      && \text{single connection,}\\
+    & \mathbf{P}_{X=2}(x) = p(x)^2        
+      &&\text{reciprocal connection.}
+  \end{aligned}%
+\end{equation*}%
+\vspace{0.1cm}%
+Thus, in comparison with Perin et al.'s findings, we find that
+anisotropy in connectivity cannot account for the overrepresentation
+in reciprocal connections. While results in
+Section~\ref{sec:two_neuron} still indicated such an
+overrepresentation due to distance-dependency, examining the
+occurrence of two neuron connections at any inter-neuron distance in
+anisotropic networks tuned to a distance-dependent connection profile
+matching experimental findings from cortical circuits imply complete
+unrelatedness of anisotropy and two neuron connection distributions.
 
 \begin{figure}[htp]
   \centering
