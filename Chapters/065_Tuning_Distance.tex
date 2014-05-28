@@ -1,34 +1,61 @@
 \newpage
 \section{Tuning distance-dependency}
 
-Stepping away, we 
+The discussion in the last section focused on the effect of anisotropy
+in connectivity on the occurrence of neuron pair motifs. Could
+distance-dependency itself, as imposed by the specific geometry, be a
+decisive factor in the distribution of edge counts in neuron pairs?
+\textcite{Song2005}, as well as \textcite{Perin2011}, report an
+overrepresentation of reciprocal connections independent from
+distance-dependent connectivity, opposing the observations made in the
+last section (\autoref{fig:two_neuron_probs} A). Furthermore, the
+connectivity profile in the anisotropic graph model, as identified in
+Section~\ref{distance_connectivity}, follows purely from abstract
+geometry rather than being motivated by connectivity found in cortical
+circuits. In an attempt to rectify this and to allow for a more
+differentiated examination of two neuron connections, in this section
+we step away from simplistic geometry and \enquote{tune} the
+anisotropic networks to display a distance-dependent connectivity as
+reported by Perin et al. by adjusting the width $w(x)$ at any point
+$x$ along the axon's projection.
+
+% We note, however, that this conclusion was obtained using 
+
+% Does however distance-dependency affect the connections in neuron
+% pairs? Finding in matching probabilities in (rewired) anisotropic and
+% distance-dependent] networks, we relate the observed overrepresentation
+% (\autoref{fig:two_neuron_probs} A) to distance-dependent connection
+% probabilities. 
+
+%  that distance-dependency Song
+% et al.~as well as Perin eta al.~ report that distance-dependency is
+% not the cause for overrepresentation. To test this tuned networks! Fig
+% A remains unexplained, tune to be able to reproduce.
 
 
+% Stepping away, we 
+
+% Maybe simplicity of the model makes stuff wrong. Tune to Perin
+% distance profile.
+
+% In their study, \textcite{Perin2011} heavily rely on a
+% distance-dependent
 
 
-Maybe simplicity of the model makes stuff wrong. Tune to Perin
-distance profile.
-
-Let 
-
-In their study, \textcite{Perin2011} heavily rely on a
-distance-dependent 
-
-
-Here we introduce anisotropic networks tuned to reflect a given
-distance-dependent connection profile $C(x)$. We are faced with the
+For this we introduce anisotropic networks tuned to reflect a given
+distance-dependent connection profile $C(x)$. We are facing the
 following problem: Given $C(x):[0,\sqrt{2}) \to [0,1]$, find
 $w:[0,\sqrt{2}) \to [0,\infty)$ such that the probability to have a
-connection from $v_1$ to $v_2$ for arbitrary vertices $v_1 \neq v_2$ in an
-anisotropic graph $G(n,w)$ with distance $\mathrm{d}(v_1,v_2) = x$ is
-$C(x)$. The problem is in general highly complex, when nothing can be
-assumed about $C(x)$. We find an approximate solution to the problem
-regarding the following geometric relation:
+connection from $v_1$ to $v_2$ for arbitrary vertices $v_1 \neq v_2$
+in an anisotropic graph $G(n,w)$ with distance $\mathrm{d}(v_1,v_2) =
+x$ is $C(x)$. The problem is in general highly complex when nothing
+can be assumed about $C(x)$. We find an approximate solution to the
+problem considering the following geometric relation:
 
 \begin{figure}[htp]
   \centering
   \makebox{%
-    \begin{overpic}[height=4.05cm]{%
+    \begin{overpic}[height=3.35cm]{%
         plots/bed7650b.pdf}
     \end{overpic}
   }%
@@ -117,10 +144,13 @@ more by the \enquote{tuned anisotropic graphs} \index{tuned
 such that the networks reflect Perin's connectivity profile. Analyzing
 the obtained axon width function we note that $x \gg w(x)$ holds for
 most $x$, justifying the approximation
-\[\sqrt{x^2 + w^2(x)} \approx
-x\] \textit{a posteriori} (\autoref{fig:perin_axwidth}). From the 25
-generated networks overall connection probability is extracted as $p
-= 0.1160 \pm 0.0006$ (SEM), as expected from the choice of $s$ (\smtcite{f11dca65}).
+\[
+  \sqrt{x^2 + w^2(x)} \approx x
+\] 
+\textit{a posteriori} (\autoref{fig:perin_axwidth}). From the 25
+generated networks overall connection probability is extracted as $p =
+0.1160 \pm 0.0006$ (SEM), as expected from the choice of $s$
+(\smtcite{f11dca65}).
 
 
 
@@ -205,12 +235,11 @@ generated networks overall connection probability is extracted as $p
 
 
 Overall distance-dependent connection probabilities in the anisotropic
-graphs clearly match the profile of Perin et al.~, presenting strongest the
-argument justifying the approximations made earlier
-(\autoref{fig:perin_profiles} A).
-\marginpar{revisiting two neuron connections} Can 
+graphs clearly match the profile of Perin et al., presenting
+strongest the argument for the approximations made earlier
+(\autoref{fig:perin_profiles} A).  \marginpar{revisiting two neuron
+  connections} 
 
-Matching the profiles obtained from the overall unde , and not Perin.
 
 
 
@@ -240,17 +269,22 @@ Matching the profiles obtained from the overall unde , and not Perin.
     \includegraphics[width=0.5\textwidth]{%
       img/tuned_legend.pdf}   
   }%
-  \vspace{-0.15cm}
-  \caption{\textbf{Overrepresentation of reciprocal connections
-      independent of } Comparison of occurrences of one- and
-    bidirectionally connected neuron pairs in (gray) with profiles
-    found by \textcite{Perin2011} (red), shows that overrepresentation of
-    bidirectional pairs is distance-independent and not connected to
-    anisotropy.  \textbf{A)} Overall connection probability in the
-    adapted anisotropic networks was successfully tuned to reflect
-    connection probability found by Perin et al. \textbf{B)-C)}
-    Probabilities for a random neuron pair to display , 
-    (\smtcite{875505b0})} %?? fix width issue!!
+  \captionsetup{skip=7pt}
+  \caption{\textbf{Distance-independent overrepresentation of
+      reciprocal connections} Comparison of occurrences of one- and
+    bidirectionally connected neuron pairs in the tuned anisotropic
+    networks (gray) with profiles found by Perin et al.~(red), shows
+    that overrepresentation of bidirectional pairs is
+    distance-independent and not connected to anisotropy.  \textbf{A)}
+    Overall connection probability in the tuned anisotropic networks
+    was successfully adjusted to reflect connection probability found
+    by Perin et al. \textbf{B)-C)} Showing in blue the probabilities
+    to obtain a neuron pair motif (single edge in B, two edges in C)
+    calculated under independence assumption from the overall
+    probability from A), we find that counts in the tuned anisotropic
+    networks (gray) match the independence assumption and do
+    \textit{not} show the overrepresentation present in Perin et al.'s
+    experiment. (\smtcite{875505b0})}
   \label{fig:perin_profiles}
 \end{figure}
 
