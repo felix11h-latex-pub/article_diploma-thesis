@@ -15,25 +15,26 @@ highly non-random motif distribution in rat's visual cortex (layer 5),
 that was later confirmed by \textcite{Perin2011} in the rat's
 somatosensory cortex (layer 5). 
 
-There are 12 three-neuron motifs that represent connected simple
-directed graphs, here labeled 4 to 16 to stay consistent with the
-reports of Song et al. By analyzing connectivity in the different
+There are 12 three-neuron motifs that represent non-isomorphic,
+connected simple directed graphs, here labeled 4 to 16 in reference to
+the report of Song et al. By analyzing connectivity in the different
 sample graphs, three-neuron motif occurrences were recorded and
 compared relative from Section~\ref{sec:two_neuron}
 
-In anisotropic networks we found two-neuron pair probabilities of
-occurrence of
-\begin{align*} 
-p_u & = 0.791336     &&\text{for unconnected pairs,}  \\
-p_s & = 0.184151 &&\text{for single connections and}\\
-p_r & = 0.024513  &&\text{for reciprocal connections.}
-\end{align*}
-Pattern 8, for example, has a probability of occurrence of 
-\[
-\mathbf{P}(X=8) = 6\, p_{u} p_{s} p_{r},
-\]
-where $X$ maps the motif the corresponding number as shown in . The
-full probabilities are
+% In anisotropic networks we found two-neuron pair probabilities of
+% occurrence of
+% \begin{align*} 
+% p_u & = 0.791336     &&\text{for unconnected pairs,}  \\
+% p_s & = 0.184151 &&\text{for single connections and}\\
+% p_r & = 0.024513  &&\text{for reciprocal connections.}
+% \end{align*}
+
+% Pattern 8, for example, has a probability of occurrence of 
+% \[
+% \mathbf{P}(X=8) = 6\, p_{u} p_{s} p_{r},
+% \]
+% where $X$ maps the motif the isomorphy classes 4-16. The distribution
+% of $X$ is then
 
 \vspace{-0.9cm}
 \begin{figure}[H]
@@ -61,12 +62,20 @@ full probabilities are
       \mathbf{P}(X=13) &   =   6 p_s^2 p_r\\
       \mathbf{P}(X=14) &   =   3 p_s^2 p_r\\
       \mathbf{P}(X=15) &   =   6 p_s p_r^2\\
-      \mathbf{P}(X=16) &   =   p_r^3.
+      \mathbf{P}(X=16) &   =   p_r^3,
     \end{align*}
-  \end{minipage}
-  \vspace{-0.9cm}
+  \end{minipage}  
+  \vspace{-.9cm}
 \end{figure}
-
+for motifs
+\vspace{-0.3cm}
+\begin{figure}[H]
+  \centering
+  \begin{overpic}[width=0.95\linewidth]{%
+    plots/4839ce41_motifs_cropped.pdf}
+  \put(100,0.2){.} 
+  \end{overpic}
+\end{figure}
 Taking the probabilities of occurrence as computed from the two-neuron
 connections as the expect, we identify overrepresentation. 
 
@@ -172,27 +181,29 @@ networks, also reflecting the findings of Song et al.
 \subsection*{Edge counts in neuron clusters}
 
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.95\linewidth]{%
-%     plots/7c826e10_test.pdf} 
-%   \captionsetup{skip=8pt}
-%   \caption{\textbf{Relative occurrence of three-neuron patterns}
-%     Extracting the counts of three-node motifs in anisotropic (filled
-%     bars) and distance-adependent networks (unfilled bars), the
-%     quotient of the obtained count with the number of occurrences
-%     expected from the two-neuron onnection probabilities in the
-%     networks (rs =, ,, cfsdfg.) shows the over- and underrepresentation of
-%     specific motifs in the network (red and black errorbars are
-%     SEM). In anisotropic networks pattern number \enquote{12}, for
-%     example, appears around five times more often than we would expect
-%     from the occurrele the findings of
-%     \textcite{Song2005} and differ significantly from the counts in
-%     distance-dependent networks, implying that anisotropy has a strong
-%     influence on the relative occurrence of three-neuron
-%     patterns. (\smtcite{4839ce41}) }
-%   \label{fig:distance_theory_compare}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{%
+    plots/7c826e10_test.pdf} 
+  \includegraphics[width=0.95\linewidth]{%
+    plots/Perin_test_6counts_compare.pdf} 
+  \captionsetup{skip=8pt}
+  \caption{\textbf{Relative foccurrence of three-neuron patterns}
+    Extracting the counts of three-node motifs in anisotropic (filled
+    bars) and distance-adependent networks (unfilled bars), the
+    quotient of the obtained count with the number of occurrences
+    expected from the two-neuron onnection probabilities in the
+    networks (rs =, ,, cfsdfg.) shows the over- and underrepresentation of
+    specific motifs in the network (red and black errorbars are
+    SEM). In anisotropic networks pattern number \enquote{12}, for
+    example, appears around five times more often than we would expect
+    from the occurrele the findings of
+    \textcite{Song2005} and differ significantly from the counts in
+    distance-dependent networks, implying that anisotropy has a strong
+    influence on the relative occurrence of three-neuron
+    patterns. (\smtcite{4839ce41}) }
+  \label{fig:distance_theory_compare}
+\end{figure}
 
 
 
