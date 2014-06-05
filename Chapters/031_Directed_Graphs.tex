@@ -85,9 +85,10 @@ of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
 means, for a directed graph specified as $G = (V,E,s,t)$, we
 have $V(G) = V$ and $E(G) = E$.
 
-A \textbf{morphism} $\phi: G \to H$, between two directed graphs
-$G=(V_G,E_G,s_G,t_G)$ and $H=(V_H,E_H,s_H,t_H)$, consists of a pair of
-maps $\phi_V: V_G \to V_H$ and $\phi_E: E_G \to E_H$, such that
+A \textbf{morphism} $\phi: G \to H$, between two directed graphs $G=(
+V_G, E_G, \allowbreak s_G, \allowbreak t_G)$ and
+$H=(V_H,E_H,s_H,t_H)$, consists of a pair of maps $\phi_V: V_G \to
+V_H$ and $\phi_E: E_G \to E_H$, such that
 \[
 s_H \circ \phi_E = \phi_V \circ s_G \mathrm{\quad and \quad} t_H \circ
 \phi_E = \phi_V \circ t_G,
@@ -113,6 +114,28 @@ isomorphism inbetween them.
   $\psi_V: V_H \to V_G, v \mapsto \varphi_V^{-1}(v)$, $\psi_E: E_H \to
   E_G, e \mapsto \varphi_E^{-1}(e)$.
 \end{remark}
+
+
+The sub-objects in graphs are subgraphs.
+
+\begin{definition}[Subgraph]\index{subgraph}
+  Let $G$ be a directed graph. A \textit{subgraph} $H$ of $G$ is a
+  directed graph with vertex set $V(H) \subseteq V(G)$ and edge set
+  $E(H) \subseteq E(G)$ with source and target functions from $G$
+  restricted to $E(H)$, such that for every $e \in E(H)$ the source
+  and target $s(e),t(e)$ are in $V(H)$. We call the subgraph
+  \textit{full} if \index{subgraph!full}
+  \[
+    E(H) = \{e \in E(G) \mid s(e), t(e) \in V(H)\}.
+  \]
+  that is if $H$ contains all edges of $G$ with source and target in
+  $V(H)$.
+\end{definition}
+
+A \textbf{motif} in $G$ is then a connected full subgraph of
+$G$. Usually motifs with, we also say $n$-motif to refer to a motif
+with $n$ vertices.
+
 
 \begin{definition}[Weighted directed graphs]
   \index{weighted graph}

@@ -233,11 +233,30 @@ stuff. Pernice2011, Sporns , Zhao2011.
 \newpage
 \subsection*{Edge counts in neuron clusters}
 
-In motifs consisting of 3 to 8 neurons, \textcite{Perin2011} made a
-distinctive observation: than they would have expected from the
-networks distance-dependent connectivity profile. Here we
+In motifs consisting of 3 to 8 neurons, \textcite{Perin2011} reported
+a striking statistic from their experiment with pyramidal cells in the
+rat's somatsosensory cortex (layer 5): Counting the number of edges
+appearing in a clusters of $n$ neurons, they find that clusters with
+relatively high edge counts appear significantly more often than
+expected from the network's distance-dependent connection
+probabilities alone. Do anisotropic networks exhibit a similar
+feature?
 
-Simulating like this we find 
+Recruiting the . After randomly sampling $n$ pairwise different
+vertices $S_n$, the subgraph $G$ %?? notation 
+spanned by $S_n$ is isolated and the
+number of edges  in %?? 
+is recorded.
+
+
+Anisotropic networks inherently carry a
+connection principle that goes beyou
+
+
+
+Here  
+
+
 
 
 \begin{figure}[H]
@@ -309,6 +328,18 @@ networks for the existence of a common neighbor relationship.
     \includegraphics[width=0.5\textwidth]{%
       img/common_neighbor_legend.pdf}
   }
+  \vspace{0.2cm}
+  \makebox{%
+    \begin{overpic}[width=0.5\textwidth]{%
+         plots/5841710e_in_k.pdf}
+      \put(20.5,57.5){\small\textbf{D}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.5\textwidth]{%
+        plots/5841710e_out_k.pdf}
+      \put(20.5,57.5){\small\textbf{E}}
+    \end{overpic}
+  }%
   \captionsetup{skip=7pt}
   \caption{\textbf{Distance-independent overrepresentation of
       reciprocal connections}  (\smtcite{something})}
@@ -319,50 +350,16 @@ networks for the existence of a common neighbor relationship.
 
 
 
-% Summarizing the above observations, we find that \marginpar{results
-%   summary} anisotropy in connectivity induces increased occurrence of
-% motifs 10, 12, 14 and 15 in the network, reflecting experimental
-% results in the rat's cortex.  While over- and underrepresentation
-% observed in local cortical circuits can be indirectly linked to
-% anisotropy for some motifs (4, 9) it does not accurately reflect
-% observed counts for other motifs (8) and shows instability under
-% manipulation of distance-dependency in some patterns (9, 16).
 
 
-% \begin{figure}[H]
-%   \centering
-%   \renewcommand{\tabcolsep}{0pt}
-%   \setlength\extrarowheight{0pt}
-%   \begin{tabular}{ll}
-%     \begin{overpic}[width=0.5\textwidth]{%
-%         plots/5841710e_in_overall.pdf}
-%       %\put(12,56){\small $\eta = 0$}
-%     \end{overpic}
-%     &
-%     \begin{overpic}[width=0.5\textwidth]{%
-%         plots/5841710e_out_overall.pdf}
-%       %\put(12,56){\small $\eta = 0.25$}
-%     \end{overpic}
-%     \\
-%     \begin{overpic}[width=0.5\textwidth]{%
-%         plots/5841710e_all_overall.pdf}
-%       %\put(12,56){\small $\eta = 0.5$}
-%     \end{overpic}
-%     &
-%     \vspace{-1cm}
-
-%     \begin{overpic}[width=0.5\textwidth]{%
-%         img/common_neighbor_legend.pdf}
-%       % \put(12,56){\small $\eta = 0.75$}
-%       %\put(4,-4){\small$0$}\put(78,-4){\small$200$}
-%     \end{overpic}
-%     \\
-%   \end{tabular}
-%   \caption{\textbf{In-degxree distrbution not affected by varying
-%       degrees of anisotropy} 
-%     (\smtcite{77995b6b}). }
-%   \label{fig:in_degree_rewiring}
-% \end{figure}
+Summarizing the above observations, we find that \marginpar{results
+  summary} anisotropy in connectivity induces increased occurrence of
+motifs 10, 12, 14 and 15 in the network, reflecting experimental
+results in the rat's cortex.  While over- and underrepresentation
+observed in local cortical circuits can be indirectly linked to
+anisotropy for some motifs (4, 9) it does not accurately reflect
+observed counts for other motifs (8) and shows instability under
+manipulation of distance-dependency in some patterns (9, 16).
 
 
 
