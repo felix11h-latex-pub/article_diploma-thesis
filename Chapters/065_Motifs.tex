@@ -233,7 +233,12 @@ stuff. Pernice2011, Sporns , Zhao2011.
 \newpage
 \subsection*{Edge counts in neuron clusters}
 
-we find resembling Perin et al.'s observation. We calculate 
+In motifs consisting of 3 to 8 neurons, \textcite{Perin2011} made a
+distinctive observation: than they would have expected from the
+networks distance-dependent connectivity profile. Here we
+
+Simulating like this we find 
+
 
 \begin{figure}[H]
   \centering
@@ -246,7 +251,7 @@ we find resembling Perin et al.'s observation. We calculate
     \put(3.2,43){\small \textbf{B}}
   \end{overpic}
   \begin{overpic}[width=0.95\linewidth]{%
-    plots/7c826e10_test.pdf} 
+    plots/temp/Perin_test_12counts_compare.pdf} 
     \put(3.2,43){\small \textbf{C}}
   \end{overpic}
   \captionsetup{skip=8pt}
@@ -262,24 +267,66 @@ we find resembling Perin et al.'s observation. We calculate
 \begin{figure}[H]
   \centering
   \begin{overpic}[width=0.95\linewidth]{%
-      plots/7c826e10_dist_rew_comp.pdf} 
-    \put(3.2,43){\small \textbf{A}}
+      plots/temp/7c826e10_dist_test.pdf} 
+    %\put(3.2,43){\small \textbf{A}}
   \end{overpic}
   \captionsetup{skip=8pt}
-  \caption{\textbf{Increased occurrence of high edge counts in neuron
-      clusters in anisotropic networks}
-    Showing the quotient of the difference 
-    Extracting the counts of three-node motifs in anisotropic (filled
-    bars) an (\smtcite{7c826e10}) }
+  \caption{\textbf{Stronger overrepresentation of clusters with high
+      edge counts when compared with distance-dependent networks}
+    Showing we find that the overrepresentation of motifs with high
+    edge counts is stronger (\smtcite{7c826e10}) }
   \label{fig:perin_rew_dist}
 \end{figure}
 
 
-In their study, Perin et al.\ follow the observation of increased edge
+In their study, Perin et al.\ follow their observation of increased edge
 counts in neuron clusters with a common neighbor rule. Hebb
 (\enquote{fire together, wire together}). Here we also investigate our
 networks for the existence of a common neighbor relationship. 
 
+
+
+\begin{figure}[htp]
+  \centering
+  \makebox{%
+    \begin{overpic}[width=0.5\textwidth]{%
+         plots/5841710e_in.pdf}
+      \put(21,56.6){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.5\textwidth]{%
+        plots/5841710e_out.pdf}
+      \put(21,56.6){\small\textbf{B}}
+    \end{overpic}
+  }%
+  \vfill
+  \vspace{0.2cm}
+  \makebox{%
+    \begin{overpic}[width=0.5\textwidth]{%
+         plots/5841710e_all.pdf}
+       \put(21,56.6){\small\textbf{C}}
+    \end{overpic}
+    \includegraphics[width=0.5\textwidth]{%
+      img/common_neighbor_legend.pdf}
+  }
+  \captionsetup{skip=7pt}
+  \caption{\textbf{Distance-independent overrepresentation of
+      reciprocal connections}  (\smtcite{something})}
+  \label{fig:cm_rule}
+\end{figure}
+
+
+
+
+
+% Summarizing the above observations, we find that \marginpar{results
+%   summary} anisotropy in connectivity induces increased occurrence of
+% motifs 10, 12, 14 and 15 in the network, reflecting experimental
+% results in the rat's cortex.  While over- and underrepresentation
+% observed in local cortical circuits can be indirectly linked to
+% anisotropy for some motifs (4, 9) it does not accurately reflect
+% observed counts for other motifs (8) and shows instability under
+% manipulation of distance-dependency in some patterns (9, 16).
 
 
 % \begin{figure}[H]
@@ -288,44 +335,37 @@ networks for the existence of a common neighbor relationship.
 %   \setlength\extrarowheight{0pt}
 %   \begin{tabular}{ll}
 %     \begin{overpic}[width=0.5\textwidth]{%
-%         /users/hoffmann/research/cn_k_test.pdf}
+%         plots/5841710e_in_overall.pdf}
 %       %\put(12,56){\small $\eta = 0$}
 %     \end{overpic}
 %     &
 %     \begin{overpic}[width=0.5\textwidth]{%
-%         /users/hoffmann/research/cn_k_test.pdf}
+%         plots/5841710e_out_overall.pdf}
 %       %\put(12,56){\small $\eta = 0.25$}
 %     \end{overpic}
 %     \\
 %     \begin{overpic}[width=0.5\textwidth]{%
-%         /users/hoffmann/research/cn_k_test.pdf}
+%         plots/5841710e_all_overall.pdf}
 %       %\put(12,56){\small $\eta = 0.5$}
 %     \end{overpic}
 %     &
+%     \vspace{-1cm}
+
 %     \begin{overpic}[width=0.5\textwidth]{%
-%         /users/hoffmann/research/cn_k_test.pdf}
+%         img/common_neighbor_legend.pdf}
 %       % \put(12,56){\small $\eta = 0.75$}
 %       %\put(4,-4){\small$0$}\put(78,-4){\small$200$}
 %     \end{overpic}
 %     \\
-%     % \begin{overpic}[width=0.28\textwidth]{%
-%     %     plots/77995b6b_in100.pdf}
-%     %   \put(12,56){\small $\eta = 1$}
-%     %   \put(4,-4){\small$0$}\put(78,-4){\small$200$}
-%     % \end{overpic}
-%     % & 
-%     % \begin{overpic}[width=0.28\textwidth]{%
-%     %     plots/77995b6b_indst.pdf}
-%     %   \put(12,56){\small distance}
-%     %   \put(4,-4){\small$0$}\put(78,-4){\small$200$}
-%     % \end{overpic}
-%     % \\
 %   \end{tabular}
 %   \caption{\textbf{In-degxree distrbution not affected by varying
 %       degrees of anisotropy} 
 %     (\smtcite{77995b6b}). }
 %   \label{fig:in_degree_rewiring}
 % \end{figure}
+
+
+
 
 
 
