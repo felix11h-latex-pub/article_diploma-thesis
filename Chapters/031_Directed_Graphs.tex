@@ -19,24 +19,25 @@ follow \textcite{nLab}.
 \begin{definition}[Directed graphs]
   \index{directed graph} \index{simple graph} \index{pseudograph}
   \index{multigraph} \index{loop graph}
-  \label{def:directed_graphs}
-  A \textit{directed pseudograph} $G$ consists of two finite
+  \label{def:directed_graphs} \index{vertex set} \index{edge set}
+  \marginpar{\vspace{0.550cm}\\short:\\$V(G)$ vertex set $E(G)$ edge set}
+  A \textit{directed pseudograph} $G$ consists  of two finite
+ sets
   %
   % Non-empty? -> No. Empty graph allowed for random 
   % graph process that adds edges and or vertices
   % 
-  $V$, the \textit{set of vertices} of $G$, and $E$, the \textit{set
-    of edges} of $G$, and two maps $ s,t: E \to V, $ the
-  \textit{source} and \textit{target functions} of $G$. A
-  \textit{directed multigraph} is a directed pseudograph without
-  loops, that is the map $d = (s,t):E \to V^2$ already maps
-  maps to $V^2\setminus\Delta_V$, where $V^2 = V \times V$ denotes the
-  cartesian product and $\Delta_V = \{(x,x) \mid x \in V\} \subseteq
-  V^2$ the diagonal. Similarily, a \textit{directed loop graph} is a
-  directed pseudograph where $d$ is injective. Finally, a
-  \textit{simple directed graph} can be defined as a directed
-  pseudograph where $d$ is both injective and already maps to
-  $V^2\setminus\Delta_V$.
+  $V(G)$, the \textit{set of vertices}  of $G$, and $E(G)$, the \textit{set of
+    edges} of $G$, and two maps $ s,t: E \to V, $ the \textit{source}
+  and \textit{target functions} of $G$. A \textit{directed multigraph}
+  is a directed pseudograph without loops, that is the map $d =
+  (s,t):E \to V^2$ already maps maps to $V^2\setminus\Delta_V$, where
+  $V^2 = V \times V$ denotes the cartesian product and $\Delta_V =
+  \{(x,x) \mid x \in V\} \subseteq V^2$ the diagonal. Similarily, a
+  \textit{directed loop graph} is a directed pseudograph where $d$ is
+  injective. Finally, a \textit{simple directed graph} can be defined
+  as a directed pseudograph where $d$ is both injective and already
+  maps to $V^2\setminus\Delta_V$.
 \end{definition}
 
 Thus, in simple directed graphs, neither parallel edges nor loops
@@ -45,7 +46,46 @@ multigraphs and directed loop graphs admit one of them
 respectively. We refer to any of the four graph types simply as a
 directed graph and only specify the type when needed.
 
-\begin{figure}[!htbp]
+
+
+% Given a directed graph $G$, we denote with $V(G)$ the set of vertices
+% of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
+% \textbf{edge set} $E(G)$ of $G$ denotes the set of edges of $G$. This
+% means, for a directed graph specified as $G = (V,E,s,t)$, we
+% have $V(G) = V$ and $E(G) = E$.
+
+A \textbf{morphism} $\phi: G \to H$, between two directed graphs $G=(
+V_G, E_G, \allowbreak s_G, \allowbreak t_G)$ and
+$H=(V_H,E_H,s_H,t_H)$, consists of a pair of maps $\phi_V: V_G \to
+V_H$ and $\phi_E: E_G \to E_H$, such that
+\[
+s_H \circ \phi_E = \phi_V \circ s_G \mathrm{\quad and \quad} t_H \circ
+\phi_E = \phi_V \circ t_G,
+\]
+that is such that the following diagram commutes:
+%
+\begin{align*} 
+  \xymatrix@+=1.3cm{E_G \ar^{t_G}@<0.66ex>[d] \ar_{s_G}@<-0.66ex>[d]
+    \ar^{\phi_E}[r] & E_H \ar^{t_H}@<0.66ex>[d]
+    \ar_{s_H}@<-0.66ex>[d]\\ V_G \ar^{\phi_V}[r] & V_H}
+\end{align*}
+%
+A morphism $\varphi: G \to H$, between two directed pseudographs $G$
+and $H$ is an \textbf{isomorphism}, if the maps $\varphi_V: V_G \to
+V_H$ and $\varphi_E: E_G \to E_H$ are bijections. Two directed
+pseudographs are called \textit{isomorphic} if there exists an
+isomorphism inbetween them.
+
+
+\begin{remark}
+  The last definition implies that, if there exists an isomorphism
+  $\varphi: G \to H$, an isomorphism $\psi: H \to G$ can be
+  found. This isomorphism is, of course, easily constructed via
+  $\psi_V: V_H \to V_G, v \mapsto \varphi_V^{-1}(v)$, $\psi_E: E_H \to
+  E_G, e \mapsto \varphi_E^{-1}(e)$.
+\end{remark}
+
+\begin{figure}[H]
   \centering 
   \makebox[0.6\textwidth]{%
     \begin{overpic}[width=0.25\textwidth]{%
@@ -72,49 +112,12 @@ directed graph and only specify the type when needed.
     \end{overpic}
     }%
     \caption{%
-      \textbf{Typical examples of the directed graph types}
+      \textbf{Examples of the directed graph types}
       \textbf{A)} directed pseudograph \textbf{B)} directed
       multigraph \textbf{C)} directed loop graph \textbf{D)} simple
       directed graph.} %??
   \label{fig:directed_graph_types}
 \end{figure}
-
-Given a directed graph $G$, we denote with $V(G)$ the set of vertices
-of $G$ and call it the \textbf{vertex set} of $G$. Analogously, the
-\textbf{edge set} $E(G)$ of $G$ denotes the set of edges of $G$. This
-means, for a directed graph specified as $G = (V,E,s,t)$, we
-have $V(G) = V$ and $E(G) = E$.
-
-A \textbf{morphism} $\phi: G \to H$, between two directed graphs $G=(
-V_G, E_G, \allowbreak s_G, \allowbreak t_G)$ and
-$H=(V_H,E_H,s_H,t_H)$, consists of a pair of maps $\phi_V: V_G \to
-V_H$ and $\phi_E: E_G \to E_H$, such that
-\[
-s_H \circ \phi_E = \phi_V \circ s_G \mathrm{\quad and \quad} t_H \circ
-\phi_E = \phi_V \circ t_G,
-\]
-that is such that the following diagram commutes:
-%
-\begin{align*} 
-  \xymatrix@+=1.3cm{E_G \ar^{t_G}@<0.66ex>[d] \ar_{s_G}@<-0.66ex>[d]
-    \ar^{\phi_E}[r] & E_H \ar^{t_H}@<0.66ex>[d]
-    \ar_{s_H}@<-0.66ex>[d]\\ V_G \ar^{\phi_V}[r] & V_H}
-\end{align*}
-%
-A morphism $\varphi: G \to H$, between two directed pseudographs $G$
-and $H$ is an \textbf{isomorphism}, if the maps $\varphi_V: V_G \to
-V_H$ and $\varphi_E: E_G \to E_H$ are bijections. Two directed
-pseudographs are called \textit{isomorphic} if there exists an
-isomorphism inbetween them.
-
-\begin{remark}
-  The last definition implies that, if there exists an isomorphism
-  $\varphi: G \to H$, an isomorphism $\psi: H \to G$ can be
-  found. This isomorphism is, of course, easily constructed via
-  $\psi_V: V_H \to V_G, v \mapsto \varphi_V^{-1}(v)$, $\psi_E: E_H \to
-  E_G, e \mapsto \varphi_E^{-1}(e)$.
-\end{remark}
-
 
 The subobjects in the directed graph category are
 subgraphs. Containing only a subset of the vertices of the original
@@ -208,7 +211,7 @@ network dynamics and a central object of interest in this thesis.
   Given a directed loop graph $G$, we often assume the graph to be
   given in this form and write edges as $e=(x,y)$. Note that this
   concept is more complicated to introduce for directed pseudographs,
-  since parallel edges $e$ and $Xe'$ should to be differentiated in the
+  since parallel edges $e$ and $e'$ should be differentiated in the
   egde set of $G$, establishing the need for $E(G)$ to be a multi- or
   indexed set, notions we are trying to avoid in this document.
 \end{remark}

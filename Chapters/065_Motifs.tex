@@ -217,7 +217,7 @@ Summarizing the above observations, we find that \marginpar{results
 motifs 10, 12, 14 and 15 in the network, reflecting experimental
 results in the rat's cortex.  While over- and underrepresentation
 observed in local cortical circuits can be indirectly linked to
-anisotropy for some motifs (4, 9) it does not accurately reflect
+anisotropy for some motifs (4, 9), it does not accurately reflect
 observed counts for other motifs (8) and shows instability under
 manipulation of distance-dependency in some patterns (9, 16).
 
@@ -249,11 +249,10 @@ set $V(H) = S_n$ is identified and its number of edges $\abs{E(H)}$ is
 recorded. Repeating this sufficiently often (order $10^6$) we obtain
 edge counts for clusters of 6,8 and 12 neurons in the anisotropic and
 tuned anisotropic networks as well as in their rewired
-counterparts. Then showing the quotient between the difference of the
-counts in the anisotropic networks and the rewired networks,
-normalized by the rewired counts we identify an overrepresentation of
-high edge counts in the neuron similar to Perin et al.\
-(\autoref{fig:perin6to12}).
+counterparts. Then, showing difference of the counts in the
+anisotropic networks and rewired networks, normalized by the rewired
+counts, we identify an overrepresentation of high edge counts in the
+neuron similar to Perin et al.\ (\autoref{fig:perin6to12}).
 
 \begin{figure}[H]
   \centering
@@ -268,22 +267,23 @@ high edge counts in the neuron similar to Perin et al.\
   \begin{overpic}[width=0.95\linewidth]{%
     plots/temp/Perin_test_12counts_compare.pdf} 
     \put(3.2,43){\small \textbf{C}}
+    \put(25,20){\textcolor{gray}{(Placeholder)}}
   \end{overpic}
   \captionsetup{skip=8pt}
   \caption{\textbf{Increased occurrence of high edge counts in neuron
-      clusters in anisotropic networks}
+      clusters in anisotropic networks} 
     Showing the quotient of the difference 
     Extracting the counts of three-node motifs in anisotropic (filled
-    bars) an (\smtcite{4839ce41}) }
+    bars) an (\smtcite{something}) }
   \label{fig:perin6to12}
 \end{figure}
 
 
-
 Anisotropic networks inherently carry a
-connection principle that goes beyou
+connection principle that goes beyou 
 
-
+we find that this effect is even stronger in comparison with
+distance-dependent networks (\autoref{fig:perin_rew_dist}).
 
 Here  
 
@@ -302,14 +302,27 @@ Here
 \end{figure}
 
 
-In their study, Perin et al.\ follow their observation of increased edge
-counts in neuron clusters with a common neighbor rule. Hebb
-(\enquote{fire together, wire together}). Here we also investigate our
-networks for the existence of a common neighbor relationship. 
+In their study, Perin et al.\ follow their report of increased
+\marginpar{common neighbor rule as underlying principle?}  edge counts
+in neuron clusters with the observation of a \enquote{common neighbor
+  rule}\index{common neighbor rule}. Relying once again on their data
+in the rat's somatsensory cortex, Perin et al.\ find that not only do
+neuron pairs with a high number of common neighbor count appear
+significantly more often than expected, but also that such pairs
+display a higher probability of being connected. In fact, the
+relationship between pair connectivity and number of common neighbors
+appears to be linear. Perin et al.\ also report that this effect is
+most pronounced when only considering common in-neighbors, that is
+other neurons that are projecting to both neurons in the pair.
+
+Here we also investigate our networks for the existence of such a
+common neighbor relationship. Simultaneously recording connection
+probabilities and the number of common neighbors between pairs of
+neurons, we find inherent dependencies between the two quantities in
+all network types (\autoref{fig:cm_rule}). 
 
 
-
-\begin{figure}[htp]
+\begin{figure}[H]
   \centering
   \makebox{%
     \begin{overpic}[width=0.5\textwidth]{%
@@ -332,6 +345,7 @@ networks for the existence of a common neighbor relationship.
     \includegraphics[width=0.5\textwidth]{%
       img/common_neighbor_legend.pdf}
   }
+  \vfill
   \vspace{0.2cm}
   \makebox{%
     \begin{overpic}[width=0.5\textwidth]{%
@@ -351,22 +365,59 @@ networks for the existence of a common neighbor relationship.
 \end{figure}
 
 
+First, we immediately note the sharp difference between in- and
+out-neighbors in their effect on connection probabilities in
+anisotropic networks, as well as in rewired networks. Only in
+distance-dependent networks it appears that in- and out-neighbors can
+be considered equivalent in their influence on connection
+probabilities (\autoref{fig:cm_rule} A-B). Furthermore, while the
+distribution of the number of common neighbors is consistent in
+distance-dependent networks, the other network types display a
+characteristic distribution of common out-neighbors
+(\autoref{fig:cm_rule} D-E). This observation clearly relates back to
+the drastically different out-degree distributions in the different
+networks found in Section~\ref{sec:degree_distribution}.
+
+Both for in- and out-neighbors we find characteristic . Here the
+profiles split into two categories, networks with anisotropy in
+connectivity (blue, orange) and distance-dependent networks (red,
+green) . Clearly anisotropy
 
 
 
+A high variance in in-neighbor distribution might 
 
-
-Summarizing the above observations, we find that \marginpar{results
-  summary} anisotropy in connectivity induces increased occurrence of
-motifs 10, 12, 14 and 15 in the network, reflecting experimental
-results in the rat's cortex.  While over- and underrepresentation
-observed in local cortical circuits can be indirectly linked to
-anisotropy for some motifs (4, 9) it does not accurately reflect
-observed counts for other motifs (8) and shows instability under
-manipulation of distance-dependency in some patterns (9, 16).
+To few have common in-neighbors (functionally unrelated) or some pair
+with a many common inputs (functionally related). 
 
 
 
+\begin{figure}[H]
+  \centering
+  \makebox{%
+    \begin{overpic}[width=0.5\textwidth,frame]{%
+        /users/hoffmann/research/5841710e_in_k_tanfitrew.pdf}
+%plots/5841710e_in_k_tanfitrew.pdf}
+      \put(21,56.6){\small\textbf{A}}
+    \end{overpic}
+    \hfill
+    \begin{overpic}[width=0.5\textwidth,frame]{%
+        %plots/temp/civ_test.pdf}
+/users/hoffmann/research/civ_test.pdf}
+      \put(21,56.6){\small\textbf{B}}
+    \end{overpic}
+  }%
+  \captionsetup{skip=7pt}
+  \caption{\textbf{Anisotropy increases variance of
+      common input distribution} For a neuron pair 
+    (\smtcite{something})}
+  \label{fig:cm_rule}
+\end{figure}
+
+
+% \marginpar{results
+%   summary} anisotropy in connectivity induces increased occurrence of
+% motifs 10, 12, 14 and 15 in the
 
 
 
