@@ -116,7 +116,9 @@ isomorphism inbetween them.
 \end{remark}
 
 
-The sub-objects in graphs are subgraphs.
+The subobjects in the directed graph category are
+subgraphs. Containing only a subset of the vertices of the original
+graph, it may contain any number of eligible edges from $G$.
 
 \begin{definition}[Subgraph]\index{subgraph}
   Let $G$ be a directed graph. A \textit{subgraph} $H$ of $G$ is a
@@ -132,10 +134,15 @@ The sub-objects in graphs are subgraphs.
   $V(H)$.
 \end{definition}
 
-A \textbf{motif} in $G$ is then a connected full subgraph of
-$G$. Usually motifs with, we also say $n$-motif to refer to a motif
-with $n$ vertices.
-
+A \textbf{motif}\index{motif} $H$ in $G$ is then a full, connected
+subgraph of $G$, that is a subgraph such that every vertex in $H$ is
+source or target of at least one edge in $E(H)$. An $n$-motif then
+refers to a motif $H$ with $\abs{V(H)} = n$. Usually motifs with only
+few vertices are considered and are often understood as the
+\enquote{building blocks} of graphs. In neuronal networks, specific
+connection patterns are associated with specific dynamical
+functionality, making motifs an import aspect in the theory of neural
+network dynamics and a central object of interest in this thesis.
 
 \begin{definition}[Weighted directed graphs]
   \index{weighted graph}
