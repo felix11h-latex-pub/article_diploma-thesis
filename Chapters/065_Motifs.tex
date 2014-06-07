@@ -6,220 +6,220 @@ In this chapter we analyze the strucarl. The term motif referes
 to... . Studies of \textcite{Song2005} and \textcite{Perin2011} show
 stuff. Pernice2011, Sporns , Zhao2011.
 
-% \newpage
-% \subsection*{Three-neuron patterns}
+\newpage
+\subsection*{Three-neuron patterns}
 
-% Here we investigate the occurrence of three-neuron patterns in
-% an\-iso\-tro\-pic networks. \textcite{Song2005} reported a
-% characteristic, highly non-ran\-dom motif distribution of pyramidal
-% cells in the rat's visual cortex (layer 5), a result later confirmed
-% by \textcite{Perin2011} in their experiment in the rat's somatosensory
-% cortex (layer 5). Repeating the experiment \textit{in silico} for the
-% different networks subject to this study, we find similar,
-% characteristic motif distributions strongly influenced by the
-% anisotropy in connectivity.
+Here we investigate the occurrence of three-neuron patterns in
+an\-iso\-tro\-pic networks. \textcite{Song2005} reported a
+characteristic, highly non-ran\-dom motif distribution of pyramidal
+cells in the rat's visual cortex (layer 5), a result later confirmed
+by \textcite{Perin2011} in their experiment in the rat's somatosensory
+cortex (layer 5). Repeating the experiment \textit{in silico} for the
+different networks subject to this study, we find similar,
+characteristic motif distributions strongly influenced by the
+anisotropy in connectivity.
 
-% There are 13%
-% %------------------------------------
-% \footnote{%
-%   There are 16 non-isomorphic simple directed graphs with 3
-%   nodes. Three of those graphs are unconnected \parencite[cf. ][%
-%   N. J. A. Sloane. The On-Line Encyclopedia of Integer Sequences,
-%   http://oeis.org. Sequence
-%   \href{http://oeis.org/A000273}{A000273}]{Davis1953}.%
-% } %
-% %-------------------------------------
-% non-isomorphic 3-motifs in simple directed graphs. In reference to Song et al.'s result, the patterns
-% are labeled 4 to 16, \vspace{-0.2cm}
-% \begin{figure}[H]
-%   \centering
-%   \begin{overpic}[width=0.95\linewidth]{%
-%     plots/4839ce41_motifs_cropped.pdf}
-%   \put(100,0.2){.} 
-%   \end{overpic}
-% \end{figure}
-% \vspace{-0.8cm} Let $X$ be a random variable that maps three random
-% vertices $v_1 \neq v_2 \neq v_3$ in a graph $G$ to the $n \in
-% \{4,5,\dots,16\}$ labeling the isomorphism class of the full subgraph
-% with vertex set $\{v_1,v_2,v_3\}$ in $G$ as above if the subgraph is
-% connected, and let $X$ map to $n=0$ otherwise. A first idea of how to
-% compute the distribution of $X$ is by inferring the probabilities of
-% motif occurrence from the two-neuron connection probabilities from
-% Section~\ref{sec:two_neuron}. In anisotropic networks we found that
-% the probabilities of occurrence are 
-% \begin{align*} 
-%   p_u & = 0.791336     &&\text{for unconnected pairs,}     \\
-%   p_s & = 0.184151     &&\text{for single connections and} \\
-%   p_r & = 0.024513     &&\text{for reciprocal connections.}
-% \end{align*}
-% From these we may, for example, calculate the probability of
-% occurrence for motif 8, 
-% \[
-%   \mathbf{P}(X=8) = 6\, p_{u} p_{s} p_{r},
-% \]
-% where the factor 6 is determined by the number of different
-% \textit{labeled} graphs belonging to the isomorphism class. The
-% distribution of $X$ for the remaining motifs is given by \\
-% %
-% \smallskip
-% %
-% \begin{minipage}{\linewidth}
-%   \begin{minipage}[c]{0.32\textwidth}
-%     \begin{align*}
-%       % \mathbf{P}(X=1) &    =   p_u^3  \\
-%       % \mathbf{P}(X=2) &    =   6 p_u p_u p_s\\
-%       % \mathbf{P}(X=3) &    =   3 p_u p_u p_r\\
-%       \mathbf{P}(X=4) &    =   3 p_s^2 p_u\\
-%       \mathbf{P}(X=5) &    =   3 p_s^2 p_u\\
-%       \mathbf{P}(X=6) &    =   6 p_s^2 p_u\\
-%       \mathbf{P}(X=7) &    =   6 p_s p_u p_r
-%     \end{align*}
-%   \end{minipage}%
-%   \begin{minipage}[c]{0.32\textwidth}
-%     \begin{align*}
-%       \mathbf{P}(X=\,\,\,9) &    =   3 p_r^2 p_u\\
-%       \mathbf{P}(X=10) &   =   6 p_s^3   \\
-%       \mathbf{P}(X=11) &   =   2 p_s^3    \\
-%       \mathbf{P}(X=12) &   =   3 p_s^2 p_r
-%     \end{align*}
-%   \end{minipage}%
-%   \begin{minipage}[c]{0.32\textwidth}
-%     \begin{align*}
-%       \mathbf{P}(X=13) &   =   6 p_s^2 p_r\\
-%       \mathbf{P}(X=14) &   =   3 p_s^2 p_r\\
-%       \mathbf{P}(X=15) &   =   6 p_s p_r^2\\
-%       \mathbf{P}(X=16) &   =   p_r^3.
-%     \end{align*}
-%   \end{minipage}  
-% \end{minipage}
-
-
-% Does this distribution accurately reflect the occurrences of
-% three-neuron motifs in anisotropic or even distance-dependent
-% networks? Here we take the distribution \marginpar{distribution from
-%   neuron-pairs as reference} determined from the two-neuron
-% probabilities as a reference to analyze occurrences of three-neuron
-% motifs in our sets of sample graphs. Counting the occurrences of
-% patterns in we find that there are significant over- and
-% underrepresentations in anisotropic as well as distance-dependent
-% networks, relative to our expectation
-% (\autoref{fig:3motif_single}). We find, for example, that in
-% anisotropic graphs pattern 12 occurs almost 5 times as often as we
-% would have expected from the two-neuron probabilities, whereas
-% the counts for pattern 11 only make up less than $30\%$ of the
-% occurrences expected.  
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.95\linewidth]{%
-%     plots/4839ce41_aniso_dist.pdf}
-%   \captionsetup{skip=8pt}
-%   \caption{\textbf{Relative occurrence of three-neuron patterns}
-%     Extracting the counts of three-node motifs in anisotropic (filled
-%     bars) and distance-dependent networks (unfilled bars), the
-%     quotient of the obtained count with the number of occurrences
-%     expected from the two-neuron connection probabilities in the
-%     networks (cf. Section~\ref{sec:two_neuron}) shows the over- and
-%     underrepresentation of specific motifs in the network (red and
-%     black errorbars are SEM). In anisotropic networks pattern 12, for
-%     example, appears around five times more often than we would expect
-%     from the occurrence two-neuron connections. The relative counts
-%     for anisotropic networks resemble the findings of
-%     \textcite{Song2005} and differ significantly from the counts in
-%     distance-dependent networks, implying that anisotropy has a strong
-%     influence on the relative occurrence of three-neuron
-%     patterns. (\smtcite{4839ce41}) }
-%   \label{fig:3motif_single}
-% \end{figure}
-
-% Comparing the relative counts for motifs in anisotropic graphs with
-% those in comparable distance-dependent networks, we
-% \marginpar{anisotropy strongly affects 3-motif
-%   occurrence}identify a strong influence of anisotropy in connectivity
-% on three-neuron motif occurrence (\autoref{fig:3motif_single}). In
-% their experiments, Song et al.\ and Perin et al.\ find an
-% overrepresentation of motifs 4, 10, 12 and 14. In anisotropic networks
-% increased counts of motifs 4, 8, 10, 12, 13 and 14 were
-% recorded. However, motifs 8 and 13 are overrepresented in
-% distance-dependent networks as well, leaving the reported motifs 4,
-% 10, 12 and 14 as motifs that are overrepresented due to anisotropy. To
-% analyze this effect closer, we also compare three-neuron counts before
-% and after rewiring in anisotropic networks
-% (\autoref{fig:3motif_full}).
+There are 13%
+%------------------------------------
+\footnote{%
+  There are 16 non-isomorphic simple directed graphs with 3
+  nodes. Three of those graphs are unconnected \parencite[cf. ][%
+  N. J. A. Sloane. The On-Line Encyclopedia of Integer Sequences,
+  http://oeis.org. Sequence
+  \href{http://oeis.org/A000273}{A000273}]{Davis1953}.%
+} %
+%-------------------------------------
+non-isomorphic 3-motifs in simple directed graphs. In reference to Song et al.'s result, the patterns
+are labeled 4 to 16, \vspace{-0.2cm}
+\begin{figure}[H]
+  \centering
+  \begin{overpic}[width=0.95\linewidth]{%
+    plots/4839ce41_motifs_cropped.pdf}
+  \put(100,0.2){.} 
+  \end{overpic}
+\end{figure}
+\vspace{-0.8cm} Let $X$ be a random variable that maps three random
+vertices $v_1 \neq v_2 \neq v_3$ in a graph $G$ to the $n \in
+\{4,5,\dots,16\}$ labeling the isomorphism class of the full subgraph
+with vertex set $\{v_1,v_2,v_3\}$ in $G$ as above if the subgraph is
+connected, and let $X$ map to $n=0$ otherwise. A first idea of how to
+compute the distribution of $X$ is by inferring the probabilities of
+motif occurrence from the two-neuron connection probabilities from
+Section~\ref{sec:two_neuron}. In anisotropic networks we found that
+the probabilities of occurrence are 
+\begin{align*} 
+  p_u & = 0.791336     &&\text{for unconnected pairs,}     \\
+  p_s & = 0.184151     &&\text{for single connections and} \\
+  p_r & = 0.024513     &&\text{for reciprocal connections.}
+\end{align*}
+From these we may, for example, calculate the probability of
+occurrence for motif 8, 
+\[
+  \mathbf{P}(X=8) = 6\, p_{u} p_{s} p_{r},
+\]
+where the factor 6 is determined by the number of different
+\textit{labeled} graphs belonging to the isomorphism class. The
+distribution of $X$ for the remaining motifs is given by \\
+%
+\smallskip
+%
+\begin{minipage}{\linewidth}
+  \begin{minipage}[c]{0.32\textwidth}
+    \begin{align*}
+      % \mathbf{P}(X=1) &    =   p_u^3  \\
+      % \mathbf{P}(X=2) &    =   6 p_u p_u p_s\\
+      % \mathbf{P}(X=3) &    =   3 p_u p_u p_r\\
+      \mathbf{P}(X=4) &    =   3 p_s^2 p_u\\
+      \mathbf{P}(X=5) &    =   3 p_s^2 p_u\\
+      \mathbf{P}(X=6) &    =   6 p_s^2 p_u\\
+      \mathbf{P}(X=7) &    =   6 p_s p_u p_r
+    \end{align*}
+  \end{minipage}%
+  \begin{minipage}[c]{0.32\textwidth}
+    \begin{align*}
+      \mathbf{P}(X=\,\,\,9) &    =   3 p_r^2 p_u\\
+      \mathbf{P}(X=10) &   =   6 p_s^3   \\
+      \mathbf{P}(X=11) &   =   2 p_s^3    \\
+      \mathbf{P}(X=12) &   =   3 p_s^2 p_r
+    \end{align*}
+  \end{minipage}%
+  \begin{minipage}[c]{0.32\textwidth}
+    \begin{align*}
+      \mathbf{P}(X=13) &   =   6 p_s^2 p_r\\
+      \mathbf{P}(X=14) &   =   3 p_s^2 p_r\\
+      \mathbf{P}(X=15) &   =   6 p_s p_r^2\\
+      \mathbf{P}(X=16) &   =   p_r^3.
+    \end{align*}
+  \end{minipage}  
+\end{minipage}
 
 
-% \begin{figure}[H]
-%   \centering
-%   \begin{overpic}[width=0.95\linewidth]{%
-%       plots/4839ce41_aniso_rew.pdf}
-%     \put(2.2,40){\small \textbf{A}} 
-%   \end{overpic}
-%   \begin{overpic}[width=0.95\linewidth]{%
-%       plots/4839ce41_tanfit_rew.pdf}
-%     \put(2.2,40){\small \textbf{B}}
-%   \end{overpic}
-%   \vspace{0.4cm}
+Does this distribution accurately reflect the occurrences of
+three-neuron motifs in anisotropic or even distance-dependent
+networks? Here we take the distribution \marginpar{distribution from
+  neuron-pairs as reference} determined from the two-neuron
+probabilities as a reference to analyze occurrences of three-neuron
+motifs in our sets of sample graphs. Counting the occurrences of
+patterns in we find that there are significant over- and
+underrepresentations in anisotropic as well as distance-dependent
+networks, relative to our expectation
+(\autoref{fig:3motif_single}). We find, for example, that in
+anisotropic graphs pattern 12 occurs almost 5 times as often as we
+would have expected from the two-neuron probabilities, whereas
+the counts for pattern 11 only make up less than $30\%$ of the
+occurrences expected.  
 
-%   \makebox{%
-%     \hspace{1.208cm}%1.23
-%     \begin{overpic}[height=3.6cm]{%
-%         plots/4839ce41_motif15.pdf}
-%       \put(-10.8,45){\small \textbf{C}}
-%       \put(32.3,44.9){\small 15}
-%       \put(40,42.9){\includegraphics[width=0.5cm]{img/misc/song_motif_15.pdf}}
-%     \end{overpic} 
-%     \hspace{0.19cm}
-%     \begin{overpic}[height=3.6cm]{%
-%         plots/4839ce41_motif16.pdf}
-%       \put(54,83){\small 16}
-%       \put(68,79){\includegraphics[width=0.5cm]{img/misc/song_motif_16.pdf}}
-%     \end{overpic} 
-%   }%
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{%
+    plots/4839ce41_aniso_dist.pdf}
+  \captionsetup{skip=8pt}
+  \caption{\textbf{Relative occurrence of three-neuron patterns}
+    Extracting the counts of three-node motifs in anisotropic (filled
+    bars) and distance-dependent networks (unfilled bars), the
+    quotient of the obtained count with the number of occurrences
+    expected from the two-neuron connection probabilities in the
+    networks (cf. Section~\ref{sec:two_neuron}) shows the over- and
+    underrepresentation of specific motifs in the network (red and
+    black errorbars are SEM). In anisotropic networks pattern 12, for
+    example, appears around five times more often than we would expect
+    from the occurrence two-neuron connections. The relative counts
+    for anisotropic networks resemble the findings of
+    \textcite{Song2005} and differ significantly from the counts in
+    distance-dependent networks, implying that anisotropy has a strong
+    influence on the relative occurrence of three-neuron
+    patterns. (\smtcite{4839ce41}) }
+  \label{fig:3motif_single}
+\end{figure}
 
-%   \captionsetup{skip=8pt}
-%   \caption{\textbf{Three-neuron motif occurrence in different network
-%       types} \textbf{A)} Comparing counts in anisotropic sample graphs
-%     with their rewired counterparts. \textbf{B)} Three-neuron motifs
-%     occurrence in tuned anisotropic networks
-%     (cf. Section~\ref{sec:tuned_networks}) with their rewired
-%     counterparts. For this two-neuron connection probabilities were
-%     extracted as in Section~\ref{sec:two_neuron} and motif
-%     probabilities were calculated analogously to anisotropic
-%     networks. \textbf{C)} Relative counts for the high edge count
-%     motifs 15 and 16 for different network types, errorbars
-%     SEM. (\smtcite{4839ce41}) }
-%   \label{fig:3motif_full}
-% \end{figure}
+Comparing the relative counts for motifs in anisotropic graphs with
+those in comparable distance-dependent networks, we
+\marginpar{anisotropy strongly affects 3-motif
+  occurrence}identify a strong influence of anisotropy in connectivity
+on three-neuron motif occurrence (\autoref{fig:3motif_single}). In
+their experiments, Song et al.\ and Perin et al.\ find an
+overrepresentation of motifs 4, 10, 12 and 14. In anisotropic networks
+increased counts of motifs 4, 8, 10, 12, 13 and 14 were
+recorded. However, motifs 8 and 13 are overrepresented in
+distance-dependent networks as well, leaving the reported motifs 4,
+10, 12 and 14 as motifs that are overrepresented due to anisotropy. To
+analyze this effect closer, we also compare three-neuron counts before
+and after rewiring in anisotropic networks
+(\autoref{fig:3motif_full}).
 
 
-% Considering motif occurrences in anisotropic as well as tuned
-% anisotropic networks, we once again confirm the overrepresentation of
-% motifs 4, 10, 12 and 14. However, increased counts of pattern 4 are
-% observed in the rewired networks as well, leading to the conclusion
-% that increased occurrence in this motif is only implicitly affected by
-% anisotropy. Motifs 10, 12 and 14 however show significant
-% overrepresentation even over their rewired counterparts in anisotropic
-% as well as in tuned anisotropic networks.
+\begin{figure}[H]
+  \centering
+  \begin{overpic}[width=0.95\linewidth]{%
+      plots/4839ce41_aniso_rew.pdf}
+    \put(2.2,40){\small \textbf{A}} 
+  \end{overpic}
+  \begin{overpic}[width=0.95\linewidth]{%
+      plots/4839ce41_tanfit_rew.pdf}
+    \put(2.2,40){\small \textbf{B}}
+  \end{overpic}
+  \vspace{0.4cm}
 
-% The overall motif distribution shows itself stable under changes in
-% the distance-dependency with the notable exception of motif 9, that
-% shows underrepresentation only in anisotropic but not in tuned
-% anisotropic or any distance-dependent network type. Analyzing the
-% occurrences of motifs 15 and 16 with a high edge counts
-% (\autoref{fig:3motif_full} C) we find that anisotropy has strong
-% influence on both motifs, with motif 15 being significantly
-% overrepresented in anisotropic networks. Motif 16 shows a highly
-% increased occurrence in anisotropic networks, however tuning causes
-% the loss of this feature in the network connectivity.
+  \makebox{%
+    \hspace{1.208cm}%1.23
+    \begin{overpic}[height=3.6cm]{%
+        plots/4839ce41_motif15.pdf}
+      \put(-10.8,45){\small \textbf{C}}
+      \put(32.3,44.9){\small 15}
+      \put(40,42.9){\includegraphics[width=0.5cm]{img/misc/song_motif_15.pdf}}
+    \end{overpic} 
+    \hspace{0.19cm}
+    \begin{overpic}[height=3.6cm]{%
+        plots/4839ce41_motif16.pdf}
+      \put(54,83){\small 16}
+      \put(68,79){\includegraphics[width=0.5cm]{img/misc/song_motif_16.pdf}}
+    \end{overpic} 
+  }%
 
-% Summarizing the above observations, we find that \marginpar{results
-%   summary} anisotropy in connectivity induces increased occurrence of
-% motifs 10, 12, 14 and 15 in the network, reflecting experimental
-% results in the rat's cortex.  While over- and underrepresentation
-% observed in local cortical circuits can be indirectly linked to
-% anisotropy for some motifs (4, 9), it does not accurately reflect
-% observed counts for other motifs (8) and shows instability under
-% manipulation of distance-dependency in some patterns (9, 16).
+  \captionsetup{skip=8pt}
+  \caption{\textbf{Three-neuron motif occurrence in different network
+      types} \textbf{A)} Comparing counts in anisotropic sample graphs
+    with their rewired counterparts. \textbf{B)} Three-neuron motifs
+    occurrence in tuned anisotropic networks
+    (cf. Section~\ref{sec:tuned_networks}) with their rewired
+    counterparts. For this two-neuron connection probabilities were
+    extracted as in Section~\ref{sec:two_neuron} and motif
+    probabilities were calculated analogously to anisotropic
+    networks. \textbf{C)} Relative counts for the high edge count
+    motifs 15 and 16 for different network types, errorbars
+    SEM. (\smtcite{4839ce41}) }
+  \label{fig:3motif_full}
+\end{figure}
+
+
+Considering motif occurrences in anisotropic as well as tuned
+anisotropic networks, we once again confirm the overrepresentation of
+motifs 4, 10, 12 and 14. However, increased counts of pattern 4 are
+observed in the rewired networks as well, leading to the conclusion
+that increased occurrence in this motif is only implicitly affected by
+anisotropy. Motifs 10, 12 and 14 however show significant
+overrepresentation even over their rewired counterparts in anisotropic
+as well as in tuned anisotropic networks.
+
+The overall motif distribution shows itself stable under changes in
+the distance-dependency with the notable exception of motif 9, that
+shows underrepresentation only in anisotropic but not in tuned
+anisotropic or any distance-dependent network type. Analyzing the
+occurrences of motifs 15 and 16 with a high edge counts
+(\autoref{fig:3motif_full} C) we find that anisotropy has strong
+influence on both motifs, with motif 15 being significantly
+overrepresented in anisotropic networks. Motif 16 shows a highly
+increased occurrence in anisotropic networks, however tuning causes
+the loss of this feature in the network connectivity.
+
+Summarizing the above observations, we find that \marginpar{results
+  summary} anisotropy in connectivity induces increased occurrence of
+motifs 10, 12, 14 and 15 in the network, reflecting experimental
+results in the rat's cortex.  While over- and underrepresentation
+observed in local cortical circuits can be indirectly linked to
+anisotropy for some motifs (4, 9), it does not accurately reflect
+observed counts for other motifs (8) and shows instability under
+manipulation of distance-dependency in some patterns (9, 16).
 
 
 
@@ -234,8 +234,8 @@ stuff. Pernice2011, Sporns , Zhao2011.
 
 In motifs consisting of 3 to 8 neurons, \textcite{Perin2011} reported
 a striking statistic from their experiment with pyramidal cells in the
-rat's somatsosensory cortex (layer 5): Counting the number of edges
-appearing in a clusters of $n$ neurons, they find that clusters with
+rat's somatsosensory cortex, layer 5: Counting the number of edges
+appearing in a cluster of $n$ neurons, they find that clusters with
 relatively high edge counts appear significantly more often than
 expected from the network's distance-dependent connection
 probabilities alone. Do anisotropic networks exhibit a similar
@@ -247,10 +247,10 @@ network types. In the main process, after randomly sampling $n$
 pairwise different vertices $S_n$, the motif $H$ in $G$ with vertex
 set $V(H) = S_n$ is identified and its number of edges $\abs{E(H)}$ is
 recorded. Repeating this sufficiently often (order $10^6$) we obtain
-edge counts for clusters of 6,8 and 12 neurons in the anisotropic and
+edge counts for clusters of 6,8 and 12 neurons in the anisotropic- and
 tuned anisotropic networks as well as in their rewired
-counterparts. Then, showing difference of the counts in the
-anisotropic networks and rewired networks, normalized by the rewired
+counterparts. Then, showing the difference between counts in the
+anisotropic networks and counts in the rewired networks, normalized by the rewired
 counts, we identify an overrepresentation of high edge counts in the
 neuron similar to Perin et al.\ (\autoref{fig:perin6to12}).
 
@@ -269,14 +269,28 @@ neuron similar to Perin et al.\ (\autoref{fig:perin6to12}).
     \put(3.2,43){\small \textbf{C}}
     \put(25,20){\textcolor{gray}{(Placeholder)}}
   \end{overpic}
-  \captionsetup{skip=8pt}
-  \caption{\textbf{Increased occurrence of high edge counts in neuron
-      clusters in anisotropic networks} 
-    Showing the quotient of the difference 
-    Extracting the counts of three-node motifs in anisotropic (filled
-    bars) an (\smtcite{something}) }
+  \captionsetup{skip=10pt}
+  \caption{\textbf{High edge counts are overrepresented in networks
+      with anisotropy} The number of edges in random clusters of 6, 8
+    and 12 neurons were recorded in the anisotropic and tuned
+    anisotropic networks, as well as in their rewired
+    counterparts. Visualizing the normalized difference between counts
+    in the anisotropic and rewired networks, shows an
+    overrepresentation of high edge counts in networks with anisotropy
+    in connectivity. }
+
+
+    % Showing the quotient of the difference Extracting the counts of
+    % three-node motifs in anisotropic (filled bars) an
+    % (\smtcite{7c826e10}) 
+  %}
   \label{fig:perin6to12}
 \end{figure}
+
+
+Tuning the networks distance-dependency appears to have no affect as
+overrepresentations in anisotropic and tuned anisotropic are
+essentially
 
 
 Anisotropic networks inherently carry a
@@ -295,133 +309,27 @@ Here
   \end{overpic}
   \captionsetup{skip=8pt}
   \caption{\textbf{Stronger overrepresentation of clusters with high
-      edge counts when compared with distance-dependent networks}
+      edge counts with distance-dependent networks as reference}
     Showing we find that the overrepresentation of motifs with high
     edge counts is stronger (\smtcite{7c826e10}) }
   \label{fig:perin_rew_dist}
 \end{figure}
 
 
-In their study, Perin et al.\ follow their report of increased
-\marginpar{common neighbor rule as underlying principle?}  edge counts
-in neuron clusters with the observation of a \enquote{common neighbor
-  rule}\index{common neighbor rule}. Relying once again on their data
-in the rat's somatsensory cortex, Perin et al.\ find that not only do
-neuron pairs with a high number of common neighbor count appear
-significantly more often than expected, but also that such pairs
-display a higher probability of being connected. In fact, the
-relationship between pair connectivity and number of common neighbors
-appears to be linear. Perin et al.\ also report that this effect is
-most pronounced when only considering common in-neighbors, that is
-other neurons that are projecting to both neurons in the pair.
-
-Here we also investigate our networks for the existence of such a
-common neighbor relationship. Simultaneously recording connection
-probabilities and the number of common neighbors between pairs of
-neurons, we find inherent dependencies between the two quantities in
-all network types (\autoref{fig:cm_rule}). 
-
-
-\begin{figure}[H]
-  \centering
-  \makebox{%
-    \begin{overpic}[width=0.5\textwidth]{%
-         plots/5841710e_in.pdf}
-      \put(21,56.6){\small\textbf{A}}
-    \end{overpic}
-    \hfill
-    \begin{overpic}[width=0.5\textwidth]{%
-        plots/5841710e_out.pdf}
-      \put(21,56.6){\small\textbf{B}}
-    \end{overpic}
-  }%
-  \vfill
-  \vspace{0.2cm}
-  \makebox{%
-    \begin{overpic}[width=0.5\textwidth]{%
-         plots/5841710e_all.pdf}
-       \put(21,56.6){\small\textbf{C}}
-    \end{overpic}
-    \includegraphics[width=0.5\textwidth]{%
-      img/common_neighbor_legend.pdf}
-  }
-  \vfill
-  \vspace{0.2cm}
-  \makebox{%
-    \begin{overpic}[width=0.5\textwidth]{%
-         plots/5841710e_in_k.pdf}
-      \put(20.5,57.5){\small\textbf{D}}
-    \end{overpic}
-    \hfill
-    \begin{overpic}[width=0.5\textwidth]{%
-        plots/5841710e_out_k.pdf}
-      \put(20.5,57.5){\small\textbf{E}}
-    \end{overpic}
-  }%
-  \captionsetup{skip=7pt}
-  \caption{\textbf{Distance-independent overrepresentation of
-      reciprocal connections}  (\smtcite{something})}
-  \label{fig:cm_rule}
-\end{figure}
-
-
-First, we immediately note the sharp difference between in- and
-out-neighbors in their effect on connection probabilities in
-anisotropic networks, as well as in rewired networks. Only in
-distance-dependent networks it appears that in- and out-neighbors can
-be considered equivalent in their influence on connection
-probabilities (\autoref{fig:cm_rule} A-B). Furthermore, while the
-distribution of the number of common neighbors is consistent in
-distance-dependent networks, the other network types display a
-characteristic distribution of common out-neighbors
-(\autoref{fig:cm_rule} D-E). This observation clearly relates back to
-the drastically different out-degree distributions in the different
-networks found in Section~\ref{sec:degree_distribution}.
-
-Both for in- and out-neighbors we find characteristic . Here the
-profiles split into two categories, networks with anisotropy in
-connectivity (blue, orange) and distance-dependent networks (red,
-green) . Clearly anisotropy
 
 
 
-A high variance in in-neighbor distribution might 
 
-arguably might lead to advantages in computation
+% A high variance in in-neighbor distribution might 
 
-To few have common in-neighbors (functionally unrelated) or some pair
-with a many common inputs (functionally related). 
+% arguably might lead to advantages in computation
+
+% To few have common in-neighbors (functionally unrelated) or some pair
+% with a many common inputs (functionally related). 
 
 
 
-\begin{figure}[H]
-  \centering
-  \makebox{%
-    \begin{overpic}[width=0.493\textwidth]{%
-        plots/5841710e_in_k_tanfitrew.pdf}
-      \put(87.5,58.2){\small\textbf{A}}
-    \end{overpic}
-    \hfill
-    \begin{overpic}[width=0.5\textwidth]{%
-        plots/ffcefe9b.pdf}
-      \put(89,58.2){\small\textbf{B}}
-    \end{overpic}
-  }%
-  \captionsetup{skip=7pt}
-  \caption{\textbf{Anisotropy increases variance of common input
-      distribution} Recording common in-neighbor counts for random
-    neuron pairs in tuned anisotropic networks and their rewired
-    versions reveals increased variance in networks with a high degree
-    of anisotropy. \textbf{A)} Common in-neighbor distribution for
-    original tuned anisotropic networks ($\eta = 0$, blue) and rewired
-    versions with $\nicefrac{1}{4}$ of all edges rewired ($\eta =
-    0.25$, red) and completely rewired ($\eta =1 $, green).
-    (\smtcite{5841710e}) \textbf{B)} Variance of the common
-    in-neighbor distributions declines with increasing rewiring factor
-    $\eta$; highest variance is found in networks with the highest
-    degree of anisotropy ($\eta = 0$). (\smtcite{ffcefe9b})}
-  \label{fig:cm_rule}
-\end{figure}
+
 
 
 % \marginpar{results
