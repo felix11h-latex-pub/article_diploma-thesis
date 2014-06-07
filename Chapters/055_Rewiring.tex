@@ -208,13 +208,15 @@ As a generalization of Definition~\ref{def:rewiring}, we define a
 partial rewiring $R_{\varepsilon, \eta}$, finding new targets only for
 a fraction $\eta$ of all edges:
 
-\begin{definition}Let $\varepsilon > 0$ and $0 \leq \eta \leq 1$. A
-  \textit{partial rewiring} $R_{\varepsilon,\eta}$ of an anisotropic
-  geometric graph $G_{n,w}$ is then a rewiring $R_{\varepsilon}$ of
-  $G_{n,w}$, in which every edge is rewired with a probability of
-  $\eta$, otherwise it remains. To avoid the occurrence of multiple
-  edges, $K_e$ is then extended to include the targets of all edges
-  originating from $s(e)$ that will not be rewired.
+\begin{definition}\index{partial rewiring} 
+  Let $\varepsilon > 0$ and $0 \leq \eta \leq 1$. A \textit{partial
+    rewiring} $R_{\varepsilon,\eta}$ of an anisotropic geometric graph
+  $G_{n,w}$ with \textit{rewiring factor}\index{rewiring factor} $\eta$
+  is then a rewiring $R_{\varepsilon}$ of $G_{n,w}$, in which every edge
+  is rewired with a probability of $\eta$, otherwise it remains. To
+  avoid the occurrence of multiple edges, $K_e$ is then extended to
+  include the targets of all edges originating from $s(e)$ that will not
+  be rewired.
 \end{definition}
 
 Clearly, as with full rewiring, partial rewiring also preserves
