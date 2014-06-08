@@ -1,4 +1,3 @@
-\newpage
 
 \section{Two Neuron Connections}\label{sec:two_neuron}
 
@@ -68,7 +67,30 @@ does not influence the occurrence of two-neuron motifs
 neuron pairs are identical in distance-dependent and rewired
 anisotropic networks (\autoref{suppfig:two_neurons_dist_rew}).
 
-\begin{figure}[ht]
+We further support this observation by computing the probability
+distribution for the expected number of edges between to random
+vertices in the anisotropic graph model. For this we assume that only
+the distance-dependent connection probability $C(x)$ determines the
+occurrence of edges in vertex pairs in the anisotropic graph
+model. Then, using the probability distribution $f(x)$ for the a
+random neuron pair to be at distance $x$, we calculate
+\begin{align*}
+\mathbf{P}(X=0) & = \int_0^{\sqrt{2}} (1-C(x))^2 f(x)\,
+dx, \\
+\mathbf{P}(X=1) & = \int_0^{\sqrt{2}} 2 C(x) (1-C(x)) f(x) \, dx \quad \mathrm{and}\\
+\mathbf{P}(X=2) & = \int_0^{\sqrt{2}} C(x)^2 f(x) \, dx. 
+\end{align*}
+Inserting the distance-dependent connection probabilities $C(x)$ in
+the anisotropic graph model as computed in
+Theorem~\ref{theorem:distance_prof} and the probability distribution
+$f(x)$ from Theorem~\ref{theorem:distance_square} we obtain
+\begin{align*} 
+\mathbf{P}(X=0) & = 0.791336 && 0.7907  \pm 0.0008\\
+\mathbf{P}(X=1) & = 0.184151 && 0.1846  \pm 0.0007\\
+\mathbf{P}(X=2) & = 0.024513 && 0.02462  \pm 0.00009,
+\end{align*}
+
+\begin{figure}[H]
   \centering
   \makebox{%
     \begin{overpic}[height=0.17\textheight]{%
@@ -106,28 +128,7 @@ anisotropic networks (\autoref{suppfig:two_neurons_dist_rew}).
 \end{figure}  
 
 
-We further support this observation by computing the probability
-distribution for the expected number of edges between to random
-vertices in the anisotropic graph model. For this we assume that only
-the distance-dependent connection probability $C(x)$ determines the
-occurrence of edges in vertex pairs in the anisotropic graph
-model. Then, using the probability distribution $f(x)$ for the a
-random neuron pair to be at distance $x$, we calculate
-\begin{align*}
-\mathbf{P}(X=0) & = \int_0^{\sqrt{2}} (1-C(x))^2 f(x)\,
-dx, \\
-\mathbf{P}(X=1) & = \int_0^{\sqrt{2}} 2 C(x) (1-C(x)) f(x) \, dx \quad \mathrm{and}\\
-\mathbf{P}(X=2) & = \int_0^{\sqrt{2}} C(x)^2 f(x) \, dx. 
-\end{align*}
-Inserting the distance-dependent connection probabilities $C(x)$ in
-the anisotropic graph model as computed in
-Theorem~\ref{theorem:distance_prof} and the probability distribution
-$f(x)$ from Theorem~\ref{theorem:distance_square} we obtain
-\begin{align*} 
-\mathbf{P}(X=0) & = 0.791336 && 0.7907  \pm 0.0008\\
-\mathbf{P}(X=1) & = 0.184151 && 0.1846  \pm 0.0007\\
-\mathbf{P}(X=2) & = 0.024513 && 0.02462  \pm 0.00009,
-\end{align*}
+
 perfectly matching the probabilities extracted from anisotropic sample
 graphs in the right column (error SEM, \smtcite{c5f1462b}). Noting
 that distance-dependency alone is sufficient to accurately predict

@@ -7,21 +7,22 @@
 
 \section{Degree distribution}\label{sec:degree_distribution}
 
-The in- and out-degree of vertex in a directed graph describes the
-number of incoming and outgoing connection from and to other vertices
-(cf. Definition~\ref{def:in_out_degree}). As a fundamental concept in
-graph and network theory, the degree distribution is integral in the
-categorization of networks and allows for the estimation of graph
-properties.
 
-Degree distribution was shown to have strong impact on the dynamics of
-neuronal networks models commonly used in computational neuroscience
-research \parencite{Roxin2011}. Increasing in-degree variance for
-example could be connected to the appearance of oscillations in the
-network. Extracting degree distributions from biological networks
-however, remains a challenge as many neurons need to be tracked
-simultaneously to obtain enough data to confidently estimate degree
-distributions. 
+The in- and out-degree of a vertex in a directed graph describes the
+number of incoming and outgoing connection from and to other
+\marginpar{cf. Definition~\ref{def:in_out_degree}} vertices. As a
+fundamental concept in graph and network theory, the degree
+distribution is integral in the categorization of networks and allows
+for the estimation of graph properties. 
+
+Node degree distribution was shown to have strong impact on the
+dynamics of neuronal networks models commonly used in computational
+neuroscience research \parencite{Roxin2011}. Increasing in-degree
+variance for example could be connected to the appearance of
+oscillations in the network. Extracting degree distributions from
+biological networks however, remains a challenge as many neurons need
+to be tracked simultaneously to obtain enough data to confidently
+estimate degree distributions.
 
 \begin{figure}[H]
   \centering
@@ -131,7 +132,7 @@ for a random node $v$ in the anisotropic network model, the out-degree
 distribution is then approximated by
 %
 \begin{align}\label{eq:axon_length_approx}
-  \mathbf{Pr}[d_{\mathrm{out}}(v) = N \frac{w l}{s^2}] = f(l),  
+  \mathbf{P}(d_{\mathrm{out}}(v) = N \frac{w l}{s^2}) = f(l),  
 \end{align}
 %
 see also \autoref{fig:out_degree_ER_compare}.
@@ -189,7 +190,10 @@ see also \autoref{fig:out_degree_ER_compare}.
 \end{figure}
 
 
-
+%------------------------------------------------
+\marginpar{\vspace{1.91cm}\\Steep incline for small out-degree cut off
+  due to binning (cf. \autoref{suppfig:out_degree})} 
+%------------------------------------------------
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.65\textwidth]{%
@@ -204,10 +208,7 @@ see also \autoref{fig:out_degree_ER_compare}.
     anisotropic network (\smtcite{019555b0}).}
   \label{fig:out_degree_ER_compare}
 \end{figure}
-%------------------------------------------------
-\marginpar{\vspace{-8.1cm}\\Steep incline for small out-degree cut off
-  due to binning (cf. \autoref{suppfig:out_degree})} 
-%------------------------------------------------
+
 
 
 %%% Local Variables: 

@@ -108,22 +108,6 @@ distribution of $X$ for the remaining motifs is given by \\
   \end{minipage}  
 \end{minipage}
 
-
-Does this distribution accurately reflect the occurrences of
-three-neuron motifs in anisotropic or even distance-dependent
-networks? Here we take the distribution \marginpar{distribution from
-  neuron-pairs as reference} determined from the two-neuron
-probabilities as a reference to analyze occurrences of three-neuron
-motifs in our sets of sample graphs. Counting the occurrences of
-patterns in we find that there are significant over- and
-underrepresentations in anisotropic as well as distance-dependent
-networks, relative to our expectation
-(\autoref{fig:3motif_single}). We find, for example, that in
-anisotropic graphs pattern 12 occurs almost 5 times as often as we
-would have expected from the two-neuron probabilities, whereas
-the counts for pattern 11 only make up less than $30\%$ of the
-occurrences expected.  
-
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.95\linewidth]{%
@@ -147,21 +131,20 @@ occurrences expected.
   \label{fig:3motif_single}
 \end{figure}
 
-Comparing the relative counts for motifs in anisotropic graphs with
-those in comparable distance-dependent networks, we
-\marginpar{anisotropy strongly affects 3-motif
-  occurrence}identify a strong influence of anisotropy in connectivity
-on three-neuron motif occurrence (\autoref{fig:3motif_single}). In
-their experiments, Song et al.\ and Perin et al.\ find an
-overrepresentation of motifs 4, 10, 12 and 14. In anisotropic networks
-increased counts of motifs 4, 8, 10, 12, 13 and 14 were
-recorded. However, motifs 8 and 13 are overrepresented in
-distance-dependent networks as well, leaving the reported motifs 4,
-10, 12 and 14 as motifs that are overrepresented due to anisotropy. To
-analyze this effect closer, we also compare three-neuron counts before
-and after rewiring in anisotropic networks
-(\autoref{fig:3motif_full}).
-
+Does this distribution accurately reflect the occurrences of
+three-neuron motifs in anisotropic or even distance-dependent
+networks? Here we take the distribution \marginpar{distribution from
+  neuron-pairs as reference} determined from the two-neuron
+probabilities as a reference to analyze occurrences of three-neuron
+motifs in our sets of sample graphs. Counting the occurrences of
+patterns in we find that there are significant over- and
+underrepresentations in anisotropic as well as distance-dependent
+networks, relative to our expectation
+(\autoref{fig:3motif_single}). We find, for example, that in
+anisotropic graphs pattern 12 occurs almost 5 times as often as we
+would have expected from the two-neuron probabilities, whereas
+the counts for pattern 11 only make up less than $30\%$ of the
+occurrences expected.  
 
 \begin{figure}[H]
   \centering
@@ -206,6 +189,20 @@ and after rewiring in anisotropic networks
   \label{fig:3motif_full}
 \end{figure}
 
+Comparing the relative counts for motifs in anisotropic graphs with
+those in comparable distance-dependent networks, we
+\marginpar{anisotropy strongly affects 3-motif
+  occurrence}identify a strong influence of anisotropy in connectivity
+on three-neuron motif occurrence (\autoref{fig:3motif_single}). In
+their experiments, Song et al.\ and Perin et al.\ find an
+overrepresentation of motifs 4, 10, 12 and 14. In anisotropic networks
+increased counts of motifs 4, 8, 10, 12, 13 and 14 were
+recorded. However, motifs 8 and 13 are overrepresented in
+distance-dependent networks as well, leaving the reported motifs 4,
+10, 12 and 14 as motifs that are overrepresented due to anisotropy. To
+analyze this effect closer, we also compare three-neuron counts before
+and after rewiring in anisotropic networks
+(\autoref{fig:3motif_full}).
 
 Considering motif occurrences in anisotropic as well as tuned
 anisotropic networks, we once again confirm the overrepresentation of
@@ -251,21 +248,7 @@ expected from the network's distance-dependent connection
 probabilities alone. Do anisotropic networks exhibit a similar
 feature?
 
-Recruiting the collection of sample graphs once again we analyze the
-occurrence of edge counts in clusters of $n$ neurons in the different
-network types. In the main process, after randomly sampling $n$
-pairwise different vertices $S_n$, the motif $H$ in $G$ with vertex
-set $V(H) = S_n$ is identified and its number of edges $\abs{E(H)}$ is
-recorded. Repeating this sufficiently often (order $10^6$) we obtain
-edge counts for clusters of 6,8 and 12 neurons in the anisotropic- and
-tuned anisotropic networks as well as in their rewired
-counterparts. Then, showing the difference between counts in the
-anisotropic networks and counts in the rewired networks, normalized by
-the rewired counts, we identify an overrepresentation of high edge
-counts in the neuron similar to Perin et al.\
-(\autoref{fig:perin6to12}).
-
-\begin{figure}[H]
+\begin{figure}[h!]
   \centering
   \begin{overpic}[width=0.95\linewidth]{%
       plots/Perin_test_6counts_compare.pdf} 
@@ -287,22 +270,22 @@ counts in the neuron similar to Perin et al.\
     anisotropic networks and rewired networks shows an
     overrepresentation of high edge counts in networks with anisotropy
     in connectivity. Errorbars SEM. (\smtcite{??})}
-
-
-
-    % shows were recorded in the anisotropic and tuned anisotropic
-    % networks, as well as in their rewired counterparts. Visualizing
-    % the normalized difference between counts in the anisotropic and
-    % rewired networks, shows an overrepresentation of high edge counts
-    % in networks with anisotropy in connectivity. }
-
-
-    % Showing the quotient of the difference Extracting the counts of
-    % three-node motifs in anisotropic (filled bars) an
-    % (\smtcite{7c826e10}) 
-  %}
   \label{fig:perin6to12}
 \end{figure}
+
+Recruiting the collection of sample graphs once again we analyze the
+occurrence of edge counts in clusters of $n$ neurons in the different
+network types. In the main process, after randomly sampling $n$
+pairwise different vertices $S_n$, the motif $H$ in $G$ with vertex
+set $V(H) = S_n$ is identified and its number of edges $\abs{E(H)}$ is
+recorded. Repeating this sufficiently often (order $10^6$) we obtain
+edge counts for clusters of 6,8 and 12 neurons in the anisotropic- and
+tuned anisotropic networks as well as in their rewired
+counterparts. Then, showing the difference between counts in the
+anisotropic networks and counts in the rewired networks, normalized by
+the rewired counts, we identify an overrepresentation of high edge
+counts in the neuron similar to Perin et al.\
+(\autoref{fig:perin6to12}).
 
 In anisotropic networks an overrepresentation of high edge counts is
 found consistently through clusters of 6, 8 and 12 neurons, with the
