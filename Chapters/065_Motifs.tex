@@ -2,22 +2,37 @@
 
 \section{Motifs}\label{sec:motifs}
 
-In this chapter we analyze the strucarl. The term motif referes
-to... . Studies of \textcite{Song2005} and \textcite{Perin2011} show
-stuff. Pernice2011, Sporns , Zhao2011.
+Non-random connectivity in local cortical circuits extends well beyond
+specific connection probability in neuron pairs: As one of their main
+results, \textcite{Song2005} report a characteristic occurrence of
+motifs of three neurons, while \textcite{Perin2011} find patterns in
+the number of connections appearing in clusters of up to 8
+neurons. Motifs have been shown to have a significant influence on
+network dynamics, with patterns affecting dynamical
+correlations \parencite{Pernice2011} and network
+synchrony \parencite{Zhao2011}.
 
-\newpage
+Finding no correlation between two-neuron connection probabilities and
+anisotropy in connectivity prior, does anisotropy influence the
+occurrence of neuron motifs? In this section we analyze higher order
+connectivity in the different network types and observe a surprisingly
+strong impact of anisotropy on patterns of connected neurons,
+promoting the concept as an underlying principle for non-random
+network connectivity.
+
+
+
 \subsection*{Three-neuron patterns}
 
-Here we investigate the occurrence of three-neuron patterns in
+We first investigate the occurrence of three-neuron patterns in
 an\-iso\-tro\-pic networks. \textcite{Song2005} reported a
 characteristic, highly non-ran\-dom motif distribution of pyramidal
-cells in the rat's visual cortex (layer 5), a result later confirmed
-by \textcite{Perin2011} in their experiment in the rat's somatosensory
-cortex (layer 5). Repeating the experiment \textit{in silico} for the
+cells in the rat's visual cortex layer 5, a result later confirmed by
+\textcite{Perin2011} in their experiment in the rat's somatosensory
+cortex layer 5. Repeating the experiment \textit{in silico} for the
 different networks subject to this study, we find similar,
-characteristic motif distributions strongly influenced by the
-anisotropy in connectivity.
+characteristic motif distributions strongly influenced by anisotropy
+in connectivity.
 
 There are 13%
 %------------------------------------
@@ -224,11 +239,6 @@ manipulation of distance-dependency in some patterns (9, 16).
 
 
 
-
-
-
-
-
 %\newpage
 \subsection*{Edge counts in neuron clusters}
 
@@ -250,9 +260,10 @@ recorded. Repeating this sufficiently often (order $10^6$) we obtain
 edge counts for clusters of 6,8 and 12 neurons in the anisotropic- and
 tuned anisotropic networks as well as in their rewired
 counterparts. Then, showing the difference between counts in the
-anisotropic networks and counts in the rewired networks, normalized by the rewired
-counts, we identify an overrepresentation of high edge counts in the
-neuron similar to Perin et al.\ (\autoref{fig:perin6to12}).
+anisotropic networks and counts in the rewired networks, normalized by
+the rewired counts, we identify an overrepresentation of high edge
+counts in the neuron similar to Perin et al.\
+(\autoref{fig:perin6to12}).
 
 \begin{figure}[H]
   \centering
@@ -271,13 +282,19 @@ neuron similar to Perin et al.\ (\autoref{fig:perin6to12}).
   \end{overpic}
   \captionsetup{skip=10pt}
   \caption{\textbf{High edge counts are overrepresented in networks
-      with anisotropy} The number of edges in random clusters of 6, 8
-    and 12 neurons were recorded in the anisotropic and tuned
-    anisotropic networks, as well as in their rewired
-    counterparts. Visualizing the normalized difference between counts
-    in the anisotropic and rewired networks, shows an
+      with anisotropy} Normalized difference between number of edges
+    in clusters of 6, 8 and 12 randomly selected neurons in
+    anisotropic networks and rewired networks shows an
     overrepresentation of high edge counts in networks with anisotropy
-    in connectivity. }
+    in connectivity. Errorbars SEM. (\smtcite{??})}
+
+
+
+    % shows were recorded in the anisotropic and tuned anisotropic
+    % networks, as well as in their rewired counterparts. Visualizing
+    % the normalized difference between counts in the anisotropic and
+    % rewired networks, shows an overrepresentation of high edge counts
+    % in networks with anisotropy in connectivity. }
 
 
     % Showing the quotient of the difference Extracting the counts of
@@ -287,19 +304,25 @@ neuron similar to Perin et al.\ (\autoref{fig:perin6to12}).
   \label{fig:perin6to12}
 \end{figure}
 
+In anisotropic networks an overrepresentation of high edge counts is
+found consistently through clusters of 6, 8 and 12 neurons, with the
+highest counts appearing up to four times as often as expected. Low
+edge counts occur less frequently than expected and an increasing
+number of connections shows an oscillation around the
+expectation. These findings are consistent with the report of Perin et
+al, which however indicates a higher maximal overrepresentation in
+clusters of 8 neurons. 
 
-Tuning the networks distance-dependency appears to have no affect as
-overrepresentations in anisotropic and tuned anisotropic are
-essentially
+Tuning the network's distance-dependency appears to not affect the
+overrepresentation as edge counts in anisotropic and tuned
+an\-iso\-tro\-pic essentially match
+(\autoref{fig:perin6to12}). Anisotropy in connectivity therefore
+presents itself as an important factor in the occurrence of increased
+high edge counts in cortical networks, possibly fully reflecting the
+findings of Perin et al., as the overrepresentation effect is found to
+be even stronger when comparing edge counts to distance-dependent
+networks as opposed to rewired versions (\autoref{fig:perin_rew_dist}).
 
-
-Anisotropic networks inherently carry a
-connection principle that goes beyou 
-
-we find that this effect is even stronger in comparison with
-distance-dependent networks (\autoref{fig:perin_rew_dist}).
-
-Here  
 
 \begin{figure}[H]
   \centering
@@ -310,8 +333,10 @@ Here
   \captionsetup{skip=8pt}
   \caption{\textbf{Stronger overrepresentation of clusters with high
       edge counts with distance-dependent networks as reference}
-    Showing we find that the overrepresentation of motifs with high
-    edge counts is stronger (\smtcite{7c826e10}) }
+    Showing the occurrence of edge counts in clusters of 8 random
+    neurons, we find that the overrepresentation of motifs with high
+    edge counts is stronger when taking distance-dependent networks as
+    a reference as opposed to rewired networks. (\smtcite{7c826e10}) }
   \label{fig:perin_rew_dist}
 \end{figure}
 
@@ -320,21 +345,7 @@ Here
 
 
 
-% A high variance in in-neighbor distribution might 
 
-% arguably might lead to advantages in computation
-
-% To few have common in-neighbors (functionally unrelated) or some pair
-% with a many common inputs (functionally related). 
-
-
-
-
-
-
-% \marginpar{results
-%   summary} anisotropy in connectivity induces increased occurrence of
-% motifs 10, 12, 14 and 15 in the
 
 
 
