@@ -51,16 +51,18 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-%%\include{FrontBackmatter/DirtyTitlepage}
-% \include{FrontBackmatter/Titlepage}
+
+%\include{FrontBackmatter/DirtyTitlepage}
 % \include{FrontBackmatter/Titleback}
 % \cleardoublepage\include{FrontBackmatter/Dedication}
 % \cleardoublepage\include{FrontBackmatter/Foreword}
-% \cleardoublepage\include{FrontBackmatter/Abstract}
+
 % \cleardoublepage\include{FrontBackmatter/Publication}
 % \cleardoublepage\include{FrontBackmatter/Acknowledgments}
- % \pagestyle{scrheadings}
- % \cleardoublepage\include{FrontBackmatter/Contents}
+
+
+
+
 % %********************************************************************
 % % Mainmatter
 % %*******************************************************
@@ -78,16 +80,38 @@
 %\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff,
 %ignore
 
-
-% \include{Chapters/01-Introduction}
-% \include{Chapters/02-Biology}
-% \include{Chapters/03-Graph_theory}
-% \include{Chapters/05-Network_Model}
- \include{Chapters/06-Structural_Aspects}
-% \include{Chapters/07-Dynamical_Aspects}
-% \include{Chapters/08-Discussion}
-
 %\include{Chapters/0X-Test_Chapter}
+
+
+\include{FrontBackmatter/Titlepage}
+\cleardoublepage\include{FrontBackmatter/Abstract}
+\pagestyle{scrheadings}
+\cleardoublepage\include{FrontBackmatter/Contents}
+
+\include{Chapters/01-Introduction}
+\include{Chapters/02-Biology}
+\include{Chapters/03-Graph_theory}
+\include{Chapters/05-Network_Model}
+\include{Chapters/06-Structural_Aspects}
+\include{Chapters/07-Dynamical_Aspects}
+\include{Chapters/08-Discussion}
+
+\appendix
+\cleardoublepage
+%\part{Appendix}
+\include{Chapters/Appendix-A}
+
+\cleardoublepage
+
+\include{FrontBackmatter/Bibliography}
+\include{FrontBackmatter/Index}
+\include{FrontBackmatter/Symbols}
+
+
+
+\cleardoublepage\include{FrontBackmatter/Colophon}
+\cleardoublepage\include{FrontBackmatter/Declaration}
+
 
 
 
@@ -98,21 +122,7 @@
 %*******************************************************
 
 
-% \appendix
-% \cleardoublepage
-% \part{Appendix}
-% \include{Chapters/Appendix-A}
 
-% \cleardoublepage
-
-% \include{FrontBackmatter/Bibliography}
-% \include{FrontBackmatter/Index}
-% \include{FrontBackmatter/Symbols}
-
-
-
-% \cleardoublepage\include{FrontBackmatter/Colophon}
-% \cleardoublepage\include{FrontBackmatter/Declaration}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************
