@@ -10,31 +10,32 @@
 
 % \newgeometry{left=1.0in,right=1.0in}
 
-\begin{mathematica}[ht!]
+\begin{mathematica}[H]
   \centering
   \captionsetup{format=plain, font=normal}
-  \includegraphics[width=\linewidth, cframe=RoyalBlue 1pt]{mathematica/distance_theorem.pdf}
+  \includegraphics[width=\linewidth, cframe=citegray 1pt]{mathematica/distance_theorem.pdf}
   \caption{Computation of probability density function for distance
-    between to random points in square of side length $s$ as supplement
-    to proof of Theorem~\ref{theorem:distance_square}. Note that form of
-    final result \texttt{Out[7]} differs from solution given in
-    \ref{theorem:distance_square}. While proof of equivalence could not
-    be achieved analytically, expressions given are numerically
-    equivalent, see \autoref{mathematica:comparison}.}
+    between to random points in square of side length $s$ as
+    supplement to proof of Theorem~\ref{theorem:distance_square}. Note
+    that form of final result \texttt{Out[7]} differs from solution
+    given in \ref{theorem:distance_square} for $1<x<\sqrt{2}$. While
+    proof of equivalence could not be achieved analytically,
+    expressions given are numerically equivalent.}
   \label{mathematica:distances}
 \end{mathematica} 
 
-
-\begin{mathematica}[t]
+\begin{mathematica}[H]
   \centering
   \captionsetup{format=plain, font=normal}
-  \includegraphics[width=\linewidth, cframe=RoyalBlue 1pt]{%
-    mathematica/distance_theorem.pdf}
-  \caption{Computation of probability density function for distance
-    between to random points in square of side length $s$ as supplement
-    to proof of Theorem~\ref{theorem:distance_square}. Note that form of
-    final result \texttt{Out[7]} differs from solut}
-  \label{mathematica:comparison}
+  \includegraphics[width=\linewidth, cframe=citegray 1pt]{%
+    mathematica/get_motifs_cropped.pdf}
+  \caption{Computation of three motifs for
+    Section~\ref{sec:motifs}. Function \texttt{c[x]} is the
+    distance-dependent probability distribution from Theorem and
+    \texttt{w[x]} the probability density function for distance
+    between two random points in a box
+    (cf. Mathematica~\ref{mathematica:distances}, Moltchanov 2012).}
+  \label{mathematica:motif}
 \end{mathematica} 
 
 
@@ -61,7 +62,7 @@
 
 \section{Supplementary figures}\label{sec:supp_figures}
 
-\subsection*{\autoref{ch:network_model}}
+%\subsection*{\autoref{ch:network_model}}
 
 \begin{figure}[H]
   \centering
@@ -72,7 +73,7 @@
 \end{figure}
 
 
-\subsection*{\autoref{ch:structural_aspects}}
+%\subsection*{\autoref{ch:structural_aspects}}
 
 \begin{figure}[H]
   \centering
@@ -83,7 +84,7 @@
 \end{figure}
 
 
-\begin{figure}[htp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{plots/064f9b10_apl_1000.pdf}
   \caption{Average path length for anisotropic and distance-dependent
@@ -92,7 +93,7 @@
 \end{figure}
 
 
-\begin{figure}[htp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{plots/c5f1462b_rew_dist.pdf}
   \caption{Probabilities for connections in neuron pairs are identical
@@ -102,65 +103,65 @@
   \end{figure}
 
 
-\begin{figure}
-    \renewcommand{\tabcolsep}{1pt}
-    \setlength\extrarowheight{0pt}
-    \begin{tabular}{lll}
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_all_overall}
-        %\put(12,55){\small $\eta = 0$}
-      \end{overpic}
-      &
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_all_single.pdf}
-        %\put(12,55){\small $\eta = 0.25$}
-      \end{overpic}
-      &
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_all_recip.pdf}
-        %\put(12,55){\small $\eta = 0.33$}
-      \end{overpic}
-      \\
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_in_overall.pdf}
-        %\put(12,55){\small $\eta = 0.75$}
-      \end{overpic}
-      &
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_in_single.pdf}
-        %\put(12,55){\small $\eta = 1$}
-        %\put(4,-4){$0$}%\put(78,-4){$200$}
-      \end{overpic}
-      & 
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_in_recip.pdf}
-        %\put(12,55){\small distance}
-        %\put(4,-4){$0$}%\put(78,-4){$200$}
-      \end{overpic}
-      \\
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_out_overall.pdf}
-        %\put(12,55){\small $\eta = 0.75$}
-      \end{overpic}
-      &
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_out_single.pdf}
-        %\put(12,55){\small $\eta = 1$}
-        %\put(4,-4){$0$}%\put(78,-4){$200$}
-      \end{overpic}
-      & 
-      \begin{overpic}[width=0.33\textwidth]{%
-          plots/5841710e_out_recip.pdf}
-        %\put(12,55){\small distance}
-        %\put(4,-4){$0$}%\put(78,-4){$200$}
-      \end{overpic}
-    \end{tabular}
-  \caption{Common neighbor rule for overall connection probability,
-    single connections and reciprocal connections in anisotropic
-    (blue), rewired (red), distance-dependent (green) and tuned
-    anisotropic (orange) networks. (\smtcite{5841710e})} 
-  \label{suppfig:common_neighbor}
-  \end{figure}
+% \begin{figure}
+%     \renewcommand{\tabcolsep}{1pt}
+%     \setlength\extrarowheight{0pt}
+%     \begin{tabular}{lll}
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_all_overall}
+%         %\put(12,55){\small $\eta = 0$}
+%       \end{overpic}
+%       &
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_all_single.pdf}
+%         %\put(12,55){\small $\eta = 0.25$}
+%       \end{overpic}
+%       &
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_all_recip.pdf}
+%         %\put(12,55){\small $\eta = 0.33$}
+%       \end{overpic}
+%       \\
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_in_overall.pdf}
+%         %\put(12,55){\small $\eta = 0.75$}
+%       \end{overpic}
+%       &
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_in_single.pdf}
+%         %\put(12,55){\small $\eta = 1$}
+%         %\put(4,-4){$0$}%\put(78,-4){$200$}
+%       \end{overpic}
+%       & 
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_in_recip.pdf}
+%         %\put(12,55){\small distance}
+%         %\put(4,-4){$0$}%\put(78,-4){$200$}
+%       \end{overpic}
+%       \\
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_out_overall.pdf}
+%         %\put(12,55){\small $\eta = 0.75$}
+%       \end{overpic}
+%       &
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_out_single.pdf}
+%         %\put(12,55){\small $\eta = 1$}
+%         %\put(4,-4){$0$}%\put(78,-4){$200$}
+%       \end{overpic}
+%       & 
+%       \begin{overpic}[width=0.33\textwidth]{%
+%           plots/5841710e_out_recip.pdf}
+%         %\put(12,55){\small distance}
+%         %\put(4,-4){$0$}%\put(78,-4){$200$}
+%       \end{overpic}
+%     \end{tabular}
+%   \caption{Common neighbor rule for overall connection probability,
+%     single connections and reciprocal connections in anisotropic
+%     (blue), rewired (red), distance-dependent (green) and tuned
+%     anisotropic (orange) networks. (\smtcite{5841710e})} 
+%   \label{suppfig:common_neighbor}
+%   \end{figure}
 
 % \begin{figure}[H]
 %   \centering
