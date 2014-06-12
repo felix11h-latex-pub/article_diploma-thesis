@@ -10,6 +10,26 @@
 
 \section{Anisotropy Measure}\label{sec:anisotropy_measure}
 
+A measure for anisotropy in connectivity in geometric graphs can be
+obtained by . The \textit{mean direction} of a set of vectors is the
+sum of the normalized vectors, divided by the number of
+vector \parencite[cf.][]{Mardia_Directional-statistics}. Its length
+gives  Formally:
+
+\begin{definition}[Anisotropy measure]\index{anisotropy measure}
+Let $G_{n, \Phi}$ be a geometric graph. For each vertex $v$ in $G_{n,
+  \Phi}$, the anisotropy degree of $v$ is defined as
+\[
+\alpha(v) =         \frac{1}{\abs{T(v)}} \sum_{w \in T(v)}
+\frac{\Phi(w)-\Phi(v)}{\norm{\Phi(w)-\Phi(v)}},
+\]
+if the target set $T(v)$ of $v$ is non-empty, otherwise we set
+$\alpha(v) = 0$.
+\end{definition}
+
+
+
+
 In the last section a method to rewire an anisotropic geometric graph,
 such that was introduced. From an . In this chapter we
 introduce.. capturing ..
@@ -17,7 +37,7 @@ introduce.. capturing ..
 The $G_{n, \Phi}$ be a geometric graph. Then, for every is the
 \textit{preferred direction} and its length is \index{preferred direction}
 
-\textcite{Mardia_Directional-statistics}
+
 
 
 Anisotropic model can be interpreted as a model maximizing anisotropy
@@ -25,9 +45,9 @@ while keeping the cutoffs (degree distribution).
 
 
  
-\begin{figure}[H]
-\caption{\textbf{illustrate varying levels of anisotropy}}
-\end{figure}
+% \begin{figure}[H]
+% \caption{\textbf{illustrate varying levels of anisotropy}}
+% \end{figure}
 
 
 \begin{figure}[H]
