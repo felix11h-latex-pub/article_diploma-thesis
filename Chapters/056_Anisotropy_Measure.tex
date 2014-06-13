@@ -11,43 +11,35 @@
 \section{Anisotropy Measure}\label{sec:anisotropy_measure}
 
 A measure for anisotropy in connectivity in geometric graphs can be
-obtained by . The \textit{mean direction} of a set of vectors is the
-sum of the normalized vectors, divided by the number of
-vector \parencite[cf.][]{Mardia_Directional-statistics}. Its length
-gives  Formally:
+adapted from concepts in the field of directional statistics. The
+\textit{mean direction} of a set of unit vectors in $\mathbb{R}^2$ is
+the sum of the vectors, divided by the cardinality of the
+set \parencite[cf.][]{Mardia_Directional-statistics}. The resulting
+vector gives a preferred direction of the sample, pointing towards a
+clustering of the set. The length of the mean direction measures the
+vectors dispersion, with a length of close to $1$ implying tight
+clustering. Here we adapt the length of the mean direction to provide
+a measure of anisotropy in connectivity for each vertex in a geometric
+graph:
 
-\begin{definition}[Anisotropy measure]\index{anisotropy measure}
+
+\begin{definition}[Anisotropy degree]\index{anisotropy
+    measure}\index{anisotropy degree}
 Let $G_{n, \Phi}$ be a geometric graph. For each vertex $v$ in $G_{n,
   \Phi}$, the anisotropy degree of $v$ is defined as
 \[
-\alpha(v) =         \frac{1}{\abs{T(v)}} \sum_{w \in T(v)}
+\lambda(v) =         \frac{1}{\abs{T(v)}} \sum_{w \in T(v)}
 \frac{\Phi(w)-\Phi(v)}{\norm{\Phi(w)-\Phi(v)}},
 \]
 if the target set $T(v)$ of $v$ is non-empty, otherwise we set
-$\alpha(v) = 0$.
+$\lambda(v) = 0$.
 \end{definition}
 
-
-
-
-In the last section a method to rewire an anisotropic geometric graph,
-such that was introduced. From an . In this chapter we
-introduce.. capturing ..
-
-The $G_{n, \Phi}$ be a geometric graph. Then, for every is the
-\textit{preferred direction} and its length is \index{preferred direction}
-
-
-
-
-Anisotropic model can be interpreted as a model maximizing anisotropy
-while keeping the cutoffs (degree distribution).
-
-
- 
-% \begin{figure}[H]
-% \caption{\textbf{illustrate varying levels of anisotropy}}
-% \end{figure}
+By the triangle inequality, the anisotropy degree $\lambda(v)$ takes
+values from $0$ to $1$. If targets of $v$ mostly align along a
+projection from $v$, the degree $\lambda(v)$ is close to
+$1$. Otherwise, if targets are widely dispersed, $\lambda(v)$ is almost
+$0$. The anisotropy degree thus provides a measure. 
 
 
 \begin{figure}[H]
@@ -75,12 +67,14 @@ while keeping the cutoffs (degree distribution).
           plots/400a41bc.pdf}
         \put(10,57){\small $\eta = 0.75$}
         \put(4,-4){$0$}\put(90,-4){$1$}
+        \put(45,-5){$\nicefrac{1}{2}$}
       \end{overpic}
       &
       \begin{overpic}[width=0.28\textwidth]{%
           plots/a5f54cb4.pdf}
         \put(10,57){\small $\eta = 1$}
         \put(4,-4){$0$}\put(90,-4){$1$}
+        \put(45,-5){$\nicefrac{1}{2}$}
       \end{overpic}
       & 
       \begin{overpic}[width=0.28\textwidth]{%
@@ -88,20 +82,30 @@ while keeping the cutoffs (degree distribution).
         \put(11,57){\small distance-}
         \put(11,45){\small dependent}
         \put(4,-4){$0$}\put(90,-4){$1$}
+        \put(45,-5){$\nicefrac{1}{2}$}
       \end{overpic} 
     \end{tabular}
   }
   %
-  \caption{\textbf{Rewiring significantly reduces anisotropy} In data
-    taken from the 25 sample graphs (Section~\ref{sample_graphs}),
-    vertex isotropy degree distribution is shown for the original set
-    of graphs ($\eta = 0$) The characteristic highly anisotropic
-    profile found in the original is already significantly reduced by
-    partial rewiring; anisotropy degree distribution in the fully
-    rewired graphs resemble degree distribution of equivalent purely
-    distance-dependent networks.}%?? sumatra label
-  \label{fig:anisotropy} %??
+  \captionsetup{skip=15pt}
+  \caption{\textbf{Rewiring significantly reduces anisotropy}
+    Analyzing vertex anisotropy degrees in the 25 sample graphs
+    (Section~\ref{sample_graphs}) and their rewired versions, we find
+    that the mean anisotropy degree decrease with increasing rewiring
+    factor $\eta$. In completely rewired graphs ($\eta=1$), anisotropy
+    degree distribution resembles those of distance-dependent
+    networks. (\smtcite{038f5b8c}, \smtcite{9893ab1f},
+    \smtcite{0c429f3c}, \smtcite{400a41bc}, \smtcite{a5f54cb4},
+    \smtcite{a5b674f0})}
+  \label{fig:anisotropy_degree} 
 \end{figure}
+
+
+In anisotropic networks
+
+
+Anisotropic model can be interpreted as a model maximizing anisotropy
+while keeping the cutoffs (degree distribution).
 
 
 ... suggesting that fully rewired anisotropic networks do not . There
