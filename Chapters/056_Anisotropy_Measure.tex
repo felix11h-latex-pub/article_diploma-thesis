@@ -6,7 +6,7 @@
 %                           Anisotropy Measure
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
-\newpage
+
 
 \section{Anisotropy Measure}\label{sec:anisotropy_measure}
 
@@ -37,10 +37,26 @@ $\lambda(v) = 0$.
 
 By the triangle inequality, the anisotropy degree $\lambda(v)$ takes
 values from $0$ to $1$. If targets of $v$ mostly align along a
-projection from $v$, the degree $\lambda(v)$ is close to
-$1$. Otherwise, if targets are widely dispersed, $\lambda(v)$ is almost
-$0$. The anisotropy degree thus provides a measure. 
+projection from $v$, the degree $\lambda(v)$ is close to $1$. On
+contrast, if targets are widely dispersed, $\lambda(v)$ is almost
+$0$. Note however that $\lambda(v) = 0$ does \textit{not} imply even
+distribution of directions, examples for this are easily
+constructed \parencite[cf.][]{Mardia_Directional-statistics}.
 
+Considering the distribution of vertex anisotropy degrees in a
+geometric graph, the profiles provide an appropriate measure for
+anisotropy in connectivity. Recording values for each vertex in
+anisotropic networks and their rewired counterparts, we find that
+rewiring does indeed eliminate anisotropy
+(\autoref{fig:anisotropy_degree}). In fact, distributions in fully
+rewired networks resemble anisotropy degrees in distance-dependent
+graphs, suggesting that rewired networks can be considered equivalent
+to distance-dependent networks in terms of their structural
+aspects. This, however, turns out not to be true. In
+Section~\ref{sec:degree_distribution} we find strongly varying
+out-degree distributions in the two network types. Therefore both
+network models remain highly relevant as a reference for the analysis
+of structural features in anisotropic networks.
 
 \begin{figure}[H]
   \centering
@@ -101,16 +117,7 @@ $0$. The anisotropy degree thus provides a measure.
 \end{figure}
 
 
-In anisotropic networks
 
-
-Anisotropic model can be interpreted as a model maximizing anisotropy
-while keeping the cutoffs (degree distribution).
-
-
-... suggesting that fully rewired anisotropic networks do not . There
-is however one difference in out-degree as an artifact of boundary
-confinment (Section~\ref{sec:degree_distribution}).
 
 
 
