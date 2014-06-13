@@ -17,7 +17,7 @@ the sum of the vectors, divided by the cardinality of the
 set \parencite[cf.][]{Mardia_Directional-statistics}. The resulting
 vector gives a preferred direction of the sample, pointing towards a
 clustering of the set. The length of the mean direction measures the
-vectors dispersion, with a length of close to $1$ implying tight
+vectors dispersion, with a length of close to one implying tight
 clustering. Here we adapt the length of the mean direction to provide
 a measure of anisotropy in connectivity for each vertex in a geometric
 graph:
@@ -29,7 +29,7 @@ Let $G_{n, \Phi}$ be a geometric graph. For each vertex $v$ in $G_{n,
   \Phi}$, the anisotropy degree of $v$ is defined as
 \[
 \lambda(v) =         \frac{1}{\abs{T(v)}} \sum_{w \in T(v)}
-\frac{\Phi(w)-\Phi(v)}{\norm{\Phi(w)-\Phi(v)}},
+\frac{\Phi(w)-\Phi(v)}{\norm{\Phi(w)-\Phi(v)}}
 \]
 if the target set $T(v)$ of $v$ is non-empty, otherwise we set
 $\lambda(v) = 0$.
@@ -39,8 +39,8 @@ By the triangle inequality, the anisotropy degree $\lambda(v)$ takes
 values from $0$ to $1$. If targets of $v$ mostly align along a
 projection from $v$, the degree $\lambda(v)$ is close to $1$. On
 contrast, if targets are widely dispersed, $\lambda(v)$ is almost
-$0$. Note however that $\lambda(v) = 0$ does \textit{not} imply even
-distribution of directions, examples for this are easily
+$0$. Note however that $\lambda(v) = 0$ does \textit{not} necessarily
+imply even distribution of directions, examples for this are easily
 constructed \parencite[cf.][]{Mardia_Directional-statistics}.
 
 Considering the distribution of vertex anisotropy degrees in a
