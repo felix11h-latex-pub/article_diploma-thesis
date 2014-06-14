@@ -138,52 +138,61 @@ formally define a rewiring as follows:
 
 Note that in the way Definition~\ref{def:rewiring} is formulated, it
 is possible for $M_e$ to be empty for some edge $e$. In this case no
-new edge is realized and the resulting, rewired network has
-$\abs{E(G)}-1$ edges. In practice this happens negligibly seldom, out
-of approximately on average only $25.68$ edges, with a standard
-deviation of $4.51$ and accounting for roughly $0.02\%$ of the rewired
-edges, are \enquote{lost} in this process (\smtcite{4afc2727}).
+new edge is realized and the resulting rewired network has
+$\abs{E(G)}-1$ edges. In practice this happens negligibly often, on
+average only $25.68$ ($4.51$ standard deviation) edges, accounting for
+roughly $0.02\%$ of the rewired edges, are \enquote{lost} in this
+process (\smtcite{4afc2727}).
 
 We formulated Definition~\ref{def:rewiring} in such a way, that
-distance-dependent connectivity is preserved. We verify this claim by the
-following estimation:
-
-Let $\tilde{C}(x)$ be the distance-de\-pen\-dent connectivity profile
-of a rewiring $R_{\varepsilon}$ of an anisotropic graph
-$G_{n,w}$. Denote with $C(x)$ the distance-de\-pen\-dent connection
-probability of the $G_{n,w}$. The expected value for $\tilde{C}(x)$ at
-any inter-vertex distance $x \in [0,\sqrt{2}]$ is given as an average
-over the connection probabilities $C(x)$ of the possible sources to
-the new edge at distance $x$
-\[
-\mathbf{E}\left[\tilde{C}(x)\right] =
-  \frac{1}{2\varepsilon}\int_{x-\varepsilon}^{x+\varepsilon} C(x') \,
-  dx'.
-\]
-Note that for this expression to be well defined in the boundary
-cases, we need to extend $C(x)$ to have $C(x) = 0$ for $x<0$ and
-$x>\sqrt{2}$.  We can then estimate the expected difference between
-$\tilde{C}(x)$ and $C(x)$ at any point $x$ as
-\begin{align}
-  \abs{\mathbf{E}\left[\tilde{C}(x) - C(x)\right]}  
-    % & = \int_{x-\varepsilon}^{x+\varepsilon} f(x') C(x') \, dx -
-    %     C(x)\notag\\
-    & = \abs{\frac{1}{2\varepsilon}\int_{x-\varepsilon}^{x+\varepsilon}
-        C(x') - C(x) \, dx} \notag\\
-    & = \frac{1}{2\varepsilon} \left\{ \int_{x-\varepsilon}^{x} C(x') -
-        C(x) \, dx - \int_x^{x+\varepsilon} C(x') - C(x) \, dx
-        \right\} \notag\\
-    & \leq  \frac{1}{2\varepsilon}, \label{eq:rewiring_est}
-\end{align}
-
-The rewiring margin $\varepsilon$ thus simultaneously governs how many
-new targets are available for each edge and how well
-distance-dependency is preserved. Setting $\varepsilon = 1.25$ 
-and applying the rewiring algorithm to the 25 sample graphs, we find
-that distance-dependent connectivity of the original graphs is matched
+distance-dependent connectivity is preserved; the rewiring margin
+$\varepsilon$ thus simultaneously governs how many new targets are
+available for each edge and how well distance-dependency is
+preserved. Setting $\varepsilon = 1.25$ and applying the rewiring
+algorithm to the 25 sample graphs, we find that distance-dependent
+connectivity of the original graphs is matched
 (\autoref{fig:rewiring_dst_prf_compare}) while at the same time
 ensuring that for any edge $e$ sufficiently many new rewiring targets
 are available (\autoref{suppfig:rew_stats}).
+
+% We verify this claim by the
+% following estimation:
+
+% Let $\tilde{C}(x)$ be the distance-de\-pen\-dent connectivity profile
+% of a rewiring $R_{\varepsilon}$ of an anisotropic graph
+% $G_{n,w}$. Denote with $C(x)$ the distance-de\-pen\-dent connection
+% probability of the $G_{n,w}$. The expected value for $\tilde{C}(x)$ at
+% any inter-vertex distance $x \in [0,\sqrt{2}]$ is given as an average
+% over the connection probabilities $C(x)$ of the possible sources to
+% the new edge at distance $x$
+% \[
+% \mathbf{E}\left[\tilde{C}(x)\right] =
+%   \frac{1}{2\varepsilon}\int_{x-\varepsilon}^{x+\varepsilon} C(x') \,
+%   dx'.
+% \]
+% Note that for this expression to be well defined in the boundary
+% cases, we need to extend $C(x)$ to have $C(x) = 0$ for $x<0$ and
+% $x>\sqrt{2}$.  Using the monotonicity of $C(x)$, we can then estimate
+% the expected difference between $\tilde{C}(x)$ and $C(x)$ at any point
+% $x$ as
+% \begin{equation}
+% \begin{aligned}
+%   \abs{\mathbf{E}\left[\tilde{C}(x) - C(x)\right]}  
+%     % & = \int_{x-\varepsilon}^{x+\varepsilon} f(x') C(x') \, dx -
+%     %     C(x)\notag\\
+%     & = \abs{\frac{1}{2\varepsilon}\int_{x-\varepsilon}^{x+\varepsilon}
+%         C(x') - C(x) \, dx'} \\
+%     & = \frac{1}{2\varepsilon} \left\{ \int_{x-\varepsilon}^{x} C(x') -
+%         C(x) \, dx' - \abs{\int_x^{x+\varepsilon} C(x') - C(x) \, dx'}
+%         \right\} \\
+%     & \leq  \frac{1}{2\varepsilon}  \int_{x-\varepsilon}^{x} C(x') -
+%         C(x) \, dx' \\
+%      & \leq \frac{1}{2} (C(x-\varepsilon) - C(x)) 
+%      %\label{eq:rewiring_est}
+% \end{aligned}
+% \end{equation}
+
+
 
 \begin{figure}[H]
   \centering
@@ -197,9 +206,9 @@ are available (\autoref{suppfig:rew_stats}).
     of probabilities from the rewired ($\varepsilon = 1.25$) sample
     graphs in gray (errorbars SEM\protect\footnotemark) we verify that
     distance-dependent connectivity is preserved when rewiring. The
-    green curve shows the expected difference between the original and
-    rewired distance profiles as estimated in
-    Equation~\ref{eq:rewiring_est}. (\smtcite{4f4dfcf1})}
+    green curve shows the absolute difference between the original
+    profile and distance dependent probabilities found in the rewired
+    network. (\smtcite{4f4dfcf1})}
   \label{fig:rewiring_dst_prf_compare}
 \end{figure}
 \footnotetext{SEM = standard error of the mean\index{SEM}}
