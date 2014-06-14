@@ -62,34 +62,32 @@ The
 \vspace{-1cm}
 \begin{mathematica}[H]
   \centering
-  \captionsetup{format=plain, font=normal, skip=-3pt}
+  \captionsetup{format=plain, font=normal, skip=7pt}
   \includegraphics[width=\linewidth, cframe=citegray
   1pt]{mathematica/distance_theorem.pdf}
-    \label{mathematica:distances}
-  \caption{Computation of probability density function for distance
-    between to random points in square of side length $s$ as
-    supplement to proof of Theorem~\ref{theorem:distance_square}. Note
-    that form of final result \texttt{Out[7]} differs from solution
-    given in \ref{theorem:distance_square} for $1<x<\sqrt{2}$. While
-    proof of equivalence could not be achieved analytically,
-    expressions given are numerically equivalent.}
+  \caption{\label{mathematica:distances}%
+    Computation of probability density function for distance between
+    to random points in square of side length $s$ as supplement to
+    proof of Theorem~\ref{theorem:distance_square}. Note that form of
+    final result \texttt{Out[7]} differs from solution given in
+    \ref{theorem:distance_square} for $1<x<\sqrt{2}$. While proof of
+    equivalence could not be achieved analytically, expressions given
+    are numerically equivalent.}
   
-  \vspace{0.5cm}
+  \vspace{0.7cm}
 
   \includegraphics[width=\linewidth, cframe=citegray 1pt]{%
     mathematica/get_motifs_cropped.pdf}
-    \captionsetup{format=plain, font=normal, skip=-3pt}
-  \caption{Computation of three motifs for
-    Section~\ref{sec:motifs}. Function \texttt{c[x]} is the
-    distance-dependent probability distribution from Theorem and
-    \texttt{w[x]} the probability density function for distance
-    between two random points in a box
-    (cf. Mathematica~\ref{mathematica:distances}, Moltchanov 2012).}
-  \label{mathematica:motif}
+    \captionsetup{format=plain, font=normal, skip=-6pt}
+    \caption{\label{mathematica:motif}%
+      Computation of three motifs for
+      Section~\ref{sec:motifs}. Function \texttt{c[x]} is the
+      distance-dependent probability distribution from Theorem and
+      \texttt{w[x]} the probability density function for distance
+      between two random points in a box
+      (cf. Mathematica~\ref{mathematica:distances}, Moltchanov 2012).}
+
 \end{mathematica} 
-
-
-
 
 
 
@@ -110,42 +108,33 @@ The
 %\subsection*{\autoref{ch:network_model}}
 
 \begin{figure}[H]
+  \vspace{-1.2cm}
   \centering
   \includegraphics[width=0.8\textwidth]{%
     plots/4afc2727.pdf}
-  \caption{(\smtcite{4afc2727})}
-  \label{suppfig:rew_stats}
-\end{figure}
+  \captionsetup{skip=-7pt}
+  \caption{\label{suppfig:rew_stats}(\smtcite{4afc2727})}
 
-
-%\subsection*{\autoref{ch:structural_aspects}}
-
-\begin{figure}[H]
-  \centering
+  \vspace{0.5cm}
+  \captionsetup{skip=-1pt}
   \includegraphics[width=0.7\textwidth]{%
     plots/c7ee86d7.pdf}
-  \caption{(\smtcite{c7ee86d7})}
-  \label{suppfig:out_degree}
-\end{figure}
+  \caption{\label{suppfig:out_degree}(\smtcite{c7ee86d7})}
+  
+  \vspace{0.5cm} 
+  \includegraphics[width=0.5\textwidth]{plots/064f9b10_apl_1000.pdf}  
+  \caption{\label{suppfig:small_world}Average path length for
+    anisotropic and distance-dependent networks,
+    $N=1000$. (\smtcite{064f9b10})}
 
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\textwidth]{plots/064f9b10_apl_1000.pdf}
-  \caption{Average path length for anisotropic and distance-dependent
-    networks, $N=1000$. (\smtcite{064f9b10})} %?? fix width issue!!
-  \label{suppfig:small_world}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering
+  \vspace{0.5cm}
+ \captionsetup{skip=2pt}
   \includegraphics[width=0.5\textwidth]{plots/c5f1462b_rew_dist.pdf}
-  \caption{Probabilities for connections in neuron pairs are identical
-    in distance-dependent and rewired anisotropic
-    networks. (\smtcite{c5f1462b})} %?? fix width issue!!
-  \label{suppfig:two_neurons_dist_rew}
-  \end{figure}
+  \caption{\label{suppfig:two_neurons_dist_rew}Probabilities for
+    connections in neuron pairs are identical in distance-dependent
+    and rewired anisotropic networks. (\smtcite{c5f1462b})}
+
+\end{figure}
 
 
 % \begin{figure}
