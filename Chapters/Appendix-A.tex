@@ -4,16 +4,68 @@
 % If problems with the headers: get headings in appendix etc. right
 %\markboth{\spacedlowsmallcaps{Appendix}}{\spacedlowsmallcaps{Appendix}}
 
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Appenidx}
+
+
+
+
+
+
+
+
+
+
+% ######################################################################### %
+% ------------------------------------------------------------------------- %
+%                 Reproducibility in Computational Research         
+% ------------------------------------------------------------------------- %
+% ######################################################################### %
+
+\section{Reproducibility of Computational Results}\label{sec:reproducibility}
+
+Computational implementations of network models and numerical analysis
+of their features are an integral part of this study. In order to
+ensure the reproducibility of these results, \textit{Sumatra}, a
+software for provenance capture of computational projects, was
+used \parencite{Sumatra2012}. As a \enquote{lab notebook for
+computational researchers}, the software combines version control of
+code with the capture of inputs and outputs, as well as the used
+parameter sets, for each computational process. Providing a database
+and various interfaces, the tool allows not only direct management of
+simulations and data but provides a platform to make the computational
+reproducible and accessible to others.
+
+In this study, for every computational result referenced \marginpar{on
+  the use of Sumatra labels} in the text, a label was cited, referring
+to the record of the process in Sumatra's database. As an integral
+part . Thus ensuring accessibility and reproducibility of the work
+presented here.
+
+
+The
+
 
 \section{Mathematica}
 
 % \newgeometry{left=1.0in,right=1.0in}
-
+\vspace{-1cm}
 \begin{mathematica}[H]
   \centering
-  \captionsetup{format=plain, font=normal}
-  \includegraphics[width=\linewidth, cframe=citegray 1pt]{mathematica/distance_theorem.pdf}
+  \captionsetup{format=plain, font=normal, skip=-3pt}
+  \includegraphics[width=\linewidth, cframe=citegray
+  1pt]{mathematica/distance_theorem.pdf}
+    \label{mathematica:distances}
   \caption{Computation of probability density function for distance
     between to random points in square of side length $s$ as
     supplement to proof of Theorem~\ref{theorem:distance_square}. Note
@@ -21,14 +73,12 @@
     given in \ref{theorem:distance_square} for $1<x<\sqrt{2}$. While
     proof of equivalence could not be achieved analytically,
     expressions given are numerically equivalent.}
-  \label{mathematica:distances}
-\end{mathematica} 
+  
+  \vspace{0.5cm}
 
-\begin{mathematica}[H]
-  \centering
-  \captionsetup{format=plain, font=normal}
   \includegraphics[width=\linewidth, cframe=citegray 1pt]{%
     mathematica/get_motifs_cropped.pdf}
+    \captionsetup{format=plain, font=normal, skip=-3pt}
   \caption{Computation of three motifs for
     Section~\ref{sec:motifs}. Function \texttt{c[x]} is the
     distance-dependent probability distribution from Theorem and
@@ -41,15 +91,7 @@
 
 
 
-% ######################################################################### %
-% ------------------------------------------------------------------------- %
-%                 Reproducibility in Computational Research         
-% ------------------------------------------------------------------------- %
-% ######################################################################### %
 
-%\section{Reproducibility in Computational Research}\label{sec:reproducibility}
-
-%\textcite{Sumatra2012}
 
 
 
@@ -60,7 +102,10 @@
 % ------------------------------------------------------------------------- %
 % ######################################################################### %
 
-\section{Supplementary figures}\label{sec:supp_figures}
+
+
+
+\section{Supplementary Figures}\label{sec:supp_figures}
 
 %\subsection*{\autoref{ch:network_model}}
 
