@@ -59,9 +59,17 @@ consisting of only one vertex has length zero.
   $U$ we obtain an $(x,z)$-walk of length $|E(W)| + |E(U)| =
   \operatorname{dist}(x,y) + \operatorname{dist}(y,z)$, proofing
   that \[ \operatorname{dist}(x,z) \le \operatorname{dist}(x,y) +
-  \operatorname{dist}(y,z).\]\end{proof}
+  \operatorname{dist}(y,z).\qedhere\]\end{proof}
 
 
+Note, however, that although the distance of two vertices displays a
+triangle inequality, it does not constitute a metric on a directed
+graph $G$ as symmetry fails, in general
+\[
+\operatorname{dist}(x,y) \neq \operatorname{dist}(y,x).
+\]
+The average distance or average path length in a directed graph $G$
+measures how efficiently of information can be transported in the network.
 
  \begin{definition}[Average path length] The \textit{average path
      length} of a directed graph $G$ with $V(G)=n$ is defined as
@@ -70,8 +78,8 @@ consisting of only one vertex has length zero.
      \operatorname{dist}(x,y). \]
 \end{definition}
 
-In practice, vertex pairs with $\operatorname{dist}(x,y) = \infty$, that is
-pairs that are not connected by a walk, are disregarded in the
+In practice, vertex pairs with $\operatorname{dist}(x,y) = \infty$,
+that is pairs that are not connected by a walk, are disregarded in the
 computation and the average path length is determined in the connected
 components of the graph, ensuring that $l$ is finite.
 
