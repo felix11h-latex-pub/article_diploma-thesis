@@ -7,30 +7,11 @@
 
 
 
-
-
-
-
-
-
-
-
 \chapter{Appenidx}
 
 
 
 
-
-
-
-
-
-
-% ######################################################################### %
-% ------------------------------------------------------------------------- %
-%                 Reproducibility in Computational Research         
-% ------------------------------------------------------------------------- %
-% ######################################################################### %
 
 \section{Reproducibility of Computational Results}\label{sec:reproducibility}
 
@@ -46,14 +27,74 @@ and various interfaces, the tool allows not only direct management of
 simulations and data but provides a platform to make the computational
 reproducible and accessible to others.
 
+
+
 In this study, for every computational result referenced \marginpar{on
   the use of Sumatra labels} in the text, a label was cited, referring
-to the record of the process in Sumatra's database. As an integral
-part . Thus ensuring accessibility and reproducibility of the work
-presented here.
+to the record of the process in Sumatra's database. Code and produced
+data are understood as part of the work of this thesis; giving
+references to computational processes in which the results were
+obtained, allows the reader at any point to see the exact
+implementation of the described process or to look up a parameter not
+explicitly mentioned in the text (\autoref{fig:sumatra}). Through this, the work presented
+here lives up to of in all areas of science.
 
 
-The
+Further contributing , with \marginpar{use of free, open source software}single exception of Mathematica, all tools
+and software used to create this work 
+
+
+\newpage
+
+\begin{figure}[H]
+  \scriptsize
+\hspace{0.4cm}
+\begin{minipage}{0.7\linewidth}
+\begin{verbatim}
+---------------------------------------------------------------------------
+Label            : com_inp_N500-trials5-step010
+Timestamp        : 2014-06-06 17:29:39.663398
+Reason           : common input variance
+Outcome          : 
+Duration         : 1087.83452988
+Repository       : GitRepository at /users/hoffmann/research
+Main_File        : comp/common_input_variance.py
+Version          : 10690e97199851f08955ed7944f7eadfe71b4bf2
+Script_Arguments : com_inp_N500-trials5-step010 <parameters>
+Executable       : Python (version: 2.7.3) at /usr/bin/python
+Parameters       : rew_frac_min = 0.1
+                 : n_trials = 5
+                 : rew_margin = 1.25
+                 : Torus = False
+                 : l_ax = 1000
+                 : rew_frac_max = 1.0
+                 : N = 500
+                 : ed_l = 296
+                 : rew_frac_step = 0.1
+                 : save_the_graph = True
+                 : comp_label = "common_input_variance/"
+                 : self_loops_allowed = False
+                 : parallel_edges_allowed = False
+Input_Data       : []
+Launch_Mode      : serial
+Output_Data      :[common_input_variance/com_inp_N500-trials5-step010.p
+                 : (1aacdd2202ba8ce6a419b6e8cf5d241c2ef37454)]
+User             : Felix Hoffmann <Felix11H@github.nomail>
+Tags             : clustering
+---------------------------------------------------------------------------
+\end{verbatim}
+\end{minipage}
+\normalsize
+\captionsetup{skip=18pt}
+\caption{\label{fig:sumatra}%
+  \textbf{Example Sumatra record entry} Showing the label, parameter
+  set and output, Sumatra record entries display the full information
+  required to reproduce th. The version number here refers to }
+\end{figure}
+
+
+
+
 
 
 \section{Mathematica}
