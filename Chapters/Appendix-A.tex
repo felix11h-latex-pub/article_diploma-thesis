@@ -17,36 +17,62 @@
 
 Computational implementations of network models and numerical analysis
 of their features are an integral part of this study. In order to
-ensure the reproducibility of these results, \textit{Sumatra}, a
-software for provenance capture of computational projects, was
-used \parencite{Sumatra2012}. As a \enquote{lab notebook for
-computational researchers}, the software combines version control of
-code with the capture of inputs and outputs, as well as the used
-parameter sets, for each computational process. Providing a database
-and various interfaces, the tool allows not only direct management of
-simulations and data but provides a platform to make the computational
+ensure the reproducibility of this part of the analysis,
+\textit{Sumatra}\footnote{Sumatra: Automated tracking of scientific
+  computations. Available at
+  \url{http://neuralensemble.org/sumatra/}}, a software for provenance
+capture of computational projects, was used. As a \enquote{lab
+  notebook for computational researchers}, the software combines
+version control of code with the capture of inputs and outputs, as
+well as the used parameter sets, for each computational
+process \parencite{Sumatra2012}. Providing a database and various
+interfaces, the tool allows not only direct management of simulations
+and data but provides a platform to make the computational
 reproducible and accessible to others.
 
 
 
-In this study, for every computational result referenced \marginpar{on
-  the use of Sumatra labels} in the text, a label was cited, referring
-to the record of the process in Sumatra's database. Code and produced
-data are understood as part of the work of this thesis; giving
-references to computational processes in which the results were
-obtained, allows the reader at any point to see the exact
+In this study, for every computational result referenced
+\marginpar{Sumatra labels}\index{label} in the text, a label was
+cited, referring to the record of the process in Sumatra's
+database. Code and produced data are understood as part of the work of
+this thesis; giving references to computational processes in which the
+results were obtained, allows the reader at any point to see the exact
 implementation of the described process or to look up a parameter not
-explicitly mentioned in the text (\autoref{fig:sumatra}). Through this, the work presented
-here lives up to of in all areas of science.
+explicitly mentioned in the text (\autoref{fig:sumatra}). Through
+this, the work presented here displays reproducibility and
+transparency of the described methods and results, meeting this
+important requirement in all scientific work.
 
+Further contributing to the reproducibility of this work
+\marginpar{use of free, open source software} is the exclusive use of
+free and open source software. With the single exception of
+\mbox{\textit{Mathematica}}\footnote{Wolfram Mathematica Version
+  $7.0.1.0$. See \url{http://www.wolfram.com/mathematica/}}, all tools
+used to create this work are freely available and can be modified as
+their source code is openly accessible. The list of software used in
+this thesis includes, additionally to the programs mentioned throughout
+the text, %
+\textit{GNU Emacs}\footnote{%
+  GNU Emacs Version $24.3$. Free Software Foundation. Available at
+  \url{http://www.gnu.org/software/emacs/}}, %
+\textit{Inkscape}\footnote{%
+  Inkscape Version $0.48.3.1$. Available at
+  \url{http://www.inkscape.org}}, %
+\textit{GNU Image Manipulation Program}\footnote{%
+  GNU Image Manipulation Program Version $2.8.8$. Available at
+  \url{http://www.gimp.org/}} and %
+\textit{TeX Live}\footnote{%
+  Tex Live 2012. D.E. Knuth. Available at
+  \url{https://www.tug.org/texlive/}}. The document's layout is based
+on an adapted version of \textit{Classicthesis}\footnote{%
+  Classicthesis $4.1$. Andr\'e Miede. Available at
+  \url{http://www.ctan.org/pkg/classicthesis}}.
 
-Further contributing , with \marginpar{use of free, open source software}single exception of Mathematica, all tools
-and software used to create this work 
-
-
-\newpage
+%\newpage
 
 \begin{figure}[H]
+  \vspace{2cm}
   \scriptsize
 \hspace{0.4cm}
 \begin{minipage}{0.7\linewidth}
@@ -88,8 +114,11 @@ Tags             : clustering
 \captionsetup{skip=18pt}
 \caption{\label{fig:sumatra}%
   \textbf{Example Sumatra record entry} Showing the label, parameter
-  set and output, Sumatra record entries display the full information
-  required to reproduce th. The version number here refers to }
+  set and outputs, Sumatra record entries display the full information
+  required to reproduce referenced results. The version number is here
+  of critical importance; it refers to a snapshot of the code base at
+  the time of simulation. Through it the exact code at this point can
+  be recovered and used to reproduce results.}
 \end{figure}
 
 
