@@ -16,7 +16,7 @@ In Gilbert's random graph model $G(n,p)$,
   models in Section~\ref{sec:random_graph_theory}}
 %------------------------------------------------
 probability of connection $p$ is independently chosen and a fixed
-value for all vertex pairs. The anisotropic geometric graph model
+value for all vertex pairs. The anisotropic geometric random graph model
 introduced in Section~\ref{sec:anisotropic_network_model} is itself a
 random graph model - node positions as well as preferred directions of
 connection are uniformly at random distributed. In contrast to
@@ -41,13 +41,12 @@ this section we explore distance connectivity of the anisotropic
 network model, securing a vital component in the analysis of
 structural features.
 
-\begin{theorem} \label{theorem:distance_prof} Let $(G,\Phi, a)$
-  represent an arbitrary realization of the anisotropic random graph
-  model $G(n,w)$. Define $C:[0,\sqrt{2}] \to [0,1]$ as the
-  distance-dependent connection probability profile of $(G,\Phi)$,
-  that is such that $C(x)$ is the probability that for a vertex pair
-  $(v,v') \in V(G)^2\setminus\Delta_{V(G)}$ in distance $x =
-  \norm{\Phi(v)-\Phi(v')}$ the vertex $v$ projects to vertex
+\begin{theorem} \label{theorem:distance_prof} Let $G_{n,w} = (G,\Phi,
+  a)$ be an anisotropic random graph. Define $C:[0,\sqrt{2}] \to
+  [0,1]$ as the distance-dependent connection probability profile of
+  $(G,\Phi)$, that is such that $C(x)$ is the probability that for a
+  vertex pair $(v,v') \in V(G)^2\setminus\Delta_{V(G)}$ in distance $x
+  = \norm{\Phi(v)-\Phi(v')}$ the vertex $v$ projects to vertex
   $v'$. Then
   \[
     C(x) = \begin{cases}%
