@@ -10,7 +10,7 @@ well. The answer to the first question was heavily implied throughout
 this thesis; referencing once again the convincing evidence of network
 structure affects various dynamical aspects \parencite{Pernice2011,
   Zhao2011}, we expect that anisotropy does in fact display a strong
-influence on dynamical aspects. The second question, however, is not
+influence on network dynamics. The second question, however, is not
 as easily answered and opens up a whole new direction of study, which
 goes beyond the scope of this report. 
 
@@ -18,22 +18,22 @@ However, as an outlook to what surprising results one might find
 investigating this topic we further, we here show how anisotropy in
 connectivity affects network dynamics in a linear rate
 model. Considering a system of $n$ neurons receiving some external
-input $\mathbf{s}$, in such linear model the rate vector
+input $\mathbf{s}$, in such  model the rate vector
 $\mathbf{r}(t)$, describing the activity for each neuron at time $t$,
-is governed the differential equation
+is governed by the differential equation
 \begin{equation}
   \dot{\mathbf{r}}  = -\mathbf{r} + W\mathbf{r} + J_S \mathbf{s},
 \label{eq:dyn}
 \end{equation}
-where $W$ is the weight matrix of the network \parencite{Sadeh2014},
-reflecting network connectivity. Each column in the $n \times n$
-matrix corresponds to a neuron in the network, determining the neuron
-either to be of inhibitory or excitatory nature. The weight matrix
+where $W$ is the weight matrix of the network, reflecting its
+connectivity \parencite{Sadeh2014}. Each column in the $n \times n$
+matrix corresponds to a neuron in the network, determining the cell to
+either be of inhibitory or excitatory nature. The weight matrix
 then carries positive, non-zero entries in the columns of excitatory
-neurons wherever an edge exists in the network, in short $W_{ij} \neq 0$
-is a necessary and sufficient condition for the existence of an edge
-$e$ with $s(e) = j$ and $t(e) = i$. The columns of inhibitory neurons
-carry non-zero, negative entries.
+neurons wherever an edge exists in the network, i.e.\ $W_{ij} \neq
+0$ is a necessary and sufficient condition for the existence of an
+edge $e$ with $s(e) = j$ and $t(e) = i$. The columns of inhibitory
+neurons carry non-zero, negative entries.
 
 Without examining the equation in detail, we note how solutions of
 (\ref{eq:dyn}) are determined by the eigenvalue spectrum of $W$. We
@@ -41,16 +41,24 @@ therefore here analyze the eigenvalue spectrum of the weight matrix
 for anisotropic networks. For this we choose the following, typically
 used parameters resembling an \textit{inhibition dominated
   network} \parencite{Brunel2000, Sadeh2014}. First we determine
-randomly $f=0.2$ of all neurons to be inhibitory, the rest being
-excitatory. Weights for existing edges are then gives as
+randomly $f=0.2$ of all neurons to be of inhibitory nature, the rest
+being excitatory. Weights for existing edges are then given as
 $J=\SI{0.136}{mV}$ in the excitatory case and $-gJ$ in the inhibitory
-case, making up with $g=8$ for the smaller population.
+case, making up with a factor $g=8$ for the smaller inhibitory population.
 
 
-Analyzing then eigenvalue spectrum of weight matrices of anisotropic
-and rewired networks, we clearly identify . While (computed as
-described in \textcite{Rajan2006}), finding the first hint of
-dynamical aspects directly influenced by anisotropy.
+Analyzing the eigenvalue spectrum of weight matrices of anisotropic
+and rewired networks, we find that the spectrum in anisotropic graphs
+clusters more tightly around the origin. While the estimated radius of the
+bulk of the spectrum (computed as described by \textcite{Rajan2006})
+is not affected, eigenvalue density peaks close to the origin in
+anisotropic networks, whereas rewired networks show a much flatter
+distribution (\autoref{fig:dynamics}). Interestingly, eigenvalue
+densities in anisotropic and rewired networks match perfectly with
+their tuned counterparts, implying that while anisotropy does strongly
+affect the density distribution, varying distance-dependency has no
+effect at all.
+
 
 %  indeed. Here as, an
 % outlook, we show in how anisotropy in connectivity affects network
@@ -120,16 +128,33 @@ dynamical aspects directly influenced by anisotropy.
   \end{minipage}
   \captionsetup{skip=14pt}
   \caption{\textbf{Anisotropy in connectivity reduces spread of
-      eigenvalues} Interestingly, the two anisotropic networks and the
-    two rewired networks have perfectly matching density distributions
+      eigenvalues} The complex eigenvalue spectra of weight matrices
+    (additionally normed by $V_{\mathrm{reset}} = \SI{20}{mV}$) of
+    anisotropic and rewired graphs (\textbf{A}), and their tuned
+    versions (\textbf{B}), show a higher clustering in anisotropic
+    networks. Circle indicates the radius of the bulk spectrum,
+    computed as described by \textcite{Rajan2006}. The density of
+    eigenvalues $\lambda$ decreases characteristically with rising
+    $|\lambda|$. Note that the two anisotropic networks and the two
+    rewired networks have perfectly matching density distributions
     (\textbf{C}), implying that while anisotropy strongly affects the
-    density distribution, varying distance-dependency does not at all.
-    rewired and tuned rewired have Errorbars SEM (\smtcite{65552fe9})}
+    density distribution, varying distance-dependency does not at
+    all. Errorbars SEM. (\smtcite{65552fe9})}
   \label{fig:dynamics}
 \end{figure}
 
 
+In the dynamical context, radius and density of the bulk spectrum are
+closely associated with the network's stability under
+perturbations. Therefore, using a linear rate model for a dynamical
+investigation of anisotropic networks, we here find a first hint of
+dynamical aspects directly influenced by anisotropy in connectivity,
+establishing a promising prospect for a more detailed dynamical
+analysis in the future.
 
+% of Relying
+% on a linear rate model, evidence sh finding the first hint of
+% dynamical aspects directly influenced by anisotropy.
 
 
 
