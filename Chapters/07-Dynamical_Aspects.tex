@@ -6,18 +6,71 @@ So far the focus of this study lay in uncovering how anisotropy
 affects structural aspects of geometric neural networks. Finding that
 higher order connectivity is indeed strongly influenced by anisotropy,
 the question arises if and how anisotropy affects dynamical aspects as
-well. As we studies repeatedly the first question is bound to be
-answered positively. In this chapter, as an outlook, we show how
-anisotropy can concretely affect network dynamics.
+well. The answer to the first question was heavily implied throughout
+this thesis; referencing once again the convincing evidence of network
+structure affects various dynamical aspects \parencite{Pernice2011,
+  Zhao2011}, we expect that anisotropy does in fact display a strong
+influence on dynamical aspects. The second question, however, is not
+as easily answered and opens up a whole new direction of study, which
+goes beyond the scope of this report. 
 
-For this
+However, as an outlook to what surprising results one might find
+investigating this topic we further, we here show how anisotropy in
+connectivity affects network dynamics in a linear rate
+model. Considering a system of $n$ neurons receiving some external
+input $\mathbf{s}$, in such linear model the rate vector
+$\mathbf{r}(t)$, describing the activity for each neuron at time $t$,
+is governed the differential equation
+\begin{equation}
+  \dot{\mathbf{r}}  = -\mathbf{r} + W\mathbf{r} + J_S \mathbf{s},
+\label{eq:dyn}
+\end{equation}
+where $W$ is the weight matrix of the network \parencite{Sadeh2014},
+reflecting network connectivity. Each column in the $n \times n$
+matrix corresponds to a neuron in the network, determining the neuron
+either to be of inhibitory or excitatory nature. The weight matrix
+then carries positive, non-zero entries in the columns of excitatory
+neurons wherever an edge exists in the network, in short $W_{ij} \neq 0$
+is a necessary and sufficient condition for the existence of an edge
+$e$ with $s(e) = j$ and $t(e) = i$. The columns of inhibitory neurons
+carry non-zero, negative entries.
 
-In a network of $N$ neurons, let $f$ be the fraction of excitatory
-neurons,
-\[f:= \frac{N_E}{N_E + N_I},
-\] if $N_E$ and $N_I$ are the number of neurons respectively.
-Balanced network. 
+Without examining the equation in detail, we note how solutions of
+(\ref{eq:dyn}) are determined by the eigenvalue spectrum of $W$. We
+therefore here analyze the eigenvalue spectrum of the weight matrix
+for anisotropic networks. For this we choose the following, typically
+used parameters resembling an \textit{inhibition dominated
+  network} \parencite{Brunel2000, Sadeh2014}. First we determine
+randomly $f=0.2$ of all neurons to be inhibitory, the rest being
+excitatory. Weights for existing edges are then gives as
+$J=\SI{0.136}{mV}$ in the excitatory case and $-gJ$ in the inhibitory
+case, making up with $g=8$ for the smaller population.
 
+
+Analyzing then eigenvalue spectrum of weight matrices of anisotropic
+and rewired networks, we clearly identify . While (computed as
+described in \textcite{Rajan2006}), finding the first hint of
+dynamical aspects directly influenced by anisotropy.
+
+%  indeed. Here as, an
+% outlook, we show in how anisotropy in connectivity affects network
+% dynamics in a linear rate model.
+
+% For this 
+
+% As we studies repeatedly the first question is bound to be
+% answered positively. In this chapter, as an outlook, we show how
+% anisotropy can concretely affect network dynamics.
+
+% For this
+
+% In a network of $N$ neurons, let $f$ be the fraction of excitatory
+% neurons,
+% \[f:= \frac{N_E}{N_E + N_I},
+% \] if $N_E$ and $N_I$ are the number of neurons respectively.
+% Balanced network. 
+
+% \parencite{Sadeh2014} \parencite{Rajan2006}
 % Sadeh 2014:
 % We refer to the network as being “inhibition
 % dominated”, if the lower number of inhibitory neurons
@@ -29,15 +82,15 @@ Balanced network.
   \centering
   \begin{minipage}{0.49\linewidth}
   \begin{overpic}[width=\linewidth]{%
-      /users/hoffmann/research/65552fe9_test.pdf} 
-    %\put(3.2,43){\small \textbf{A}}
+      plots/65552fe9_aniso.pdf} 
+    \put(23.2,33.4){\small \textbf{A}}
   \end{overpic}
 
   \vspace{0.3cm}
 
   \begin{overpic}[width=\linewidth]{%
-      /users/hoffmann/research/65552fe9_test2.pdf} 
-    %\put(3.2,43){\small \textbf{B}}
+      plots/65552fe9_tuned.pdf} 
+    \put(23.2,33.4){\small \textbf{B}}
   \end{overpic}
   \end{minipage}
   \hfill
@@ -45,8 +98,8 @@ Balanced network.
     \vspace{-1.61cm}
     \hspace{0.2cm}
   \begin{overpic}[width=0.92\linewidth]{%
-      /users/hoffmann/research/65552fe9_dens.pdf} 
-    %\put(3.2,43){\small \textbf{C}}
+      plots/65552fe9_dens.pdf} 
+    \put(90.2,61.){\small \textbf{C}}
     \put(6,-7){\footnotesize%
       {\color{mpl_blue}\rule{0.3cm}{0.15cm}} %
       anisotropic}
@@ -66,12 +119,12 @@ Balanced network.
   \end{overpic}
   \end{minipage}
   \captionsetup{skip=14pt}
-  \caption{\textbf{High edge counts are overrepresented in networks
-      with anisotropy} Normalized difference between number of edges
-    in clusters of 6, 8 and 12 randomly selected neurons in
-    anisotropic networks and rewired networks shows an
-    overrepresentation of high edge counts in networks with anisotropy
-    in connectivity. Errorbars SEM (\smtcite{65552fe9})}
+  \caption{\textbf{Anisotropy in connectivity reduces spread of
+      eigenvalues} Interestingly, the two anisotropic networks and the
+    two rewired networks have perfectly matching density distributions
+    (\textbf{C}), implying that while anisotropy strongly affects the
+    density distribution, varying distance-dependency does not at all.
+    rewired and tuned rewired have Errorbars SEM (\smtcite{65552fe9})}
   \label{fig:dynamics}
 \end{figure}
 
