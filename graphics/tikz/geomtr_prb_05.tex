@@ -1,0 +1,62 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{units}
+
+\newcommand*{\Angle}{35}% 
+\newcommand*{\Overshoot}{22.5}%
+\newcommand*{\Rorg}{2.5}%
+\newcommand*{\R}{1.2}%
+\newcommand*{\LgthAx}{2.5}%
+\newcommand*{\Lo}{-0.6}%
+\newcommand*{\Sep}{0.18}%
+\newcommand*{\YSep}{0.1}%
+\newcommand*{\XSep}{0.2}%
+\newcommand*{\DashLgth}{0.75}%
+
+
+\begin{document}
+\begin{tikzpicture}
+
+
+    % (theta:r) polar coordinates!
+
+    \pgfmathsetmacro{\WdthAx}{\Rorg*sin(\Angle)}%
+
+    \node[draw, inner sep=0pt, minimum size = 6pt, circle, thick] at
+    (0,0) (neuron) {};
+    \draw[thick] (-\WdthAx,\LgthAx) -- (-\WdthAx,0) --
+    (neuron) -- (\WdthAx,0) -- (\WdthAx,\LgthAx);
+
+    \path  (90+\Angle+\Overshoot:\Rorg) arc (90+\Angle+\Overshoot:90+\Angle:\Rorg);
+    \path (90+\Angle:\Rorg) arc (90+\Angle:90-\Angle:\Rorg);
+    \path (90-\Angle:\Rorg) arc (90-\Angle:90-\Angle-\Overshoot:\Rorg);
+
+    \draw (-\R,0)  arc (180:0:\R);
+
+    \draw[<-] (90+\Angle:\R+0.14) arc (90+\Angle:98:\R+0.14); 
+    \draw[->] (83:\R+0.14) arc (83:90-\Angle:\R+0.14); 
+    \node at (88:\R+0.24) {$v'$};
+
+    \draw[<-] (\WdthAx,\Lo) -- (0+\Sep,\Lo);
+    \draw[<-] (-\WdthAx, \Lo) -- (0-\Sep,\Lo);
+    \node at (0,\Lo) {$w$};
+
+    \draw[<->,shorten >= 0.8, shorten <= 0.8] (neuron) --node[right] {$x$} (0, \R);
+ 
+    \node at (0.28,-0.22) {$v$};
+    %\draw (0,0) -- node[right]  {} (0,\R);
+
+    %\draw (90+\Angle:\R) -- node[below] {$\scriptstyle w/2$} ($(90+\Angle:\R)!.5!(90-\Angle:\R)$);
+
+    \draw[thick, dashed] (-\WdthAx, \LgthAx) -- (-\WdthAx, \LgthAx + \DashLgth);
+    \draw[thick, dashed] (\WdthAx, \LgthAx) -- (\WdthAx, \LgthAx + \DashLgth);
+
+
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

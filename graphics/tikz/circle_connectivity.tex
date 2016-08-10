@@ -1,0 +1,42 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{units}
+
+\newcommand*{\Angle}{35}% 
+\newcommand*{\Overshoot}{22.5}%
+\newcommand*{\Rorg}{2.5}%
+\newcommand*{\R}{1.2}%
+\newcommand*{\LgthAx}{2.5}%
+\newcommand*{\Lo}{-0.6}%
+\newcommand*{\Sep}{0.18}%
+\newcommand*{\YSep}{0.1}%
+\newcommand*{\XSep}{0.2}%
+\newcommand*{\DashLgth}{0.75}%
+
+
+\begin{document}
+\begin{tikzpicture}
+
+
+
+
+\node[draw=none, fill=none]  (V1) at (0,0) {$v_1$};
+\node[draw=none, fill=none]  (V2) at (1.4,1.8) {$v_2$};
+\node[draw=none, fill=none]  (V3) at (3.6,-1.5) {$v_3$};
+  
+\draw [shorten >=0.02cm, ->] (V1.east) -- node[auto]{$x$} (V2.south);
+\draw [shorten >=0.02cm, ->] (V1.east) -- node[below]{$y$} (V3.north);
+\draw [dashed] (V2.south) -- node[auto]{$z$} (V3.north);
+
+\draw [] (V1.east)+(-21.08:0.8cm) arc   (-21.08:54.12:0.8cm) node[auto]{};
+
+\draw [] (V1.east)+(12:0.5cm) node[auto]{$\theta$};
+
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
